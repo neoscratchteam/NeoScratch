@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { Menu, X, Code, MessageCircle } from 'lucide-react';
 
 interface NavigationItem {
@@ -84,7 +83,6 @@ export function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
-            <ThemeToggle />
             <Button 
               variant="outline"
               size="sm" 
@@ -99,7 +97,6 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-2 lg:hidden">
-            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"

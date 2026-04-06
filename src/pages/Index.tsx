@@ -91,18 +91,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Fold Transition: Trusted By Row */}
-      <div className="bg-background py-8 border-b border-border/50">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-[10px] font-bold tracking-[0.4em] text-muted-foreground/30 uppercase">
-            TRUSTED BY BUSINESSES ACROSS RWANDA AND BEYOND
-          </p>
-        </div>
-      </div>
-
-
-
-
       {/* Services Section */}
       <section className="py-24 bg-secondary/20" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
