@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
-import { FloatingChat } from '@/components/FloatingChat';
+import { FloatingChat } from '@/components/FloatingChat'; // This is now only "Go to top"
 
 import { useScrollToTop } from '@/hooks/useScrollToTop';
 import AOS from 'aos';
