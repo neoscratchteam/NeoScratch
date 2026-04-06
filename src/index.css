@@ -17,10 +17,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 10% 10%;
 
-    --primary: 28 96% 60%;
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 28 96% 85%;
-    --primary-dark: 28 96% 45%;
+    --primary-light: 221 83% 85%;
+    --primary-dark: 221 83% 45%;
 
     --secondary: 0 0% 98%;
     --secondary-foreground: 220 10% 10%;
@@ -28,8 +28,8 @@
     --muted: 0 0% 96%;
     --muted-foreground: 220 10% 40%;
 
-    --accent: 28 96% 95%;
-    --accent-foreground: 28 96% 45%;
+    --accent: 221 83% 95%;
+    --accent-foreground: 221 83% 45%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -42,29 +42,29 @@
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 28 96% 60%;
+    --ring: 221 83% 53%;
 
     --radius: 1rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(28 96% 60%), hsl(28 96% 45%));
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 83% 45%));
     --gradient-secondary: linear-gradient(135deg, hsl(0 0% 98%), hsl(0 0% 96%));
     
-    /* MDX style hero gradient - large minimal orange glow on white */
-    --gradient-hero: radial-gradient(circle at top left, hsl(28 96% 60% / 0.1) 0%, transparent 40%),
-                     radial-gradient(circle at bottom right, hsl(28 96% 45% / 0.05) 0%, transparent 40%);
+    /* MDX style hero gradient - large minimal blue glow on white */
+    --gradient-hero: radial-gradient(circle at top left, hsl(221 83% 53% / 0.1) 0%, transparent 40%),
+                     radial-gradient(circle at bottom right, hsl(221 83% 45% / 0.05) 0%, transparent 40%);
     
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 99%));
 
     /* Grid Pattern */
-    --grid-color: hsl(28 96% 60% / 0.05);
+    --grid-color: hsl(221 83% 53% / 0.05);
 
     /* Apple-like Smooth Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-    --shadow-glow: 0 0 30px hsl(28 96% 60% / 0.15);
+    --shadow-glow: 0 0 30px hsl(221 83% 53% / 0.15);
 
     /* Apple smooth animations */
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -82,10 +82,10 @@
     --popover: 220 10% 6%;
     --popover-foreground: 0 0% 96%;
 
-    --primary: 28 96% 60%;
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 28 96% 75%;
-    --primary-dark: 28 96% 45%;
+    --primary-light: 221 83% 75%;
+    --primary-dark: 221 83% 45%;
 
     --secondary: 220 10% 10%;
     --secondary-foreground: 0 0% 96%;
@@ -93,29 +93,29 @@
     --muted: 220 10% 10%;
     --muted-foreground: 220 10% 65%;
 
-    --accent: 28 96% 15%;
-    --accent-foreground: 28 96% 80%;
+    --accent: 221 83% 15%;
+    --accent-foreground: 221 83% 80%;
 
     --border: 220 10% 15%;
     --input: 220 10% 15%;
-    --ring: 28 96% 60%;
+    --ring: 221 83% 53%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(28 96% 60%), hsl(28 96% 45%));
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 83% 45%));
     --gradient-secondary: linear-gradient(135deg, hsl(220 10% 10%), hsl(220 10% 8%));
     
     /* MDX style hero gradient - dark mode */
-    --gradient-hero: radial-gradient(circle at top left, hsl(28 96% 60% / 0.15) 0%, transparent 40%),
-                     radial-gradient(circle at bottom right, hsl(28 96% 45% / 0.1) 0%, transparent 40%);
+    --gradient-hero: radial-gradient(circle at top left, hsl(221 83% 53% / 0.15) 0%, transparent 40%),
+                     radial-gradient(circle at bottom right, hsl(221 83% 45% / 0.1) 0%, transparent 40%);
     
     --gradient-card: linear-gradient(145deg, hsl(220 10% 6%), hsl(220 10% 8%));
 
-    --grid-color: hsl(28 96% 60% / 0.03);
+    --grid-color: hsl(221 83% 53% / 0.03);
 
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
-    --shadow-glow: 0 0 30px hsl(28 96% 60% / 0.2);
+    --shadow-glow: 0 0 30px hsl(221 83% 53% / 0.2);
   }
 }
 
