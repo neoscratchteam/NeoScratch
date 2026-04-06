@@ -1,172 +1,228 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Code, Smartphone, Users, Lightbulb, ArrowRight, Star, Globe, Heart, Palette, Network, Database, Cloud, Megaphone, Monitor } from 'lucide-react';
+import { 
+  Code, Smartphone, Globe, Palette, 
+  ArrowRight, ArrowUpRight, CheckCircle2,
+  Search, ShieldCheck, Settings, BarChart3,
+  Monitor
+} from 'lucide-react';
 import { useCountUpAnimation } from '@/hooks/useCountUpAnimation';
 import { TestimonialSlider } from '@/components/ui/TestimonialSlider';
+import heroDashboard from '@/assets/hero-dashboard.png';
 
 const Index = () => {
   // Counter animations for stats
-  const projectsCount = useCountUpAnimation({ end: 6, suffix: '+' });
-  const studentsCount = useCountUpAnimation({ end: 32, suffix: '+' });
+  const projectsCount = useCountUpAnimation({ end: 30, suffix: '+' });
+  const experienceCount = useCountUpAnimation({ end: 2, suffix: '+' });
   const clientsCount = useCountUpAnimation({ end: 20, suffix: '+' });
-  const experienceCount = useCountUpAnimation({ end: 3, suffix: '+' });
+  const retentionCount = useCountUpAnimation({ end: 100, suffix: '%' });
 
   return (
     <div className="min-h-screen">
-
       
-    {/* Hero Section */}
-    <section className="py-24 lg:py-36 relative overflow-hidden bg-background">
-      <div className="absolute inset-0 hero-bg pointer-events-none" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-foreground mb-6 animate-fade-in">
-          Take Your Business <span className="block text-gradient">Digital & Beyond</span>
-        </h1>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-slide-up leading-relaxed">
-          Welcome to NeoScratch — your partner in transforming ideas into smart, scalable, and cutting-edge tech solutions. From innovative software to professional design and digital marketing, we help businesses thrive.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          <Button size="xl" className="bg-primary text-primary-foreground hover:bg-primary-dark rounded-full px-8 shadow-sm hover:shadow-md transition-all" asChild>
-            <Link to="/request-website">
-              Get Started <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-          <Button variant="outline" size="xl" className="rounded-full px-8 border-border hover:bg-secondary transition-all" asChild>
-            <Link to="/about">Learn More</Link>
-          </Button>
-        </div>
-      </div>
-    </section>
-
-
-      {/* Features Section */}
-      <section className="py-20" data-aos="fade-up" data-aos-duration="1000">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 
-              className="text-3xl lg:text-4xl font-bold mb-4"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              What We Do
-            </h2>
-            <p 
-              className="text-xl text-muted-foreground max-w-3xl mx-auto"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              Comprehensive tech solutions to drive digital transformation in Rwanda and beyond.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            {[
-              { icon: Globe, title: 'Web Development', desc: 'Build modern, responsive websites and web apps.' },
-              { icon: Smartphone, title: 'Mobile Apps', desc: 'Create cross-platform mobile solutions ' },
-              { icon: Code, title: 'Programming Education', desc: 'Teach coding through hands-on bootcamps.' },
-              { icon: Palette, title: 'Graphic Design', desc: 'Design stunning UI/UX and branding assets.' },
-              { icon: Network, title: 'Networking Solutions', desc: 'Implement secure, scalable network systems.' },
-              { icon: Database, title: 'Software Installations', desc: 'Deploy and configure software for businesses.' },
-              { icon: Lightbulb, title: 'Tech Consulting', desc: 'Provide strategic guidance for tech projects.' },
-              { icon: Cloud, title: 'Cloud Integration', desc: 'Integrate cloud solutions for efficiency.' },
-              { icon: Megaphone, title: 'Digital Marketing', desc: 'Boost online presence with SEO and campaigns.' },
-              { icon: Monitor, title: 'Computer Skills Training', desc: 'Teach essential digital literacy skills.' },
-            ].map((service, index) => (
-              <div
-                key={service.title}
-                className="text-center p-6 rounded-2xl bg-gradient-card hover-lift"
-                data-aos="flip-left"
-                data-aos-delay={index * 100}
-                data-aos-duration="800"
-              >
-                <div className="bg-gradient-primary p-4 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-                  <service.icon className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-muted-foreground">{service.desc}</p>
+      {/* Hero Section */}
+      <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-background">
+        <div className="absolute inset-0 hero-bg bg-grid pointer-events-none opacity-40" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="animate-fade-in">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                <span>Software Development & Digital Marketing Studio — Kigali, Rwanda</span>
               </div>
-            ))}
+              
+              <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
+                We build software and get your business <span className="text-gradient">found online.</span>
+              </h1>
+              
+              <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-xl">
+                From custom websites and powerful software to SEO and Google Business Profile setup — we give businesses across Rwanda the digital tools they need to attract more customers and grow with confidence.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-16">
+                <Button size="xl" className="bg-primary text-primary-foreground hover:bg-primary-dark rounded-xl px-8 shadow-lg shadow-primary/20 transition-all font-semibold" asChild>
+                  <Link to="/services">
+                    See What We Do
+                  </Link>
+                </Button>
+                <Button variant="outline" size="xl" className="rounded-xl px-8 border-primary/20 hover:bg-primary/5 transition-all font-semibold" asChild>
+                  <Link to="/contact">Contact Us</Link>
+                </Button>
+              </div>
+
+              {/* Stats Grid inside Hero */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pt-8 border-t border-border/50">
+                <div ref={projectsCount.elementRef}>
+                  <div className="text-3xl font-bold text-foreground mb-1">{projectsCount.count}</div>
+                  <p className="text-sm text-muted-foreground">Projects delivered</p>
+                </div>
+                <div ref={experienceCount.elementRef}>
+                  <div className="text-3xl font-bold text-foreground mb-1">{experienceCount.count}</div>
+                  <p className="text-sm text-muted-foreground">Years in business</p>
+                </div>
+                <div ref={clientsCount.elementRef}>
+                  <div className="text-3xl font-bold text-foreground mb-1">{clientsCount.count}</div>
+                  <p className="text-sm text-muted-foreground">Happy clients</p>
+                </div>
+                <div ref={retentionCount.elementRef}>
+                  <div className="text-3xl font-bold text-foreground mb-1">{retentionCount.count}</div>
+                  <p className="text-sm text-muted-foreground">Client retention</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Content - Mockup */}
+            <div className="relative lg:block animate-float">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-border/50 bg-card">
+                <img 
+                  src={heroDashboard} 
+                  alt="NeoScratch Dashboard Mockup" 
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -right-6 h-24 w-24 bg-primary/20 rounded-full blur-3xl" />
+              <div className="absolute -bottom-10 -left-10 h-32 w-32 bg-primary/10 rounded-full blur-3xl" />
+            </div>
           </div>
+        </div>
+        
+        {/* Trusted By Row */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24 text-center">
+          <p className="text-[10px] font-bold tracking-[0.2em] text-muted-foreground uppercase opacity-60">
+            TRUSTED BY BUSINESSES ACROSS RWANDA AND BEYOND
+          </p>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-secondary/30" data-aos="fade-up" data-aos-duration="1000">
+      {/* Services Section */}
+      <section className="py-24 bg-secondary/20" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div 
-              ref={projectsCount.elementRef}
-              data-aos="zoom-in"
-              data-aos-delay="100"
-            >
-              <div className="text-4xl font-bold text-primary mb-2">{projectsCount.count}</div>
-              <p className="text-muted-foreground">Projects Completed</p>
-            </div>
-            <div 
-              ref={studentsCount.elementRef}
-              data-aos="zoom-in"
-              data-aos-delay="200"
-            >
-              <div className="text-4xl font-bold text-primary mb-2">{studentsCount.count}</div>
-              <p className="text-muted-foreground">Students Trained</p>
-            </div>
-            <div 
-              ref={clientsCount.elementRef}
-              data-aos="zoom-in"
-              data-aos-delay="300"
-            >
-              <div className="text-4xl font-bold text-primary mb-2">{clientsCount.count}</div>
-              <p className="text-muted-foreground">Happy Clients</p>
-            </div>
-            <div 
-              ref={experienceCount.elementRef}
-              data-aos="zoom-in"
-              data-aos-delay="400"
-            >
-              <div className="text-4xl font-bold text-primary mb-2">{experienceCount.count}</div>
-              <p className="text-muted-foreground">Years Experience</p>
-            </div>
+          <div className="mb-16">
+            <span className="text-primary font-bold tracking-widest text-xs uppercase mb-4 block">WHAT WE DO</span>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">
+              Here's what we're really good at.
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
+              Whether you need a powerful website, a custom software system, or to show up when customers search for you on Google — we handle it all, so you can focus on running your business.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { 
+                icon: Monitor, 
+                title: 'Website Design & Development', 
+                desc: 'Your website is your most important salesperson — it works 24/7, never calls in sick, and is the first thing a potential customer judges you by.',
+                tags: ['Up to 15 pages', 'Mobile first', 'Admin panel', 'Fast delivery']
+              },
+              { 
+                icon: Globe, 
+                title: 'Google Business Profile Setup', 
+                desc: 'Before a customer visits your business or calls you, they search Google. We set up, verify, and fully optimise your Google Business Profile.',
+                tags: ['Google Maps', 'Verified listing', 'Reviews setup', 'Local SEO']
+              },
+              { 
+                icon: BarChart3, 
+                title: 'Search Engine Optimisation (SEO)', 
+                desc: 'Being on page two of Google is the same as being invisible. We optimise your website with the right keywords to reach customers.',
+                tags: ['Keyword research', 'On-page SEO', 'Search Console', 'Monthly reports']
+              },
+              { 
+                icon: Code, 
+                title: 'Custom Software Development', 
+                desc: 'No off-the-shelf tool fits every business perfectly. When your operations have outgrown spreadsheets, we build exactly what you need.',
+                tags: ['Web apps', 'Dashboards', 'Booking systems', 'Automations']
+              },
+              { 
+                icon: Smartphone, 
+                title: 'Mobile App Development', 
+                desc: 'Your customers live on their phones — your business should too. We build polished iOS and Android apps with solid backend logic.',
+                tags: ['iOS & Android', 'React Native', 'MoMo / Airtel', 'Offline-first']
+              },
+              { 
+                icon: Settings, 
+                title: 'Website Maintenance & Management', 
+                desc: 'Launching your website is the beginning, not the end. We keep it fast, secure, and up to date with monthly retainers.',
+                tags: ['Monthly retainer', 'Content updates', 'SEO monitoring', 'Reports']
+              },
+            ].map((service, index) => (
+              <div
+                key={service.title}
+                className="group relative flex flex-col p-8 rounded-[2rem] bg-card border border-border shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="flex justify-between items-start mb-8">
+                  <div className="p-3 rounded-xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <service.icon className="h-6 w-6" />
+                  </div>
+                  <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                
+                <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
+                <p className="text-muted-foreground mb-8 line-clamp-3 leading-relaxed">{service.desc}</p>
+                
+                <div className="mt-auto flex flex-wrap gap-2">
+                  {service.tags.map(tag => (
+                    <span key={tag} className="px-3 py-1 rounded-full bg-secondary text-[11px] font-medium text-muted-foreground border border-border">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <Button variant="outline" className="rounded-full border-primary/20 hover:bg-primary/5 text-primary font-semibold group" asChild>
+              <Link to="/services">
+                View all services 
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Testimonials Wavy Section */}
-      <section className="py-24 bg-background border-t border-border/50">
+      <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">What Our Clients Say</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Don't just take our word for it — hear from the businesses we've helped grow.</p>
+        </div>
         <TestimonialSlider />
       </section>
 
       {/* CTA Section */}
-      <section 
-        className="py-24 relative overflow-hidden bg-background"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 
-            className="text-3xl lg:text-4xl font-bold text-foreground tracking-tight mb-6"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Ready to Start Your Project?
-          </h2>
-          <p 
-            className="text-xl text-muted-foreground mb-8"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Contact us at customerservice@neoscratch.com or +250 792 734 752 to bring your tech vision to life with NeoScratch’s expanded services.
-          </p>
-          <div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <Button variant="outline" size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
-              <Link to="/request-website">Get Started</Link>
-            </Button>
-            <Button variant="glass" size="lg" asChild>
-              <Link to="/contact">Contact Us</Link>
-            </Button>
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-primary/5" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="bg-primary rounded-[3rem] p-12 lg:p-20 text-center text-primary-foreground shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-12 opacity-10">
+              <Code className="h-64 w-64" />
+            </div>
+            
+            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-8">
+              Ready to Start Your Project?
+            </h2>
+            <p className="text-xl opacity-90 mb-12 max-w-2xl mx-auto leading-relaxed">
+              Contact us to bring your tech vision to life. Whether it's a website, an app, or digital marketing, we're here to help.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button size="xl" className="bg-white text-primary hover:bg-white/90 rounded-2xl px-12 font-bold shadow-xl shadow-black/10" asChild>
+                <Link to="/request-website">Get Started</Link>
+              </Button>
+              <Button size="xl" variant="outline" className="border-white/20 hover:bg-white/10 text-white rounded-2xl px-12 font-bold" asChild>
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

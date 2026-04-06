@@ -51,9 +51,13 @@
     --gradient-secondary: linear-gradient(135deg, hsl(0 0% 98%), hsl(0 0% 96%));
     
     /* MDX style hero gradient - large minimal orange glow on white */
-    --gradient-hero: radial-gradient(circle at top center, hsl(32 100% 92%) 0%, transparent 60%);
+    --gradient-hero: radial-gradient(circle at top left, hsl(28 96% 60% / 0.1) 0%, transparent 40%),
+                     radial-gradient(circle at bottom right, hsl(28 96% 45% / 0.05) 0%, transparent 40%);
     
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 99%));
+
+    /* Grid Pattern */
+    --grid-color: hsl(28 96% 60% / 0.05);
 
     /* Apple-like Smooth Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -100,9 +104,12 @@
     --gradient-secondary: linear-gradient(135deg, hsl(220 10% 10%), hsl(220 10% 8%));
     
     /* MDX style hero gradient - dark mode */
-    --gradient-hero: radial-gradient(circle at top center, hsl(28 96% 60% / 0.15) 0%, transparent 60%);
+    --gradient-hero: radial-gradient(circle at top left, hsl(28 96% 60% / 0.15) 0%, transparent 40%),
+                     radial-gradient(circle at bottom right, hsl(28 96% 45% / 0.1) 0%, transparent 40%);
     
     --gradient-card: linear-gradient(145deg, hsl(220 10% 6%), hsl(220 10% 8%));
+
+    --grid-color: hsl(28 96% 60% / 0.03);
 
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
@@ -170,6 +177,13 @@
     background: var(--gradient-hero);
     position: relative;
     overflow: hidden;
+  }
+
+  .bg-grid {
+    background-size: 60px 60px;
+    background-image: 
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
   }
 
   .bg-gradient-card {
