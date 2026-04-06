@@ -21,15 +21,9 @@ export function TestimonialSlider() {
     <div className="w-full flex flex-col justify-center gap-12 lg:gap-20">
       <div className="text-center animate-fade-in">
         <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight mb-4">What Our Customers Say</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto text-lg mb-8">
+        <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
           Real stories from real people! See how our services have transformed their experiences.
         </p>
-        <Link 
-          to="/request-website" 
-          className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform duration-300 shadow-md"
-        >
-          Book Now
-        </Link>
       </div>
 
       <div className="relative h-64 sm:h-80 flex items-center justify-center w-full animate-slide-up" style={{ animationDelay: '0.1s' }}>
@@ -123,6 +117,16 @@ export function TestimonialSlider() {
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>
+      </div>
+
+      {/* Book Now button moved to the bottom */}
+      <div className="text-center animate-fade-in mt-1">
+        <Link 
+          to="/request-website" 
+          className="inline-flex items-center justify-center bg-foreground text-background px-8 py-3 rounded-full font-medium hover:scale-105 transition-transform duration-300 shadow-md"
+        >
+          Book Now
+        </Link>
       </div>
     </div>
   );
