@@ -64,9 +64,7 @@ const Index = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    let requestRef: number;
-
-    const updateScroll = () => {
+    const handleScroll = () => {
       if (!ghostRef.current) return;
       const rect = ghostRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
@@ -78,20 +76,22 @@ const Index = () => {
       let nextProgress = 0;
       if (start <= 0 && end >= 0) {
         nextProgress = Math.abs(start) / total;
+      } else if (start > 0) {
+        nextProgress = 0;
       } else if (end < 0) {
         nextProgress = 1;
       }
       
       setScrollProgress(nextProgress);
-      requestRef = requestAnimationFrame(updateScroll);
     };
 
-    requestRef = requestAnimationFrame(updateScroll);
-    return () => cancelAnimationFrame(requestRef);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const cardWidth = 85; 
   const gapWidth = 5;  
+  // Direct, fast mapping by applying the progress instantly to the transform
   const translateX = -scrollProgress * (cardWidth + gapWidth) * (projects.length - 1);
 
   return (
@@ -257,8 +257,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Horizontal Scroll Projects Section - Anti-Shake & High Precision */}
-      <div ref={ghostRef} className="relative h-[250vh]">
+      {/* Horizontal Scroll Projects Section - HIGH SPEED SYNC */}
+      <div ref={ghostRef} className="relative h-[180vh]">
         <section className="sticky top-0 h-screen overflow-hidden bg-background py-8 flex flex-col justify-center">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8 flex justify-between items-end">
             <div>
@@ -273,10 +273,9 @@ const Index = () => {
           </div>
 
           <div 
-            className="flex gap-[4vw] px-[7.5vw] will-change-transform transform-gpu"
+            className="flex gap-[4vw] px-[7.5vw] transform-gpu will-change-transform"
             style={{ 
-              transform: `translate3d(${translateX.toFixed(2)}vw, 0px, 0px)`,
-              // Removed transition-transform to eliminate conflict with rapid scroll updates (anti-shake)
+              transform: `translate3d(${translateX.toFixed(2)}vw, 0px, 0px)`
             }}
           >
             {projects.map((p) => (
