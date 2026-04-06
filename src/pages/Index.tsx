@@ -181,12 +181,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Wavy Section */}
+      {/* Testimonials Wavy Section (No Header) */}
       <section className="py-24 bg-background">
-        <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">What Our Clients Say</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">Don't just take our word for it — hear from the businesses we've helped grow.</p>
-        </div>
         <TestimonialSlider />
       </section>
 
