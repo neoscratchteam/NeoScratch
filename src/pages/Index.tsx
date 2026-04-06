@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { 
@@ -11,12 +11,87 @@ import { useCountUpAnimation } from '@/hooks/useCountUpAnimation';
 import { TestimonialSlider } from '@/components/ui/TestimonialSlider';
 import heroDashboard from '@/assets/professional-dashboard.png';
 
+const projects = [
+  {
+    id: 1,
+    title: 'Indaro Yacu Organization',
+    tag: 'WEBSITE DESIGN & DEVELOPMENT',
+    year: '2024',
+    subtitle: 'for Indaro Yacu',
+    description: 'A modern website for a Rwandan NGO supporting vulnerable children through education, cultural programs, and psychosocial care.',
+    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop',
+    link: '#'
+  },
+  {
+    id: 2,
+    title: 'Country Records',
+    tag: 'MEDIA & ENTERTAINMENT',
+    year: '2024',
+    subtitle: 'for Country Records',
+    description: 'A full-service entertainment and creative production company website showcasing music, video, and artist management services in Rwanda.',
+    image: 'https://images.unsplash.com/photo-1514525253361-bee8718a300c?q=80&w=1200&auto=format&fit=crop',
+    link: '#'
+  },
+  {
+    id: 3,
+    title: 'PixelMart Multi-Tenant',
+    tag: 'RETAIL & TECH',
+    year: '2024',
+    subtitle: 'for local businesses',
+    description: 'A powerful multi-tenant SaaS platform for managing branches, inventory, and sales in real-time across Rwanda.',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop',
+    link: '#'
+  },
+  {
+    id: 4,
+    title: 'Kigali Logistics Hub',
+    tag: 'LOGISTICS',
+    year: '2023',
+    subtitle: 'for Supply Chain',
+    description: 'Custom warehouse management software optimizing tea and coffee exports with real-time tracking and MOMO integration.',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
+    link: '#'
+  }
+];
+
 const Index = () => {
   // Counter animations for stats
   const projectsCount = useCountUpAnimation({ end: 30, suffix: '+' });
   const experienceCount = useCountUpAnimation({ end: 2, suffix: '+' });
   const clientsCount = useCountUpAnimation({ end: 20, suffix: '+' });
   const retentionCount = useCountUpAnimation({ end: 100, suffix: '%' });
+
+  // Fast, Direct Horizontal Scroll Logic
+  const ghostRef = useRef<HTMLDivElement>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ghostRef.current) return;
+      const rect = ghostRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      const start = rect.top;
+      const end = rect.bottom - windowHeight;
+      const total = rect.height - windowHeight;
+      
+      if (start <= 0 && end >= 0) {
+        // Direct mapping
+        setScrollProgress(Math.abs(start) / total);
+      } else if (start > 0) {
+        setScrollProgress(0);
+      } else if (end < 0) {
+        setScrollProgress(1);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const cardWidth = 80; // vw
+  const gapWidth = 5;  // vw
+  const translateX = -scrollProgress * (cardWidth + gapWidth) * (projects.length - 1);
 
   return (
     <div className="min-h-screen">
@@ -181,7 +256,70 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Wavy Section (No Header) */}
+      {/* FAST Horizontal Scroll Projects Section - Full Image Fill & Direct Sync */}
+      <div ref={ghostRef} className="relative h-[300vh]">
+        <section className="sticky top-0 h-screen overflow-hidden bg-background py-20 flex flex-col justify-center">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-10 flex justify-between items-end">
+            <div>
+              <span className="text-primary font-bold tracking-[0.2em] text-[10px] uppercase mb-3 block">FEATURED WORK</span>
+              <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
+                Platforms we've engineered.
+              </h2>
+            </div>
+            <Button variant="outline" size="sm" className="rounded-xl border-primary/20 hover:bg-primary/5 text-primary font-bold text-xs" asChild>
+              <Link to="/projects">View all projects</Link>
+            </Button>
+          </div>
+
+          <div 
+            className="flex gap-[5vw] px-[10vw] transition-transform duration-200 ease-out"
+            style={{ transform: `translateX(${translateX}vw)` }}
+          >
+            {projects.map((p) => (
+              <div 
+                key={p.id}
+                className="w-[80vw] flex-shrink-0 h-[55vh] min-h-[400px] bg-white rounded-3xl border border-border shadow-2xl overflow-hidden flex flex-col lg:flex-row group transition-shadow duration-300"
+              >
+                {/* Image Section - FULL FILL */}
+                <div className="lg:w-[60%] h-[50%] lg:h-full bg-secondary overflow-hidden relative">
+                  <img 
+                    src={p.image} 
+                    alt={p.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  {/* Subtle Overlay to make it feel expensive */}
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
+                </div>
+                
+                {/* Content Section - Balanced Sidebar */}
+                <div className="lg:w-[40%] h-[50%] lg:h-full p-10 lg:p-14 flex flex-col justify-center bg-white relative z-10">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <span className="text-[11px] font-bold text-muted-foreground/40">{p.year}</span>
+                    <span className="h-px w-6 bg-border"></span>
+                    <span className="text-primary text-[10px] font-bold tracking-widest uppercase">{p.tag}</span>
+                  </div>
+                  
+                  <h3 className="text-3xl lg:text-4xl font-bold mb-4 leading-tight group-hover:text-primary transition-colors">{p.title}</h3>
+                  <p className="text-muted-foreground text-sm font-semibold mb-6">for {p.subtitle.replace('for ', '')}</p>
+                  
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-10 opacity-80 font-medium">
+                    {p.description}
+                  </p>
+                  
+                  <Link 
+                    to={p.link}
+                    className="inline-flex items-center text-primary text-sm font-bold hover:gap-3 transition-all duration-300 group/link"
+                  >
+                    View project <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      {/* Testimonials Section */}
       <section className="py-24 bg-background">
         <TestimonialSlider />
       </section>
