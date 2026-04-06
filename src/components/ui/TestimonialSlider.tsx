@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { testimonials } from '@/data/testimonials';
 import { Link } from 'react-router-dom';
 
 export function TestimonialSlider() {
   const [activeIndex, setActiveIndex] = useState(1);
+  
   const next = () => setActiveIndex((prev) => (prev + 1) % testimonials.length);
   const prev = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+
+  // Auto-move functionality (5 second interval)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      next();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="w-full flex flex-col justify-center gap-12 lg:gap-20">
