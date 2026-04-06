@@ -21,87 +21,87 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       
-      {/* Dynamic Hero Section */}
-      <section className="relative overflow-hidden pt-12">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-[2.5rem] bg-primary overflow-hidden shadow-2xl">
-            {/* Grid Pattern Layer */}
-            <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
+      {/* Full-Height Professional Hero Section */}
+      <section className="relative h-screen min-h-[700px] overflow-hidden bg-primary flex items-center">
+        {/* Sharp Square Grid Background */}
+        <div className="absolute inset-0 z-0 bg-grid opacity-20 pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-16 lg:pt-24 pb-12 lg:pb-16 flex flex-col justify-center">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
             
-            <div className="relative z-10 px-8 py-16 lg:px-16 lg:py-20">
-              <div className="grid lg:grid-cols-12 gap-12 items-center">
-                
-                {/* Left Content */}
-                <div className="lg:col-span-7 animate-fade-in text-white">
-                  <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/90 text-xs font-medium mb-8">
-                    <span>Software Development & Digital Marketing Studio — Kigali, Rwanda</span>
-                  </div>
-                  
-                  <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.15]">
-                    We build software and get <br className="hidden md:block" /> your business <span className="text-white/80">found online.</span>
-                  </h1>
-                  
-                  <p className="text-base lg:text-lg text-white/70 mb-10 leading-relaxed max-w-xl font-light">
-                    From custom websites and powerful software to SEO and Google Business Profile setup — we give businesses across Rwanda the digital tools they need to attract more customers and grow with confidence.
-                  </p>
-                  
-                  <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                    <Button size="xl" className="bg-white text-primary hover:bg-white/90 rounded-xl px-10 shadow-lg transition-all font-bold" asChild>
-                      <Link to="/services">
-                        See What We Do
-                      </Link>
-                    </Button>
-                    <Button variant="outline" size="xl" className="rounded-xl px-10 border-white/30 text-white hover:bg-white/10 transition-all font-bold" asChild>
-                      <Link to="/contact">Contact Us</Link>
-                    </Button>
-                  </div>
+            {/* Left Content */}
+            <div className="lg:col-span-7 animate-fade-in text-white space-y-6">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/90 text-xs font-medium animate-slide-up">
+                <span>Software Development & Digital Marketing Studio — Kigali, Rwanda</span>
+              </div>
+              
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                We build software and get <br className="hidden md:block" /> your business <span className="text-white/70">found online.</span>
+              </h1>
+              
+              <p className="text-sm lg:text-base text-white/70 leading-relaxed max-w-xl font-light animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                From custom websites and powerful software to SEO and Google Business Profile setup — we give businesses across Rwanda the digital tools they need to attract more customers and grow with confidence.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-2 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-xl px-10 shadow-lg transition-all font-bold" asChild>
+                  <Link to="/services">
+                    See What We Do
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" className="rounded-xl px-10 border-white/30 text-white hover:bg-white/10 transition-all font-bold" asChild>
+                  <Link to="/contact">Contact Us</Link>
+                </Button>
+              </div>
 
-                  {/* Horizontal Stats Row within the Hero Box */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10 max-w-2xl">
-                    <div ref={projectsCount.elementRef}>
-                      <div className="text-2xl font-bold text-white mb-0.5">{projectsCount.count}</div>
-                      <p className="text-[10px] text-white/50 uppercase tracking-widest font-semibold">Projects delivered</p>
-                    </div>
-                    <div ref={experienceCount.elementRef} className="border-l border-white/10 pl-6">
-                      <div className="text-2xl font-bold text-white mb-0.5">{experienceCount.count}</div>
-                      <p className="text-[10px] text-white/50 uppercase tracking-widest font-semibold">Years in business</p>
-                    </div>
-                    <div ref={clientsCount.elementRef} className="border-l border-white/10 pl-6">
-                      <div className="text-2xl font-bold text-white mb-1">{clientsCount.count}</div>
-                      <p className="text-[10px] text-white/50 uppercase tracking-widest font-semibold">Happy clients</p>
-                    </div>
-                    <div ref={retentionCount.elementRef} className="border-l border-white/10 pl-6">
-                      <div className="text-2xl font-bold text-white mb-1">{retentionCount.count}</div>
-                      <p className="text-[10px] text-white/50 uppercase tracking-widest font-semibold">Client retention</p>
-                    </div>
-                  </div>
+              {/* Precise Stats Bar */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-10 border-t border-white/10 max-w-3xl animate-slide-up" style={{ animationDelay: '0.4s' }}>
+                <div ref={projectsCount.elementRef}>
+                  <div className="text-2xl lg:text-3xl font-bold text-white mb-0.5">{projectsCount.count}</div>
+                  <p className="text-[10px] text-white/40 uppercase tracking-[0.1em] font-bold">Projects delivered</p>
                 </div>
-
-                {/* Right Content - Mockup */}
-                <div className="lg:col-span-5 relative hidden lg:block">
-                  <div className="relative -mr-32 translate-x-12">
-                    <div className="bg-card rounded-2xl shadow-3xl overflow-hidden border border-white/10 transform rotate-1 hover:rotate-0 transition-transform duration-700">
-                      <img 
-                        src={heroDashboard} 
-                        alt="Professional Dashboard Mockup" 
-                        className="w-full h-auto"
-                      />
-                    </div>
-                  </div>
+                <div ref={experienceCount.elementRef}>
+                  <div className="text-2xl lg:text-3xl font-bold text-white mb-0.5">{experienceCount.count}</div>
+                  <p className="text-[10px] text-white/40 uppercase tracking-[0.1em] font-bold">Years in business</p>
                 </div>
-                
+                <div ref={clientsCount.elementRef}>
+                  <div className="text-2xl lg:text-3xl font-bold text-white mb-0.5">{clientsCount.count}</div>
+                  <p className="text-[10px] text-white/40 uppercase tracking-[0.1em] font-bold">Happy clients</p>
+                </div>
+                <div ref={retentionCount.elementRef}>
+                  <div className="text-2xl lg:text-3xl font-bold text-white mb-0.5">{retentionCount.count}</div>
+                  <p className="text-[10px] text-white/40 uppercase tracking-[0.1em] font-bold">Client retention</p>
+                </div>
               </div>
             </div>
-          </div>
-          
-          {/* Trusted By Row (Exactly below the hero box as in screenshot) */}
-          <div className="py-12 text-center">
-            <p className="text-[9px] font-bold tracking-[0.3em] text-muted-foreground/60 uppercase">
-              TRUSTED BY BUSINESSES ACROSS RWANDA AND BEYOND
-            </p>
+
+            {/* Right Content - Mockup (Peeking from Edge) */}
+            <div className="lg:col-span-5 relative hidden lg:block animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <div className="relative -mr-48 translate-x-12 translate-y-8">
+                <div className="bg-card rounded-2xl shadow-3xl overflow-hidden border border-white/10 transform rotate-1 hover:rotate-0 transition-all duration-1000">
+                  <img 
+                    src={heroDashboard} 
+                    alt="Professional Dashboard Mockup" 
+                    className="w-full h-auto opacity-95 grayscale-[20%] hover:grayscale-0 transition-all duration-500"
+                  />
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
       </section>
+
+      {/* Fold Transition: Trusted By Row */}
+      <div className="bg-background py-8 border-b border-border/50">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <p className="text-[10px] font-bold tracking-[0.4em] text-muted-foreground/30 uppercase">
+            TRUSTED BY BUSINESSES ACROSS RWANDA AND BEYOND
+          </p>
+        </div>
+      </div>
+
+
 
 
       {/* Services Section */}

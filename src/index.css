@@ -57,7 +57,7 @@
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 99%));
 
     /* Grid Pattern */
-    --grid-color: hsl(221 83% 53% / 0.05);
+    --grid-color: hsl(221 83% 53% / 0.15);
 
     /* Apple-like Smooth Shadows */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -109,7 +109,7 @@
     
     --gradient-card: linear-gradient(145deg, hsl(220 10% 6%), hsl(220 10% 8%));
 
-    --grid-color: hsl(221 83% 53% / 0.03);
+    --grid-color: hsl(221 83% 53% / 0.1);
 
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
@@ -180,10 +180,10 @@
   }
 
   .bg-grid {
-    background-size: 60px 60px;
+    background-size: 140px 140px;
     background-image: 
-      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+      linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   }
 
   .bg-gradient-card {

@@ -38,11 +38,14 @@ export function Header() {
     setIsMenuOpen(false);
   }, [location]);
 
+  const isHomePage = location.pathname === '/';
+  const isHeaderThemed = !isHomePage || isScrolled;
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-background/80 backdrop-blur-lg shadow-lg border-b border-border/50'
-        : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isHeaderThemed
+        ? 'bg-primary shadow-lg border-b border-white/10 text-white'
+        : 'bg-transparent text-white'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,7 +55,11 @@ export function Header() {
             to="/"
             className="flex items-center space-x-2 hover:opacity-75 transition-opacity duration-300"
           >
-            <img src="/neoscratch.png" className="h-8 md:h-10 mix-blend-multiply dark:invert dark:mix-blend-screen" alt="NeoScratch Logo" />
+            <img 
+              src="/neoscratch.png" 
+              className="h-8 md:h-10 brightness-0 invert" 
+              alt="NeoScratch Logo" 
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -63,9 +70,11 @@ export function Header() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-accent hover:text-accent-foreground ${location.pathname === item.href
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-foreground'
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${isHeaderThemed 
+                    ? 'hover:bg-white/10' 
+                    : 'hover:bg-white/20'} ${location.pathname === item.href
+                      ? 'bg-white/20 text-white'
+                      : 'text-white'
                     }`}
                 >
                   {item.name}
@@ -76,8 +85,15 @@ export function Header() {
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
             <ThemeToggle />
-            <Button variant="outline" size="sm" asChild>
-              <Link to="/request-website">Request Website</Link>
+            <Button 
+              variant="outline"
+              size="sm" 
+              asChild 
+              className={`rounded-xl px-6 font-bold transition-all ${isHeaderThemed 
+                ? "bg-white text-primary border-white hover:bg-white/90" 
+                : "border-white text-white hover:bg-white hover:text-primary"}`}
+            >
+              <Link to="/request-website">Get Free Quote</Link>
             </Button>
           </div>
 
@@ -88,7 +104,7 @@ export function Header() {
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden"
+              className="text-white hover:bg-white/20"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -97,23 +113,23 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden animate-fade-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-lg rounded-lg mt-2 border border-border/50 shadow-xl">
+          <div className="lg:hidden animate-fade-in pb-4">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-primary border border-white/10 rounded-2xl shadow-xl">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${location.pathname === item.href
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-foreground hover:bg-accent hover:text-accent-foreground'
+                    ? 'bg-white/20 text-white'
+                    : 'text-white hover:bg-white/10'
                     }`}
                 >
                   {item.name}
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
-                <Button variant="outline" size="sm" className="w-full" asChild>
-                  <Link to="/request-website">Request Website</Link>
+                <Button variant="hero" className="w-full bg-white text-primary hover:bg-white/90" size="sm" asChild>
+                  <Link to="/request-website">Get Free Quote</Link>
                 </Button>
               </div>
             </div>

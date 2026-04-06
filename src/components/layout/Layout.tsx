@@ -27,7 +27,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-grow pt-16 lg:pt-20" data-aos="fade-up" data-aos-duration="800">
+      <main className="flex-grow" data-aos="fade-up" data-aos-duration="800">
         {children}
       </main>
       <Footer />
