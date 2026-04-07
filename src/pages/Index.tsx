@@ -66,7 +66,7 @@ const Index = () => {
             {/* Left Content */}
             <div className="lg:col-span-7 animate-fade-in text-white space-y-6 pb-16">
               <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/90 text-xs font-medium animate-slide-up">
-                <span>Software Development & Digital Marketing Studio — Kigali, Rwanda</span>
+                <span>Software Development & Digital Marketing Studio — International Focus</span>
               </div>
               
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] animate-slide-up" style={{ animationDelay: '0.1s' }}>
@@ -74,7 +74,7 @@ const Index = () => {
               </h1>
               
               <p className="text-sm lg:text-base text-white/70 leading-relaxed max-w-xl font-light animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                From custom websites and powerful software to SEO and Google Business Profile setup — we give businesses across Rwanda the digital tools they need to attract more customers and grow with confidence.
+                From custom websites and powerful software to SEO and Google Business Profile setup — we give global businesses the digital tools they need to attract more customers and grow with confidence.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 pt-2 animate-slide-up" style={{ animationDelay: '0.3s' }}>

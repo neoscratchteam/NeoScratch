@@ -29,7 +29,7 @@ export const projects: Project[] = [
     id: 'twagiye-taxi',
     title: 'Twagiye — Eco-Friendly Ride-Hailing Platform',
     subtitle: 'for Twagiye Taxi',
-    description: 'A ride-hailing platform connecting electric and hybrid car owners with passengers for greener rides across Rwanda.',
+    description: 'A ride-hailing platform connecting electric and hybrid car owners with passengers for greener rides across the globe.',
     techStack: ['Next.js', 'React', 'Tailwind CSS', 'Prisma', 'PostgreSQL'],
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop',
     liveDemo: 'https://twagiye.rw',
@@ -38,8 +38,8 @@ export const projects: Project[] = [
     client: 'Twagiye Taxi',
     year: '2026',
     details: {
-      overview: "Twagiye is Rwanda's first eco-focused ride-hailing platform that exclusively connects hybrid and electric vehicle owners with passengers seeking greener transportation. The platform empowers car owners to monetize their vehicles on their own schedule while giving riders access to verified, environmentally friendly rides with cashless payment options including Mobile Money, Visa, and Mastercard.",
-      objective: "To build a modern, high-performance web platform that positions Twagiye as Rwanda's go-to green mobility brand — enabling driver onboarding, passenger engagement, and communicating the company's environmental mission with a compelling digital presence.",
+      overview: "Twagiye is an eco-focused ride-hailing platform that exclusively connects hybrid and electric vehicle owners with passengers seeking greener transportation. The platform empowers car owners to monetize their vehicles on their own schedule while giving riders access to verified, environmentally friendly rides with cashless payment options worldwide.",
+      objective: "To build a modern, high-performance web platform that positions Twagiye as a leading global green mobility brand — enabling driver onboarding, passenger engagement, and communicating the company's environmental mission with a compelling digital presence.",
       delivered: [
         "Fully responsive marketing website built with Next.js 16 and Tailwind CSS",
         "Driver onboarding flow with vehicle verification system",
@@ -48,12 +48,12 @@ export const projects: Project[] = [
         "Testimonials system with dynamic content",
         "FAQ section for driver and passenger education",
         "App download integration and newsletter subscription",
-        "Mobile-first design optimized for Rwandan users"
+        "Mobile-first design optimized for global users"
       ],
       process: [
         {
           title: "Discovery & Research",
-          description: "Understood Twagiye's mission, target audience (EV/hybrid car owners and eco-conscious passengers), and the Rwandan mobility landscape."
+          description: "Understood Twagiye's mission, target audience (EV/hybrid car owners and eco-conscious passengers), and the international mobility landscape."
         },
         {
           title: "Design & Branding",
@@ -69,11 +69,11 @@ export const projects: Project[] = [
         },
         {
           title: "Deployment & Launch",
-          description: "Deployed on a VPS with PM2 process management for reliability and fast load times."
+          description: "Deployed on a global VPS with PM2 process management for reliability and fast load times."
         }
       ],
-      results: "The platform launched with a strong digital presence that clearly communicates Twagiye's value proposition to both drivers and passengers. The site features a modern bento-grid layout, floating stat cards, and smooth interactions that position Twagiye as a premium, trustworthy brand in Rwanda's growing green mobility space. The driver onboarding funnel provides a seamless path from discovery to sign-up.",
-      conclusion: "Twagiye represents the intersection of technology and sustainability in Rwanda. By building a platform that's both visually compelling and functionally robust, we helped Twagiye establish itself as a pioneer in eco-friendly ride-hailing — proving that going green and earning income can go hand in hand.",
+      results: "The platform launched with a strong digital presence that clearly communicates Twagiye's value proposition to both drivers and passengers. The site features a modern bento-grid layout, floating stat cards, and smooth interactions that position Twagiye as a premium, trustworthy brand in the growing green mobility space. The driver onboarding funnel provides a seamless path from discovery to sign-up.",
+      conclusion: "Twagiye represents the intersection of technology and sustainability globally. By building a platform that's both visually compelling and functionally robust, we helped Twagiye establish itself as a pioneer in eco-friendly ride-hailing.",
       services: ["Logistics & Supply Chain", "Website Design & Development"]
     }
   },
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     year: '2024',
     price: '500,000 RWF',
     details: {
-      overview: "PixelMart is a high-performance inventory and multi-branch management platform designed specifically for the electronics and retail landscape in Rwanda. It addresses the challenges of tracking complex stock items like LCD panels, smartphones, and spare parts across multiple physical locations in real-time.",
+      overview: "PixelMart is a high-performance inventory and multi-branch management platform designed specifically for the global electronics and retail landscape. It addresses the challenges of tracking complex stock items like LCD panels, smartphones, and spare parts across multiple physical locations in real-time.",
       objective: "To create a unified digital headquarters that eliminates inventory discrepancies, automates stock level alerts, and provides the owner with clear, actionable insights into sales performance across all branches.",
       delivered: [
         "Real-time central dashboard with high-visibility metrics",
@@ -141,7 +141,7 @@ export const projects: Project[] = [
         "Daily, weekly, and monthly sales summaries",
         "Multi-user support with role-based access",
         "Mobile-friendly inventory checker",
-        "Integration with local payment methods reference"
+        "Integration with global payment methods reference"
       ],
       process: [
         {
@@ -176,14 +176,14 @@ export const projects: Project[] = [
     year: '2024',
     price: '1,000 RWF',
     details: {
-      overview: "Open Future Savings is a community-driven fintech solution for the savings group at Apeki Tumba TSS. It transforms the traditional paper-based savings ledger into a transparent, secure digital record system accessible to all members.",
+      overview: "Open Future Savings is a community-driven fintech solution for savings groups. It transforms traditional paper-based savings ledgers into transparent, secure digital record systems accessible to all members globally.",
       objective: "To build trust within the savings group by providing real-time visibility into contributions, loans, and group financial health while simplifying the admin's workload.",
       delivered: [
         "Personal saving dashboards for all members",
         "Automated monthly contribution logging",
         "Loan request and tracking system",
         "Admin panel for financial audits",
-        "SMS notification integration for contribution confirmations"
+        "Global notification integration for contribution confirmations"
       ],
       process: [
         {
@@ -199,7 +199,7 @@ export const projects: Project[] = [
           description: "Conducted training sessions for the group admin to manage the digital transition."
         }
       ],
-      results: "The group reported a 40% increase in member engagement and excitement, as members can now track their financial growth on their phones.",
+      results: "The group reported a 40% increase in member engagement and excitement, as members can now track their financial growth on their devices.",
       conclusion: "Digitizing community finance strengthens group bonds and prepares members for larger formal banking systems.",
       services: ["FinTech", "Community Tools", "Record Management"]
     }
@@ -208,7 +208,7 @@ export const projects: Project[] = [
     id: 'indaro-yacu',
     title: 'Indaro Yacu Organization',
     subtitle: 'for Indaro Yacu',
-    description: 'A modern website for a Rwandan NGO supporting vulnerable children through education, cultural programs, and psychosocial care.',
+    description: 'A modern website for an International NGO supporting vulnerable children through education, cultural programs, and psychosocial care.',
     techStack: ['React', 'Tailwind CSS'],
     image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop',
     liveDemo: '#',
@@ -217,14 +217,14 @@ export const projects: Project[] = [
     client: 'Indaro Yacu',
     year: '2024',
     details: {
-      overview: "Indaro Yacu is a Rwandan NGO dedicated to the well-being of vulnerable children. We developed a modern, storytelling-focused website to help them communicate their impact, share success stories, and facilitate global partnerships.",
+      overview: "Indaro Yacu is an International NGO dedicated to the well-being of vulnerable children. We developed a modern, storytelling-focused website to help them communicate their impact, share success stories, and facilitate global partnerships.",
       objective: "To create a professional and emotionally resonant digital presence that positions Indaro Yacu as a credible supporter of child education and cultural heritage.",
       delivered: [
         "Immersive hero section with high-quality child impact photos",
         "Detailed program pages (Education, Culture, Psychosocial)",
         "Direct donation and partnership contact integration",
-        "Multilingual support readiness (Kinyarwanda/English)",
-        "SEO optimization for international visibility"
+        "Multilingual support readiness (International & Local languages)",
+        "SEO optimization for global visibility"
       ],
       process: [
         {
@@ -237,7 +237,7 @@ export const projects: Project[] = [
         },
         {
           title: "Performance Tuning",
-          description: "Ensured the image-heavy site loads instantly even on limited mobile data connections."
+          description: "Ensured the image-heavy site loads instantly even on various network speeds."
         }
       ],
       results: "The website successfully facilitated three new international partnership inquiries within the first month of launch.",

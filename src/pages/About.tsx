@@ -29,14 +29,14 @@ const values = [
 
 const aboutData = {
   story: [
-    "NeoScratch is a Rwanda-based software development and open-source technology company focused on building modern, scalable, and high-performance digital solutions for businesses, startups, and institutions across Rwanda and Africa.",
+    "NeoScratch is a global software development and open-source technology company focused on building modern, scalable, and high-performance digital solutions for businesses, startups, and institutions worldwide.",
     "We design and develop a wide range of custom web and mobile applications, advanced business automation tools, business analytics platforms, and open-source systems that help organizations innovate, scale efficiently, and gain real-time insights.",
     "NeoScratch combines modern technologies with a deep passion for digital transformation, delivering state-of-the-art systems that solve modern challenges in the digital era."
   ],
-  mission: "To empower businesses and individuals with intelligent software solutions.",
-  vision: "To become a leading global software house built from Rwanda.",
+  mission: "To empower global businesses and individuals with intelligent software solutions.",
+  vision: "To become a leading global software house that sets new standards for innovation.",
   founded: "2024",
-  ceo: "Théogène Iradukunda"
+  ceo: "Theogene Iradukunda"
 };
 
 export default function About() {
@@ -52,11 +52,11 @@ export default function About() {
           <Badge variant="secondary" className="bg-primary/10 text-primary border-none mb-6 px-4 py-1 text-[9px] font-extrabold tracking-[0.2em] uppercase">
             WHO WE ARE
           </Badge>
-          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-8 leading-tight max-w-4xl">
-            Engineering the future of <span className="text-primary italic">digital Rwanda.</span>
+          <h1 className="text-xl md:text-2xl font-bold tracking-tight text-foreground mb-6 leading-tight max-w-2xl">
+            Engineering the future of <span className="text-primary italic">global business.</span>
           </h1>
           <p className="text-muted-foreground text-[13px] md:text-sm max-w-xl leading-relaxed font-medium">
-            A small team of dedicated engineers building software that scales and designs that resonate. Trusted by companies to lead their technical transformation.
+            A small team of dedicated engineers building software that scales and designs that resonate. Trusted by international companies to lead their technical transformation.
           </p>
         </div>
       </section>
@@ -101,8 +101,7 @@ export default function About() {
           {/* MAIN CONTENT SCROLL AREA */}
           <div className="lg:col-span-9 space-y-24 order-1 lg:order-2 lg:pl-16">
             
-            {/* Story Section with Stunning Image */}
-            <section className="space-y-12">
+            <div className="lg:col-span-12">
                {/* Main Banner Image */}
                <div className="relative rounded-3xl overflow-hidden border border-border aspect-[21/9]">
                   <img 
@@ -113,8 +112,8 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
                </div>
 
-               <div className="grid md:grid-cols-12 gap-8">
-                  <h2 className="md:col-span-4 text-2xl font-bold text-foreground leading-tight">Our Story</h2>
+               <div className="grid md:grid-cols-12 gap-8 mt-12">
+                  <h2 className="md:col-span-4 text-2xl font-bold text-foreground leading-tight">Our Global Reach</h2>
                   <div className="md:col-span-8 space-y-6">
                     {aboutData.story.map((para, i) => (
                       <p key={i} className="text-muted-foreground text-[13px] leading-relaxed font-semibold">
@@ -123,7 +122,7 @@ export default function About() {
                     ))}
                   </div>
                </div>
-            </section>
+            </div>
 
             {/* Values Grid - Refined & Minimalist */}
             <section className="space-y-12">
@@ -152,14 +151,14 @@ export default function About() {
                   <div>
                     <span className="text-[9px] font-bold text-primary uppercase tracking-[0.2em] mb-4 block">FROM THE FOUNDER</span>
                     <h3 className="text-2xl font-bold mb-6 italic leading-relaxed text-foreground">
-                      "We don't just write code. We architect solutions that empower businesses to think differently."
+                      "We don't just write code. We architect solutions that empower global businesses to think differently."
                     </h3>
                     <p className="text-muted-foreground text-[13px] leading-relaxed font-semibold mb-6">
-                      Théogène Iradukunda leads NeoScratch with a vision for open-source technical excellence in Rwanda. His focus is on ensuring every line of code we write contributes to the long-term scalability of our clients.
+                      Theogene Iradukunda leads NeoScratch with a vision for open-source technical excellence on a global scale. His focus is on ensuring every line of code we write contributes to the long-term scalability of our international clients.
                     </p>
                     <div className="flex items-center gap-6">
-                       <span className="text-[10px] font-bold text-foreground opacity-50 underline underline-offset-4 decoration-primary/20 cursor-pointer hover:opacity-100 transition-opacity">LINKEDIN</span>
-                       <span className="text-[10px] font-bold text-foreground opacity-50 underline underline-offset-4 decoration-primary/20 cursor-pointer hover:opacity-100 transition-opacity">TWITTER</span>
+                       <span className="text-[10px] font-bold text-primary underline underline-offset-4 decoration-primary/20 cursor-pointer hover:opacity-100 transition-opacity">LINKEDIN</span>
+                       <span className="text-[10px] font-bold text-primary underline underline-offset-4 decoration-primary/20 cursor-pointer hover:opacity-100 transition-opacity">TWITTER</span>
                     </div>
                   </div>
                </div>
@@ -174,10 +173,10 @@ export default function About() {
         <div className="absolute inset-0 z-0 bg-grid opacity-30 pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 text-white">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight leading-tight">
-            Bring your technical <br className="hidden md:block" /> vision to market.
+            Bring your global <br className="hidden md:block" /> technical vision to market.
           </h2>
           <p className="text-white/70 text-[13px] md:text-sm mb-12 max-w-2xl mx-auto font-semibold">
-            Partner with Rwanda's engineering experts. From MVP to global scale, we lead the way.
+            Partner with engineering experts. From MVP to global scale, we lead the way.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
