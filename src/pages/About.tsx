@@ -156,9 +156,13 @@ export default function About() {
                     <p className="text-muted-foreground text-[13px] leading-relaxed font-semibold mb-6">
                       Theogene Iradukunda leads NeoScratch with a vision for open-source technical excellence on a global scale. His focus is on ensuring every line of code we write contributes to the long-term scalability of our international clients.
                     </p>
-                    <div className="flex items-center gap-6">
-                       <span className="text-[10px] font-bold text-primary underline underline-offset-4 decoration-primary/20 cursor-pointer hover:opacity-100 transition-opacity">LINKEDIN</span>
-                       <span className="text-[10px] font-bold text-primary underline underline-offset-4 decoration-primary/20 cursor-pointer hover:opacity-100 transition-opacity">TWITTER</span>
+                    <div className="flex items-center gap-3">
+                       <Button size="sm" className="rounded-full bg-[#0077b5] hover:bg-[#0077b5]/90 text-white font-bold h-9 px-6 text-[10px] tracking-widest shadow-xl shadow-blue-500/20" asChild>
+                          <a href="https://linkedin.com/in/theogene-iradukunda" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+                       </Button>
+                       <Button size="sm" className="rounded-full bg-[#1DA1F2] hover:bg-[#1DA1F2]/90 text-white font-bold h-9 px-6 text-[10px] tracking-widest shadow-xl shadow-blue-400/20" asChild>
+                          <a href="https://twitter.com/theogene_ir" target="_blank" rel="noopener noreferrer">TWITTER</a>
+                       </Button>
                     </div>
                   </div>
                </div>
