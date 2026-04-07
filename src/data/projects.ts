@@ -26,58 +26,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'twagiye-taxi',
-    title: 'Twagiye — Eco-Friendly Ride-Hailing Platform',
-    subtitle: 'for Twagiye Taxi',
-    description: 'A ride-hailing platform connecting electric and hybrid car owners with passengers for greener rides across the globe.',
-    techStack: ['Next.js', 'React', 'Tailwind CSS', 'Prisma', 'PostgreSQL'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop',
-    liveDemo: 'https://twagiye.rw',
-    category: 'Logistics & Supply Chain',
-    tag: 'LOGISTICS & SUPPLY CHAIN',
-    client: 'Twagiye Taxi',
-    year: '2026',
-    details: {
-      overview: "Twagiye is an eco-focused ride-hailing platform that exclusively connects hybrid and electric vehicle owners with passengers seeking greener transportation. The platform empowers car owners to monetize their vehicles on their own schedule while giving riders access to verified, environmentally friendly rides with cashless payment options worldwide.",
-      objective: "To build a modern, high-performance web platform that positions Twagiye as a leading global green mobility brand — enabling driver onboarding, passenger engagement, and communicating the company's environmental mission with a compelling digital presence.",
-      delivered: [
-        "Fully responsive marketing website built with Next.js 16 and Tailwind CSS",
-        "Driver onboarding flow with vehicle verification system",
-        "Bento-style feature showcase highlighting platform benefits",
-        "Impact section with real-time community stats (300+ drivers, 500+ passengers, 10+ cities)",
-        "Testimonials system with dynamic content",
-        "FAQ section for driver and passenger education",
-        "App download integration and newsletter subscription",
-        "Mobile-first design optimized for global users"
-      ],
-      process: [
-        {
-          title: "Discovery & Research",
-          description: "Understood Twagiye's mission, target audience (EV/hybrid car owners and eco-conscious passengers), and the international mobility landscape."
-        },
-        {
-          title: "Design & Branding",
-          description: "Created a clean, nature-inspired design system using Twagiye's green (#66B544) brand palette with bold typography and modern card layouts."
-        },
-        {
-          title: "Development",
-          description: "Built with Next.js, React 19, Tailwind CSS, and Prisma. Focused on performance, SEO, and mobile responsiveness."
-        },
-        {
-          title: "Content & Messaging",
-          description: "Crafted messaging that speaks directly to car owners (\"Turn Your Green Car Into Income\") and passengers (\"Book Green Rides\")."
-        },
-        {
-          title: "Deployment & Launch",
-          description: "Deployed on a global VPS with PM2 process management for reliability and fast load times."
-        }
-      ],
-      results: "The platform launched with a strong digital presence that clearly communicates Twagiye's value proposition to both drivers and passengers. The site features a modern bento-grid layout, floating stat cards, and smooth interactions that position Twagiye as a premium, trustworthy brand in the growing green mobility space. The driver onboarding funnel provides a seamless path from discovery to sign-up.",
-      conclusion: "Twagiye represents the intersection of technology and sustainability globally. By building a platform that's both visually compelling and functionally robust, we helped Twagiye establish itself as a pioneer in eco-friendly ride-hailing.",
-      services: ["Logistics & Supply Chain", "Website Design & Development"]
-    }
-  },
-  {
     id: 'pixelmart-management',
     title: 'PixelMart — Unified Inventory & Financial Headquarters',
     subtitle: 'for PixelMart LCD Rwanda',
@@ -215,47 +163,6 @@ export const projects: Project[] = [
       results: "Open Future has fundamentally changed how the group operates, increasing member contribution consistency and trust. The finance administrator now handles audits in seconds rather than hours of manual calculation.",
       conclusion: "Open Future is more than an app; it is a financial empowerment tool for the next generation of engineers and entrepreneurs in Rulindo.",
       services: ["Community FinTech", "Finacial Literacy Tools", "Custom Web Development"]
-    }
-  },
-  {
-    id: 'indaro-yacu',
-    title: 'Indaro Yacu Organization',
-    subtitle: 'for Indaro Yacu',
-    description: 'A modern website for an International NGO supporting vulnerable children through education, cultural programs, and psychosocial care.',
-    techStack: ['React', 'Tailwind CSS'],
-    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop',
-    liveDemo: '#',
-    category: 'NGO & Development',
-    tag: 'NON-PROFIT',
-    client: 'Indaro Yacu',
-    year: '2024',
-    details: {
-      overview: "Indaro Yacu is an International NGO dedicated to the well-being of vulnerable children. We developed a modern, storytelling-focused website to help them communicate their impact, share success stories, and facilitate global partnerships.",
-      objective: "To create a professional and emotionally resonant digital presence that positions Indaro Yacu as a credible supporter of child education and cultural heritage.",
-      delivered: [
-        "Immersive hero section with high-quality child impact photos",
-        "Detailed program pages (Education, Culture, Psychosocial)",
-        "Direct donation and partnership contact integration",
-        "Multilingual support readiness (International & Local languages)",
-        "SEO optimization for global visibility"
-      ],
-      process: [
-        {
-          title: "Storytelling Workshop",
-          description: "Collaborated with the NGO team to define the key narratives that drive donor engagement."
-        },
-        {
-          title: "Branding Refinement",
-          description: "Standardized the organization's color palette and typography for consistency."
-        },
-        {
-          title: "Performance Tuning",
-          description: "Ensured the image-heavy site loads instantly even on various network speeds."
-        }
-      ],
-      results: "The website successfully facilitated three new international partnership inquiries within the first month of launch.",
-      conclusion: "Technology serves its highest purpose when it gives a voice to those doing social good.",
-      services: ["NGO Web Design", "Digital Identity", "SEO Strategy"]
     }
   }
 ];
