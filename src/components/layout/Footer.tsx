@@ -45,7 +45,7 @@ export function Footer() {
                 <span className="font-outfit text-2xl font-black tracking-tighter text-white uppercase transition-all">
                   NEOSCRATCH
                 </span>
-                <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-bold -mt-1 group-hover:text-white transition-colors">Technical Studio</p>
+                <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] font-extrabold -mt-1 group-hover:text-white transition-colors">Software House</p>
               </Link>
               
               <p className="text-white/60 text-sm leading-relaxed max-w-sm font-medium">
