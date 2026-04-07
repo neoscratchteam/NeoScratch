@@ -14,9 +14,9 @@ import heroDashboard from '@/assets/professional-dashboard.png';
 import { projects } from '@/data/projects';
 
 const Index = () => {
-  const projectsCount = useCountUpAnimation({ end: 30, suffix: '+' });
+  const projectsCount = useCountUpAnimation({ end: 5, suffix: '+' });
   const experienceCount = useCountUpAnimation({ end: 2, suffix: '+' });
-  const clientsCount = useCountUpAnimation({ end: 20, suffix: '+' });
+  const clientsCount = useCountUpAnimation({ end: 6, suffix: '+' });
   const retentionCount = useCountUpAnimation({ end: 100, suffix: '%' });
 
   const ghostRef = useRef<HTMLDivElement>(null);
