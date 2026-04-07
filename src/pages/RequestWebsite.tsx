@@ -125,7 +125,7 @@ _Request sent from neoscratch.rw inquiry portal_
                       value={formData.name}
                       onChange={handleInputChange}
                       className="w-full px-5 py-3.5 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
-                      placeholder="Jean Gatare"
+                      placeholder="Your full name"
                       required
                     />
                   </div>
@@ -136,7 +136,7 @@ _Request sent from neoscratch.rw inquiry portal_
                       value={formData.whatsapp}
                       onChange={handleInputChange}
                       className="w-full px-5 py-3.5 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
-                      placeholder="+250 78X XXX XXX"
+                      placeholder="Your phone number"
                       required
                     />
                   </div>
@@ -148,7 +148,7 @@ _Request sent from neoscratch.rw inquiry portal_
                       value={formData.email}
                       onChange={handleInputChange}
                       className="w-full px-5 py-3.5 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
-                      placeholder="you@company.com"
+                      placeholder="Your email address"
                     />
                   </div>
                   <div>
