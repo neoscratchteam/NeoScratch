@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
-import { Send, Check, MessageCircle, ArrowRight, Zap, Shield, Globe } from 'lucide-react';
+import { Send, Check, MessageCircle, ArrowRight, Zap, Shield, Globe, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 
-const projectTypes = [
-  'Business Website',
-  'E-commerce Store',
-  'Portfolio Website',
-  'Blog/News Site',
+const services = [
+  'Website Design',
+  'Google Business Profile',
+  'SEO',
+  'Custom Software',
   'Mobile App',
-  'Web Application',
-  'Landing Page',
-  'Other',
+  'Website Maintenance',
+  'Not sure yet',
 ];
 
 const budgetRanges = [
-  'Under 100,000 RWF',
-  '100,000 - 250,000 RWF',
-  '250,000 - 500,000 RWF',
-  '500,000 - 1,000,000 RWF',
-  'Over 1,000,000 RWF',
+  'Under 500k RWF',
+  '500k – 1M RWF',
+  '1M – 3M RWF',
+  '3M+ RWF',
+  'Not sure yet',
 ];
 
 export default function RequestWebsite() {
@@ -28,22 +27,21 @@ export default function RequestWebsite() {
     email: '',
     whatsapp: '',
     company: '',
-    projectType: '',
+    serviceType: '',
     budget: '',
-    deadline: '',
+    hasWebsite: 'No',
+    domain: '',
     description: '',
-    features: '',
-    inspiration: '',
   });
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.projectType || !formData.budget || !formData.description) {
+    if (!formData.name || !formData.whatsapp || !formData.serviceType || !formData.budget || !formData.description) {
       toast({
-        title: "Missing Information",
-        description: "Please fill in all core fields so we can architecturalize your solution.",
+        title: "Incomplete Request",
+        description: "Please fill in all (*) required fields.",
         variant: "destructive",
       });
       return;
@@ -54,25 +52,19 @@ export default function RequestWebsite() {
 *NEW PROJECT INQUIRY | NEOSCRATCH*
 -------------------------
 *Client:* ${formData.name}
-*Email:* ${formData.email}
-*WhatsApp:* ${formData.whatsapp || 'N/A'}
-*Company:* ${formData.company || 'N/A'}
+*Email:* ${formData.email || 'N/A'}
+*WhatsApp:* ${formData.whatsapp}
+*Business:* ${formData.company || 'N/A'}
 
 *PROJECT DETAILS*
-*Type:* ${formData.projectType}
+*Service:* ${formData.serviceType}
 *Budget:* ${formData.budget}
-*Deadline:* ${formData.deadline || 'Flexible'}
+*Existing Website:* ${formData.hasWebsite}
+${formData.hasWebsite === 'Yes' ? `*Domain:* ${formData.domain}` : ''}
 
 *DESCRIPTION*
 ${formData.description}
-
-*REQUIRED FEATURES*
-${formData.features || 'Standard Features'}
-
-*INSPIRATION*
-${formData.inspiration || 'None provided'}
 -------------------------
-_Request sent from neoscratch.rw inquiry portal_
     `.trim();
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -81,160 +73,161 @@ _Request sent from neoscratch.rw inquiry portal_
     
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
-      toast({
-        title: "Redirecting to WhatsApp",
-        description: "Your architecture brief is ready. Please hit 'Send' in WhatsApp.",
-      });
       setSubmitting(false);
-    }, 800);
+    }, 500);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const toggleSelection = (field: 'serviceType' | 'budget', value: string) => {
+    setFormData({ ...formData, [field]: value });
   };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* 🚀 MODERN HERO SECTION */}
-      <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#1a73e8] relative overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-grid opacity-[0.05] pointer-events-none" style={{ backgroundSize: '60px 60px' }} />
+      {/* 🚀 COMPACT HERO SECTION */}
+      <section className="pt-24 pb-16 lg:pt-36 lg:pb-20 bg-[#1a73e8] relative overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-grid opacity-[0.05] pointer-events-none" style={{ backgroundSize: '40px 40px' }} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/90 text-[10px] font-bold uppercase tracking-widest mb-6 animate-slide-up">
-            <span>Engineering Excellence</span>
-          </div>
-          <h1 className="text-4xl lg:text-7xl font-bold tracking-tight text-white mb-8 animate-fade-in max-w-4xl mx-auto uppercase">
+          <Badge className="bg-white/10 text-white border-white/20 text-[9px] uppercase tracking-[0.2em] mb-4">Architecture Brief</Badge>
+          <h1 className="text-3xl lg:text-5xl font-bold tracking-tight text-white mb-4 animate-fade-in uppercase">
             Architect Your <br /> Digital <span className="opacity-70">Presence.</span>
           </h1>
-          <p className="text-sm lg:text-[15px] text-white/80 max-w-2xl mx-auto leading-relaxed font-medium animate-slide-up">
-            Tell us about your global vision. We combine Rwandan creativity with international engineering standards to build platforms that scale.
+          <p className="text-[13px] text-white/70 max-w-xl mx-auto leading-relaxed font-semibold animate-slide-up">
+            Fast, high-performance inquiries for global scaling.
           </p>
         </div>
       </section>
 
-      {/* 📝 COMPLEX INQUIRY FORM */}
-      <section className="py-24 bg-[#f8fafc]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-border/40 rounded-[2.5rem] p-8 lg:p-16 shadow-2xl shadow-blue-500/5">
-            <div className="mb-12">
-               <h2 className="text-[12px] font-black tracking-[0.2em] text-[#1a73e8] uppercase mb-4 text-center">Project Architecture</h2>
-               <p className="text-3xl font-bold text-center text-foreground">Tell us about your project</p>
-            </div>
-
+      {/* 📝 PROJECT INQUIRY FORM - SMALL & READABLE STYLE */}
+      <section className="py-20 bg-[#f8fafc]">
+        <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white border border-border/40 rounded-3xl p-6 lg:p-10 shadow-2xl shadow-blue-500/5">
             <form onSubmit={handleSubmit} className="space-y-10">
-              {/* Personal Section */}
+              
+              {/* Section 1: Your Details */}
               <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4">Your details</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
                   <div>
-                    <label className="block text-[10px] font-black text-muted-foreground uppercase tracking-widest mb-3">Full Name *</label>
+                    <label className="block text-[11px] font-black text-muted-foreground/80 uppercase tracking-widest mb-2">Your name *</label>
                     <input
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-5 py-4 border border-border rounded-2xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-sm font-semibold"
-                      placeholder="e.g. Theogene Iradukunda"
+                      className="w-full px-5 py-4 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      placeholder="Jean Gatare"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] font-black text-muted-foreground uppercase tracking-widest mb-3">Professional Email *</label>
+                    <label className="block text-[11px] font-black text-muted-foreground/80 uppercase tracking-widest mb-2">Phone / WhatsApp *</label>
+                    <input
+                      name="whatsapp"
+                      value={formData.whatsapp}
+                      onChange={handleInputChange}
+                      className="w-full px-5 py-4 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      placeholder="+250 78X XXX XXX"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-black text-muted-foreground/80 uppercase tracking-widest mb-2">Email</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-5 py-4 border border-border rounded-2xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-sm font-semibold"
-                      placeholder="contact@company.com"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-[10px] font-black text-muted-foreground uppercase tracking-widest mb-3">WhatsApp Connection</label>
-                    <input
-                      name="whatsapp"
-                      value={formData.whatsapp}
-                      onChange={handleInputChange}
-                      className="w-full px-5 py-4 border border-border rounded-2xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-sm font-semibold"
-                      placeholder="+250 792 734 752"
+                      className="w-full px-5 py-4 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      placeholder="you@company.com"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] font-black text-muted-foreground uppercase tracking-widest mb-3">Company / Brand</label>
+                    <label className="block text-[11px] font-black text-muted-foreground/80 uppercase tracking-widest mb-2">Business name</label>
                     <input
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-5 py-4 border border-border rounded-2xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-sm font-semibold"
-                      placeholder="NeoScratch Global"
+                      className="w-full px-5 py-4 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      placeholder="Your business name"
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Technical Section */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-[10px] font-black text-muted-foreground uppercase tracking-widest mb-3">Project Taxonomy *</label>
-                  <select
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleInputChange}
-                    className="w-full px-5 py-4 border border-border rounded-2xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-sm font-bold appearance-none cursor-pointer"
-                    required
-                  >
-                    <option value="">Select Architecture</option>
-                    {projectTypes.map(t => <option key={t} value={t}>{t}</option>)}
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-[10px] font-black text-muted-foreground uppercase tracking-widest mb-3">Budget Allocation *</label>
-                  <select
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleInputChange}
-                    className="w-full px-5 py-4 border border-border rounded-2xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-sm font-bold appearance-none cursor-pointer"
-                    required
-                  >
-                    <option value="">Select Range</option>
-                    {budgetRanges.map(r => <option key={r} value={r}>{r}</option>)}
-                  </select>
+              {/* Section 2: What do you need? */}
+              <div className="space-y-6">
+                <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4">What do you need? *</h2>
+                <div className="flex flex-wrap gap-2.5">
+                  {services.map((s) => (
+                    <button
+                      key={s}
+                      type="button"
+                      onClick={() => toggleSelection('serviceType', s)}
+                      className={`px-4 py-2.5 rounded-xl border text-[12px] font-black transition-all duration-300 ${
+                        formData.serviceType === s 
+                          ? 'bg-[#1a73e8] text-white border-[#1a73e8]' 
+                          : 'bg-white text-muted-foreground/80 border-border hover:border-[#1a73e8]/30 hover:text-[#1a73e8]'
+                      }`}
+                    >
+                      {s}
+                    </button>
+                  ))}
                 </div>
               </div>
 
-              {/* Description Section */}
-              <div>
-                <label className="block text-[10px] font-black text-muted-foreground uppercase tracking-widest mb-3">Project Brief *</label>
+              {/* Section 3: Budget range */}
+              <div className="space-y-6">
+                <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4">Budget range</h2>
+                <div className="flex flex-wrap gap-2.5">
+                  {budgetRanges.map((r) => (
+                    <button
+                      key={r}
+                      type="button"
+                      onClick={() => toggleSelection('budget', r)}
+                      className={`px-4 py-2.5 rounded-xl border text-[12px] font-black transition-all duration-300 ${
+                        formData.budget === r 
+                          ? 'border-[#1a73e8] text-[#1a73e8] border-2 bg-white' 
+                          : 'bg-white text-muted-foreground/80 border-border hover:border-[#1a73e8]/30 hover:text-[#1a73e8]'
+                      }`}
+                    >
+                      {r}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Section 4: Tell us briefly */}
+              <div className="space-y-6">
+                <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4">Tell us briefly</h2>
                 <textarea
                   name="description"
                   value={formData.description}
                   onChange={handleInputChange}
                   rows={5}
-                  className="w-full px-5 py-4 border border-border rounded-2xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-sm font-semibold resize-none"
-                  placeholder="Tell us about your technical goals and vision..."
+                  className="w-full px-6 py-6 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold resize-none placeholder:text-muted-foreground/30"
+                  placeholder="What does your business do? What do you need help with? Any specific features or deadlines?"
                   required
                 />
               </div>
 
-              {/* Action Button */}
+              {/* Final Submit Action */}
               <div className="pt-6">
                 <Button
                   type="submit"
                   size="xl"
-                  className="w-full rounded-2xl bg-[#1a73e8] text-white hover:bg-black hover:scale-[1.02] transition-all duration-300 h-16 text-xs font-black uppercase tracking-widest shadow-2xl shadow-blue-500/20"
+                  className="w-full rounded-xl bg-[#1a73e8] text-white hover:bg-black hover:scale-[1.02] transition-all duration-300 h-14 text-[11px] font-black uppercase tracking-widest shadow-2xl shadow-blue-500/10"
                   disabled={submitting}
                 >
-                  {submitting ? (
-                    <Zap className="h-5 w-5 mr-3 animate-spin" />
-                  ) : (
-                    <MessageCircle className="h-5 w-5 mr-3" />
-                  )}
-                  {submitting ? 'Architecting Brief...' : 'Inquire via WhatsApp'}
+                  {submitting ? 'Preparing Brief...' : 'Send Request via WhatsApp'}
+                  {!submitting && <ArrowRight className="ml-2.5 h-4 w-4" />}
                 </Button>
-                <div className="mt-6 flex items-center justify-center gap-6 text-[10px] font-black text-muted-foreground/60 uppercase tracking-widest">
-                   <div className="flex items-center"><Shield className="h-3 w-3 mr-2" /> Secure Inquiry</div>
-                   <div className="flex items-center"><Globe className="h-3 w-3 mr-2" /> Global Response</div>
+                <div className="mt-6 flex items-center justify-center gap-6 text-[9px] font-black text-muted-foreground/30 uppercase tracking-[0.2em]">
+                   <div className="flex items-center"><Shield className="h-3 w-3 mr-2" /> Global Standard</div>
+                   <div className="flex items-center"><Globe className="h-3 w-3 mr-2" /> Fast Inquiry</div>
                 </div>
               </div>
             </form>
@@ -242,25 +235,33 @@ _Request sent from neoscratch.rw inquiry portal_
         </div>
       </section>
 
-      {/* 🏗️ ARCHITECTURE STEPS */}
-      <section className="py-24 bg-white">
+      {/* 🏗️ ARCHITECTURE STEPS - MINIMALIST */}
+      <section className="py-20 bg-white border-t border-border/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
              {[
-               { id: '01', title: 'TECHNICAL BRIEF', desc: 'Securely submit your project parameters through our portal.' },
-               { id: '02', title: 'EXECUTIVE REVIEW', desc: 'Our lead engineers analyze your requirements for scalability.' },
-               { id: '03', title: 'PROPOSAL PHASE', desc: 'Receive a full architecture map, timeline, and optimized quote.' },
-               { id: '04', title: 'ENGINEERING', desc: 'We build your vision using industry-leading technical standards.' }
+               { id: '01', title: 'TECHNICAL BRIEF', desc: 'Secure project submission.' },
+               { id: '02', title: 'EXECUTIVE REVIEW', desc: 'Requirements analysis.' },
+               { id: '03', title: 'PROPOSAL PHASE', desc: 'Architecture map and quote.' },
+               { id: '04', title: 'ENGINEERING', desc: 'Industry-leading build.' }
              ].map(step => (
-               <div key={step.id} className="relative group">
-                  <span className="text-4xl font-black text-[#1a73e8]/10 group-hover:text-[#1a73e8]/20 transition-colors mb-4 block">{step.id}</span>
-                  <h3 className="text-[11px] font-black tracking-widest text-foreground mb-3">{step.title}</h3>
-                  <p className="text-[13px] font-semibold text-muted-foreground leading-relaxed">{step.desc}</p>
+               <div key={step.id} className="group">
+                  <span className="text-2xl font-black text-[#1a73e8]/10 mb-2 block">{step.id}</span>
+                  <h3 className="text-[10px] font-black tracking-widest text-foreground mb-1 uppercase">{step.title}</h3>
+                  <p className="text-[11px] font-bold text-muted-foreground leading-tight">{step.desc}</p>
                </div>
              ))}
            </div>
         </div>
       </section>
     </div>
+  );
+}
+
+function Badge({ children, className }: { children: React.ReactNode; className?: string }) {
+  return (
+    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full font-medium ${className}`}>
+      {children}
+    </span>
   );
 }
