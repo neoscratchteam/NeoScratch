@@ -187,6 +187,24 @@ const servicesData = [
 export default function Services() {
   const [filter, setFilter] = useState('All');
 
+  const handleFilterChange = (cat: string) => {
+    setFilter(cat);
+    // Smooth scroll to the top of the services section
+    const element = document.getElementById('services-grid');
+    if (element) {
+      const offset = 140; // Accounting for sticky header + filter bar
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   const filteredServices = filter === 'All' 
     ? servicesData 
     : servicesData.filter(s => s.category === filter);
@@ -219,7 +237,7 @@ export default function Services() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setFilter(cat)}
+                onClick={() => handleFilterChange(cat)}
                 className={`px-5 py-2 rounded-full text-[12px] whitespace-nowrap font-bold transition-all duration-300 ${
                   filter === cat 
                     ? 'bg-[#1a73e8] text-white shadow-lg shadow-blue-500/10' 
@@ -234,7 +252,7 @@ export default function Services() {
       </section>
 
       {/* 📦 SERVICES GRID - Small Modern Cards */}
-      <section className="py-24">
+      <section id="services-grid" className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((s) => (
