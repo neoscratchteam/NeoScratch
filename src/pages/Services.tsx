@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, Code, Palette, Lightbulb, Check, ArrowRight, Star, Monitor, Smartphone, GraduationCap, Zap, ShoppingCart, Layout, Database, Settings, RefreshCw } from 'lucide-react';
+import { Globe, Code, Palette, Lightbulb, Check, ArrowRight, Star, Monitor, Smartphone, GraduationCap, Zap, ShoppingCart, Layout, Database, Settings, RefreshCw, Heart, Briefcase, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
@@ -14,6 +14,7 @@ const categories = [
   'Portfolio', 
   'Mobile App', 
   'Desktop App', 
+  'NGOs',
   'Database Migration', 
   'Maintenance', 
   'Update', 
@@ -30,6 +31,26 @@ const servicesData = [
     features: ['Responsive Design', 'SaaS Architecture', 'E-commerce', 'API Integration'],
     price: 'Starting from 500,000 RWF',
     popular: true,
+  },
+  {
+    id: 14,
+    category: 'Development',
+    icon: Briefcase,
+    title: 'Business Website',
+    description: 'Professional corporate websites designed to establish a powerful online presence and drive lead generation for SMEs.',
+    features: ['Service Pages', 'SEO Setup', 'Lead Forms', 'Analytics'],
+    price: 'Starting from 150,000 RWF',
+    popular: false,
+  },
+  {
+    id: 15,
+    category: 'Development',
+    icon: Building2,
+    title: 'Big Business Enterprise',
+    description: 'Large-scale enterprise websites with advanced multi-page architectures and custom integrations for high-volume traffic.',
+    features: ['Multi-page Structure', 'Speed Optimization', 'Secure CMS', '24/7 Monitoring'],
+    price: 'Starting from 350,000 RWF',
+    popular: false,
   },
   {
     id: 2,
@@ -92,6 +113,16 @@ const servicesData = [
     popular: false,
   },
   {
+    id: 16,
+    category: 'NGOs',
+    icon: Heart,
+    title: 'Non-Profit / NGO Site',
+    description: 'Impactful digital platforms for NGOs with secure online donation systems and community engagement tools.',
+    features: ['Secure Donation', 'Event Management', 'Impact Reports', 'Volunteer signup'],
+    price: 'Starting from 400,000 RWF',
+    popular: false,
+  },
+  {
     id: 8,
     category: 'E-commerce',
     icon: ShoppingCart,
@@ -105,10 +136,10 @@ const servicesData = [
     id: 9,
     category: 'Portfolio',
     icon: Palette,
-    title: 'Creative Portfolio Design',
-    description: 'Showcase your work with stunning, high-performance portfolios designed to captivate a global audience.',
+    title: 'Personal High-End Portfolio',
+    description: 'Professional visual portfolios for individuals wanting to showcase their unique work and talent internationally.',
     features: ['Visual Showcases', 'Smooth Motion', 'Contact Forms', 'SEO Optimized'],
-    price: 'Starting from 100,000 RWF',
+    price: 'Starting from 70,000 RWF',
     popular: false,
   },
   {
@@ -138,7 +169,7 @@ const servicesData = [
     title: 'Technical Updates',
     description: 'Regular feature updates and bug fixes for your existing digital products to keep them modern and functional.',
     features: ['Bug Fixes', 'New Features', 'Code Cleanup', 'Fast Updates'],
-    price: 'Starting from 30,000 RWF',
+    price: 'Starting from 100,000 RWF',
     popular: false,
   },
   {
@@ -147,8 +178,8 @@ const servicesData = [
     icon: Globe,
     title: 'Domain & Hosting Control',
     description: 'Full management of your domain names and secure hosting servers with global CDN support.',
-    features: ['.RW / .COM Setup', 'SSL Certificates', 'Global Hosting', '24/7 Support'],
-    price: 'Starting from 15,000 RWF/yr',
+    features: ['.RW / .COM / .NET / more TLDs Setup', 'SSL Certificates', 'Global Hosting', '24/7 Support'],
+    price: 'Starting from 27,500 RWF/yr',
     popular: false,
   },
 ];
