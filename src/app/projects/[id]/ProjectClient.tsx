@@ -41,25 +41,22 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Back Link */}
-        <Link 
-          href="/projects" 
-          className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-12 group"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-          All projects
-        </Link>
-
-        {/* Header Section */}
-        <div className="max-w-4xl mb-16">
-          <div className="flex flex-wrap items-center gap-4 mb-6">
-            <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20 border-none px-3 py-1 text-[10px] font-bold tracking-wider uppercase">
+        <div className="pt-24 pb-12">
+          <div className="flex flex-wrap items-center gap-3 mb-6">
+            <Link 
+              href="/projects" 
+              className="text-[10px] font-black text-primary uppercase tracking-[0.2em] hover:opacity-70 transition-opacity"
+            >
+              All projects
+            </Link>
+            <span className="text-muted-foreground/30">•</span>
+            <Badge variant="secondary" className="bg-primary/5 text-primary border-primary/10 px-2.5 py-0.5 text-[10px] font-bold tracking-wider uppercase rounded-full">
               {project.tag || project.category}
             </Badge>
             <span className="text-muted-foreground/40 hidden sm:block">•</span>
-            <span className="text-sm font-semibold text-muted-foreground">{project.client}</span>
+            <span className="text-[10px] font-bold text-muted-foreground/60 uppercase tracking-widest leading-none">{project.client}</span>
             <span className="text-muted-foreground/40 hidden sm:block">•</span>
-            <span className="text-sm font-semibold text-muted-foreground">{project.year}</span>
+            <span className="text-[10px] font-bold text-muted-foreground/60 uppercase tracking-widest leading-none">{project.year}</span>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-8 leading-[1.1]">
