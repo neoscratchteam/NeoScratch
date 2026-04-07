@@ -82,56 +82,62 @@ export default function Events() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {filteredEvents.map((event, i) => (
-                <div 
-                  key={event.id}
-                  className="group flex flex-col bg-white border border-[#1a73e8]/10 rounded-3xl overflow-hidden hover:border-[#1a73e8]/40 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <img src={event.image} alt={event.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div className="absolute top-4 left-4">
-                      <Badge className="bg-white/95 backdrop-blur-sm text-[#1a73e8] text-[9px] font-bold border-none px-3 py-1">
-                        {event.type}
-                      </Badge>
-                    </div>
-                  </div>
-
-                  <div className="p-8 flex flex-col flex-1">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="flex items-center text-[10px] font-bold text-muted-foreground/60 uppercase tracking-widest leading-none">
-                        <Calendar className="h-3 w-3 mr-2 text-[#1a73e8]" />
-                        {new Date(event.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+              {filteredEvents.length > 0 ? (
+                filteredEvents.map((event, i) => (
+                  <div 
+                    key={event.id}
+                    className="group flex flex-col bg-white border border-[#1a73e8]/10 rounded-3xl overflow-hidden hover:border-[#1a73e8]/40 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500"
+                  >
+                    <div className="relative aspect-[16/10] overflow-hidden">
+                      <img src={event.image} alt={event.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <div className="absolute top-4 left-4">
+                        <Badge className="bg-white/95 backdrop-blur-sm text-[#1a73e8] text-[9px] font-bold border-none px-3 py-1">
+                          {event.type}
+                        </Badge>
                       </div>
                     </div>
-                    
-                    <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-[#1a73e8] transition-colors leading-tight uppercase text-[15px]">
-                      {event.title}
-                    </h3>
-                    
-                    <p className="text-muted-foreground text-[13px] leading-relaxed font-semibold mb-8 line-clamp-3">
-                      {event.description}
-                    </p>
 
-                    <div className="mt-auto space-y-6">
-                      <div className="flex items-center text-[11px] font-bold text-foreground/70">
-                        <MapPin className="h-3.5 w-3.5 mr-2 text-[#1a73e8]" />
-                        {event.location}
+                    <div className="p-8 flex flex-col flex-1">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="flex items-center text-[10px] font-bold text-muted-foreground/60 uppercase tracking-widest leading-none">
+                          <Calendar className="h-3 w-3 mr-2 text-[#1a73e8]" />
+                          {new Date(event.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                        </div>
                       </div>
                       
-                      <div className="pt-6 border-t border-border/40 flex items-center justify-between">
-                        <div className="flex gap-2">
-                            {event.tags.map(tag => (
-                              <span key={tag} className="text-[8px] font-black text-muted-foreground/40 border border-border/60 px-2 py-0.5 rounded-full">#{tag}</span>
-                            ))}
+                      <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-[#1a73e8] transition-colors leading-tight uppercase text-[15px]">
+                        {event.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground text-[13px] leading-relaxed font-semibold mb-8 line-clamp-3">
+                        {event.description}
+                      </p>
+
+                      <div className="mt-auto space-y-6">
+                        <div className="flex items-center text-[11px] font-bold text-foreground/70">
+                          <MapPin className="h-3.5 w-3.5 mr-2 text-[#1a73e8]" />
+                          {event.location}
                         </div>
-                        <Link href="/contact" className="text-[10px] font-bold text-[#1a73e8] uppercase tracking-[0.2em] flex items-center">
-                            Join Event <ArrowRight className="ml-2 h-3 w-3" />
-                        </Link>
+                        
+                        <div className="pt-6 border-t border-border/40 flex items-center justify-between">
+                          <div className="flex gap-2">
+                              {event.tags.map(tag => (
+                                <span key={tag} className="text-[8px] font-black text-muted-foreground/40 border border-border/60 px-2 py-0.5 rounded-full">#{tag}</span>
+                              ))}
+                          </div>
+                          <Link href="/contact" className="text-[10px] font-bold text-[#1a73e8] uppercase tracking-[0.2em] flex items-center">
+                              Join Event <ArrowRight className="ml-2 h-3 w-3" />
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
+                ))
+              ) : (
+                <div className="lg:col-span-3 py-12 text-center">
+                   <p className="text-lg font-bold text-muted-foreground uppercase tracking-widest italic">Upcoming events will be announced soon.</p>
                 </div>
-              ))}
+              )}
             </div>
             
             {/* ⬆️ BACK TO TOP OF SECTION */}
