@@ -15,7 +15,7 @@ const navigation: NavigationItem[] = [
   { name: 'Projects', href: '/projects' },
   { name: 'Services', href: '/services' },
   { name: 'Events', href: '/events' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'News', href: '/news' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -69,7 +69,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${isHeaderThemed 
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative group ${isHeaderThemed 
                     ? 'hover:bg-white/10' 
                     : 'hover:bg-white/20'} ${location.pathname === item.href
                       ? 'bg-white/20 text-white'
@@ -77,6 +77,11 @@ export function Header() {
                     }`}
                 >
                   {item.name}
+                  {item.name === 'News' && (
+                    <span className="absolute -top-1 -right-1 flex h-4 w-6 items-center justify-center bg-red-500 text-white text-[8px] font-black rounded-full shadow-lg border border-white/20">
+                      21+
+                    </span>
+                  )}
                 </Link>
               ))}
           </nav>
@@ -116,12 +121,17 @@ export function Header() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${location.pathname === item.href
+                  className={`relative flex items-center w-fit px-3 py-2 rounded-md text-base font-medium transition-colors ${location.pathname === item.href
                     ? 'bg-white/20 text-white'
                     : 'text-white hover:bg-white/10'
                     }`}
                 >
                   {item.name}
+                  {item.name === 'News' && (
+                    <span className="absolute -top-1 -right-4 flex h-4 w-6 items-center justify-center bg-red-500 text-white text-[8px] font-black rounded-full shadow-lg border border-white/20">
+                      21+
+                    </span>
+                  )}
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
