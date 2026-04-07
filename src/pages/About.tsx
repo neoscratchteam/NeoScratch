@@ -105,8 +105,8 @@ export default function About() {
                {/* Main Banner Image */}
                <div className="relative rounded-3xl overflow-hidden border border-border aspect-[21/9]">
                   <img 
-                    src="https://images.unsplash.com/photo-1522071823991-b9671f9d7f1f?q=80&w=2000&auto=format&fit=crop" 
-                    alt="Team engineering" 
+                    src="/kigali.jpg" 
+                    alt="Kigali Global Innovation Hub" 
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
