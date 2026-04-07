@@ -89,9 +89,10 @@ export default function Projects() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((p) => (
-                <div 
+                <Link 
                   key={p.id} 
-                  className="group flex flex-col bg-white border border-[#1a73e8]/20 rounded-2xl overflow-hidden hover:border-[#1a73e8]/40 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-500"
+                  href={`/projects/${p.id}`}
+                  className="group flex flex-col bg-white border border-[#1a73e8]/20 rounded-2xl overflow-hidden hover:border-[#1a73e8]/40 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-500 cursor-pointer"
                 >
                   {/* Image Container */}
                   <div className="relative aspect-[16/10] overflow-hidden">
@@ -120,16 +121,13 @@ export default function Projects() {
                     </p>
                     
                     <div className="mt-auto">
-                      <Link 
-                        href={`/projects/${p.id}`} 
-                        className="inline-flex items-center text-[10px] font-bold text-[#1a73e8] uppercase tracking-[0.2em] group/link"
-                      >
+                      <div className="inline-flex items-center text-[10px] font-bold text-[#1a73e8] uppercase tracking-[0.2em] group/link">
                         Case Study 
                         <ArrowRight className="ml-2 h-3 w-3 group-hover/link:translate-x-1 transition-transform" />
-                      </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 

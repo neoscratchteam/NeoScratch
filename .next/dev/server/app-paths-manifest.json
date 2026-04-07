@@ -4,6 +4,7 @@
   "/contact/page": "app/contact/page.js",
   "/events/page": "app/events/page.js",
   "/page": "app/page.js",
+  "/projects/[id]/page": "app/projects/[id]/page.js",
   "/projects/page": "app/projects/page.js",
   "/services/page": "app/services/page.js"
 }

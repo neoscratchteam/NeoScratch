@@ -237,9 +237,10 @@ export default function Index() {
             }}
           >
             {projects.map((p) => (
-              <div 
+              <Link 
                 key={p.id}
-                className="w-[85vw] flex-shrink-0 h-[40vh] min-h-[320px] bg-white rounded-3xl border border-border shadow-2xl overflow-hidden flex flex-col lg:flex-row group transition-all duration-300 hover:ring-2 hover:ring-primary"
+                href={`/projects/${p.id}`}
+                className="w-[85vw] flex-shrink-0 h-[40vh] min-h-[320px] bg-white rounded-3xl border border-border shadow-2xl overflow-hidden flex flex-col lg:flex-row group transition-all duration-300 hover:ring-2 hover:ring-primary cursor-pointer"
               >
                 {/* Image Section - FULL FILL */}
                 <div className="lg:w-[65%] h-[50%] lg:h-full bg-secondary overflow-hidden relative">
@@ -269,14 +270,11 @@ export default function Index() {
                     {p.description}
                   </p>
                   
-                  <Link 
-                    href={`/projects/${p.id}`}
-                    className="inline-flex items-center text-primary text-xs font-bold hover:gap-2 transition-all duration-300 group/link"
-                  >
+                  <div className="inline-flex items-center text-primary text-xs font-bold hover:gap-2 transition-all duration-300 group/link">
                     Explore Case <ArrowRight className="ml-1.5 h-3.5 w-3.5 group-hover/link:translate-x-1" />
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
