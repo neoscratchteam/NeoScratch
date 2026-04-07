@@ -32,7 +32,7 @@ export default function Projects() {
       {/* Hero Section - Solid Blue with Grid */}
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#1a73e8] relative overflow-hidden">
         {/* Large Grid Overlay */}
-        <div className="absolute inset-0 z-0 bg-grid opacity-20 pointer-events-none" style={{ backgroundSize: '60px 60px' }} />
+        <div className="absolute inset-0 z-0 bg-grid opacity-[0.05] pointer-events-none" style={{ backgroundSize: '60px 60px' }} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="max-w-3xl mx-auto">

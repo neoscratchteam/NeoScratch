@@ -46,7 +46,7 @@ export default function About() {
       {/* Premium Hero Section */}
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-background relative overflow-hidden">
         {/* Simple background noise/grid */}
-        <div className="absolute inset-x-0 bottom-0 top-0 h-full w-full bg-grid opacity-10 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 top-0 h-full w-full bg-grid opacity-[0.05] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Badge variant="secondary" className="bg-primary/10 text-primary border-none mb-6 px-4 py-1 text-[9px] font-extrabold tracking-[0.2em] uppercase">
