@@ -11,6 +11,7 @@ import { StarryBackground } from "@/components/StarryBackground";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+import ProjectDetails from "./pages/ProjectDetails";
 import Services from "./pages/Services";
 import Events from "./pages/Events";
 import RequestWebsite from "./pages/RequestWebsite";
@@ -42,6 +43,7 @@ const App = () => (
                     <Route path="/" element={<Index />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/projects" element={<Projects />} />
+                    <Route path="/projects/:id" element={<ProjectDetails />} />
                     <Route path="/services" element={<Services />} />
                     <Route path="/events" element={<Events />} />
                     <Route path="/request-website" element={<RequestWebsite />} />

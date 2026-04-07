@@ -11,48 +11,7 @@ import { useCountUpAnimation } from '@/hooks/useCountUpAnimation';
 import { TestimonialSlider } from '@/components/ui/TestimonialSlider';
 import heroDashboard from '@/assets/professional-dashboard.png';
 
-const projects = [
-  {
-    id: 1,
-    title: 'Indaro Yacu Organization',
-    tag: 'WEBSITE DESIGN & DEVELOPMENT',
-    year: '2024',
-    subtitle: 'for Indaro Yacu',
-    description: 'A modern website for a Rwandan NGO supporting vulnerable children through education, cultural programs, and psychosocial care.',
-    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop',
-    link: '#'
-  },
-  {
-    id: 2,
-    title: 'Country Records',
-    tag: 'MEDIA & ENTERTAINMENT',
-    year: '2024',
-    subtitle: 'for Country Records',
-    description: 'A full-service entertainment and creative production company website showcasing music, video, and artist management services in Rwanda.',
-    image: 'https://images.unsplash.com/photo-1514525253361-bee8718a300c?q=80&w=1200&auto=format&fit=crop',
-    link: '#'
-  },
-  {
-    id: 3,
-    title: 'PixelMart Multi-Tenant',
-    tag: 'RETAIL & TECH',
-    year: '2024',
-    subtitle: 'for local businesses',
-    description: 'A powerful multi-tenant SaaS platform for managing branches, inventory, and sales in real-time across Rwanda.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop',
-    link: '#'
-  },
-  {
-    id: 4,
-    title: 'Kigali Logistics Hub',
-    tag: 'LOGISTICS',
-    year: '2023',
-    subtitle: 'for Supply Chain',
-    description: 'Custom warehouse management software optimizing tea and coffee exports with real-time tracking and MOMO integration.',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
-    link: '#'
-  }
-];
+import { projects } from '@/data/projects';
 
 const Index = () => {
   const projectsCount = useCountUpAnimation({ end: 30, suffix: '+' });
@@ -311,7 +270,7 @@ const Index = () => {
                   </p>
                   
                   <Link 
-                    to={p.link}
+                    to={`/projects/${p.id}`}
                     className="inline-flex items-center text-primary text-xs font-bold hover:gap-2 transition-all duration-300 group/link"
                   >
                     Explore Case <ArrowRight className="ml-1.5 h-3.5 w-3.5 group-hover/link:translate-x-1" />

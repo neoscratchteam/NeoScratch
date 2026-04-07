@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { projects } from '@/data/projects';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -105,9 +106,9 @@ export function ProjectStickyStack() {
                 </div>
 
                 <Button asChild size="xl" className="bg-[#fe4b33] hover:bg-[#ff5d47] text-white rounded-3xl px-16 py-9 h-auto border-none shadow-2xl shadow-[#fe4b33]/40 text-xl font-black uppercase tracking-tighter group transition-all duration-300 hover:scale-[1.02] active:scale-95">
-                    <a href={activeProject.liveDemo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4">
-                        View Project <ArrowRight className="w-7 h-7 group-hover:translate-x-1.5 transition-transform" />
-                    </a>
+                    <Link to={`/projects/${activeProject.id}`} className="flex items-center gap-4">
+                        View Details <ArrowRight className="w-7 h-7 group-hover:translate-x-1.5 transition-transform" />
+                    </Link>
                 </Button>
             </motion.div>
 

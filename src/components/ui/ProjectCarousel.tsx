@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { ExternalLink, ChevronLeft, ChevronRight, Play, Info, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight, Info } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { projects } from '@/data/projects';
 
 export function ProjectCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const navigate = useNavigate();
 
   const next = () => setActiveIndex((prev) => (prev + 1) % projects.length);
   const prev = () => setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
-
-  // Prevent background scrolling when modal is open
-  useEffect(() => {
-    if (selectedProject) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [selectedProject]);
 
   return (
     <>
@@ -79,7 +68,7 @@ export function ProjectCarousel() {
                     {/* Active Hover Overlay -> Read More */}
                     {isActive && (
                       <div 
-                        onClick={() => setSelectedProject(p)}
+                        onClick={() => navigate(`/projects/${p.id}`)}
                         className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm flex flex-col items-center justify-center cursor-pointer"
                       >
                         <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex flex-col items-center">
@@ -114,73 +103,6 @@ export function ProjectCarousel() {
           </div>
         </div>
       </div>
-
-      {/* Pop-up Modal */}
-      {selectedProject && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 animate-fade-in shadow-2xl">
-          <div 
-            className="absolute inset-0 bg-black/80 backdrop-blur-md cursor-pointer transition-opacity"
-            onClick={() => setSelectedProject(null)}
-          />
-          <div className="relative w-full max-w-5xl bg-[#1a1b1e] rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-white/10 animate-slide-up">
-            
-            {/* Close Button */}
-            <button 
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-black/90 text-white rounded-full transition-colors border border-white/10"
-              aria-label="Close modal"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            
-            {/* Project Image Left Side */}
-            <div className="w-full md:w-1/2 aspect-video md:aspect-auto h-64 md:h-auto bg-black border-r border-white/5 relative">
-              <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover opacity-90" />
-              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#1a1b1e] to-transparent pointer-events-none" />
-            </div>
-
-            {/* Project Content Right Side */}
-            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
-              <span className="text-primary font-semibold text-sm tracking-wider uppercase mb-2">
-                {selectedProject.client}
-              </span>
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
-                {selectedProject.title}
-              </h3>
-              
-              <p className="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">
-                {selectedProject.description}
-              </p>
-              
-              <div className="mb-10">
-                <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Technologies Used</h4>
-                <div className="flex flex-wrap gap-2">
-                  {selectedProject.techStack.map(tag => (
-                    <span key={tag} className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-200 text-xs font-semibold tracking-wide">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 mt-auto border-t border-white/10 pt-8">
-                {selectedProject.liveDemo && selectedProject.liveDemo !== '#' ? (
-                  <Button asChild size="xl" className="flex-1 bg-primary hover:bg-primary/90 text-white rounded-xl shadow-lg shadow-primary/25 border-none gap-2 font-semibold">
-                    <a href={selectedProject.liveDemo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-5 h-5" /> Visit Live Site
-                    </a>
-                  </Button>
-                ) : (
-                  <Button disabled size="xl" className="flex-1 bg-white/5 text-gray-500 rounded-xl border-none cursor-not-allowed gap-2">
-                     Currently In Development
-                  </Button>
-                )}
-              </div>
-            </div>
-
-          </div>
-        </div>
-      )}
     </>
   );
 }
