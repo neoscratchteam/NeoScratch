@@ -18,7 +18,6 @@ import RequestWebsite from "./pages/RequestWebsite";
 import JoinUs from "./pages/JoinUs";
 import Partnerships from "./pages/Partnerships";
 import Testimonials from "./pages/Testimonials";
-import News from "./pages/News";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -50,7 +49,6 @@ const App = () => (
                     <Route path="/join-us" element={<JoinUs />} />
                     <Route path="/partnerships" element={<Partnerships />} />
                     <Route path="/testimonials" element={<Testimonials />} />
-                    <Route path="/news" element={<News />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>

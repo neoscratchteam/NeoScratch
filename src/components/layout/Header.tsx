@@ -15,7 +15,6 @@ const navigation: NavigationItem[] = [
   { name: 'Projects', href: '/projects' },
   { name: 'Services', href: '/services' },
   { name: 'Events', href: '/events' },
-  { name: 'News', href: '/news' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -77,11 +76,6 @@ export function Header() {
                     }`}
                 >
                   {item.name}
-                  {item.name === 'News' && (
-                    <span className="absolute -top-1 -right-1 flex h-4 w-6 items-center justify-center bg-red-500 text-white text-[8px] font-black rounded-full shadow-lg border border-white/20">
-                      21+
-                    </span>
-                  )}
                 </Link>
               ))}
           </nav>
@@ -127,11 +121,6 @@ export function Header() {
                     }`}
                 >
                   {item.name}
-                  {item.name === 'News' && (
-                    <span className="absolute -top-1 -right-4 flex h-4 w-6 items-center justify-center bg-red-500 text-white text-[8px] font-black rounded-full shadow-lg border border-white/20">
-                      21+
-                    </span>
-                  )}
                 </Link>
               ))}
               <div className="pt-4 space-y-2">
