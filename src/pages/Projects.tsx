@@ -29,23 +29,21 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-white">
       
-      {/* Hero Section - Solid Blue with Grid */}
+      {/* 🚀 MODERN HERO SECTION - Matches Service Page */}
       <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#1a73e8] relative overflow-hidden">
         {/* Large Grid Overlay */}
         <div className="absolute inset-0 z-0 bg-grid opacity-[0.05] pointer-events-none" style={{ backgroundSize: '60px 60px' }} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-8 leading-tight">
-              Projects that drive digital growth.
-            </h1>
-            <p className="text-white/80 text-[14px] md:text-[16px] leading-relaxed font-medium mb-10 max-w-2xl mx-auto">
-              Real projects, real clients, real results. From websites and mobile apps to digital marketing and custom software — designed and delivered by our studio for businesses across the globe.
-            </p>
-            <Button size="xl" className="bg-white text-[#1a73e8] hover:bg-white/90 rounded-full px-10 h-14 text-sm font-bold shadow-xl shadow-black/10" asChild>
-              <Link to="/request-website">Start your project</Link>
-            </Button>
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/90 text-[10px] font-bold uppercase tracking-widest mb-6 animate-slide-up">
+            <span>Our Global Portfolio</span>
           </div>
+          <h1 className="text-4xl lg:text-7xl font-bold tracking-tight text-white mb-8 animate-fade-in max-w-4xl mx-auto uppercase">
+            Proven Results. <br /> Globally <span className="opacity-70 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20 text-white">Engineered.</span>
+          </h1>
+          <p className="text-sm lg:text-[15px] text-white/80 max-w-2xl mx-auto leading-relaxed font-medium animate-slide-up">
+            Explore our curated showcase of high-performance digital solutions, from complex enterprise platforms to stunning creative portfolios built for the international stage.
+          </p>
         </div>
       </section>
 
