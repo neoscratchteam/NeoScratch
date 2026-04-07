@@ -216,7 +216,7 @@ const Index = () => {
       </section>
 
       {/* Horizontal Scroll Projects Section - High Contrast Hover Focus */}
-      <div ref={ghostRef} className="relative h-[180vh]">
+      <div ref={ghostRef} className="relative h-[400vh]">
         <section className="sticky top-0 h-screen overflow-hidden bg-background py-8 flex flex-col justify-center">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8 flex justify-between items-end">
             <div>
