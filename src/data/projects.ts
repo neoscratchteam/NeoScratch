@@ -121,45 +121,51 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 'smartstock-system',
-    title: 'SmartStock System',
-    subtitle: 'for Jiridasee',
-    description: 'A flexible stock management system developed for Jiridasee’s mixed shop, supporting multiple product categories, sales tracking, and inventory monitoring.',
-    techStack: ['React', 'MongoDB', 'Tailwind CSS'],
-    image: 'https://images.unsplash.com/photo-1514525253361-bee8718a300c?q=80&w=1200&auto=format&fit=crop',
-    liveDemo: '#',
-    category: 'web',
-    tag: 'RETAIL & TECH',
-    client: 'Jiridasee',
-    year: '2024',
-    price: '250,000 RWF',
+    id: 'smartstock',
+    title: 'SmartStock — Ultimate Inventory & Business Management',
+    subtitle: 'for Juldas',
+    description: 'A professional PWA-based stock management system that tracks inventory, branches, employees, and full financial performance with real-time profit and loss reporting.',
+    techStack: ['React', 'MongoDB', 'Tailwind CSS', 'PWA'],
+    image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1775564686/smartstock_tbgyi2.png',
+    liveDemo: 'https://smartstock.rw/',
+    category: 'Business Automation',
+    tag: 'INVENTORY & ERP',
+    client: 'Mr. Juldas',
+    year: '2026',
+    price: 'Flexible Pricing',
     details: {
-      overview: "SmartStock was developed to bring digital efficiency to Jiridasee's mixed retail shop. The system manages everything from perishables to electronics, providing a flexible schema that adapts to the diverse inventory of a neighborhood mixed shop.",
-      objective: "To provide a lightweight yet powerful sales and inventory tracking tool that replaces manual bookkeeping and reduces errors in financial reporting.",
+      overview: "SmartStock is a state-of-the-art Business Management System (BMS) originally engineered for Mr. Juldas to solve complex inventory and branch synchronization challenges. Since its launch in 2026, it has evolved into a powerful public platform designed to empower businesses of all sizes—from micro-SMEs to large industrial operations—with absolute control over their stock, staff, and finances.",
+      objective: "To deliver a high-performance, cross-platform solution (PWA) that replaces manual record-keeping with automated stock tracking, employee monitoring, and precise financial analytics including daily profit and loss statements.",
       delivered: [
-        "Dynamic category management system",
-        "Daily, weekly, and monthly sales summaries",
-        "Multi-user support with role-based access",
-        "Mobile-friendly inventory checker",
-        "Integration with global payment methods reference"
+        "Installable PWA (Progressive Web App) for mobile and desktop use",
+        "Multi-branch inventory synchronization and management",
+        "Employee role management and performance auditing",
+        "Daily, weekly, and monthly income tracking",
+        "Automatic Profit & Loss (P&L) reporting engine",
+        "Multi-tenant architecture supporting businesses of all scales",
+        "Real-time stock level alerts and branch-to-branch transfers"
       ],
       process: [
         {
-          title: "Discovery Phase",
-          description: "Identified the unique challenges of a 'mixed shop' where product categories are frequently updated."
+          title: "The Motivation (Juldas' Vision)",
+          description: "Initially built to help Mr. Juldas manage his growing business empire, focusing on eliminating inventory gaps and human error across multiple locations."
         },
         {
-          title: "System Design",
-          description: "Built a flexible MongoDB-based data structure to handle varying product attributes."
+          title: "Architecture & Scalability",
+          description: "Engineered with a robust MongoDB backbone to handle thousands of SKUs and real-time transaction logs simultaneously."
         },
         {
-          title: "Deployment",
-          description: "Setup on a localized server with cloud backups for data safety."
+          title: "Public Evolution",
+          description: "Transformed from a private enterprise tool into a global SaaS platform with tiered pricing suitable for any business type."
+        },
+        {
+          title: "PWA Deployment",
+          description: "Optimized for speed and offline-ready capabilities, allowing managers to monitor their business from anywhere in the world."
         }
       ],
-      results: "Jiridasee now has a 100% accurate daily sales record and can identify their most profitable items instantly, leading to smarter purchasing decisions.",
-      conclusion: "SmartStock proves that digital transformation is possible and beneficial for businesses of any size.",
-      services: ["Retail Software", "Database Management", "Sales Tracking"]
+      results: "SmartStock has helped business owners achieve 100% financial transparency and reduce manual auditing time by up to 60%. It is now a trusted tool for industries ranging from retail shops to large factories.",
+      conclusion: "SmartStock is the definitive proof of how a custom engineering solution can scale to become an industry-leading standard for digital transformation.",
+      services: ["Business Automation", "Inventory Systems", "PWA Development", "Financial Analytics"]
     }
   },
   {

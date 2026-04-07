@@ -60,12 +60,11 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
           </div>
         </div>
 
-        {/* Main Image Block */}
-        <div className="w-full mb-24 rounded-2xl overflow-hidden border border-border bg-secondary/30 aspect-video lg:aspect-[21/9]">
+        <div className="w-full mb-24 rounded-2xl overflow-hidden border border-border bg-secondary/10 shadow-inner">
           <img 
             src={project.image} 
             alt={project.title} 
-            className="w-full h-full object-cover"
+            className="w-full h-auto block"
           />
         </div>
 
