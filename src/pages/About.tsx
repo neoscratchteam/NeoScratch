@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, Eye, Heart, Users, Award, Shield, Zap, Sparkles, ArrowRight } from 'lucide-react';
+import { Target, Eye, Heart, Users, Award, Shield, Zap, Sparkles, ArrowRight, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
@@ -33,174 +33,159 @@ const aboutData = {
     "We design and develop a wide range of custom web and mobile applications, advanced business automation tools, business analytics platforms, and open-source systems that help organizations innovate, scale efficiently, and gain real-time insights.",
     "NeoScratch combines modern technologies with a deep passion for digital transformation, delivering state-of-the-art systems that solve modern challenges in the digital era."
   ],
-  mission: "To empower businesses and individuals in Rwanda and across Africa with reliable, intelligent, and world-class software solutions that drive productivity and digital growth in the modern economy.",
-  vision: "To become a leading global African software house, building world-class technology products from Rwanda that set new standards for innovation."
+  mission: "To empower businesses and individuals with intelligent software solutions.",
+  vision: "To become a leading global software house built from Rwanda.",
+  founded: "2024",
+  ceo: "Théogène Iradukunda"
 };
 
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
       
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-20 bg-background relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Badge variant="secondary" className="bg-primary/5 text-primary border-none mb-4 px-3 py-1 text-[9px] font-bold tracking-[0.2em] uppercase">
-            ESTABLISHED 2024
+      {/* Premium Hero Section */}
+      <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-background relative overflow-hidden">
+        {/* Simple background noise/grid */}
+        <div className="absolute inset-x-0 bottom-0 top-0 h-full w-full bg-grid opacity-10 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <Badge variant="secondary" className="bg-primary/10 text-primary border-none mb-6 px-4 py-1 text-[9px] font-extrabold tracking-[0.2em] uppercase">
+            WHO WE ARE
           </Badge>
-          <h1 className="text-xl md:text-2xl font-bold tracking-tight text-foreground mb-6 leading-tight max-w-2xl">
+          <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-8 leading-tight max-w-4xl">
             Engineering the future of <span className="text-primary italic">digital Rwanda.</span>
           </h1>
           <p className="text-muted-foreground text-[13px] md:text-sm max-w-xl leading-relaxed font-medium">
-            We are a team of passionate creators, engineers, and strategists dedicated to transforming businesses through high-end digital solutions and technical excellence.
+            A small team of dedicated engineers building software that scales and designs that resonate. Trusted by companies to lead their technical transformation.
           </p>
         </div>
       </section>
 
-      {/* Narrative Section */}
-      <section className="py-20 border-t border-border/40">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          {/* STICKY SIDEBAR - Matches the user's preferred detail style */}
+          <div className="lg:col-span-3 space-y-12 lg:sticky lg:top-32 h-fit self-start order-2 lg:order-1">
             <div>
-              <span className="text-[10px] font-bold text-primary uppercase tracking-[0.2em] mb-3 block">OUR NARRATIVE</span>
-              <h2 className="text-2xl font-bold mb-6 text-foreground leading-snug">Built on the philosophy of open innovation.</h2>
-              <div className="space-y-5">
-                {aboutData.story.map((para, i) => (
-                  <p key={i} className="text-muted-foreground text-[13px] leading-relaxed font-medium">
-                    {para}
-                  </p>
-                ))}
-              </div>
-              <div className="pt-8">
-                <Button size="sm" className="rounded-full px-6 h-10 font-bold shadow-lg shadow-primary/10 text-xs" asChild>
-                  <Link to="/contact">Get in touch</Link>
-                </Button>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-xl border border-border aspect-[5/4]">
-                <img 
-                  src="https://images.unsplash.com/photo-1522071823991-b9671f9d7f1f?q=80&w=2000&auto=format&fit=crop" 
-                  alt="Our workspace" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-background/90 to-transparent">
-                   <p className="text-foreground text-[11px] font-bold leading-relaxed italic border-l border-primary/40 pl-4 py-0.5">
-                     "We believe that the best software is built through collaboration and a deep understanding of local needs."
-                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision Grid */}
-      <section className="py-20 bg-secondary/15">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div className="bg-background border border-border p-8 rounded-2xl group hover:border-primary/20 transition-colors">
-              <div className="h-10 w-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-6">
-                <Target className="h-5 w-5" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Our Mission</h3>
-              <p className="text-muted-foreground text-[13px] leading-relaxed font-medium">
+              <h3 className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-4">MISSION</h3>
+              <p className="text-sm font-bold text-foreground leading-snug">
                 {aboutData.mission}
               </p>
             </div>
-            
-            <div className="bg-background border border-border p-8 rounded-2xl group hover:border-primary/20 transition-colors">
-              <div className="h-10 w-10 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-6">
-                <Eye className="h-5 w-5" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Our Vision</h3>
-              <p className="text-muted-foreground text-[13px] leading-relaxed font-medium">
+
+            <div>
+              <h3 className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-4">VISION</h3>
+              <p className="text-sm font-bold text-foreground leading-snug">
                 {aboutData.vision}
               </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Leadership Section */}
-      <section className="py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-12 items-center">
-            <div className="w-64 flex-shrink-0">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border shadow-lg">
-                 <img 
-                    src="/theodev.png" 
-                    alt="Théogène Iradukunda" 
-                    className="w-full h-full object-cover"
-                 />
-                 <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/90 to-transparent">
-                    <p className="text-white font-bold text-sm mb-0.5">Théogène Iradukunda</p>
-                    <p className="text-primary text-[8px] uppercase font-bold tracking-widest leading-none">Founder & CEO</p>
-                 </div>
-              </div>
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-12">
+               <div>
+                 <h3 className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">FOUNDED</h3>
+                 <p className="text-sm font-bold text-foreground">{aboutData.founded}</p>
+               </div>
+               <div>
+                  <h3 className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-2">FOUNDER & CEO</h3>
+                  <p className="text-sm font-bold text-foreground">{aboutData.ceo}</p>
+               </div>
             </div>
+
+            <div className="pt-8 border-t border-border/50">
+               <Button className="w-full rounded-xl h-14 bg-primary text-white hover:bg-primary/90 font-bold shadow-2xl shadow-primary/20" asChild>
+                  <Link to="/contact">Discuss a project</Link>
+               </Button>
+            </div>
+          </div>
+
+          {/* MAIN CONTENT SCROLL AREA */}
+          <div className="lg:col-span-9 space-y-24 order-1 lg:order-2 lg:pl-16">
             
-            <div className="flex-1">
-              <span className="text-[9px] font-extrabold text-primary uppercase tracking-[0.2em] mb-3 block">LEADERSHIP</span>
-              <h2 className="text-xl font-bold mb-6 text-foreground leading-snug">Driven by a passion for technical excellence.</h2>
-              <div className="space-y-4 text-[13px] text-muted-foreground font-medium leading-relaxed">
-                <p>
-                   Théogène Iradukunda is a software engineer and technology entrepreneur passionate about open-source innovation and digital transformation in Africa.
-                </p>
-                <p>
-                   Under his leadership, NeoScratch has helped multiple businesses improve stock control, operational efficiency, and financial visibility through smart software solutions. He leads NeoScratch’s vision, product development, and technical strategy.
-                </p>
-                <div className="pt-4 flex gap-3">
-                  <span className="text-[10px] font-bold text-foreground cursor-pointer hover:text-primary transition-colors underline underline-offset-4 decoration-primary/20">LINKEDIN</span>
-                  <span className="text-[10px] font-bold text-foreground cursor-pointer hover:text-primary transition-colors underline underline-offset-4 decoration-primary/20">TWITTER</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            {/* Story Section with Stunning Image */}
+            <section className="space-y-12">
+               {/* Main Banner Image */}
+               <div className="relative rounded-3xl overflow-hidden border border-border aspect-[21/9]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1522071823991-b9671f9d7f1f?q=80&w=2000&auto=format&fit=crop" 
+                    alt="Team engineering" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
+               </div>
 
-      {/* Values Section */}
-      <section className="py-20 border-t border-border/40">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-          <span className="text-[9px] font-extrabold text-primary uppercase tracking-[0.2em] mb-2 block">OUR VALUES</span>
-          <h2 className="text-xl font-bold">What defines us.</h2>
-        </div>
-        
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((v, i) => (
-              <div key={i} className="text-center group">
-                <div className="h-10 w-10 rounded-full bg-primary/5 mx-auto flex items-center justify-center text-primary mb-4">
-                  <v.icon className="h-5 w-5" />
-                </div>
-                <h4 className="text-sm font-bold mb-2 group-hover:text-primary transition-colors">{v.title}</h4>
-                <p className="text-muted-foreground text-[12px] leading-relaxed font-medium px-4">
-                  {v.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+               <div className="grid md:grid-cols-12 gap-8">
+                  <h2 className="md:col-span-4 text-2xl font-bold text-foreground leading-tight">Our Story</h2>
+                  <div className="md:col-span-8 space-y-6">
+                    {aboutData.story.map((para, i) => (
+                      <p key={i} className="text-muted-foreground text-[13px] leading-relaxed font-semibold">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+               </div>
+            </section>
 
-      {/* CTA Footer with Grid Background */}
-      <section className="py-20 bg-primary relative overflow-hidden mt-12">
+            {/* Values Grid - Refined & Minimalist */}
+            <section className="space-y-12">
+               <h2 className="text-2xl font-bold text-foreground leading-tight">Philosophy</h2>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 {values.map((v, i) => (
+                   <div key={i} className="p-8 bg-secondary/10 rounded-2xl border border-border/40 group hover:border-primary/20 transition-all duration-300">
+                     <div className="h-10 w-10 rounded-full bg-primary/5 flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+                        <v.icon className="h-5 w-5" />
+                     </div>
+                     <h4 className="text-base font-bold mb-3">{v.title}</h4>
+                     <p className="text-muted-foreground text-[13px] leading-relaxed font-medium">
+                       {v.description}
+                     </p>
+                   </div>
+                 ))}
+               </div>
+            </section>
+
+            {/* Leadership Deep Dive */}
+            <section className="py-12 border-t border-border/40">
+               <div className="flex flex-col md:flex-row gap-12 items-start">
+                  <div className="w-48 h-48 rounded-2xl overflow-hidden border border-border/50 flex-shrink-0">
+                     <img src="/theodev.png" alt="CEO" className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <span className="text-[9px] font-bold text-primary uppercase tracking-[0.2em] mb-4 block">FROM THE FOUNDER</span>
+                    <h3 className="text-2xl font-bold mb-6 italic leading-relaxed text-foreground">
+                      "We don't just write code. We architect solutions that empower businesses to think differently."
+                    </h3>
+                    <p className="text-muted-foreground text-[13px] leading-relaxed font-semibold mb-6">
+                      Théogène Iradukunda leads NeoScratch with a vision for open-source technical excellence in Rwanda. His focus is on ensuring every line of code we write contributes to the long-term scalability of our clients.
+                    </p>
+                    <div className="flex items-center gap-6">
+                       <span className="text-[10px] font-bold text-foreground opacity-50 underline underline-offset-4 decoration-primary/20 cursor-pointer hover:opacity-100 transition-opacity">LINKEDIN</span>
+                       <span className="text-[10px] font-bold text-foreground opacity-50 underline underline-offset-4 decoration-primary/20 cursor-pointer hover:opacity-100 transition-opacity">TWITTER</span>
+                    </div>
+                  </div>
+               </div>
+            </section>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Blue Grid CTA Section */}
+      <section className="py-24 lg:py-32 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-grid opacity-30 pointer-events-none" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 text-white">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight leading-tight">
-            Ready to bring your <br className="hidden md:block" /> technical vision to life?
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight leading-tight">
+            Bring your technical <br className="hidden md:block" /> vision to market.
           </h2>
-          <p className="text-white/70 text-[13px] md:text-sm mb-10 max-w-xl mx-auto font-medium">
-            Join the forward-thinking businesses across Rwanda that trust NeoScratch for their digital transformation and software engineering needs.
+          <p className="text-white/70 text-[13px] md:text-sm mb-12 max-w-2xl mx-auto font-semibold">
+            Partner with Rwanda's engineering experts. From MVP to global scale, we lead the way.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full px-10 h-14 text-sm font-bold shadow-xl" asChild>
-              <Link to="/request-website">Start a Project</Link>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button size="xl" className="bg-white text-primary hover:bg-white/90 rounded-xl px-12 h-16 text-lg font-bold shadow-2xl" asChild>
+              <Link to="/request-website">Get Free Quote</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-full px-10 h-14 text-sm font-bold backdrop-blur-sm" asChild>
-              <Link to="/contact">Contact Support</Link>
+            <Button size="xl" variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-xl px-12 h-16 text-lg font-bold backdrop-blur-sm" asChild>
+              <Link to="/contact">Contact Sales</Link>
             </Button>
           </div>
         </div>

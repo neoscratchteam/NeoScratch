@@ -77,7 +77,7 @@ const ProjectDetails = () => {
         </div>
 
         {/* Main Image Block */}
-        <div className="w-full mb-24 rounded-2xl overflow-hidden border border-border shadow-2xl bg-secondary/30 aspect-video lg:aspect-[21/9]">
+        <div className="w-full mb-24 rounded-2xl overflow-hidden border border-border bg-secondary/30 aspect-video lg:aspect-[21/9]">
           <img 
             src={project.image} 
             alt={project.title} 
