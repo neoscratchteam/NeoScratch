@@ -79,45 +79,50 @@ export const projects: Project[] = [
   },
   {
     id: 'pixelmart-management',
-    title: 'PixelMart Management',
-    subtitle: 'for PixelMart',
-    description: 'A smart inventory and stock management system for Mr. Faustina, focused on electronics and LCD products, with real-time inventory tracking and branch management.',
-    techStack: ['React', 'Node.js', 'Firebase'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop',
-    liveDemo: 'https://pixelmartrw.pages.dev',
-    category: 'web',
-    tag: 'RETAIL & TECH',
-    client: 'Mr. Faustina',
-    year: '2024',
-    price: '500,000 RWF',
+    title: 'PixelMart — Unified Inventory & Financial Headquarters',
+    subtitle: 'for PixelMart LCD Rwanda',
+    description: 'A robust multi-branch management platform for the electronics retail leader in Rwanda, featuring real-time stock tracking, heatmapped income analytics, and role-based employee control.',
+    techStack: ['React', 'Node.js', 'Firebase', 'PWA'],
+    image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1775564616/pixelmartsold_yabygf.png',
+    liveDemo: 'https://pixelmartrw.vercel.app',
+    category: 'Inventory & ERP',
+    tag: 'INVENTORY & ERP',
+    client: 'Mr. Faustin Hagenimana',
+    year: '2026',
+    price: 'Custom Enterprise',
     details: {
-      overview: "PixelMart is a high-performance inventory and multi-branch management platform designed specifically for the global electronics and retail landscape. It addresses the challenges of tracking complex stock items like LCD panels, smartphones, and spare parts across multiple physical locations in real-time.",
-      objective: "To create a unified digital headquarters that eliminates inventory discrepancies, automates stock level alerts, and provides the owner with clear, actionable insights into sales performance across all branches.",
+      overview: "PixelMart is a high-performance inventory and multi-branch management ecosystem designed specifically for PixelMart LCD Rwanda. It digitalizes the entire sales lifecycle of phone accessories—from screens to spare parts—across numerous physical locations, ensuring that all data flows into a unified administrative core.",
+      objective: "To eliminate the delays of manual end-of-day reporting by providing an instant, cloud-synced application that managers use to record activities, while giving the owner a real-time, data-driven view of global business health.",
       delivered: [
-        "Real-time central dashboard with high-visibility metrics",
-        "Multi-branch hierarchical management system",
-        "Automated low-stock notification engine",
-        "Integrated sales and order tracking (PoS)",
-        "Advanced search and filtering for thousands of SKUs",
-        "Custom reports generation for monthly auditing"
+        "Automated branch-to-admin reporting engine",
+        "Real-time daily, weekly, and all-time financial dashboards",
+        "Dynamic income heatmaps showing branch performance tiers",
+        "Role-based access control (RBAC) with employee branch assignment",
+        "Advanced date-specific sorting and historical auditing",
+        "Installable PWA for streamlined branch operations",
+        "Interactive sold-items analytics and trend forecasting"
       ],
       process: [
         {
-          title: "Technical Consultation",
-          description: "Worked closely with Mr. Faustina to map out the entire inventory flow and branch hierarchy."
+          title: "Technical Discovery",
+          description: "Worked directly with Mr. Faustin to identify bottleneck's in his existing multi-branch manual reporting process."
         },
         {
-          title: "Database Architecture",
-          description: "Utilized Firebase Realtime Database for near-instant synchronization across all branch terminals."
+          title: "Architecture Design",
+          description: "Built a Firebase-driven realtime backend that handles high-volume transactions with sub-second synchronization."
         },
         {
-          title: "UI/UX Development",
-          description: "Created a high-contrast, easy-to-read interface optimized for fast-paced retail environments."
+          title: "Analytics Suite",
+          description: "Developed custom heatmap visualizations to give management instant clarity on geographic performance."
+        },
+        {
+          title: "Training & Rollout",
+          description: "Conducted training for branch managers to ensure a smooth transition from paper logbooks to the digital platform."
         }
       ],
-      results: "PixelMart successfully reduced inventory counting time by over 70% and eliminated the 'out-of-stock' surprises that were previously common across branches. The system now handles thousands of daily transactions with zero lag.",
-      conclusion: "By digitalizing his core operations, Mr. Faustina is now able to focus on scaling his business with the confidence that his inventory is always accurate.",
-      services: ["Software Development", "Inventory Systems", "Business Automation"]
+      results: "PixelMart reduced reporting latency from 12 hours to less than 1 second. The owner now has exact financial oversight of every branch regardless of his physical location, leading to a much more stable and scalable operation.",
+      conclusion: "PixelMart represents the global standard for modern retail automation in the electronics sector.",
+      services: ["Software Development", "Retail Ecosystems", "Business Intelligence"]
     }
   },
   {
