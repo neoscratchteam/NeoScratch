@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
-import { Send, Check, MessageCircle, ArrowRight, Zap, Shield, Globe, ExternalLink } from 'lucide-react';
+import { Send, Check, MessageCircle, ArrowRight, Zap, Shield, Globe, ExternalLink, Smartphone, Code, Heart, Palette, Calculator, Search, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 
 const services = [
-  'Website Design',
-  'Google Business Profile',
-  'SEO',
-  'Custom Software',
-  'Mobile App',
-  'Website Maintenance',
-  'Not sure yet',
+  'Development', 
+  'E-commerce', 
+  'Mobile App', 
+  'Design', 
+  'Strategy', 
+  'Portfolio', 
+  'Education', 
+  'Maintenance', 
+  'NGOs',
+  'Update', 
+  'Domain Name',
+  'Not sure yet'
 ];
 
 const budgetRanges = [
@@ -57,14 +62,15 @@ export default function RequestWebsite() {
 *Business:* ${formData.company || 'N/A'}
 
 *PROJECT DETAILS*
-*Service:* ${formData.serviceType}
-*Budget:* ${formData.budget}
+*Service Category:* ${formData.serviceType}
+*Budget Range:* ${formData.budget}
 *Existing Website:* ${formData.hasWebsite}
 ${formData.hasWebsite === 'Yes' ? `*Domain:* ${formData.domain}` : ''}
 
 *DESCRIPTION*
 ${formData.description}
 -------------------------
+_Request sent from neoscratch.rw inquiry portal_
     `.trim();
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -102,7 +108,7 @@ ${formData.description}
         </div>
       </section>
 
-      {/* 📝 PROJECT INQUIRY FORM - SMALL & READABLE STYLE */}
+      {/* 📝 PROJECT INQUIRY FORM - SYNCED WITH SERVICES DATA */}
       <section className="py-20 bg-[#f8fafc]">
         <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white border border-border/40 rounded-3xl p-6 lg:p-10 shadow-2xl shadow-blue-500/5">
@@ -118,7 +124,7 @@ ${formData.description}
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-5 py-4 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      className="w-full px-5 py-3.5 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
                       placeholder="Jean Gatare"
                       required
                     />
@@ -129,19 +135,19 @@ ${formData.description}
                       name="whatsapp"
                       value={formData.whatsapp}
                       onChange={handleInputChange}
-                      className="w-full px-5 py-4 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      className="w-full px-5 py-3.5 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
                       placeholder="+250 78X XXX XXX"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] font-black text-muted-foreground/80 uppercase tracking-widest mb-2">Email</label>
+                    <label className="block text-[11px] font-black text-muted-foreground/80 uppercase tracking-widest mb-2">Business Email</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-5 py-4 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      className="w-full px-5 py-3.5 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
                       placeholder="you@company.com"
                     />
                   </div>
@@ -151,14 +157,14 @@ ${formData.description}
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-5 py-4 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      className="w-full px-5 py-3.5 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
                       placeholder="Your business name"
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Section 2: What do you need? */}
+              {/* Section 2: What do you need? - SYNCED CATEGORIES */}
               <div className="space-y-6">
                 <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4">What do you need? *</h2>
                 <div className="flex flex-wrap gap-2.5">
@@ -167,7 +173,7 @@ ${formData.description}
                       key={s}
                       type="button"
                       onClick={() => toggleSelection('serviceType', s)}
-                      className={`px-4 py-2.5 rounded-xl border text-[12px] font-black transition-all duration-300 ${
+                      className={`px-4 py-2 rounded-xl border text-[11px] font-black transition-all duration-300 ${
                         formData.serviceType === s 
                           ? 'bg-[#1a73e8] text-white border-[#1a73e8]' 
                           : 'bg-white text-muted-foreground/80 border-border hover:border-[#1a73e8]/30 hover:text-[#1a73e8]'
@@ -179,7 +185,43 @@ ${formData.description}
                 </div>
               </div>
 
-              {/* Section 3: Budget range */}
+              {/* Section 3: Existing Website Logic */}
+              <div className="space-y-6 pt-2">
+                  <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4 capitalize">Exist an current website?</h2>
+                  <div className="flex gap-3 max-w-[240px]">
+                      {['Yes', 'No'].map(choice => (
+                        <button
+                          key={choice}
+                          type="button"
+                          onClick={() => setFormData({...formData, hasWebsite: choice})}
+                          className={`flex-1 py-3.5 rounded-xl border text-[11px] font-black uppercase tracking-widest transition-all ${
+                            formData.hasWebsite === choice 
+                              ? 'bg-[#1a73e8] text-white border-[#1a73e8]' 
+                              : 'bg-white text-muted-foreground/60 border-border'
+                          }`}
+                        >
+                          {choice}
+                        </button>
+                      ))}
+                  </div>
+                  {formData.hasWebsite === 'Yes' && (
+                    <div className="animate-fade-in pt-2">
+                       <div className="relative">
+                          <input
+                            name="domain"
+                            value={formData.domain}
+                            onChange={handleInputChange}
+                            className="w-full px-5 py-3.5 pl-12 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/40"
+                            placeholder="www.your-current-site.com"
+                            required={formData.hasWebsite === 'Yes'}
+                          />
+                          <Globe className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-[#1a73e8] opacity-40" />
+                       </div>
+                    </div>
+                  )}
+              </div>
+
+              {/* Section 4: Budget range */}
               <div className="space-y-6">
                 <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4">Budget range</h2>
                 <div className="flex flex-wrap gap-2.5">
@@ -188,7 +230,7 @@ ${formData.description}
                       key={r}
                       type="button"
                       onClick={() => toggleSelection('budget', r)}
-                      className={`px-4 py-2.5 rounded-xl border text-[12px] font-black transition-all duration-300 ${
+                      className={`px-4 py-2 rounded-xl border text-[11px] font-black transition-all duration-300 ${
                         formData.budget === r 
                           ? 'border-[#1a73e8] text-[#1a73e8] border-2 bg-white' 
                           : 'bg-white text-muted-foreground/80 border-border hover:border-[#1a73e8]/30 hover:text-[#1a73e8]'
@@ -200,7 +242,7 @@ ${formData.description}
                 </div>
               </div>
 
-              {/* Section 4: Tell us briefly */}
+              {/* Section 5: Tell us briefly */}
               <div className="space-y-6">
                 <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4">Tell us briefly</h2>
                 <textarea
