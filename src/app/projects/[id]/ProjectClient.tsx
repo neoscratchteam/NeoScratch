@@ -26,10 +26,10 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
     author: {
       '@type': 'Organization',
       name: 'NeoScratch',
-      url: 'https://neoscratch.vercel.app',
+      url: 'https://neoscratch.com',
     },
     image: project.image,
-    url: `https://neoscratch.vercel.app/projects/${project.id}`,
+    url: `https://neoscratch.com/projects/${project.id}`,
   };
 
   return (

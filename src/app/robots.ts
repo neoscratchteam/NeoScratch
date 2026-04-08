@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://neoscratch.vercel.app/sitemap.xml',
+    sitemap: 'https://neoscratch.com/sitemap.xml',
   }
 }
