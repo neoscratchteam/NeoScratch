@@ -84,12 +84,12 @@ export function Header() {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link
+            <a
               href="/request-website"
-              className="inline-flex items-center justify-center px-6 py-2 rounded-xl text-sm font-bold bg-white text-primary border border-white transition-all duration-200 hover:bg-primary hover:text-white hover:border-white/60 hover:scale-[1.04] shadow-sm"
+              className="inline-flex items-center justify-center px-6 py-2 rounded-xl text-sm font-bold bg-white text-primary border border-white shadow-sm transition-all duration-200 hover:bg-white/10 hover:text-white hover:border-white hover:scale-[1.04]"
             >
               Get Your Website
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
