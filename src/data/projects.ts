@@ -40,7 +40,7 @@ export const projects: Project[] = [
     category: 'Inventory & ERP',
     tag: 'INVENTORY & ERP',
     client: 'Mr. Faustin Hagenimana',
-    year: '2025',
+    year: 'Dec 10, 2025',
     price: 'Custom Enterprise',
     gallery: [
       'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776365356/Screenshot_2026-04-16_at_20.48.39_dutnuy.png',
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     category: 'Business Automation',
     tag: 'INVENTORY & ERP',
     client: 'Mr. Juldas',
-    year: '2026',
+    year: 'Jan 20, 2026',
     price: 'Flexible Pricing',
     gallery: [
       'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776365829/Screenshot_2026-04-16_at_20.54.15_snugfy.png',
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     category: 'FinTech & Education',
     tag: 'COMMUNITY FINTECH',
     client: 'Apeki Tumba TSS',
-    year: '2025',
+    year: 'Aug 04, 2025',
     price: 'Community Driven',
     gallery: [
       'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776366290/Screenshot_2026-04-16_at_21.01.15_v3rolu.png',
@@ -210,7 +210,7 @@ export const projects: Project[] = [
     category: 'Fintech & Wealth Management',
     tag: 'FINTECH & WEALTH',
     client: 'Public Release',
-    year: '2026',
+    year: 'Apr 15, 2026',
     price: 'Free & Professional Tiers',
     gallery: [
       'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776366782/fintrackwhite_wv4nu0.png',
@@ -255,4 +255,4 @@ export const projects: Project[] = [
     seoDescription: "FinTrack is a Strategic Wealth & Risk Command Center. Track multi-wallet liquidity, automate savings, and predict burn rates with a high-fidelity risk engine.",
     seoKeywords: ["FinTrack Rwanda", "Personal Finance App", "Wealth Management", "Risk Analytics", "Data Sovereignty"]
   }
-];
+].sort((a, b) => new Date(b.year).getTime() - new Date(a.year).getTime());
