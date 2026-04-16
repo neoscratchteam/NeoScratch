@@ -18,14 +18,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${project.title} | NeoScratch Portfolio`,
+    title: `${project.title} | Case Study | NeoScratch`,
     description: project.description,
+    keywords: [...project.techStack, project.category, "NeoScratch case study", "software development Rwanda"],
+    alternates: {
+      canonical: `https://neoscratch.com/projects/${id}`,
+    },
     openGraph: {
+      title: `${project.title} | NeoScratch Case Study`,
+      description: project.description,
+      url: `https://neoscratch.com/projects/${id}`,
+      type: 'article',
+      images: [
+        {
+          url: project.image,
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        }
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
       title: `${project.title} | NeoScratch Case Study`,
       description: project.description,
       images: [project.image],
     },
   };
+
 }
 
 export default function Page({ params }: Props) {

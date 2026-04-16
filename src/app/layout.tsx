@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "NeoScratch | Web Design, Apps & SEO Services in Rwanda",
     template: "%s | NeoScratch"
   },
-  description: "NeoScratch builds professional websites, mobile apps, and handles SEO & Google Business Profile setup for businesses in Rwanda and worldwide. Fast delivery. Trusted results.",
+  description: "NeoScratch is a premier digital engineering studio in Rwanda. We build professional websites, high-performance mobile apps, and provide strategic SEO & Google Business Profile services for global growth.",
   keywords: [
     "web design Rwanda", "website design Kigali", "web development Rwanda",
     "mobile app development Rwanda", "SEO services Rwanda", "Google Business Profile setup Rwanda",
@@ -24,7 +24,8 @@ export const metadata: Metadata = {
     "affordable website Rwanda", "ecommerce website Rwanda",
     "digital marketing Rwanda", "online presence Rwanda",
     "website maintenance Rwanda", "NeoScratch",
-    "tech company Kigali", "software company Rwanda"
+    "tech company Kigali", "software company Rwanda",
+    "software house Rwanda", "best web design Kigali"
   ],
   authors: [{ name: "NeoScratch", url: "https://neoscratch.com" }],
   creator: "NeoScratch",
@@ -38,10 +39,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://neoscratch.com'),
   alternates: {
     canonical: 'https://neoscratch.com',
+    languages: {
+      'en-US': '/en-US',
+    },
   },
   openGraph: {
     title: "NeoScratch | Web Design, Apps & SEO Services in Rwanda",
-    description: "Professional website design, mobile apps, SEO, and Google Business Profile setup for businesses in Rwanda and beyond.",
+    description: "Professional website design, mobile apps, SEO, and Google Business Profile setup for businesses in Rwanda and beyond. We build digital products that scale.",
     url: 'https://neoscratch.com',
     siteName: 'NeoScratch',
     locale: 'en_US',
@@ -65,6 +69,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
@@ -74,7 +79,16 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/icon.svg',
+    icon: [
+      { url: '/icon.svg' },
+      { url: '/favicon.ico' },
+    ],
+    apple: [
+      { url: '/apple-icon.png' },
+    ],
+  },
+  verification: {
+    google: 'google-site-verification-id', // User should replace this
   },
 };
 
@@ -112,6 +126,8 @@ export default function RootLayout({
         { '@type': 'Country', name: 'Rwanda' },
         { '@type': 'Country', name: 'Uganda' },
         { '@type': 'Country', name: 'Kenya' },
+        { '@type': 'Country', name: 'USA' },
+        { '@type': 'Country', name: 'UK' },
         { '@type': 'AdministrativeArea', name: 'East Africa' },
       ],
       hasOfferCatalog: {
@@ -154,6 +170,7 @@ export default function RootLayout({
       },
     }
   ];
+
 
   return (
     <html lang="en" suppressHydrationWarning>

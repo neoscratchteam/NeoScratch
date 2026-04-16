@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
+import { projects } from '@/data/projects'
 
-const pages: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
+const staticPages: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
   { path: '',                  priority: 1.0,  changeFrequency: 'weekly' },
   { path: '/services',         priority: 0.95, changeFrequency: 'weekly' },
   { path: '/request-website',  priority: 0.90, changeFrequency: 'monthly' },
@@ -17,10 +18,20 @@ const pages: { path: string; priority: number; changeFrequency: MetadataRoute.Si
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://neoscratch.com'
 
-  return pages.map(({ path, priority, changeFrequency }) => ({
+  const staticEntries = staticPages.map(({ path, priority, changeFrequency }) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),
     changeFrequency,
     priority,
   }))
+
+  const projectEntries = projects.map((project) => ({
+    url: `${baseUrl}/projects/${project.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  return [...staticEntries, ...projectEntries]
 }
+
