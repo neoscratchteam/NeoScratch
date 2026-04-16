@@ -136,12 +136,12 @@ export function Footer() {
         <div className="py-8 border-t border-white/5">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              <div className="text-[10px] font-bold text-white/20 uppercase tracking-[0.2em]">
-                © 2024 NEOSCRATCH INC. ENGINEERED FOR GLOBAL IMPACT.
+              <div className="text-[10px] font-bold text-white uppercase tracking-[0.2em]">
+                &copy; 2026 NEOSCRATCH INC. ENGINEERED FOR GLOBAL IMPACT.
               </div>
               <Link
                 href="/policy"
-                className="text-[10px] font-bold text-white/20 hover:text-white/60 uppercase tracking-[0.2em] transition-colors"
+                className="text-[10px] font-bold text-white hover:text-white/80 uppercase tracking-[0.2em] transition-colors"
               >
                 Privacy Policy
               </Link>
