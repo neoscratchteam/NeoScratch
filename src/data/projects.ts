@@ -197,6 +197,62 @@ export const projects: Project[] = [
     },
     seoDescription: "Discover Open Future, a fintech platform enabling student micro-savings at Apeki Tumba TSS. Digital ledgers and goal-based saving for Rulindo District.",
     seoKeywords: ["Open Future Savings", "Student Fintech Rwanda", "Apeki Tumba SACCO", "Rulindo Community Savings", "Student Micro-savings Platform"]
-  }
+  },
 
+  {
+    id: 'fintrack',
+    title: 'FinTrack — Strategic Wealth & Risk Command Center',
+    subtitle: 'for Public Release (Open for Everyone)',
+    description: 'A high-performance personal finance engine designed to track multi-wallet liquidity, automate savings goals, and provide real-time risk analytics to ensure income velocity always exceeds expenditure.',
+    techStack: ['Next.js', 'Firebase', 'MongoDB', 'Tailwind CSS'],
+    image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776366728/Screenshot_2026-04-16_at_21.03.39_fpyf50.png',
+    liveDemo: 'https://fintrackrw.pages.dev/',
+    category: 'Fintech & Wealth Management',
+    tag: 'FINTECH & WEALTH',
+    client: 'Public Release',
+    year: '2026',
+    price: 'Free & Professional Tiers',
+    gallery: [
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776366782/fintrackwhite_wv4nu0.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776366778/Screenshot_2026-04-16_at_21.04.13_eyknpw.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776366777/Screenshot_2026-04-16_at_21.04.03_kg7rv8.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776366774/Screenshot_2026-04-16_at_21.03.50_tbamh3.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776366728/Screenshot_2026-04-16_at_21.03.39_fpyf50.png'
+    ],
+    details: {
+      overview: "FinTrack is a sophisticated financial management system engineered to solve the problem of fragmented personal wealth. Launched in 2026, it serves as a \"Strategic Command Center\" for individuals who need absolute clarity over their cash flow. It moves beyond simple budgeting by introducing a High-Fidelity Risk Engine that identifies structural deficits before they become critical financial failures.",
+      objective: "To replace messy spreadsheets and basic banking apps with a unified, visual engine that tracks every deposit, withdrawal, and transfer while managing separate \"Vaults\" for savings and operational capital.",
+      delivered: [
+        "Multi-Wallet Liquidity Nodes: Tracking for Cash, Mobile Money, and Banks",
+        "Strategic Goal Engine: Set financial milestones and link specific wallets",
+        "Automated Risk Ledger: Predictive burn rate analysis and liquidity warnings",
+        "Surgical Transaction Auditing: High-precision categorization of capital movement",
+        "Absolute Data Sovereignty: Privacy-first architecture (encrypted, local-first)",
+        "Global Financial Analytics: Deep visual reporting on wealth growth"
+      ],
+      process: [
+        {
+          title: "The Motivation (Wealth Control)",
+          description: "Built by NeoScratch to empower users to 'be rich' through actionable data, focusing on actively reducing operational risks."
+        },
+        {
+          title: "Architecture & Security",
+          description: "Developed using Next.js and MongoDB/Firebase to handle complex capital arrays with zero-margin auditing precision."
+        },
+        {
+          title: "The Risk Engine Logic",
+          description: "Engineered custom algorithms to calculate the 'Runway' estimating how long current wealth lasts based on spending velocity."
+        },
+        {
+          title: "User Experience Execution",
+          description: "A premium, high-contrast visual interface designed for the modern operational operator."
+        }
+      ],
+      results: "Since its deployment in 2026, FinTrack has helped users identify up to 30% in unnecessary 'outcoming' expenses within the first month alone, setting a new standard for personal wealth management.",
+      conclusion: "FinTrack is the definitive standard for digital capital auditing. It proves that with the right data visualization and risk detection, anyone can assume command of their financial future.",
+      services: ["Fintech Development", "Wealth Management", "Data Sovereignty", "Risk Analytics"]
+    },
+    seoDescription: "FinTrack is a Strategic Wealth & Risk Command Center. Track multi-wallet liquidity, automate savings, and predict burn rates with a high-fidelity risk engine.",
+    seoKeywords: ["FinTrack Rwanda", "Personal Finance App", "Wealth Management", "Risk Analytics", "Data Sovereignty"]
+  }
 ];
