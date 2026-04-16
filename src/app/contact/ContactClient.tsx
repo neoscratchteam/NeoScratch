@@ -201,7 +201,7 @@ ${formData.message}
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-[13px] font-bold text-[#1a73e8] uppercase tracking-widest mb-6">Prefer another way?</p>
             <div className="flex flex-wrap justify-center gap-8 lg:gap-16">
-               <a href="https://linkedin.com/in/theogene-iradukunda" className="text-foreground/60 hover:text-[#1a73e8] text-[13px] font-bold flex items-center transition-colors">LinkedIn Profile <ArrowRight className="ml-2 h-4 w-4" /></a>
+               <a href="https://www.linkedin.com/in/theogene-iradukunda-88b07a381/" className="text-foreground/60 hover:text-[#1a73e8] text-[13px] font-bold flex items-center transition-colors">LinkedIn Profile <ArrowRight className="ml-2 h-4 w-4" /></a>
                <a href="https://github.com/theodevrwanda" className="text-foreground/60 hover:text-[#1a73e8] text-[13px] font-bold flex items-center transition-colors">GitHub Repository <ArrowRight className="ml-2 h-4 w-4" /></a>
                <Link href="/projects" className="text-foreground/60 hover:text-[#1a73e8] text-[13px] font-bold flex items-center transition-colors">Browse Projects <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </div>
