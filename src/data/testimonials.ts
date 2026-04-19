@@ -1,5 +1,14 @@
 export const testimonials = [
   {
+    name: 'You Are Next!',
+    role: 'Our Future Partner',
+    serviceType: 'Your Dream Project',
+    link: '/request-website',
+    content: 'Join our elite circle of successful partners. Your vision could be our next showcased masterpiece.',
+    avatar: 'YOU', // Special value for text avatar
+    isSpecial: true,
+  },
+  {
     name: 'Mr. Jean Baptiste',
     role: 'Business Owner, Oluxy Watches',
     serviceType: 'E-Commerce & Retail ERP',

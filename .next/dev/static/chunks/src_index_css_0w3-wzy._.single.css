@@ -2247,6 +2247,11 @@ img {
   background-color: #fffffff2;
 }
 
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[radial-gradient\(circle_at_center\,_var\(--primary\)_0\%\,_transparent_50\%\)\] {
   background-image: radial-gradient(circle at center, var(--primary) 0%, transparent 50%);
 }
@@ -4990,6 +4995,11 @@ img {
 
   .sm\:text-xl {
     font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-lg {
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
