@@ -198,8 +198,8 @@ export const projects: Project[] = [
     id: 'smartstock',
     title: 'SmartStock — Ultimate Inventory & Business Management',
     subtitle: 'for Juldas',
-    description: 'A professional PWA-based stock management system that tracks inventory, branches, employees, and full financial performance with real-time profit and loss reporting.',
-    techStack: ['React', 'MongoDB', 'Tailwind CSS', 'PWA'],
+    description: 'A professional web-based stock management system that tracks inventory, branches, employees, and full financial performance with real-time profit and loss reporting.',
+    techStack: ['React', 'MongoDB', 'Tailwind CSS'],
     image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776365807/Screenshot_2026-04-16_at_20.54.03_e6t6ir.png',
     liveDemo: 'https://smartstock.rw/',
     category: 'Business Automation',
@@ -216,9 +216,9 @@ export const projects: Project[] = [
     ],
     details: {
       overview: "SmartStock is a state-of-the-art Business Management System (BMS) originally engineered for Mr. Juldas to solve complex inventory and branch synchronization challenges. Since its launch in 2026, it has evolved into a powerful public platform designed to empower businesses of all sizes—from micro-SMEs to large industrial operations—with absolute control over their stock, staff, and finances.",
-      objective: "To deliver a high-performance, cross-platform solution (PWA) that replaces manual record-keeping with automated stock tracking, employee monitoring, and precise financial analytics including daily profit and loss statements.",
+      objective: "To deliver a high-performance, cross-platform solution that replaces manual record-keeping with automated stock tracking, employee monitoring, and precise financial analytics including daily profit and loss statements.",
       delivered: [
-        "Installable PWA (Progressive Web App) for mobile and desktop use",
+        "Enterprise-grade stock management core",
         "Multi-branch inventory synchronization and management",
         "Employee role management and performance auditing",
         "Daily, weekly, and monthly income tracking",
@@ -240,16 +240,16 @@ export const projects: Project[] = [
           description: "Transformed from a private enterprise tool into a global SaaS platform with tiered pricing suitable for any business type."
         },
         {
-          title: "PWA Deployment",
-          description: "Optimized for speed and offline-ready capabilities, allowing managers to monitor their business from anywhere in the world."
+          title: "Unified Deployment",
+          description: "Optimized for speed and high availability, allowing managers to monitor their business from anywhere in the world with zero latency."
         }
       ],
       results: "SmartStock has helped business owners achieve 100% financial transparency and reduce manual auditing time by up to 60%. It is now a trusted tool for industries ranging from retail shops to large factories.",
       conclusion: "SmartStock is the definitive proof of how a custom engineering solution can scale to become an industry-leading standard for digital transformation.",
-      services: ["Business Automation", "Inventory Systems", "PWA Development", "Financial Analytics"]
+      services: ["Business Automation", "Inventory Systems", "SaaS Development", "Financial Analytics"]
     },
-    seoDescription: "SmartStock is a state-of-the-art PWA for stock management and financial monitoring. Built for Juldas to solve complex branch synchronization challenges.",
-    seoKeywords: ["SmartStock Rwanda", "Business Management System", "PWA Stock Tracking", "Real-time Profit Loss Reporting", "Juldas SmartStock"]
+    seoDescription: "SmartStock is a state-of-the-art business management system for stock tracking and financial monitoring. Built for Juldas to solve complex branch synchronization challenges.",
+    seoKeywords: ["SmartStock Rwanda", "Business Management System", "SaaS Stock Tracking", "Real-time Profit Loss Reporting", "Juldas SmartStock"]
   },
 
   {
@@ -257,7 +257,7 @@ export const projects: Project[] = [
     title: 'PixelMart — Unified Inventory & Financial Headquarters',
     subtitle: 'for PixelMart LCD Rwanda',
     description: 'A robust multi-branch management platform for the electronics retail leader in Rwanda, featuring real-time stock tracking, heatmapped income analytics, and role-based employee control.',
-    techStack: ['React', 'Node.js', 'Firebase', 'PWA'],
+    techStack: ['React', 'Node.js', 'Firebase'],
     image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776365356/Screenshot_2026-04-16_at_20.48.39_dutnuy.png',
     liveDemo: 'https://pixelmartrw.vercel.app',
     category: 'Inventory & ERP',
@@ -281,7 +281,7 @@ export const projects: Project[] = [
         "Dynamic income heatmaps showing branch performance tiers",
         "Role-based access control (RBAC) with employee branch assignment",
         "Advanced date-specific sorting and historical auditing",
-        "Installable PWA for streamlined branch operations",
+        "Optimized interface for streamlined branch operations",
         "Interactive sold-items analytics and trend forecasting"
       ],
       process: [
