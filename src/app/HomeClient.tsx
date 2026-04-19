@@ -135,55 +135,47 @@ export default function Index() {
               </div>
             </div>
 
-            {/* ── RIGHT: Animated Vertical scrolling service cards ── */}
+            {/* ── RIGHT: Vertical scrolling service cards ── */}
             <div className="hidden lg:block relative h-[520px] overflow-hidden animate-fade-in" style={{ animationDelay: '0.4s' }}>
               {/* Top fade */}
-              <div className="absolute top-0 inset-x-0 h-24 z-20 pointer-events-none" style={{ background: 'linear-gradient(to bottom, hsl(221 83% 53%), transparent)' }} />
+              <div className="absolute top-0 inset-x-0 h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to bottom, hsl(221 83% 53%), transparent)' }} />
               {/* Bottom fade */}
-              <div className="absolute bottom-0 inset-x-0 h-24 z-20 pointer-events-none" style={{ background: 'linear-gradient(to top, hsl(221 83% 53%), transparent)' }} />
+              <div className="absolute bottom-0 inset-x-0 h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, hsl(221 83% 53%), transparent)' }} />
 
-              <motion.div 
-                className="flex flex-col gap-4"
-                animate={{
-                  y: ["0%", "-50%"]
-                }}
-                transition={{
-                  duration: 20,
-                  ease: "linear",
-                  repeat: Infinity
-                }}
-              >
-                {[...new Array(2)].map((_, groupIdx) => (
-                  <React.Fragment key={groupIdx}>
-                    {[
-                      { icon: Monitor, label: 'Website Design & Dev', desc: 'Up to 15 pages • Mobile first • Admin panel', color: 'hsl(221 83% 70%)' },
-                      { icon: Globe, label: 'Google Business Profile', desc: 'Google Maps • Verified listing • Local SEO', color: 'hsl(142 70% 55%)' },
-                      { icon: BarChart3, label: 'Search Engine Optimisation', desc: 'Keyword research • On-page SEO • Monthly reports', color: 'hsl(38 90% 60%)' },
-                      { icon: Code, label: 'Custom Software Dev', desc: 'Dashboards • Booking systems • Automations', color: 'hsl(280 70% 65%)' },
-                      { icon: Smartphone, label: 'Mobile App Development', desc: 'iOS & Android • React Native • Offline-first', color: 'hsl(200 90% 60%)' },
-                      { icon: Settings, label: 'Website Maintenance', desc: 'Monthly retainer • Content updates • Reports', color: 'hsl(0 70% 65%)' },
-                    ].map((s, i) => {
-                      const Icon = s.icon;
-                      return (
-                        <div
-                          key={`${groupIdx}-${i}`}
-                          className="flex items-center gap-4 rounded-2xl border p-4 bg-white/7 border-white/10 hover:bg-white/15 transition-all duration-300 group"
-                          style={{ background: 'rgba(255,255,255,0.07)', borderColor: 'rgba(255,255,255,0.1)' }}
-                        >
-                          <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${s.color}22` }}>
-                            <Icon className="w-5 h-5" style={{ color: s.color }} />
-                          </div>
-                          <div>
-                            <p className="font-bold text-white text-sm leading-tight">{s.label}</p>
-                            <p className="text-white/50 text-xs mt-0.5 leading-snug">{s.desc}</p>
-                          </div>
-                          <ArrowUpRight className="w-4 h-4 text-white/30 ml-auto shrink-0 group-hover:text-white transition-colors" />
-                        </div>
-                      );
-                    })}
-                  </React.Fragment>
-                ))}
-              </motion.div>
+              {/* static services track */}
+              <div className="flex flex-col gap-4">
+                {mounted && [
+                  { icon: Monitor, label: 'Website Design & Dev', desc: 'Up to 15 pages • Mobile first • Admin panel', color: 'hsl(221 83% 70%)' },
+                  { icon: Globe, label: 'Google Business Profile', desc: 'Google Maps • Verified listing • Local SEO', color: 'hsl(142 70% 55%)' },
+                  { icon: BarChart3, label: 'Search Engine Optimisation', desc: 'Keyword research • On-page SEO • Monthly reports', color: 'hsl(38 90% 60%)' },
+                  { icon: Code, label: 'Custom Software Dev', desc: 'Dashboards • Booking systems • Automations', color: 'hsl(280 70% 65%)' },
+                  { icon: Smartphone, label: 'Mobile App Development', desc: 'iOS & Android • React Native • Offline-first', color: 'hsl(200 90% 60%)' },
+                  { icon: Settings, label: 'Website Maintenance', desc: 'Monthly retainer • Content updates • Reports', color: 'hsl(0 70% 65%)' },
+                ].map((s, i) => {
+                  const Icon = s.icon;
+                  const isCentre = i === 2; // highlight 3rd card statically
+                  return (
+                    <div
+                      key={i}
+                      className={`flex items-center gap-4 rounded-2xl border transition-all duration-300 ${
+                        isCentre
+                          ? 'p-5 bg-white/20 border-white/30 shadow-xl scale-[1.03]'
+                          : 'p-4 bg-white/8 border-white/12 hover:bg-white/15'
+                      }`}
+                      style={{ background: isCentre ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.07)', borderColor: isCentre ? 'rgba(255,255,255,0.28)' : 'rgba(255,255,255,0.1)' }}
+                    >
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${s.color}22` }}>
+                        <Icon className="w-5 h-5" style={{ color: s.color }} />
+                      </div>
+                      <div>
+                        <p className="font-bold text-white text-sm leading-tight">{s.label}</p>
+                        <p className="text-white/50 text-xs mt-0.5 leading-snug">{s.desc}</p>
+                      </div>
+                      <ArrowUpRight className="w-4 h-4 text-white/30 ml-auto shrink-0" />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
 
           </div>

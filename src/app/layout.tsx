@@ -6,13 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "@/components/Providers";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import dynamic from 'next/dynamic';
-
-const FloatingChat = dynamic(() => import('@/components/FloatingChat').then(mod => mod.FloatingChat), { ssr: false });
-const BackToTop = dynamic(() => import('@/components/BackToTop').then(mod => mod.BackToTop), { ssr: false });
-const ScrollProgress = dynamic(() => import('@/components/PageTransition').then(mod => mod.ScrollProgress), { ssr: false });
-const PageTransition = dynamic(() => import('@/components/PageTransition').then(mod => mod.PageTransition), { ssr: false });
-
+import { FloatingChat } from "@/components/FloatingChat";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
@@ -107,29 +101,6 @@ export default function RootLayout({
   const jsonLd = [
     {
       '@context': 'https://schema.org',
-      '@type': 'Organization',
-      '@id': 'https://neoscratch.com/#organization',
-      name: 'NeoScratch',
-      url: 'https://neoscratch.com',
-      logo: 'https://neoscratch.com/og-image.png',
-      contactPoint: [
-        {
-          '@type': 'ContactPoint',
-          telephone: '+250792734752',
-          contactType: 'customer service',
-          areaServed: 'RW',
-          availableLanguage: ['en', 'fr', 'rwanda']
-        }
-      ],
-      sameAs: [
-        'https://www.x.com/theo_dev_rw',
-        'https://www.instagram.com/neoscratch/',
-        'https://www.linkedin.com/in/theogene-iradukunda-88b07a381/',
-        'https://github.com/theodevrwanda'
-      ]
-    },
-    {
-      '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
       name: 'NeoScratch',
       description: 'Professional web design, mobile app development, SEO, and Google Business Profile setup for businesses in Rwanda and worldwide.',
@@ -178,6 +149,12 @@ export default function RootLayout({
         opens: '08:00',
         closes: '18:00'
       },
+      sameAs: [
+        'https://www.x.com/theo_dev_rw',
+        'https://www.instagram.com/neoscratch/',
+        'https://www.linkedin.com/in/theogene-iradukunda-88b07a381/',
+        'https://github.com/theodevrwanda'
+      ]
     },
     {
       '@context': 'https://schema.org',
@@ -199,7 +176,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${outfit.variable} font-inter`}>
-        <ScrollProgress />
         <Script
           id="structured-data"
           type="application/ld+json"
@@ -209,13 +185,10 @@ export default function RootLayout({
           <div className="min-h-screen flex flex-col">
             <Header />
             <main className="flex-grow pt-16 lg:pt-20">
-              <PageTransition>
-                {children}
-              </PageTransition>
+              {children}
             </main>
             <Footer />
             <FloatingChat />
-            <BackToTop />
           </div>
         </Providers>
         <Analytics />
