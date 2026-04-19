@@ -16,12 +16,12 @@ export const testimonials = [
     avatar: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1775569550/faustin_gok4su.jpg',
   },
   {
-    name: 'Open Future',
-    role: 'Savings Group for Students, Apeki Tumba TSS',
-    serviceType: 'Record Management System',
-    link: 'https://openfuture.pages.dev',
-    content: 'The digital savings management platform has transformed how we track monthly savings and manage our members. Simple and effective!',
-    avatar: '/openfuture.png',
+    name: 'Juldas',
+    role: 'CEO & Founder, Tech Solutions',
+    serviceType: 'System Architecture & Development',
+    link: '#',
+    content: 'The technical excellence and dedication shown by NeoScratch is unparalleled. They delivered a high-performance system that perfectly aligns with our growth strategy.',
+    avatar: '/juldas.png',
   },
   {
     name: 'Niyonsenga DieuMerci',
@@ -32,11 +32,11 @@ export const testimonials = [
     avatar: '/kate.jpeg',
   },
   {
-    name: 'Juldas',
-    role: 'CEO & Founder, Tech Solutions',
-    serviceType: 'System Architecture & Development',
-    link: '#',
-    content: 'The technical excellence and dedication shown by NeoScratch is unparalleled. They delivered a high-performance system that perfectly aligns with our growth strategy.',
-    avatar: '/juldas.png',
+    name: 'Open Future',
+    role: 'Savings Group for Students, Apeki Tumba TSS',
+    serviceType: 'Record Management System',
+    link: 'https://openfuture.pages.dev',
+    content: 'The digital savings management platform has transformed how we track monthly savings and manage our members. Simple and effective!',
+    avatar: '/openfuture.png',
   }
 ];

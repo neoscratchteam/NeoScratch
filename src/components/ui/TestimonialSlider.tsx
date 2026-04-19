@@ -4,7 +4,7 @@ import { testimonials } from '@/data/testimonials';
 import Link from 'next/link';
 
 export function TestimonialSlider() {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
   
   const next = () => setActiveIndex((prev) => (prev + 1) % testimonials.length);
   const prev = () => setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
