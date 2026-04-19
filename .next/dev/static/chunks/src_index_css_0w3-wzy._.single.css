@@ -2358,10 +2358,6 @@ img {
   padding: 1rem;
 }
 
-.p-5 {
-  padding: 1.25rem;
-}
-
 .p-6 {
   padding: 1.5rem;
 }
@@ -2372,6 +2368,10 @@ img {
 
 .p-\[1px\] {
   padding: 1px;
+}
+
+.p-5 {
+  padding: 1.25rem;
 }
 
 .px-1 {

@@ -61,6 +61,7 @@ export function Header() {
               src="/logo.svg" 
               width={160}
               height={32}
+              style={{ height: 'auto' }}
               className="h-6 md:h-8 w-auto hover:opacity-90 transition-opacity" 
               alt="NEOSCRATCH Logo" 
               priority
