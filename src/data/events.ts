@@ -14,9 +14,9 @@ export const upcomingEvents: Event[] = [];
 
 export const pastEvents = [
   {
-    title: 'Oluxy Official Digital Boutique Launch',
+    title: 'Oluxy Official Platform Launch',
     date: '2026-04-19',
-    description: 'The global premier of Oluxy Watches\' digital home, redefining Rwandan luxury with cinematic e-commerce and heritage-driven storytelling.',
+    description: 'The global premier of Oluxy Watches\' digital home, redefining Rwandan watch retail with cinematic e-commerce and heritage-driven storytelling.',
     image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628329/hero2_dtp7ly.png',
     author: 'Theogene Iradukunda'
   },

@@ -30,7 +30,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'oluxy-digital-boutique',
+    id: 'oluxy-digital-platform',
     title: 'Oluxy Watches — The Art of Rwandan Elegance',
     subtitle: 'for Mr. Jean Baptiste (Oluxy Watches)',
     description: 'A cinematic high-end e-commerce platform for Kigali\'s premier timepiece destination, featuring a professional product immersion engine and seamless heritage-driven storytelling.',
@@ -38,10 +38,10 @@ export const projects: Project[] = [
     image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628329/hero2_dtp7ly.png',
     liveDemo: 'https://oluxywatches.com',
     category: 'E-Commerce & Branding',
-    tag: 'LUXURY E-COMMERCE',
+    tag: 'E-COMMERCE & MANAGEMENT',
     client: 'Mr. Jean Baptiste',
     year: 'Apr 19, 2026',
-    price: 'Boutique Pricing',
+    price: 'Platform Pricing',
     gallery: [
       'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628329/hero2_dtp7ly.png',
       'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628330/collections_uiznpa.png',
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     details: {
       delivered: [
         "Cinematic Product Discovery Engine",
-        "Interactive Luxury Timepiece Collections",
+        "Interactive Premium Timepiece Collections",
         "Oluxy Wear & Premium Eyewear Modules",
         "Expert Repair & Heritage Care Booking Systems",
         "12 Months International Warranty Documentation",
@@ -62,7 +62,7 @@ export const projects: Project[] = [
       process: [
         {
           title: "Brand Philosophy Integration",
-          description: "Worked closely with the Oluxy team at GF Plaza to translate their heritage-driven boutique experience into a digital medium."
+          description: "Worked closely with the Oluxy team at GF Plaza to translate their heritage-driven platform experience into a digital medium."
         },
         {
           title: "Visual Excellence",
@@ -73,24 +73,24 @@ export const projects: Project[] = [
           description: "Implemented custom systems for watch servicing and heritage maintenance requests directly through the platform."
         }
       ],
-      results: "The Official Digital Boutique was launched today (Apr 19, 2026), providing an elite digital home for Oluxy's prestigious collections. It further solidifies their position as Kigali's premier timepiece destination.",
-      conclusion: "Oluxy Watches represents the ultimate intersection of Rwandan ambition and global luxury standards.",
+      results: "The Official Digital Platform was launched today (Apr 19, 2026), providing an elite digital home for Oluxy's prestigious collections. It further solidifies their position as Kigali's premier timepiece destination.",
+      conclusion: "Oluxy Watches represents the ultimate intersection of Rwandan ambition and global premium standards.",
       services: ["Branding", "E-Commerce", "Heritage UI/UX", "Operations Automation"]
     },
-    seoDescription: "Discover Oluxy Watches — Kigali's premier destination for luxury timepieces and premium eyewear. Official boutique launched at GF Plaza.",
-    seoKeywords: ["Oluxy Watches", "Luxury Watches Rwanda", "Kigali Watch Shop", "Premium Eyewear Rwanda", "GF Plaza Kigali"]
+    seoDescription: "Discover Oluxy Watches — Kigali's premier destination for premium timepieces and premium eyewear. Official platform launched at GF Plaza.",
+    seoKeywords: ["Oluxy Watches", "Premium Watches Rwanda", "Kigali Watch Shop", "Premium Eyewear Rwanda", "GF Plaza Kigali"]
   },
 
   {
-    id: 'oluxy-luxury-dashboard',
+    id: 'oluxy-premium-dashboard',
     title: 'Oluxy — Premium Watches E-Commerce & Retail Dashboard',
     subtitle: 'for Mr. Jean Baptiste (Oluxy Watches)',
-    description: 'A high-end retail management system engineered for Rwanda\'s premier luxury watch boutique, delivering a centralized "all-in-one" dashboard for tracking prestigious products, orders, and elite brands.',
+    description: 'A high-end retail management system engineered for Rwanda\'s premier premium watch platform, delivering a centralized "all-in-one" dashboard for tracking prestigious products, orders, and elite brands.',
     techStack: ['React', 'Python 3', 'FastAPI', 'Tailwind CSS'],
     image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776367659/Screenshot_2026-04-15_at_14.31.26_yly1g3.png',
     liveDemo: '#',
     category: 'E-Commerce & Retail ERP',
-    tag: 'LUXURY RETAIL ERP',
+    tag: 'RETAIL ERP',
     client: 'Mr. Jean Baptiste',
     year: 'Apr 16, 2026',
     price: 'Custom Enterprise',
@@ -102,19 +102,19 @@ export const projects: Project[] = [
       'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776367655/Screenshot_2026-04-16_at_21.24.43_qq6q0c.png'
     ],
     details: {
-      overview: "Oluxy is Kigali's premier destination for luxury timepieces, situated in the prestigious GF Plaza near Kigali City Tower. The leadership required an elite, all-in-one digital dashboard to securely handle their high-value inventory, orchestrate complex customer orders, and manage prestigious watch brands seamlessly.",
-      objective: "To develop a sophisticated retail management dashboard that centralizes inventory tracking, streamlines order fulfillment, and provides instant holistic insights into boutique performance via a single pane of glass.",
+      overview: "Oluxy is Kigali's premier destination for premium timepieces, situated in the prestigious GF Plaza near Kigali City Tower. The leadership required an elite, all-in-one digital dashboard to securely handle their high-value inventory, orchestrate complex customer orders, and manage prestigious watch brands seamlessly.",
+      objective: "To develop a sophisticated retail management dashboard that centralizes inventory tracking, streamlines order fulfillment, and provides instant holistic insights into platform performance via a single pane of glass.",
       delivered: [
         "All-in-One Command Center: Unified overview of high-value inventory, real-time sales, and active orders",
         "Premium Brand Management: Robust modules to add, track, and categorize prestigious watch collections",
         "Secure Order Tracking Engine: High-fidelity orchestration of VIP client purchases and deliveries",
         "Financial Analytics: Visual reporting on daily performance and revenue metrics",
-        "Lightning-Fast Operations: Seamless UI crafted in React to accelerate daily boutique workflows"
+        "Lightning-Fast Operations: Seamless UI crafted in React to accelerate daily platform workflows"
       ],
       process: [
         {
-          title: "Boutique Workflow Analysis",
-          description: "Conducted in-depth operational reviews at the GF Plaza storefront to map exact requirements for securely tracking high-value luxury goods."
+          title: "Platform Workflow Analysis",
+          description: "Conducted in-depth operational reviews at the GF Plaza storefront to map exact requirements for securely tracking high-value premium goods."
         },
         {
           title: "Architecture & Engineering",
@@ -122,19 +122,19 @@ export const projects: Project[] = [
         },
         {
           title: "Dashboard Centralization",
-          description: "Designed an intuitive 'all-in-one' dashboard enabling the ownership team to assess total boutique health in a single glance."
+          description: "Designed an intuitive 'all-in-one' dashboard enabling the ownership team to assess total platform health in a single glance."
         },
         {
           title: "Execution & Deployment",
           description: "Executed a flawless launch today (Apr 16, 2026), ensuring no disruption to daily VIP client operations."
         }
       ],
-      results: "The customized Oluxy dashboard completely revolutionized boutique operations. Complete oversight of the product catalogue, brand portfolios, and daily orders are now orchestrated effortlessly, eliminating analog friction.",
+      results: "The customized Oluxy dashboard completely revolutionized platform operations. Complete oversight of the product catalogue, brand portfolios, and daily orders are now orchestrated effortlessly, eliminating analog friction.",
       conclusion: "Oluxy's Retail Command Center stands as a testament to the belief that elite physical assets demand an equally elite, tailor-made digital management infrastructure.",
       services: ["Retail Ecosystems", "Python Backend Engineering", "Dashboard UI/UX", "Business Automation"]
     },
-    seoDescription: "Explore the Oluxy Luxury Watches Dashboard. A premium retail management ecosystem built for Kigali's top watch boutique leveraging React and Python 3.",
-    seoKeywords: ["Oluxy Watches Rwanda", "Luxury Retail Dashboard", "Kigali Watch Store System", "React Python 3 Dashboard", "GF Plaza Retail Tech"]
+    seoDescription: "Explore the Oluxy Premium Watches Dashboard. A premium retail management ecosystem built for Kigali's top watch platform leveraging React and Python 3.",
+    seoKeywords: ["Oluxy Watches Rwanda", "Premium Retail Dashboard", "Kigali Watch Store System", "React Python 3 Dashboard", "GF Plaza Retail Tech"]
   },
 
   {

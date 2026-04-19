@@ -2,9 +2,9 @@ export const testimonials = [
   {
     name: 'Mr. Jean Baptiste',
     role: 'Business Owner, Oluxy Watches',
-    serviceType: 'Luxury E-Commerce & Retail ERP',
+    serviceType: 'E-Commerce & Retail ERP',
     link: 'https://oluxywatches.com',
-    content: 'NeoScratch redefined our digital presence. They didn\'t just build a website; they captured the essence of local luxury and precision. Our digital boutique is now as prestigious as our physical showroom.',
+    content: 'NeoScratch redefined our digital presence. They didn\'t just build a website; they captured the essence of precision and quality. Our digital platform is now as prestigious as our physical showroom.',
     avatar: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776629743/oluxywatchesmainlogo_tmsurb.png',
   },
   {
