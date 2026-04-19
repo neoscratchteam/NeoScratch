@@ -1,5 +1,13 @@
 export const testimonials = [
   {
+    name: 'Oluxy Leadership Team',
+    role: 'Owners, Oluxy Luxury Watches',
+    serviceType: 'Luxury E-Commerce & Retail ERP',
+    link: 'https://oluxywatches.com',
+    content: 'NeoScratch redefined our digital presence. They didn\'t just build a website; they captured the essence of local luxury and precision. Our digital boutique is now as prestigious as our physical showroom.',
+    avatar: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628329/hero2_dtp7ly.png',
+  },
+  {
     name: 'Mr. Faustin Hagenimana',
     role: 'CEO & Founder, PixelMart LCD Rwanda',
     serviceType: 'Inventory & ERP System',

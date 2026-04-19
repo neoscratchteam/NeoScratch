@@ -17,7 +17,7 @@ import heroDashboard from '@/assets/professional-dashboard.png';
 import { projects } from '@/data/projects';
 
 export default function Index() {
-  const projectsCount = useCountUpAnimation({ end: 5, suffix: '+' });
+  const projectsCount = useCountUpAnimation({ end: 6, suffix: '+' });
   const experienceCount = useCountUpAnimation({ end: 2, suffix: '+' });
   const clientsCount = useCountUpAnimation({ end: 6, suffix: '+' });
   const retentionCount = useCountUpAnimation({ end: 100, suffix: '%' });

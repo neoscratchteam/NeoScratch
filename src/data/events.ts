@@ -14,6 +14,13 @@ export const upcomingEvents: Event[] = [];
 
 export const pastEvents = [
   {
+    title: 'Oluxy Official Digital Boutique Launch',
+    date: '2026-04-19',
+    description: 'The global premier of Oluxy Watches\' digital home, redefining Rwandan luxury with cinematic e-commerce and heritage-driven storytelling.',
+    image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628329/hero2_dtp7ly.png',
+    author: 'Theogene Iradukunda'
+  },
+  {
     title: 'PixelMart Unified Headquarters Launch',
     date: '2026-01-10',
     description: 'Successfully deployed the PixelMart ERP and financial headquarters for Mr. Faustin Hagenimana, revolutionizing multi-branch retail management.',
