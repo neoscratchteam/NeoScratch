@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Ready to scale your business? Contact our engineering team in Kigali for professional web, mobile, and SEO solutions.",
     type: 'website',
     url: 'https://neoscratch.com/contact',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact NeoScratch' }],
+    images: [{ url: '/preview.png', width: 1200, height: 630, alt: 'Contact NeoScratch' }],
   },
   twitter: {
     card: 'summary_large_image',

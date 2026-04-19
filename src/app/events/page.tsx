@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: "Connect with the engineering community in Rwanda. Join our workshops and summits to scale your technical skills.",
     type: 'website',
     url: 'https://neoscratch.com/events',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Events at NeoScratch' }],
+    images: [{ url: '/preview.png', width: 1200, height: 630, alt: 'Events at NeoScratch' }],
   },
 };
 

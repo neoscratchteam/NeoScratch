@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "See our work in action. From ERP systems to community fintech, explore how we solve complex problems with elegant code.",
     type: 'website',
     url: 'https://neoscratch.com/projects',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NeoScratch Portfolio' }],
+    images: [{ url: '/preview.png', width: 1200, height: 630, alt: 'NeoScratch Portfolio' }],
   },
   twitter: {
     card: 'summary_large_image',

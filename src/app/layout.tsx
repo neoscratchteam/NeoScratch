@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png',
+        url: '/preview.png',
         width: 1200,
         height: 630,
         alt: 'NeoScratch - Web Design, Apps & SEO Services Rwanda',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     title: "NeoScratch | Web Design, Apps & SEO Services in Rwanda",
     description: "Professional website design, mobile apps, SEO, and Google Business Profile setup for businesses in Rwanda and beyond.",
     creator: '@neoscratch',
-    images: ['/twitter-image.png'],
+    images: ['/preview.png'],
   },
   robots: {
     index: true,
@@ -104,7 +104,7 @@ export default function RootLayout({
       '@type': 'ProfessionalService',
       name: 'NeoScratch',
       description: 'Professional web design, mobile app development, SEO, and Google Business Profile setup for businesses in Rwanda and worldwide.',
-      image: 'https://neoscratch.com/og-image.png',
+      image: 'https://neoscratch.com/preview.png',
       '@id': 'https://neoscratch.com/#organization',
       url: 'https://neoscratch.com',
       telephone: '+250792734752',

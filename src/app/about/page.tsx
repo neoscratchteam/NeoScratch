@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "Discover our mission to build world-class digital products from the heart of Kigali. Technical excellence meeting creative design.",
     type: 'website',
     url: 'https://neoscratch.com/about',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'About NeoScratch' }],
+    images: [{ url: '/preview.png', width: 1200, height: 630, alt: 'About NeoScratch' }],
   },
   twitter: {
     card: 'summary_large_image',

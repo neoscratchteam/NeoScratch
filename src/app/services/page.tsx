@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: "Professional website design, mobile apps, SEO, and Google Business Profile setup for businesses in Rwanda and the region.",
     url: 'https://neoscratch.com/services',
     type: 'website',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NeoScratch Services' }],
+    images: [{ url: '/preview.png', width: 1200, height: 630, alt: 'NeoScratch Services' }],
   },
   twitter: {
     card: 'summary_large_image',
