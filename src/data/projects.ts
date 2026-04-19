@@ -32,14 +32,14 @@ export const projects: Project[] = [
   {
     id: 'oluxy-digital-boutique',
     title: 'Oluxy Watches — The Art of Rwandan Elegance',
-    subtitle: 'for Oluxy Luxury Watches',
+    subtitle: 'for Mr. Jean Baptiste (Oluxy Luxury)',
     description: 'A cinematic high-end e-commerce platform for Kigali\'s premier timepiece destination, featuring a professional product immersion engine and seamless heritage-driven storytelling.',
     techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628329/hero2_dtp7ly.png',
     liveDemo: 'https://oluxywatches.com',
     category: 'E-Commerce & Branding',
     tag: 'LUXURY E-COMMERCE',
-    client: 'Oluxy Watches',
+    client: 'Mr. Jean Baptiste',
     year: 'Apr 19, 2026',
     price: 'Boutique Pricing',
     gallery: [
@@ -86,14 +86,14 @@ export const projects: Project[] = [
   {
     id: 'oluxy-luxury-dashboard',
     title: 'Oluxy — Premium Watches E-Commerce & Retail Dashboard',
-    subtitle: 'for Oluxy Luxury Watches (GF Plaza)',
+    subtitle: 'for Mr. Jean Baptiste (GF Plaza)',
     description: 'A high-end retail management system engineered for Rwanda\'s premier luxury watch boutique, delivering a centralized "all-in-one" dashboard for tracking prestigious products, orders, and elite brands.',
     techStack: ['React', 'Python 3', 'FastAPI', 'Tailwind CSS'],
     image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776367659/Screenshot_2026-04-15_at_14.31.26_yly1g3.png',
     liveDemo: '#',
     category: 'E-Commerce & Retail ERP',
     tag: 'LUXURY RETAIL ERP',
-    client: 'Oluxy Watches (near Kigali City Tower / GF Plaza)',
+    client: 'Mr. Jean Baptiste',
     year: 'Apr 16, 2026',
     price: 'Custom Enterprise',
     gallery: [

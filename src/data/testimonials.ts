@@ -1,15 +1,15 @@
 export const testimonials = [
   {
-    name: 'Oluxy Leadership Team',
-    role: 'Owners, Oluxy Luxury Watches',
+    name: 'Mr. Jean Baptiste',
+    role: 'Owner, Oluxy Luxury Watches',
     serviceType: 'Luxury E-Commerce & Retail ERP',
     link: 'https://oluxywatches.com',
     content: 'NeoScratch redefined our digital presence. They didn\'t just build a website; they captured the essence of local luxury and precision. Our digital boutique is now as prestigious as our physical showroom.',
-    avatar: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628329/hero2_dtp7ly.png',
+    avatar: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776629743/oluxywatchesmainlogo_tmsurb.png',
   },
   {
     name: 'Mr. Faustin Hagenimana',
-    role: 'CEO & Founder, PixelMart LCD Rwanda',
+    role: 'Business Owner, PixelMart LCD Rwanda',
     serviceType: 'Inventory & ERP System',
     link: 'https://pixelmartrw.vercel.app',
     content: 'NeoScratch developed a comprehensive management system for my business. Tracked products, multiple branches, and automated reporting has never been easier!',

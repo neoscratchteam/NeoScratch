@@ -139,16 +139,9 @@ export default function Index() {
               {/* Bottom fade */}
               <div className="absolute bottom-0 inset-x-0 h-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to top, hsl(221 83% 53%), transparent)' }} />
 
-              {/* Scrolling track */}
-              <div style={{ animation: 'heroScrollUp 18s linear infinite' }} className="flex flex-col gap-4 will-change-transform">
+              {/* static services track */}
+              <div className="flex flex-col gap-4" suppressHydrationWarning>
                 {[
-                  { icon: Monitor, label: 'Website Design & Dev', desc: 'Up to 15 pages • Mobile first • Admin panel', color: 'hsl(221 83% 70%)' },
-                  { icon: Globe, label: 'Google Business Profile', desc: 'Google Maps • Verified listing • Local SEO', color: 'hsl(142 70% 55%)' },
-                  { icon: BarChart3, label: 'Search Engine Optimisation', desc: 'Keyword research • On-page SEO • Monthly reports', color: 'hsl(38 90% 60%)' },
-                  { icon: Code, label: 'Custom Software Dev', desc: 'Dashboards • Booking systems • Automations', color: 'hsl(280 70% 65%)' },
-                  { icon: Smartphone, label: 'Mobile App Development', desc: 'iOS & Android • React Native • Offline-first', color: 'hsl(200 90% 60%)' },
-                  { icon: Settings, label: 'Website Maintenance', desc: 'Monthly retainer • Content updates • Reports', color: 'hsl(0 70% 65%)' },
-                  /* duplicate for seamless loop */
                   { icon: Monitor, label: 'Website Design & Dev', desc: 'Up to 15 pages • Mobile first • Admin panel', color: 'hsl(221 83% 70%)' },
                   { icon: Globe, label: 'Google Business Profile', desc: 'Google Maps • Verified listing • Local SEO', color: 'hsl(142 70% 55%)' },
                   { icon: BarChart3, label: 'Search Engine Optimisation', desc: 'Keyword research • On-page SEO • Monthly reports', color: 'hsl(38 90% 60%)' },
@@ -157,7 +150,7 @@ export default function Index() {
                   { icon: Settings, label: 'Website Maintenance', desc: 'Monthly retainer • Content updates • Reports', color: 'hsl(0 70% 65%)' },
                 ].map((s, i) => {
                   const Icon = s.icon;
-                  const isCentre = i % 6 === 2; // highlight every 3rd card
+                  const isCentre = i === 2; // highlight 3rd card statically
                   return (
                     <div
                       key={i}
