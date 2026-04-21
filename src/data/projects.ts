@@ -30,58 +30,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'oluxy-digital-platform',
-    title: 'Oluxy Watches — The Art of Rwandan Elegance',
-    subtitle: 'for Mr. Jean Baptiste (Oluxy Watches)',
-    description: 'A cinematic high-end e-commerce platform for Kigali\'s premier timepiece destination, featuring a professional product immersion engine and seamless heritage-driven storytelling.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628329/hero2_dtp7ly.png',
-    liveDemo: 'https://oluxywatches.com',
-    category: 'E-Commerce & Branding',
-    tag: 'E-COMMERCE & MANAGEMENT',
-    client: 'Mr. Jean Baptiste',
-    year: 'Apr 19, 2026',
-    price: 'Platform Pricing',
-    gallery: [
-      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628329/hero2_dtp7ly.png',
-      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628330/collections_uiznpa.png',
-      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628315/hero1_msgfp0.png',
-      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628302/productviewoluxy_jxtaje.png',
-      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628301/addtocart_fsphwy.png'
-    ],
-    details: {
-      delivered: [
-        "Cinematic Product Discovery Engine",
-        "Interactive Premium Timepiece Collections",
-        "Oluxy Wear & Premium Eyewear Modules",
-        "Expert Repair & Heritage Care Booking Systems",
-        "12 Months International Warranty Documentation",
-        "COSC Chronometer Precision Certification Standards",
-        "Responsive VIP Contact & Showroom Integration"
-      ],
-      process: [
-        {
-          title: "Brand Philosophy Integration",
-          description: "Worked closely with the Oluxy team at GF Plaza to translate their heritage-driven platform experience into a digital medium."
-        },
-        {
-          title: "Visual Excellence",
-          description: "Leveraged cinematic imagery and fluid animations to mirror the precision and movement of a high-end chronometer."
-        },
-        {
-          title: "Operations & Booking",
-          description: "Implemented custom systems for watch servicing and heritage maintenance requests directly through the platform."
-        }
-      ],
-      results: "The Official Digital Platform was launched today (Apr 19, 2026), providing an elite digital home for Oluxy's prestigious collections. It further solidifies their position as Kigali's premier timepiece destination.",
-      conclusion: "Oluxy Watches represents the ultimate intersection of Rwandan ambition and global premium standards.",
-      services: ["Branding", "E-Commerce", "Heritage UI/UX", "Operations Automation"]
-    },
-    seoDescription: "Discover Oluxy Watches — Kigali's premier destination for premium timepieces and premium eyewear. Official platform launched at GF Plaza.",
-    seoKeywords: ["Oluxy Watches", "Premium Watches Rwanda", "Kigali Watch Shop", "Premium Eyewear Rwanda", "GF Plaza Kigali"]
-  },
-
-  {
     id: 'oluxy-wear-platform',
     title: 'Oluxy Wear — Elite Eyewear & Fashion Statement',
     subtitle: 'for Mr. Jean Baptiste (Oluxy Wear)',
@@ -133,6 +81,57 @@ export const projects: Project[] = [
     seoKeywords: ["Oluxy Wear", "Luxury Eyewear Rwanda", "Kigali Fashion Shop", "Premium Glasses Kigali", "Oluxy Boutique"]
   },
 
+  {
+    id: 'oluxy-digital-platform',
+    title: 'Oluxy Watches — The Art of Rwandan Elegance',
+    subtitle: 'for Mr. Jean Baptiste (Oluxy Watches)',
+    description: 'A cinematic high-end e-commerce platform for Kigali\'s premier timepiece destination, featuring a professional product immersion engine and seamless heritage-driven storytelling.',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628329/hero2_dtp7ly.png',
+    liveDemo: 'https://oluxywatches.com',
+    category: 'E-Commerce & Branding',
+    tag: 'E-COMMERCE & MANAGEMENT',
+    client: 'Mr. Jean Baptiste',
+    year: 'Apr 19, 2026',
+    price: 'Platform Pricing',
+    gallery: [
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628329/hero2_dtp7ly.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628330/collections_uiznpa.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628315/hero1_msgfp0.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628302/productviewoluxy_jxtaje.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776628301/addtocart_fsphwy.png'
+    ],
+    details: {
+      delivered: [
+        "Cinematic Product Discovery Engine",
+        "Interactive Premium Timepiece Collections",
+        "Oluxy Wear & Premium Eyewear Modules",
+        "Expert Repair & Heritage Care Booking Systems",
+        "12 Months International Warranty Documentation",
+        "COSC Chronometer Precision Certification Standards",
+        "Responsive VIP Contact & Showroom Integration"
+      ],
+      process: [
+        {
+          title: "Brand Philosophy Integration",
+          description: "Worked closely with the Oluxy team at GF Plaza to translate their heritage-driven platform experience into a digital medium."
+        },
+        {
+          title: "Visual Excellence",
+          description: "Leveraged cinematic imagery and fluid animations to mirror the precision and movement of a high-end chronometer."
+        },
+        {
+          title: "Operations & Booking",
+          description: "Implemented custom systems for watch servicing and heritage maintenance requests directly through the platform."
+        }
+      ],
+      results: "The Official Digital Platform was launched today (Apr 19, 2026), providing an elite digital home for Oluxy's prestigious collections. It further solidifies their position as Kigali's premier timepiece destination.",
+      conclusion: "Oluxy Watches represents the ultimate intersection of Rwandan ambition and global premium standards.",
+      services: ["Branding", "E-Commerce", "Heritage UI/UX", "Operations Automation"]
+    },
+    seoDescription: "Discover Oluxy Watches — Kigali's premier destination for premium timepieces and premium eyewear. Official platform launched at GF Plaza.",
+    seoKeywords: ["Oluxy Watches", "Premium Watches Rwanda", "Kigali Watch Shop", "Premium Eyewear Rwanda", "GF Plaza Kigali"]
+  },
 
   {
     id: 'oluxy-premium-dashboard',
