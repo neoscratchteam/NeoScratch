@@ -12,7 +12,7 @@ export const testimonials = [
     name: 'Mr. Jean Baptiste',
     role: 'Business Owner, Oluxy',
     serviceType: 'Multi-Platform E-Commerce & ERP',
-    link: 'https://oluxywatches.com',
+    link: 'https://oluxywear.com',
     content: 'NeoScratch redefined our digital presence across multiple ventures. From Oluxy Watches to Oluxy Wear and our internal management dashboard, they didn\'t just build platforms; they captured the essence of precision and quality. Our digital ecosystem is now as prestigious as our physical showrooms.',
     avatar: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776629743/oluxywatchesmainlogo_tmsurb.png',
   },
