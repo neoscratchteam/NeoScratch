@@ -80,10 +80,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icon.png' },
+      { url: '/favicon-180x180.png' },
     ],
     apple: [
-      { url: '/apple-icon.png' },
+      { url: '/favicon-180x180.png' },
     ],
   },
   verification: {
