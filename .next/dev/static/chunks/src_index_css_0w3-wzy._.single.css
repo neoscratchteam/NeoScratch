@@ -776,6 +776,10 @@ img {
   margin-right: 1.5rem;
 }
 
+.mr-8 {
+  margin-right: 2rem;
+}
+
 .mt-0\.5 {
   margin-top: .125rem;
 }
@@ -822,10 +826,6 @@ img {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mr-8 {
-  margin-right: 2rem;
 }
 
 .line-clamp-2 {
@@ -1612,6 +1612,10 @@ img {
   flex-wrap: wrap;
 }
 
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -1805,6 +1809,10 @@ img {
 
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
 }
 
 .whitespace-nowrap {
@@ -3476,6 +3484,15 @@ img {
   font-family: var(--font-outfit), sans-serif;
 }
 
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .\[mask-image\:radial-gradient\(ellipse_at_center\,transparent_20\%\,black\)\] {
   -webkit-mask-image: radial-gradient(#0000 20%, #000);
   mask-image: radial-gradient(#0000 20%, #000);
@@ -3851,6 +3868,10 @@ img {
 
 .hover\:text-white\/80:hover {
   color: #fffc;
+}
+
+.hover\:text-primary:hover {
+  color: hsl(var(--primary));
 }
 
 .hover\:underline:hover {
@@ -5109,10 +5130,6 @@ img {
   .md\:py-28 {
     padding-top: 7rem;
     padding-bottom: 7rem;
-  }
-
-  .md\:pb-0 {
-    padding-bottom: 0;
   }
 
   .md\:text-2xl {

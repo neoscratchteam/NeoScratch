@@ -201,6 +201,14 @@
   .perspective-1000 {
     perspective: 1000px;
   }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @keyframes fadeIn {

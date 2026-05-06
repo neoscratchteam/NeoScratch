@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Globe, Code, Palette, Lightbulb, Check, ArrowRight, Star, Monitor, Smartphone, GraduationCap, Zap, ShoppingCart, Layout, Database, Settings, RefreshCw, Heart, Briefcase, Building2 } from 'lucide-react';
+import { Globe, Code, Palette, Lightbulb, Check, ArrowRight, Star, Monitor, Smartphone, GraduationCap, Zap, ShoppingCart, Layout, Database, Settings, RefreshCw, Heart, Briefcase, Building2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
@@ -188,6 +188,31 @@ const servicesData = [
 
 export default function Services() {
   const [filter, setFilter] = useState('All');
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
+
+  const checkScroll = () => {
+    if (!scrollContainerRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+    setShowLeftArrow(scrollLeft > 10);
+    setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
+  };
+
+  React.useEffect(() => {
+    checkScroll();
+    window.addEventListener('resize', checkScroll);
+    return () => window.removeEventListener('resize', checkScroll);
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (!scrollContainerRef.current) return;
+    const scrollAmount = 200;
+    scrollContainerRef.current.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+  };
 
   const handleFilterChange = (cat: string) => {
     setFilter(cat);
@@ -234,15 +259,31 @@ export default function Services() {
           </div>
         </section>
 
-        {/* 🔍 FILTER BAR - Matches Project Page Experience */}
-        <section className="py-12 border-b border-border/40 sticky top-[72px] bg-white z-40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap items-center gap-3 justify-start md:justify-center overflow-x-auto pb-4 md:pb-0 hide-scrollbar">
+        {/* 🔍 FILTER BAR - Single Line Horizontal Scroll with Navigation Arrows */}
+        <section className="py-8 border-b border-border/40 sticky top-[72px] bg-white z-40">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative group">
+            
+            {/* Left Arrow */}
+            {showLeftArrow && (
+              <button 
+                onClick={() => scroll('left')}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-1.5 rounded-full bg-white border border-border shadow-md text-foreground hover:text-primary transition-all duration-200"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+            )}
+
+            {/* Scroll Container */}
+            <div 
+              ref={scrollContainerRef}
+              onScroll={checkScroll}
+              className="flex flex-nowrap items-center gap-2 justify-start overflow-x-auto pb-2 hide-scrollbar scroll-smooth"
+            >
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => handleFilterChange(cat)}
-                  className={`px-5 py-2 rounded-full text-[12px] whitespace-nowrap font-bold transition-all duration-300 ${
+                  className={`px-4 py-2 rounded-full text-[11px] whitespace-nowrap font-bold transition-all duration-300 ${
                     filter === cat 
                       ? 'bg-[#1a73e8] text-white shadow-lg shadow-blue-500/10' 
                       : 'bg-[#f4f7fa] text-[#555] hover:bg-[#e8ebf0]'
@@ -252,6 +293,17 @@ export default function Services() {
                 </button>
               ))}
             </div>
+
+            {/* Right Arrow */}
+            {showRightArrow && (
+              <button 
+                onClick={() => scroll('right')}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-1.5 rounded-full bg-white border border-border shadow-md text-foreground hover:text-primary transition-all duration-200"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </button>
+            )}
+
           </div>
         </section>
 
