@@ -50,6 +50,45 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 }
 
-export default function Page({ params }: Props) {
-  return <ProjectPage params={params} />;
+export default async function Page({ params }: Props) {
+  const { id } = await params;
+  const decodedId = decodeURIComponent(id);
+  const project = projects.find((p) => p.id === decodedId || p.id === id);
+
+  if (!project) {
+    notFound();
+  }
+
+  const projectJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: project.title,
+    description: project.seoDescription,
+    image: project.image,
+    url: `https://neoscratch.com/projects/${id}`,
+    author: {
+      '@type': 'Organization',
+      name: 'NeoScratch',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'NeoScratch',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://neoscratch.com/logo.png',
+      },
+    },
+    datePublished: project.year,
+    keywords: project.seoKeywords.join(', '),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
+      <ProjectPage params={params} />
+    </>
+  );
 }

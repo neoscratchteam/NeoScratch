@@ -104,8 +104,8 @@ export default function RootLayout({
       name: 'NeoScratch',
       alternateName: 'NeoScratch Rwanda',
       description: 'NeoScratch is Rwanda\'s premier digital engineering studio. We specialize in high-end web design, mobile app development (iOS & Android), SEO, and strategic Google Business Profile management.',
-      image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776629743/oluxywatchesmainlogo_tmsurb.png',
-      logo: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776629743/oluxywatchesmainlogo_tmsurb.png',
+      image: 'https://neoscratch.com/favicon-180x180.png',
+      logo: 'https://neoscratch.com/favicon-180x180.png',
       '@id': 'https://neoscratch.com/#organization',
       url: 'https://neoscratch.com',
       telephone: '+250792734752',
@@ -150,7 +150,7 @@ export default function RootLayout({
       },
       sameAs: [
         'https://www.x.com/theo_dev_rw',
-        'https://www.instagram.com/neoscratch/',
+        'https://www.instagram.com/neoscratchltd/',
         'https://www.linkedin.com/in/theogene-iradukunda-88b07a381/',
         'https://github.com/theodevrwanda'
       ]
