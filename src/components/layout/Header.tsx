@@ -58,7 +58,7 @@ export function Header() {
             className="flex items-center space-x-2 hover:opacity-75 transition-opacity duration-300 mr-8 lg:mr-12"
           >
             <Image 
-              src="/logo.png?v=1.1" 
+              src="/logo.png" 
               width={160}
               height={32}
               style={{ height: 'auto' }}
