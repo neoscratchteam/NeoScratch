@@ -58,7 +58,7 @@ export function Header() {
             className="flex items-center space-x-2 hover:opacity-75 transition-opacity duration-300"
           >
             <Image 
-              src="/logo.svg" 
+              src="/logo.png" 
               width={160}
               height={32}
               style={{ height: 'auto' }}

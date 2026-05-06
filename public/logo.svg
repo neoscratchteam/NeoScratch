@@ -1,6 +1,0 @@
-<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    .brand { font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: -0.05em; text-transform: uppercase; }
-  </style>
-  <text x="0" y="35" class="brand" font-size="28" fill="white">NEOSCRATCH</text>
-</svg>
