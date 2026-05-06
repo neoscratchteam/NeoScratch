@@ -246,7 +246,7 @@ export default function Services() {
           {/* Large Grid Overlay */}
           <div className="absolute inset-0 z-0 bg-grid opacity-[0.05] pointer-events-none" style={{ backgroundSize: '60px 60px' }} />
           
-        <div className="max-w-none ml-[3px] px-2 relative z-10 text-center md:text-left">
+        <div className="max-w-none ml-[3px] px-2 relative z-10 flex flex-col items-center text-center">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/90 text-[10px] font-bold uppercase tracking-widest mb-6 animate-slide-up">
               <span>Global Engineering Solutions</span>
             </div>
