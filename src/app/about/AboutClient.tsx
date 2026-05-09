@@ -44,19 +44,19 @@ const aboutData = {
 const teamMembers = [
   {
     id: 1,
-    name: 'Emma Davis',
-    role: 'Founder',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop',
-    bio: 'As the founder, I\'ve been deeply immersed in the journey of turning our vision into a thriving reality.',
-    socials: { email: 'emma@neoscratch.com', whatsapp: '250792734752', instagram: 'https://instagram.com/emmadavis' }
+    name: 'Theogene Iradukunda',
+    role: 'Founder & CEO',
+    image: '/theodev.png',
+    bio: 'As the founder of NeoScratch, I\'ve been deeply immersed in the journey of turning our vision into a thriving reality.',
+    socials: { email: 'theodevrwanda@gmail.com', whatsapp: '250792734752', instagram: 'https://www.instagram.com/theodev.me' }
   },
   {
     id: 2,
-    name: 'James Wilson',
-    role: 'Technical Lead',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop',
-    bio: 'Architecting scalable solutions and ensuring our engineering practices remain at the forefront of the industry.',
-    socials: { email: 'james@neoscratch.com', whatsapp: '250792734752', instagram: 'https://instagram.com/jameswilson' }
+    name: 'Solange Nishimwe',
+    role: 'Projects Manager',
+    image: '/solange.jpg',
+    bio: 'Overseeing technical execution and project delivery to ensure we meet and exceed client expectations.',
+    socials: { email: 'solangenishimwe@gmail.com', whatsapp: '250783204222', instagram: 'https://www.instagram.com/nishimwe__solange/' }
   },
   {
     id: 3,
