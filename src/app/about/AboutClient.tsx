@@ -229,7 +229,7 @@ export default function About() {
               <p className="text-muted-foreground text-[13px] md:text-sm font-semibold leading-relaxed">
                 These individuals are the heart and soul of our product.
               </p>
-              <Button className="rounded-full bg-[#185d34] hover:bg-[#114225] text-white font-bold px-8 h-12 shadow-xl shadow-green-900/20" asChild>
+              <Button className="rounded-full bg-[#1a73e8] hover:bg-[#1557b0] text-white font-bold px-8 h-12 shadow-xl shadow-blue-500/20" asChild>
                 <Link href="/contact">Join our team</Link>
               </Button>
             </div>
@@ -254,7 +254,7 @@ export default function About() {
                     )}
 
                     <div 
-                      className={`absolute inset-x-0 bottom-0 bg-[#e6f4ea] dark:bg-primary/10 backdrop-blur-sm p-5 md:p-6 transition-all duration-700 delay-100 ease-out flex flex-col justify-end ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
+                      className={`absolute inset-x-0 bottom-0 bg-[#e8f0fe] dark:bg-primary/10 backdrop-blur-sm p-5 md:p-6 transition-all duration-700 delay-100 ease-out flex flex-col justify-end ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
                     >
                       <div className="flex justify-between items-start mb-3">
                         <div>
@@ -262,9 +262,9 @@ export default function About() {
                           <p className="text-[11px] uppercase tracking-wider font-bold text-muted-foreground/80">{member.role}</p>
                         </div>
                         <div className="flex gap-2.5">
-                          <a href={`mailto:${member.socials.email}`} className="text-foreground/60 hover:text-[#185d34] transition-colors"><Mail size={18} /></a>
-                          <a href={`https://wa.me/${member.socials.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-[#185d34] transition-colors"><Phone size={18} /></a>
-                          <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-[#185d34] transition-colors"><Instagram size={18} /></a>
+                          <a href={`mailto:${member.socials.email}`} className="text-foreground/60 hover:text-[#1a73e8] transition-colors"><Mail size={18} /></a>
+                          <a href={`https://wa.me/${member.socials.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-[#1a73e8] transition-colors"><Phone size={18} /></a>
+                          <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-[#1a73e8] transition-colors"><Instagram size={18} /></a>
                         </div>
                       </div>
                       <p className="text-[13px] font-medium text-foreground/80 leading-relaxed line-clamp-3">

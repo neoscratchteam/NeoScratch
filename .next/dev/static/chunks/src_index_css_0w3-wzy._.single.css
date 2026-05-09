@@ -2294,6 +2294,11 @@ img {
   background-color: #fffffff2;
 }
 
+.bg-\[\#e8f0fe\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 240 254 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[radial-gradient\(circle_at_center\,_var\(--primary\)_0\%\,_transparent_50\%\)\] {
   background-image: radial-gradient(circle at center, var(--primary) 0%, transparent 50%);
 }
@@ -3919,6 +3924,11 @@ img {
 
 .hover\:bg-white\/90:hover {
   background-color: #ffffffe6;
+}
+
+.hover\:bg-\[\#1557b0\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 87 176 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:text-\[\#185d34\]:hover {
