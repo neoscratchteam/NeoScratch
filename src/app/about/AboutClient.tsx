@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { Target, Eye, Heart, Users, Award, Shield, Zap, Sparkles, ArrowRight, MessageCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Target, Eye, Heart, Users, Award, Shield, Zap, Sparkles, ArrowRight, MessageCircle, Mail, Phone, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
@@ -41,7 +41,52 @@ const aboutData = {
   ceo: "Theogene Iradukunda"
 };
 
+const teamMembers = [
+  {
+    id: 1,
+    name: 'Emma Davis',
+    role: 'Founder',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop',
+    bio: 'As the founder, I\'ve been deeply immersed in the journey of turning our vision into a thriving reality.',
+    socials: { email: 'emma@neoscratch.com', whatsapp: '250792734752', instagram: 'https://instagram.com/emmadavis' }
+  },
+  {
+    id: 2,
+    name: 'James Wilson',
+    role: 'Technical Lead',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop',
+    bio: 'Architecting scalable solutions and ensuring our engineering practices remain at the forefront of the industry.',
+    socials: { email: 'james@neoscratch.com', whatsapp: '250792734752', instagram: 'https://instagram.com/jameswilson' }
+  },
+  {
+    id: 3,
+    name: 'Sarah Chen',
+    role: 'Lead Designer',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop',
+    bio: 'Passionate about creating intuitive, beautiful interfaces that deliver exceptional user experiences.',
+    socials: { email: 'sarah@neoscratch.com', whatsapp: '250792734752', instagram: 'https://instagram.com/sarahchen' }
+  },
+  {
+    id: 4,
+    name: 'Michael Patel',
+    role: 'Growth Manager',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop',
+    bio: 'Driving strategic partnerships and expanding our global reach across emerging markets.',
+    socials: { email: 'michael@neoscratch.com', whatsapp: '250792734752', instagram: 'https://instagram.com/michaelpatel' }
+  },
+  {
+    id: 5,
+    name: 'Jessica Taylor',
+    role: 'Product Owner',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop',
+    bio: 'Bridging the gap between technical execution and business objectives for seamless product delivery.',
+    socials: { email: 'jessica@neoscratch.com', whatsapp: '250792734752', instagram: 'https://instagram.com/jessicataylor' }
+  }
+];
+
 export default function About() {
+  const [activeTeamMember, setActiveTeamMember] = useState(0);
+
   return (
     <div className="min-h-screen bg-background">
       
@@ -173,6 +218,67 @@ export default function About() {
 
         </div>
       </div>
+
+      {/* Team Section */}
+      <section className="py-24 bg-background overflow-hidden border-t border-border/40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div className="lg:col-span-4 space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">Welcome our talented team</h2>
+              <p className="text-muted-foreground text-[13px] md:text-sm font-semibold leading-relaxed">
+                These individuals are the heart and soul of our product.
+              </p>
+              <Button className="rounded-full bg-[#185d34] hover:bg-[#114225] text-white font-bold px-8 h-12 shadow-xl shadow-green-900/20" asChild>
+                <Link href="/contact">Join our team</Link>
+              </Button>
+            </div>
+            
+            <div className="lg:col-span-8 flex h-[450px] md:h-[500px] gap-3 md:gap-4 overflow-hidden">
+              {teamMembers.map((member, idx) => {
+                const isActive = activeTeamMember === idx;
+                return (
+                  <div
+                    key={member.id}
+                    onClick={() => setActiveTeamMember(idx)}
+                    className={`relative cursor-pointer overflow-hidden rounded-2xl md:rounded-3xl transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isActive ? 'flex-[4] md:flex-[5] shadow-xl ring-1 ring-border' : 'flex-[1] hover:flex-[1.2]'}`}
+                  >
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="absolute inset-0 w-full h-full object-cover" 
+                    />
+                    
+                    {!isActive && (
+                      <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-colors duration-500" />
+                    )}
+
+                    <div 
+                      className={`absolute inset-x-0 bottom-0 bg-[#e6f4ea] dark:bg-primary/10 backdrop-blur-sm p-5 md:p-6 transition-all duration-700 delay-100 ease-out flex flex-col justify-end ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}
+                    >
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <h4 className="font-bold text-foreground text-base md:text-lg">{member.name}</h4>
+                          <p className="text-[11px] uppercase tracking-wider font-bold text-muted-foreground/80">{member.role}</p>
+                        </div>
+                        <div className="flex gap-2.5">
+                          <a href={`mailto:${member.socials.email}`} className="text-foreground/60 hover:text-[#185d34] transition-colors"><Mail size={18} /></a>
+                          <a href={`https://wa.me/${member.socials.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-[#185d34] transition-colors"><Phone size={18} /></a>
+                          <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-foreground/60 hover:text-[#185d34] transition-colors"><Instagram size={18} /></a>
+                        </div>
+                      </div>
+                      <p className="text-[13px] font-medium text-foreground/80 leading-relaxed line-clamp-3">
+                        {member.bio}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* Blue Grid CTA Section */}
       <section className="py-24 lg:py-32 bg-primary relative overflow-hidden">
