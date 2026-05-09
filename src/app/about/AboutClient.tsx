@@ -65,6 +65,14 @@ const teamMembers = [
     image: '/jeann.webp',
     bio: 'Dedicated to conceptualizing innovative ideas that drive positive change and push the boundaries of digital creation.',
     socials: { email: 'jeanne@neoscratch.com', whatsapp: '250794338062', instagram: 'https://www.instagram.com/uwizeyimana2811' }
+  },
+  {
+    id: 4,
+    name: 'Mugisha Sam',
+    role: 'Graphic Designer',
+    image: '/bigsam.webp',
+    bio: 'Specializing in visual storytelling and brand identity, creating impactful designs that bridge the gap between technology and art.',
+    socials: { email: 'bigsamdmd@gmail.com', whatsapp: '250796395652', instagram: 'https://www.instagram.com/__bigsam_1' }
   }
 ];
 
