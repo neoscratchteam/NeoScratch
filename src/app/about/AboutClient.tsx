@@ -65,22 +65,6 @@ const teamMembers = [
     image: '/jeann.webp',
     bio: 'Dedicated to conceptualizing innovative ideas that drive positive change and push the boundaries of digital creation.',
     socials: { email: 'jeanne@neoscratch.com', whatsapp: '250794338062', instagram: 'https://www.instagram.com/uwizeyimana2811' }
-  },
-  {
-    id: 4,
-    name: 'Michael Patel',
-    role: 'Growth Manager',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop',
-    bio: 'Driving strategic partnerships and expanding our global reach across emerging markets.',
-    socials: { email: 'michael@neoscratch.com', whatsapp: '250792734752', instagram: 'https://instagram.com/michaelpatel' }
-  },
-  {
-    id: 5,
-    name: 'Jessica Taylor',
-    role: 'Product Owner',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop',
-    bio: 'Bridging the gap between technical execution and business objectives for seamless product delivery.',
-    socials: { email: 'jessica@neoscratch.com', whatsapp: '250792734752', instagram: 'https://instagram.com/jessicataylor' }
   }
 ];
 
