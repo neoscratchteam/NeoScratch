@@ -51,22 +51,6 @@ const teamMembers = [
     socials: { email: 'theodevrwanda@gmail.com', whatsapp: '250792734752', instagram: 'https://www.instagram.com/theodev.me' }
   },
   {
-    id: 2,
-    name: 'Solange Nishimwe',
-    role: 'Projects Manager',
-    image: '/solange.jpg',
-    bio: 'Overseeing technical execution and project delivery to ensure we meet and exceed client expectations.',
-    socials: { email: 'solangenishimwe@gmail.com', whatsapp: '250783204222', instagram: 'https://www.instagram.com/nishimwe__solange/' }
-  },
-  {
-    id: 3,
-    name: 'Jeanne Uwizeyimana',
-    role: 'Idealist',
-    image: '/jeann.webp',
-    bio: 'Dedicated to conceptualizing innovative ideas that drive positive change and push the boundaries of digital creation.',
-    socials: { email: 'jeanne@neoscratch.com', whatsapp: '250794338062', instagram: 'https://www.instagram.com/uwizeyimana2811' }
-  },
-  {
     id: 4,
     name: 'Mugisha Sam',
     role: 'Graphic Designer',
