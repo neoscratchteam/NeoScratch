@@ -51,7 +51,7 @@ export function Header() {
           : 'bg-transparent py-2'
       } text-white`}
     >
-      <div className="max-w-none ml-[3px] px-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-start items-center h-16 lg:h-20">
           {/* Logo */}
           <Link
@@ -60,10 +60,9 @@ export function Header() {
           >
             <Image 
               src="/logo.png" 
-              width={160}
-              height={32}
-              style={{ height: 'auto' }}
-              className="h-6 md:h-8 w-auto hover:opacity-90 transition-opacity" 
+              width={40}
+              height={40}
+              className="h-8 w-8 md:h-10 md:w-10 hover:opacity-90 transition-opacity" 
               alt="NEOSCRATCH Logo" 
               priority
             />

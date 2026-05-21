@@ -50,7 +50,7 @@ export default function Projects() {
           {/* Large Grid Overlay */}
           <div className="absolute inset-0 z-0 bg-grid opacity-[0.05] pointer-events-none" style={{ backgroundSize: '60px 60px' }} />
           
-          <div className="max-w-none ml-[3px] px-2 relative z-10 flex flex-col items-center text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/90 text-[10px] font-bold uppercase tracking-widest mb-6 animate-slide-up">
               <span>Our Global Portfolio</span>
             </div>
@@ -65,7 +65,7 @@ export default function Projects() {
 
         {/* 🔍 FILTER BAR - Pill Buttons */}
         <section className="py-12 border-b border-border/40 sticky top-16 lg:top-20 bg-white z-40">
-          <div className="max-w-none ml-[3px] px-2">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap items-center gap-3 justify-start md:justify-center">
               {dynamicCategories.map((cat) => (
                 <button
@@ -91,7 +91,7 @@ export default function Projects() {
 
         {/* Project Grid - Modern Small Cards */}
         <section id="projects-grid" className="py-24">
-          <div className="max-w-none ml-[3px] px-2">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((p) => (
                 <Link 

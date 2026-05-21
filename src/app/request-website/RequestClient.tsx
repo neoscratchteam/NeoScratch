@@ -99,7 +99,7 @@ _Request sent from neoscratch.rw inquiry portal_
       <section className="pb-16 lg:pb-20 bg-[#1a73e8] relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-grid opacity-[0.05] pointer-events-none" style={{ backgroundSize: '40px 40px' }} />
         
-        <div className="max-w-none ml-[3px] px-2 relative z-10 flex flex-col items-center text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
           <Badge className="bg-white/10 text-white border-white/20 text-[9px] uppercase tracking-[0.2em] mb-4">Architecture Brief</Badge>
           <h1 className="text-3xl lg:text-5xl font-bold tracking-tight text-white mb-4 animate-fade-in uppercase">
             Architect Your <br /> Digital <span className="opacity-70">Presence.</span>

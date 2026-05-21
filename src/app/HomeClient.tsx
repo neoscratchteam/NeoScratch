@@ -91,7 +91,7 @@ export default function Index() {
         {/* Grid lines */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.04] z-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
 
-        <div className="relative z-10 max-w-none ml-[3px] px-2 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
 
             {/* ── LEFT ── */}
@@ -201,7 +201,7 @@ export default function Index() {
 
       {/* Services Section */}
       <section className="py-24 bg-secondary/20" id="services">
-        <div className="max-w-none ml-[3px] px-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
             <span className="text-primary font-bold tracking-widest text-xs uppercase mb-4 block">WHAT WE DO</span>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">
@@ -357,7 +357,7 @@ export default function Index() {
 
       {/* Testimonials Section */}
       <section className="py-24 bg-background">
-        <div className="max-w-none ml-[3px] px-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <TestimonialSlider />
         </div>
       </section>
@@ -365,7 +365,7 @@ export default function Index() {
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/5" />
-        <div className="max-w-none ml-[3px] px-2 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="bg-primary rounded-[3rem] p-12 lg:p-20 text-center text-primary-foreground shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 p-12 opacity-10">
               <Code className="h-64 w-64" />

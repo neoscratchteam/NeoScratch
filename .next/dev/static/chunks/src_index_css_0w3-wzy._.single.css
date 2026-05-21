@@ -5125,8 +5125,8 @@ img {
     height: 2.5rem;
   }
 
-  .md\:h-8 {
-    height: 2rem;
+  .md\:h-12 {
+    height: 3rem;
   }
 
   .md\:h-\[450px\] {
@@ -5139,6 +5139,14 @@ img {
 
   .md\:min-h-\[800px\] {
     min-height: 800px;
+  }
+
+  .md\:w-10 {
+    width: 2.5rem;
+  }
+
+  .md\:w-12 {
+    width: 3rem;
   }
 
   .md\:w-\[var\(--radix-navigation-menu-viewport-width\)\] {
