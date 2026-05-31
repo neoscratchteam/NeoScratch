@@ -185,7 +185,7 @@ const servicesData = [
       { text: 'Order via Email', included: true },
       { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
       { text: 'Professional Business Emails', included: false },
-      { text: 'Inventory Sync & API', included: true },
+      { text: 'Basic Inventory Sync & API', included: true },
       { text: 'Ads Campaign Setup', included: false },
       { text: '15 Pages', included: true },
       { text: '6 Months Free Maintenance', included: true }
