@@ -131,12 +131,14 @@ const servicesData = [
     title: 'Starter E-commerce',
     description: 'Affordable, full-featured online store with dashboard and basic tools for small shops starting online.',
     features: [
-      'Dashboard included',
+      'Admin Panel / Dashboard',
       '5 Pages',
       '3 Months Free Maintenance',
       'Free Domain Name (1 Year)',
-      'Standard SEO Setup',
       'Order via WhatsApp',
+      'Free Database Integration',
+      'Free Uptime Monitoring',
+      'Standard SEO Setup',
       'Up to 50 Products'
     ],
     price: '150,000 RWF',
@@ -149,13 +151,12 @@ const servicesData = [
     title: 'Standard E-commerce',
     description: 'Complete online store for growing businesses, including advanced catalog features and extended support.',
     features: [
-      'Dashboard included',
+      'Admin Panel / Dashboard',
       '8 Pages',
       '4 Months Free Maintenance',
       'Free Domain Name (1 Year)',
+      'Order via WhatsApp & Email',
       'Google Search Optimization',
-      'Payment Gateway Integration',
-      'Order via WhatsApp',
       'Up to 200 Products'
     ],
     price: '200,000 RWF',
@@ -176,6 +177,7 @@ const servicesData = [
       '1 Month Ads Campaign Setup',
       'Order via WhatsApp',
       'Real-time Email & WhatsApp Notifications',
+      'Local Payment Gateways (MTN MoMo, Airtel Money)',
       'Inventory Sync'
     ],
     price: '450,000 RWF',
@@ -196,6 +198,7 @@ const servicesData = [
       '2 Months Ads Running & Opt',
       'Order via WhatsApp',
       'Real-time Email & WhatsApp Notifications',
+      'Local Payment Gateways (MTN MoMo, Airtel Money)',
       '5 Professional Business Emails'
     ],
     price: '800,000 RWF',
@@ -216,6 +219,7 @@ const servicesData = [
       '3 Months Ads Running & weekly reports',
       'Order via WhatsApp',
       'Real-time Email & WhatsApp Notifications',
+      'Local Payment Gateways (MTN MoMo, Airtel Money)',
       '5 Professional Business Emails',
       'Multi-vendor & API Integrations'
     ],
