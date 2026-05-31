@@ -138,7 +138,7 @@ const servicesData = [
       { text: 'Free Database & Uptime Monitoring', included: true },
       { text: 'Order via Email', included: false },
       { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: false },
-      { text: '5 Professional Business Emails', included: false },
+      { text: 'Professional Business Emails', included: false },
       { text: 'Inventory Sync & API', included: false },
       { text: 'Ads Campaign Setup', included: false },
       { text: '5 Pages', included: true },
@@ -161,7 +161,7 @@ const servicesData = [
       { text: 'Free Database & Uptime Monitoring', included: true },
       { text: 'Order via Email', included: true },
       { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: false },
-      { text: '5 Professional Business Emails', included: false },
+      { text: 'Professional Business Emails', included: false },
       { text: 'Inventory Sync & API', included: false },
       { text: 'Ads Campaign Setup', included: false },
       { text: '8 Pages', included: true },
@@ -184,7 +184,7 @@ const servicesData = [
       { text: 'Free Database & Uptime Monitoring', included: true },
       { text: 'Order via Email', included: true },
       { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
-      { text: '5 Professional Business Emails', included: false },
+      { text: 'Professional Business Emails', included: false },
       { text: 'Inventory Sync & API', included: true },
       { text: 'Ads Campaign Setup', included: false },
       { text: '15 Pages', included: true },
@@ -207,7 +207,7 @@ const servicesData = [
       { text: 'Free Database & Uptime Monitoring', included: true },
       { text: 'Order via Email', included: true },
       { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
-      { text: '5 Professional Business Emails', included: true },
+      { text: 'Professional Business Emails', included: true },
       { text: 'Inventory Sync & API', included: true },
       { text: 'Ads Campaign Setup', included: true },
       { text: '25 Pages', included: true },
@@ -230,7 +230,7 @@ const servicesData = [
       { text: 'Free Database & Uptime Monitoring', included: true },
       { text: 'Order via Email', included: true },
       { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
-      { text: '5 Professional Business Emails', included: true },
+      { text: 'Professional Business Emails', included: true },
       { text: 'Inventory Sync & API', included: true },
       { text: 'Ads Campaign Setup', included: true },
       { text: 'Unlimited Pages', included: true },
@@ -424,8 +424,13 @@ export default function Services() {
               {filteredServices.map((s) => (
                 <div 
                   key={s.id} 
-                  className="group flex flex-col bg-white border border-[#1a73e8]/10 rounded-2xl p-8 hover:border-[#1a73e8]/40 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500"
+                  className="group relative flex flex-col bg-white border border-[#1a73e8]/10 rounded-2xl p-8 hover:border-[#1a73e8]/40 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500"
                 >
+                  {s.popular && (
+                    <Badge className="absolute top-4 right-4 bg-[#1a73e8] text-white hover:bg-[#1a73e8]/90 font-bold text-[9px] uppercase tracking-wider px-3 py-1 rounded-full border-none">
+                      Most Popular
+                    </Badge>
+                  )}
                   <div className="h-14 w-14 rounded-xl bg-[#1a73e8]/10 flex items-center justify-center mb-8 group-hover:bg-[#1a73e8] transition-colors duration-500">
                     <s.icon className="h-6 w-6 text-[#1a73e8] group-hover:text-white transition-colors duration-500" />
                   </div>
