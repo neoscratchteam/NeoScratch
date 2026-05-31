@@ -140,7 +140,13 @@ const servicesData = [
       { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: false },
       { text: '5 Professional Business Emails', included: false },
       { text: 'Inventory Sync & API', included: false },
-      { text: 'Ads Campaign Setup', included: false }
+      { text: 'Ads Campaign Setup', included: false },
+      { text: '5-8 Pages', included: true },
+      { text: '15-25 Pages', included: false },
+      { text: 'Unlimited Pages', included: false },
+      { text: '3-4 Months Free Maintenance', included: true },
+      { text: '6-12 Months Free Maintenance', included: false },
+      { text: '24 Months Free Maintenance', included: false }
     ],
     price: '150,000 RWF',
     popular: false,
@@ -161,7 +167,13 @@ const servicesData = [
       { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: false },
       { text: '5 Professional Business Emails', included: false },
       { text: 'Inventory Sync & API', included: false },
-      { text: 'Ads Campaign Setup', included: false }
+      { text: 'Ads Campaign Setup', included: false },
+      { text: '5-8 Pages', included: true },
+      { text: '15-25 Pages', included: false },
+      { text: 'Unlimited Pages', included: false },
+      { text: '3-4 Months Free Maintenance', included: true },
+      { text: '6-12 Months Free Maintenance', included: false },
+      { text: '24 Months Free Maintenance', included: false }
     ],
     price: '200,000 RWF',
     popular: false,
@@ -182,7 +194,13 @@ const servicesData = [
       { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
       { text: '5 Professional Business Emails', included: false },
       { text: 'Inventory Sync & API', included: true },
-      { text: 'Ads Campaign Setup', included: false }
+      { text: 'Ads Campaign Setup', included: false },
+      { text: '5-8 Pages', included: false },
+      { text: '15-25 Pages', included: true },
+      { text: 'Unlimited Pages', included: false },
+      { text: '3-4 Months Free Maintenance', included: false },
+      { text: '6-12 Months Free Maintenance', included: true },
+      { text: '24 Months Free Maintenance', included: false }
     ],
     price: '450,000 RWF',
     popular: true,
@@ -203,7 +221,13 @@ const servicesData = [
       { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
       { text: '5 Professional Business Emails', included: true },
       { text: 'Inventory Sync & API', included: true },
-      { text: 'Ads Campaign Setup', included: true }
+      { text: 'Ads Campaign Setup', included: true },
+      { text: '5-8 Pages', included: false },
+      { text: '15-25 Pages', included: true },
+      { text: 'Unlimited Pages', included: false },
+      { text: '3-4 Months Free Maintenance', included: false },
+      { text: '6-12 Months Free Maintenance', included: true },
+      { text: '24 Months Free Maintenance', included: false }
     ],
     price: '800,000 RWF',
     popular: false,
@@ -224,7 +248,13 @@ const servicesData = [
       { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
       { text: '5 Professional Business Emails', included: true },
       { text: 'Inventory Sync & API', included: true },
-      { text: 'Ads Campaign Setup', included: true }
+      { text: 'Ads Campaign Setup', included: true },
+      { text: '5-8 Pages', included: false },
+      { text: '15-25 Pages', included: false },
+      { text: 'Unlimited Pages', included: true },
+      { text: '3-4 Months Free Maintenance', included: false },
+      { text: '6-12 Months Free Maintenance', included: false },
+      { text: '24 Months Free Maintenance', included: true }
     ],
     price: '1,340,000 RWF',
     popular: false,
