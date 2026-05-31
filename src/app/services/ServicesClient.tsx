@@ -136,6 +136,7 @@ const servicesData = [
       '3 Months Free Maintenance',
       'Free Domain Name (1 Year)',
       'Standard SEO Setup',
+      'Order via WhatsApp',
       'Up to 50 Products'
     ],
     price: '150,000 RWF',
@@ -154,6 +155,7 @@ const servicesData = [
       'Free Domain Name (1 Year)',
       'Google Search Optimization',
       'Payment Gateway Integration',
+      'Order via WhatsApp',
       'Up to 200 Products'
     ],
     price: '200,000 RWF',
@@ -172,6 +174,8 @@ const servicesData = [
       'Free Domain & Hosting (1 Yr)',
       'Google Business Setup + SEO',
       '1 Month Ads Campaign Setup',
+      'Order via WhatsApp',
+      'Real-time Email & WhatsApp Notifications',
       'Inventory Sync'
     ],
     price: '450,000 RWF',
@@ -190,7 +194,9 @@ const servicesData = [
       'Free Domain & Cloud Hosting (1 Yr)',
       'Comprehensive SEO Audit',
       '2 Months Ads Running & Opt',
-      'SMS/WhatsApp Order Alerts'
+      'Order via WhatsApp',
+      'Real-time Email & WhatsApp Notifications',
+      '5 Professional Business Emails'
     ],
     price: '800,000 RWF',
     popular: false,
@@ -208,6 +214,9 @@ const servicesData = [
       'Dedicated VPS Hosting (1 Yr)',
       'Premium SEO & Content Strategy',
       '3 Months Ads Running & weekly reports',
+      'Order via WhatsApp',
+      'Real-time Email & WhatsApp Notifications',
+      '5 Professional Business Emails',
       'Multi-vendor & API Integrations'
     ],
     price: '1,340,000 RWF',
