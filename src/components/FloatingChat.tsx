@@ -35,7 +35,7 @@ export function FloatingChat() {
             whileHover={{ scale: 1.1, y: -5 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollToTop}
-            className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-primary border border-primary/20 shadow-xl z-50 hover:bg-primary/5 transition-colors group"
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-primary border border-primary/20 shadow-xl z-50 hover:bg-primary hover:text-white hover:border-primary transition-colors duration-300 group"
             title="Go to Top"
           >
             <ChevronUp className="h-6 w-6 group-hover:-translate-y-1 transition-transform" />
