@@ -144,7 +144,7 @@ const servicesData = [
       { text: '5 Pages', included: true },
       { text: '3 Months Free Maintenance', included: true }
     ],
-    price: '150,000 RWF',
+    price: 'Starting from 150,000 RWF',
     popular: false,
   },
   {
@@ -167,7 +167,7 @@ const servicesData = [
       { text: '8 Pages', included: true },
       { text: '4 Months Free Maintenance', included: true }
     ],
-    price: '200,000 RWF',
+    price: 'Starting from 200,000 RWF',
     popular: false,
   },
   {
@@ -190,7 +190,7 @@ const servicesData = [
       { text: '15 Pages', included: true },
       { text: '6 Months Free Maintenance', included: true }
     ],
-    price: '450,000 RWF',
+    price: 'Starting from 450,000 RWF',
     popular: true,
   },
   {
@@ -213,7 +213,7 @@ const servicesData = [
       { text: '25 Pages', included: true },
       { text: '12 Months Free Maintenance', included: true }
     ],
-    price: '800,000 RWF',
+    price: 'Starting from 800,000 RWF',
     popular: false,
   },
   {
@@ -236,7 +236,7 @@ const servicesData = [
       { text: 'Unlimited Pages', included: true },
       { text: '24 Months Free Maintenance', included: true }
     ],
-    price: '1,340,000 RWF',
+    price: 'Starting from 1,340,000 RWF',
     popular: false,
   },
   {
