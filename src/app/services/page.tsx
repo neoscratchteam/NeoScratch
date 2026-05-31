@@ -49,6 +49,21 @@ const servicesJsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    name: 'E-commerce Website Development',
+    provider: { '@type': 'Organization', name: 'NeoScratch' },
+    description: 'Custom e-commerce platforms with admin dashboard, secure checkouts, and custom features. Min 5 pages, starting from 150,000 RWF up to 1,340,000 RWF.',
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'RWF',
+      lowPrice: '150000',
+      highPrice: '1340000',
+      offerCount: '5',
+    },
+    areaServed: 'RW',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
     name: 'Mobile App Engineering',
     provider: { '@type': 'Organization', name: 'NeoScratch' },
     description: 'Native and cross-platform mobile applications for iOS and Android.',

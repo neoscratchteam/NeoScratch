@@ -756,10 +756,6 @@ img {
   margin-left: 1rem;
 }
 
-.ml-\[3px\] {
-  margin-left: 3px;
-}
-
 .ml-auto {
   margin-left: auto;
 }
@@ -1329,10 +1325,6 @@ img {
 
 .max-w-md {
   max-width: 28rem;
-}
-
-.max-w-none {
-  max-width: none;
 }
 
 .max-w-sm {
