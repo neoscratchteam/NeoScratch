@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Globe, Code, Palette, Lightbulb, Check, ArrowRight, Star, Monitor, Smartphone, GraduationCap, Zap, ShoppingCart, Layout, Database, Settings, RefreshCw, Heart, Briefcase, Building2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Globe, Code, Palette, Lightbulb, Check, X, ArrowRight, Star, Monitor, Smartphone, GraduationCap, Zap, ShoppingCart, Layout, Database, Settings, RefreshCw, Heart, Briefcase, Building2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
@@ -129,17 +129,18 @@ const servicesData = [
     category: 'E-commerce',
     icon: ShoppingCart,
     title: 'Starter E-commerce',
-    description: 'Affordable, full-featured online store with dashboard and basic tools for small shops starting online.',
+    description: 'Affordable, full-featured online store (5 Pages, 3 Months Free Maintenance, Up to 50 Products) with dashboard and basic tools for small shops starting online.',
     features: [
-      'Admin Panel / Dashboard',
-      '5 Pages',
-      '3 Months Free Maintenance',
-      'Free Domain Name (1 Year)',
-      'Order via WhatsApp',
-      'Free Database Integration',
-      'Free Uptime Monitoring',
-      'Standard SEO Setup',
-      'Up to 50 Products'
+      { text: 'Admin Panel / Dashboard', included: true },
+      { text: 'Free Domain Name (1 Year)', included: true },
+      { text: 'Standard SEO Setup', included: true },
+      { text: 'Order via WhatsApp', included: true },
+      { text: 'Free Database & Uptime Monitoring', included: true },
+      { text: 'Order via WhatsApp & Email', included: false },
+      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: false },
+      { text: '5 Professional Business Emails', included: false },
+      { text: 'Inventory Sync & API', included: false },
+      { text: 'Ads Campaign Setup', included: false }
     ],
     price: '150,000 RWF',
     popular: false,
@@ -149,15 +150,18 @@ const servicesData = [
     category: 'E-commerce',
     icon: ShoppingCart,
     title: 'Standard E-commerce',
-    description: 'Complete online store for growing businesses, including advanced catalog features and extended support.',
+    description: 'Complete online store (8 Pages, 4 Months Free Maintenance, Up to 200 Products) for growing businesses, including advanced catalog features and extended support.',
     features: [
-      'Admin Panel / Dashboard',
-      '8 Pages',
-      '4 Months Free Maintenance',
-      'Free Domain Name (1 Year)',
-      'Order via WhatsApp & Email',
-      'Google Search Optimization',
-      'Up to 200 Products'
+      { text: 'Admin Panel / Dashboard', included: true },
+      { text: 'Free Domain Name (1 Year)', included: true },
+      { text: 'Standard SEO Setup', included: true },
+      { text: 'Order via WhatsApp', included: true },
+      { text: 'Free Database & Uptime Monitoring', included: true },
+      { text: 'Order via WhatsApp & Email', included: true },
+      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: false },
+      { text: '5 Professional Business Emails', included: false },
+      { text: 'Inventory Sync & API', included: false },
+      { text: 'Ads Campaign Setup', included: false }
     ],
     price: '200,000 RWF',
     popular: false,
@@ -167,18 +171,18 @@ const servicesData = [
     category: 'E-commerce',
     icon: ShoppingCart,
     title: 'Growth E-commerce',
-    description: 'High-performance online store with local payment integrations, inventory tools, and initial marketing push.',
+    description: 'High-performance online store (15 Pages, 6 Months Free Maintenance, Unlimited Products) with local payment integrations, inventory tools, and initial marketing push.',
     features: [
-      'Dashboard included',
-      '15 Pages',
-      '6 Months Free Maintenance',
-      'Free Domain & Hosting (1 Yr)',
-      'Google Business Setup + SEO',
-      '1 Month Ads Campaign Setup',
-      'Order via WhatsApp',
-      'Real-time Email & WhatsApp Notifications',
-      'Local Payment Gateways (MTN MoMo, Airtel Money)',
-      'Inventory Sync'
+      { text: 'Admin Panel / Dashboard', included: true },
+      { text: 'Free Domain Name (1 Year)', included: true },
+      { text: 'Standard SEO Setup', included: true },
+      { text: 'Order via WhatsApp', included: true },
+      { text: 'Free Database & Uptime Monitoring', included: true },
+      { text: 'Order via WhatsApp & Email', included: true },
+      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
+      { text: '5 Professional Business Emails', included: false },
+      { text: 'Inventory Sync & API', included: true },
+      { text: 'Ads Campaign Setup', included: false }
     ],
     price: '450,000 RWF',
     popular: true,
@@ -188,18 +192,18 @@ const servicesData = [
     category: 'E-commerce',
     icon: ShoppingCart,
     title: 'Pro E-commerce',
-    description: 'Advanced digital commerce platform with multi-channel features, extensive marketing, and dedicated support.',
+    description: 'Advanced digital commerce platform (25 Pages, 12 Months Free Maintenance, Unlimited Products) with multi-channel features, extensive marketing, and dedicated support.',
     features: [
-      'Dashboard & Sales Analytics',
-      '25 Pages',
-      '12 Months Free Maintenance',
-      'Free Domain & Cloud Hosting (1 Yr)',
-      'Comprehensive SEO Audit',
-      '2 Months Ads Running & Opt',
-      'Order via WhatsApp',
-      'Real-time Email & WhatsApp Notifications',
-      'Local Payment Gateways (MTN MoMo, Airtel Money)',
-      '5 Professional Business Emails'
+      { text: 'Admin Panel / Dashboard', included: true },
+      { text: 'Free Domain Name (1 Year)', included: true },
+      { text: 'Standard SEO Setup', included: true },
+      { text: 'Order via WhatsApp', included: true },
+      { text: 'Free Database & Uptime Monitoring', included: true },
+      { text: 'Order via WhatsApp & Email', included: true },
+      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
+      { text: '5 Professional Business Emails', included: true },
+      { text: 'Inventory Sync & API', included: true },
+      { text: 'Ads Campaign Setup', included: true }
     ],
     price: '800,000 RWF',
     popular: false,
@@ -209,19 +213,18 @@ const servicesData = [
     category: 'E-commerce',
     icon: ShoppingCart,
     title: 'Enterprise E-commerce',
-    description: 'The ultimate bespoke e-commerce solution for market leaders, complete with comprehensive marketing and custom tools.',
+    description: 'The ultimate bespoke e-commerce solution (Unlimited Pages, 24 Months Free Maintenance, Unlimited Products) for market leaders, complete with comprehensive marketing and custom tools.',
     features: [
-      'Custom Admin Dashboard',
-      'Unlimited Pages',
-      '24 Months Free Maintenance',
-      'Dedicated VPS Hosting (1 Yr)',
-      'Premium SEO & Content Strategy',
-      '3 Months Ads Running & weekly reports',
-      'Order via WhatsApp',
-      'Real-time Email & WhatsApp Notifications',
-      'Local Payment Gateways (MTN MoMo, Airtel Money)',
-      '5 Professional Business Emails',
-      'Multi-vendor & API Integrations'
+      { text: 'Admin Panel / Dashboard', included: true },
+      { text: 'Free Domain Name (1 Year)', included: true },
+      { text: 'Standard SEO Setup', included: true },
+      { text: 'Order via WhatsApp', included: true },
+      { text: 'Free Database & Uptime Monitoring', included: true },
+      { text: 'Order via WhatsApp & Email', included: true },
+      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
+      { text: '5 Professional Business Emails', included: true },
+      { text: 'Inventory Sync & API', included: true },
+      { text: 'Ads Campaign Setup', included: true }
     ],
     price: '1,340,000 RWF',
     popular: false,
@@ -426,12 +429,27 @@ export default function Services() {
                   </p>
 
                   <div className="space-y-4 mb-8">
-                    {s.features.map((f, i) => (
-                      <div key={i} className="flex items-center text-[10px] font-bold text-foreground/70 uppercase tracking-widest leading-none">
-                        <Check className="h-3 w-3 mr-3 text-[#1a73e8]" />
-                        {f}
-                      </div>
-                    ))}
+                    {(s.features as (string | { text: string; included: boolean })[]).map((f, i) => {
+                      if (typeof f === 'string') {
+                        return (
+                          <div key={i} className="flex items-center text-[10px] font-bold text-foreground/70 uppercase tracking-widest leading-none">
+                            <Check className="h-3.5 w-3.5 mr-3 text-[#1a73e8] shrink-0" />
+                            <span>{f}</span>
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <div key={i} className="flex items-center text-[10px] font-bold text-foreground/70 uppercase tracking-widest leading-none">
+                            {f.included ? (
+                              <Check className="h-3.5 w-3.5 mr-3 text-[#1a73e8] shrink-0" />
+                            ) : (
+                              <X className="h-3.5 w-3.5 mr-3 text-red-500 shrink-0" />
+                            )}
+                            <span>{f.text}</span>
+                          </div>
+                        );
+                      }
+                    })}
                   </div>
 
                   <div className="pt-8 border-t border-border/40 flex items-center justify-between">

@@ -3041,6 +3041,23 @@ img {
   color: #ffffffe6;
 }
 
+.text-foreground\/30 {
+  color: hsl(var(--foreground) / .3);
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+}
+
+.line-through {
+  text-decoration-line: line-through;
+}
+
+.decoration-1 {
+  text-decoration-thickness: 1px;
+}
+
 .underline-offset-4 {
   text-underline-offset: 4px;
 }
