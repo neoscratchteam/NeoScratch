@@ -74,9 +74,7 @@ export default function Index() {
             className="object-cover"
             priority
           />
-          {/* Overlay - Darker for readability */}
           <div className="absolute inset-0 bg-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/40 to-transparent" />
         </div>
 
         {/* Radial glows */}
@@ -170,7 +168,6 @@ export default function Index() {
                       { icon: Smartphone, label: 'Mobile App Development', desc: 'iOS & Android • React Native • Offline-first', color: 'hsl(200 90% 60%)' },
                       { icon: Settings, label: 'Website Maintenance', desc: 'Monthly retainer • Content updates • Reports', color: 'hsl(0 70% 65%)' },
                       { icon: Monitor, label: 'Website Design & Dev', desc: 'Up to 15 pages • Mobile first • Admin panel', color: 'hsl(221 83% 70%)' },
-                      { icon: Globe, label: 'Google Business Profile', desc: 'Google Maps • Verified listing • Local SEO', color: 'hsl(142 70% 55%)' },
                     ].map((s, i) => {
                       const Icon = s.icon;
                       return (
