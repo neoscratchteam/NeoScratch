@@ -40,25 +40,25 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-jakarta">
-      {/* Top Bar */}
-      <div className="bg-[#052219] text-white/80 text-xs py-2 border-b border-white/10 hidden md:block">
+      {/* Top Bar (Bright Lime Green) */}
+      <div className="bg-[#a3e635] text-[#0b3b2d] text-xs py-2 font-semibold hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center space-x-6">
-            <span className="flex items-center gap-1.5 text-lime-400 font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5" />
-              We&apos;re top software &amp; business consulting agency in Rwanda
+            <span className="flex items-center gap-1.5 font-bold">
+              <CheckCircle2 className="w-3.5 h-3.5 fill-[#0b3b2d] text-[#a3e635]" />
+              We&apos;re top business consulting agency
             </span>
-            <a href="mailto:info@neoscratch.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <Mail className="w-3.5 h-3.5 text-lime-400" />
-              info@neoscratch.com
+            <a href="mailto:example@biztop.com" className="flex items-center gap-1.5 hover:underline transition-all">
+              <Mail className="w-3.5 h-3.5" />
+              example@biztop.com
             </a>
           </div>
           <div className="flex items-center space-x-4">
-            <span className="text-white/60">Follow Us —</span>
-            <a href="#" className="hover:text-lime-400 transition-colors"><Facebook className="w-3.5 h-3.5" /></a>
-            <a href="#" className="hover:text-lime-400 transition-colors"><Twitter className="w-3.5 h-3.5" /></a>
-            <a href="#" className="hover:text-lime-400 transition-colors"><Instagram className="w-3.5 h-3.5" /></a>
-            <a href="#" className="hover:text-lime-400 transition-colors"><Linkedin className="w-3.5 h-3.5" /></a>
+            <span>Follow Us —</span>
+            <a href="#" className="hover:opacity-75 transition-opacity"><Facebook className="w-3.5 h-3.5" /></a>
+            <a href="#" className="hover:opacity-75 transition-opacity"><Twitter className="w-3.5 h-3.5" /></a>
+            <a href="#" className="hover:opacity-75 transition-opacity"><Instagram className="w-3.5 h-3.5" /></a>
+            <a href="#" className="hover:opacity-75 transition-opacity"><Linkedin className="w-3.5 h-3.5" /></a>
           </div>
         </div>
       </div>
@@ -111,11 +111,11 @@ export function Header() {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/request-website"
-              className="inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-sm font-bold bg-lime-400 text-[#0b3b2d] shadow-md hover:bg-lime-300 transition-all duration-300 hover:scale-[1.03] group"
+              className="inline-flex items-center gap-3 pl-5 pr-1.5 py-1.5 rounded-full text-xs font-extrabold bg-[#0b3b2d] text-white border-2 border-lime-400 shadow-md hover:bg-[#07261d] transition-all duration-300 hover:scale-[1.03] group"
             >
-              <span>Get Your Website</span>
-              <span className="w-8 h-8 rounded-full bg-[#0b3b2d] text-lime-400 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
-                <ArrowRight className="w-4 h-4" />
+              <span className="text-white font-bold">Book Appointment</span>
+              <span className="w-7 h-7 rounded-full bg-lime-400 text-[#0b3b2d] flex items-center justify-center font-black text-xs group-hover:translate-x-0.5 transition-transform">
+                »
               </span>
             </Link>
           </div>

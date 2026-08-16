@@ -63,96 +63,85 @@ export default function Index() {
     <div className="min-h-screen font-jakarta bg-[#f7f8f3] text-[#0b3b2d]">
       
       {/* ── 1. Biztop Forest Green Hero Section ── */}
-      <section className="relative bg-[#0b3b2d] text-white pt-32 lg:pt-40 pb-20 lg:pb-28 overflow-hidden">
+      <section className="relative bg-[#0b3b2d] text-white pt-28 lg:pt-36 pb-16 lg:pb-24 overflow-hidden">
         
-        {/* Subtle Background Glow Patterns */}
-        <div className="absolute inset-0 pointer-events-none opacity-20">
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-lime-400 blur-[140px]" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-emerald-600 blur-[120px]" />
+        {/* Full-bleed background image with left gradient blend */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/rwanda_hero_seamless.png"
+            alt="Rwandan Business Leaders"
+            fill
+            className="object-cover object-right lg:object-right-top opacity-90 lg:opacity-100"
+            priority
+          />
+          {/* Gradient overlay to blend left side smoothly */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b3b2d] via-[#0b3b2d]/95 lg:via-[#0b3b2d]/85 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b3b2d] via-transparent to-transparent opacity-80 lg:opacity-40" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[520px]">
 
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
 
               {/* Rating Pill Badge */}
-              <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold backdrop-blur-md">
-                <span className="font-bold text-white">4.9</span>
-                <div className="flex items-center text-amber-400">
-                  <Star className="w-3.5 h-3.5 fill-current" />
-                  <Star className="w-3.5 h-3.5 fill-current" />
-                  <Star className="w-3.5 h-3.5 fill-current" />
-                  <Star className="w-3.5 h-3.5 fill-current" />
-                  <Star className="w-3.5 h-3.5 fill-current" />
+              <div className="inline-flex items-center gap-3 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-semibold backdrop-blur-md">
+                <span className="font-bold text-white text-xs">4.9</span>
+                <div className="flex items-center text-lime-400">
+                  <Star className="w-3 h-3 fill-current" />
+                  <Star className="w-3 h-3 fill-current" />
+                  <Star className="w-3 h-3 fill-current" />
+                  <Star className="w-3 h-3 fill-current" />
+                  <Star className="w-3 h-3 fill-current" />
                 </div>
-                <span className="text-white/80 border-l border-white/20 pl-2">5K+ Reviews</span>
+                <span className="text-white/80 border-l border-white/20 pl-2 text-[11px]">5K+ Reviews</span>
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-white uppercase">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.04] text-white uppercase font-jakarta">
                 NEXT — GEN TOP <br />
-                NOTCH <span className="text-lime-400">BUSINESS</span> <br />
-                SOLUTIONS
+                NOTCH <span className="text-[#a3e635]">BUSINESS</span> <br />
+                SOLUTION
               </h1>
 
               {/* Subtitle */}
-              <p className="text-base sm:text-lg text-white/80 max-w-xl leading-relaxed">
-                We provide expert business consulting &amp; software engineering services to help companies grow, optimize operations, and achieve sustainable digital success.
+              <p className="text-sm sm:text-base text-white/80 max-w-lg leading-relaxed">
+                We provide expert business consulting services to help companies grow, optimize operations, and achieve sustainable digital success.
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex flex-wrap items-center gap-5 pt-2">
+                {/* Book Appointment Pill Button */}
                 <Link
                   href="/request-website"
-                  className="inline-flex items-center gap-3 pl-7 pr-3 py-3.5 rounded-full text-base font-bold bg-lime-400 text-[#0b3b2d] shadow-lg hover:bg-lime-300 transition-all duration-300 hover:scale-[1.03] group"
+                  className="inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs font-extrabold bg-[#0b3b2d] text-white border-2 border-[#a3e635] shadow-lg hover:bg-[#07261d] transition-all duration-300 hover:scale-[1.03] group"
                 >
-                  <span>Book Appointment</span>
-                  <span className="w-9 h-9 rounded-full bg-[#0b3b2d] text-lime-400 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                    <ArrowRight className="w-4 h-4" />
+                  <span className="text-white font-bold">Book Appointment</span>
+                  <span className="w-8 h-8 rounded-full bg-[#a3e635] text-[#0b3b2d] flex items-center justify-center font-black text-sm group-hover:translate-x-0.5 transition-transform">
+                    »
                   </span>
                 </Link>
 
+                {/* Call Us Callout */}
                 <a
                   href="tel:+250788000000"
-                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 text-white transition-all duration-300 font-semibold text-sm"
+                  className="inline-flex items-center gap-3 text-white transition-all font-semibold text-xs group"
                 >
-                  <div className="w-8 h-8 rounded-full bg-lime-400 text-[#0b3b2d] flex items-center justify-center">
-                    <Phone className="w-4 h-4" />
+                  <div className="w-10 h-10 rounded-full bg-[#a3e635] text-[#0b3b2d] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                    <Phone className="w-5 h-5 fill-current" />
                   </div>
                   <div>
-                    <span className="block text-[10px] text-white/60 uppercase tracking-widest leading-none">CALL US</span>
-                    <span className="font-bold text-white text-sm">+250 788 000 000</span>
+                    <span className="block text-[9px] text-white/70 uppercase tracking-widest leading-none font-bold">CALL US</span>
+                    <span className="font-extrabold text-white text-sm tracking-wide">+880 (4590) 053</span>
                   </div>
                 </a>
               </div>
 
             </div>
 
-            {/* Right Hero Image (Photorealistic Rwandan Business Executives) */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/15 shadow-2xl group">
-                <Image
-                  src="/rwanda_hero.png"
-                  alt="Rwandan Business Leaders"
-                  width={600}
-                  height={650}
-                  className="w-full h-[480px] lg:h-[540px] object-cover transition-transform duration-700 group-hover:scale-105"
-                  priority
-                />
-                {/* Floating overlay tag */}
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#0b3b2d]/85 backdrop-blur-md border border-white/20 flex items-center gap-4 text-white">
-                  <div className="w-12 h-12 rounded-xl bg-lime-400 text-[#0b3b2d] flex items-center justify-center font-bold text-xl shrink-0">
-                    <CheckCircle2 className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-sm leading-tight text-white">Verified Excellence</p>
-                    <p className="text-xs text-white/70 mt-0.5">Top-Rated Tech &amp; Consulting Team in Kigali</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Spacer for Right Side Seamless Portrait */}
+            <div className="hidden lg:block lg:col-span-5 h-full min-h-[500px]" />
 
           </div>
         </div>
@@ -533,41 +522,6 @@ export default function Index() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <TestimonialSlider />
-        </div>
-      </section>
-
-
-      {/* ── 7. Call To Action Banner ── */}
-      <section className="py-20 bg-[#f7f8f3]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#0b3b2d] rounded-[3rem] p-10 sm:p-16 lg:p-20 text-center text-white shadow-2xl relative overflow-hidden">
-            <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-lime-400/10 blur-3xl pointer-events-none" />
-            
-            <span className="text-lime-400 font-extrabold tracking-widest text-xs uppercase mb-4 block">
-              GET IN TOUCH WITH NEOSCRATCH
-            </span>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-white max-w-3xl mx-auto leading-tight">
-              Ready to elevate your business with modern tech?
-            </h2>
-            <p className="text-base sm:text-lg text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Book a call or send us a request today. We&apos;ll help you craft a high-performance website, custom software, and digital strategy.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/request-website"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-base font-bold bg-lime-400 text-[#0b3b2d] hover:bg-lime-300 transition-all shadow-lg hover:scale-105"
-              >
-                <span>Book Appointment</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link 
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-bold bg-white/10 border border-white/20 hover:bg-white/20 text-white transition-all"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
 
