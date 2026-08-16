@@ -7,23 +7,23 @@ import {
   Code, Smartphone, Globe, Palette, 
   ArrowRight, ArrowUpRight, CheckCircle2,
   Search, ShieldCheck, Settings, BarChart3,
-  Monitor
+  Monitor, Star, Phone, Briefcase, TrendingUp,
+  Handshake, Users, Award, Check
 } from 'lucide-react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useCountUpAnimation } from '@/hooks/useCountUpAnimation';
 import { TestimonialSlider } from '@/components/ui/TestimonialSlider';
-
 import { projects } from '@/data/projects';
 
 export default function Index() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
 
-  const projectsCount = useCountUpAnimation({ end: 6, suffix: '+' });
-  const experienceCount = useCountUpAnimation({ end: 2, suffix: '+' });
-  const clientsCount = useCountUpAnimation({ end: 6, suffix: '+' });
-  const retentionCount = useCountUpAnimation({ end: 100, suffix: '%' });
+  const projectsCount = useCountUpAnimation({ end: 10, suffix: 'K+' });
+  const experienceCount = useCountUpAnimation({ end: 5, suffix: '+' });
+  const clientsCount = useCountUpAnimation({ end: 500, suffix: '+' });
+  const retentionCount = useCountUpAnimation({ end: 99, suffix: '%' });
 
   const ghostRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -60,152 +60,339 @@ export default function Index() {
   const translateX = -scrollProgress * (cardWidth + gapWidth) * (displayedProjects.length - 1);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-jakarta bg-[#f7f8f3] text-[#0b3b2d]">
       
-      {/* ── Modern Hero ── */}
-      <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden flex items-center">
+      {/* ── 1. Biztop Forest Green Hero Section ── */}
+      <section className="relative bg-[#0b3b2d] text-white pt-32 lg:pt-40 pb-20 lg:pb-28 overflow-hidden">
         
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/kigalihero.jpg"
-            alt="Kigali City Skyline"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/60" />
+        {/* Subtle Background Glow Patterns */}
+        <div className="absolute inset-0 pointer-events-none opacity-20">
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-lime-400 blur-[140px]" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-emerald-600 blur-[120px]" />
         </div>
 
-        {/* Radial glows */}
-        <div className="absolute inset-0 pointer-events-none z-0">
-          <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full opacity-20" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%)' }} />
-          <div className="absolute top-1/2 -right-60 w-[400px] h-[400px] rounded-full opacity-10" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%)' }} />
-        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
 
-        {/* Dot-grid */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.05] z-0" style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+            {/* Left Content */}
+            <div className="lg:col-span-7 space-y-6">
 
-        {/* Grid lines */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.04] z-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-
-            {/* ── LEFT ── */}
-            <div className="space-y-5 animate-fade-in">
-
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs font-semibold tracking-wide bg-white/10 border-white/20 text-white/80 animate-slide-up">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Software &amp; Growth Studio — Kigali, Rwanda
+              {/* Rating Pill Badge */}
+              <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-semibold backdrop-blur-md">
+                <span className="font-bold text-white">4.9</span>
+                <div className="flex items-center text-amber-400">
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                  <Star className="w-3.5 h-3.5 fill-current" />
+                </div>
+                <span className="text-white/80 border-l border-white/20 pl-2">5K+ Reviews</span>
               </div>
 
-              {/* Headline */}
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.08] tracking-tight text-white animate-slide-up" style={{ animationDelay: '0.1s' }}>
-                We build software<br />
-                <span className="text-white/40">that grows your</span><br />
-                business.
+              {/* Main Headline */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-white uppercase">
+                NEXT — GEN TOP <br />
+                NOTCH <span className="text-lime-400">BUSINESS</span> <br />
+                SOLUTIONS
               </h1>
 
-              {/* Sub */}
-              <p className="text-sm lg:text-base leading-relaxed max-w-md text-white/70 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                Custom websites, apps, SEO, and Google Business Setup — everything your business needs to get found, look great, and convert visitors into customers.
+              {/* Subtitle */}
+              <p className="text-base sm:text-lg text-white/80 max-w-xl leading-relaxed">
+                We provide expert business consulting &amp; software engineering services to help companies grow, optimize operations, and achieve sustainable digital success.
               </p>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link
                   href="/request-website"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl font-bold text-sm bg-white text-primary shadow-lg hover:bg-white/90 transition-all duration-300 hover:scale-[1.03]"
+                  className="inline-flex items-center gap-3 pl-7 pr-3 py-3.5 rounded-full text-base font-bold bg-lime-400 text-[#0b3b2d] shadow-lg hover:bg-lime-300 transition-all duration-300 hover:scale-[1.03] group"
                 >
-                  Start Your Project
-                  <ArrowRight className="w-4 h-4" />
+                  <span>Book Appointment</span>
+                  <span className="w-9 h-9 rounded-full bg-[#0b3b2d] text-lime-400 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
                 </Link>
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-2xl font-bold text-sm bg-white/15 border border-white/25 text-white hover:bg-white/25 transition-all duration-300 hover:scale-[1.02]"
+
+                <a
+                  href="tel:+250788000000"
+                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 text-white transition-all duration-300 font-semibold text-sm"
                 >
-                  View Our Work
-                  <ArrowUpRight className="w-4 h-4" />
-                </Link>
+                  <div className="w-8 h-8 rounded-full bg-lime-400 text-[#0b3b2d] flex items-center justify-center">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] text-white/60 uppercase tracking-widest leading-none">CALL US</span>
+                    <span className="font-bold text-white text-sm">+250 788 000 000</span>
+                  </div>
+                </a>
               </div>
 
-              {/* Stats */}
-              <div className="flex flex-wrap gap-6 pt-4 border-t border-white/10 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-                {[
-                  { ref: projectsCount.elementRef, val: projectsCount.count, label: 'Projects' },
-                  { ref: experienceCount.elementRef, val: experienceCount.count, label: 'Yrs Experience' },
-                  { ref: clientsCount.elementRef, val: clientsCount.count, label: 'Happy Clients' },
-                  { ref: retentionCount.elementRef, val: retentionCount.count, label: 'Retention' },
-                ].map((s, i) => (
-                  <div key={i} ref={s.ref} className="flex flex-col">
-                    <span className="text-xl font-extrabold text-white">{s.val}</span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest mt-0.5 text-white/40">{s.label}</span>
-                  </div>
-                ))}
-              </div>
             </div>
 
-            {/* ── RIGHT: Animated Vertical scrolling service cards ── */}
-            <div className="hidden lg:block relative h-[520px] overflow-hidden animate-fade-in" style={{ animationDelay: '0.4s' }}>
-
-              <motion.div 
-                className="flex flex-col gap-4"
-                animate={{
-                  y: ["0%", "-50%"]
-                }}
-                transition={{
-                  duration: 25,
-                  ease: "linear",
-                  repeat: Infinity
-                }}
-              >
-                {[...new Array(2)].map((_, groupIdx) => (
-                  <React.Fragment key={groupIdx}>
-                    {[
-                      { icon: Code, label: 'Custom Software Dev', desc: 'Dashboards • Booking systems • Automations', color: 'hsl(280 70% 65%)' },
-                      { icon: Smartphone, label: 'Mobile App Development', desc: 'iOS & Android • React Native • Offline-first', color: 'hsl(200 90% 60%)' },
-                      { icon: Settings, label: 'Website Maintenance', desc: 'Monthly retainer • Content updates • Reports', color: 'hsl(0 70% 65%)' },
-                      { icon: Monitor, label: 'Website Design & Dev', desc: 'Up to 15 pages • Mobile first • Admin panel', color: 'hsl(221 83% 70%)' },
-                    ].map((s, i) => {
-                      const Icon = s.icon;
-                      return (
-                        <div
-                          key={`${groupIdx}-${i}`}
-                          className="flex items-center gap-4 rounded-2xl border p-4 bg-white/5 border-white/10 transition-all duration-300 group"
-                          style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)' }}
-                        >
-                          <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${s.color}15` }}>
-                            <Icon className="w-5 h-5" style={{ color: s.color }} />
-                          </div>
-                          <div>
-                            <p className="font-bold text-white text-sm leading-tight">{s.label}</p>
-                            <p className="text-white/50 text-xs mt-0.5 leading-snug">{s.desc}</p>
-                          </div>
-                          <ArrowUpRight className="w-4 h-4 text-white/20 ml-auto shrink-0 group-hover:text-white transition-colors" />
-                        </div>
-                      );
-                    })}
-                  </React.Fragment>
-                ))}
-              </motion.div>
+            {/* Right Hero Image (Photorealistic Rwandan Business Executives) */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white/15 shadow-2xl group">
+                <Image
+                  src="/rwanda_hero.png"
+                  alt="Rwandan Business Leaders"
+                  width={600}
+                  height={650}
+                  className="w-full h-[480px] lg:h-[540px] object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
+                {/* Floating overlay tag */}
+                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#0b3b2d]/85 backdrop-blur-md border border-white/20 flex items-center gap-4 text-white">
+                  <div className="w-12 h-12 rounded-xl bg-lime-400 text-[#0b3b2d] flex items-center justify-center font-bold text-xl shrink-0">
+                    <CheckCircle2 className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-sm leading-tight text-white">Verified Excellence</p>
+                    <p className="text-xs text-white/70 mt-0.5">Top-Rated Tech &amp; Consulting Team in Kigali</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24 bg-secondary/20" id="services">
+
+      {/* ── 2. Essential Features Section ("* Our Approach") ── */}
+      <section className="py-24 bg-[#f7f8f3]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16">
-            <span className="text-primary font-bold tracking-widest text-xs uppercase mb-4 block">WHAT WE DO</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-              Here's what we're really good at.
+          
+          {/* Section Header */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#0b3b2d] text-xs font-extrabold uppercase tracking-wider mb-3">
+                <Star className="w-3.5 h-3.5 text-lime-600 fill-current" />
+                Our Approach
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0b3b2d] max-w-xl leading-tight">
+                Essential features for modern business success
+              </h2>
+            </div>
+            <p className="text-sm sm:text-base text-gray-600 max-w-md leading-relaxed">
+              Explore integrated consulting &amp; engineering approaches to improve processes, increase productivity, and support long-term organizational data-driven business development.
+            </p>
+          </div>
+
+          {/* 3 Interactive Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            {/* Card 1: White Card */}
+            <div className="bg-white rounded-[2rem] p-8 border border-emerald-950/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-100 text-[#0b3b2d] flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                  <Briefcase className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold text-[#0b3b2d] mb-4">
+                  Next-gen Human &amp; Software Resources
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                  We provide expert business consulting &amp; tech talent solutions to help companies grow rapidly and sustain scale.
+                </p>
+              </div>
+              <Link 
+                href="/services" 
+                className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-gray-100 hover:bg-[#0b3b2d] hover:text-white px-5 py-2.5 rounded-full transition-colors w-fit"
+              >
+                <span>Explore More</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+            {/* Card 2: Bright Lime Highlight Card */}
+            <div className="bg-lime-400 rounded-[2rem] p-8 border border-lime-500/30 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group text-[#0b3b2d]">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-[#0b3b2d] text-lime-400 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform shadow-md">
+                  <TrendingUp className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-extrabold text-[#0b3b2d] mb-4">
+                  Market Growth &amp; Digital Strategy
+                </h3>
+                <p className="text-[#0b3b2d]/80 text-sm leading-relaxed mb-8 font-medium">
+                  Identify new market opportunities and accelerate sustainable business growth through data &amp; strategic SEO.
+                </p>
+              </div>
+              <Link 
+                href="/services" 
+                className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#0b3b2d] hover:bg-[#06261d] px-5 py-2.5 rounded-full transition-colors w-fit shadow-sm"
+              >
+                <span>Explore More</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+            {/* Card 3: Deep Forest Green Card */}
+            <div className="bg-[#0b3b2d] rounded-[2rem] p-8 border border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group text-white">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-white/10 text-lime-400 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                  <Handshake className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  Business Process Improvement
+                </h3>
+                <p className="text-white/70 text-sm leading-relaxed mb-8">
+                  Optimize internal workflows to increase efficiency, team productivity, and high-performance automated software output.
+                </p>
+              </div>
+              <Link 
+                href="/services" 
+                className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-lime-400 hover:bg-lime-300 px-5 py-2.5 rounded-full transition-colors w-fit"
+              >
+                <span>Explore More</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ── 3. Comprehensive Solution Section ("* Who We Are?") ── */}
+      <section className="py-24 bg-white border-t border-b border-gray-200/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+
+            {/* Left Grid: Images & Stat Box */}
+            <div className="lg:col-span-6 space-y-6">
+              
+              {/* Top Main Photo */}
+              <div className="rounded-[2.5rem] overflow-hidden border border-gray-200 shadow-md">
+                <Image
+                  src="/rwanda_team_tablet.png"
+                  alt="Rwandan Tech Consultants"
+                  width={600}
+                  height={350}
+                  className="w-full h-[280px] sm:h-[320px] object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Bottom 2 Items Row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                
+                {/* Stat Box (Bright Lime) */}
+                <div className="bg-lime-400 rounded-[2rem] p-6 text-[#0b3b2d] shadow-md flex flex-col justify-between">
+                  <div className="w-10 h-10 rounded-full bg-[#0b3b2d] text-lime-400 flex items-center justify-center mb-4">
+                    <Check className="w-5 h-5 stroke-[3]" />
+                  </div>
+                  <div>
+                    <h4 className="text-3xl font-extrabold tracking-tight mb-1">10K+</h4>
+                    <p className="text-xs font-bold uppercase tracking-wider text-[#0b3b2d]/80 leading-snug">
+                      Our Total Completed Works
+                    </p>
+                  </div>
+                </div>
+
+                {/* Secondary Image */}
+                <div className="rounded-[2rem] overflow-hidden border border-gray-200 shadow-sm">
+                  <Image
+                    src="/rwanda_women_meeting.png"
+                    alt="Rwandan Business Women Collaborating"
+                    width={300}
+                    height={200}
+                    className="w-full h-[180px] object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Right Content */}
+            <div className="lg:col-span-6 space-y-6">
+
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#0b3b2d] text-xs font-extrabold uppercase tracking-wider">
+                <Star className="w-3.5 h-3.5 text-lime-600 fill-current" />
+                Who We Are?
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0b3b2d] leading-tight">
+                Comprehensive solution for business excellence
+              </h2>
+
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                Discover innovative consulting &amp; digital engineering strategies that help businesses improve operations, increase profitability, and achieve long-term growth across Kigali and digital markets around the world.
+              </p>
+
+              {/* Founder/CEO Row */}
+              <div className="flex flex-wrap items-center gap-6 pt-2">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-3 pl-6 pr-2.5 py-3 rounded-full text-xs font-bold bg-[#0b3b2d] text-white hover:bg-[#07261d] transition-colors"
+                >
+                  <span>More About Us</span>
+                  <span className="w-7 h-7 rounded-full bg-lime-400 text-[#0b3b2d] flex items-center justify-center">
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </Link>
+
+                <div className="flex items-center gap-3 border-l border-gray-200 pl-6">
+                  <div className="w-11 h-11 rounded-full bg-emerald-800 text-white font-bold flex items-center justify-center text-sm shadow-sm">
+                    TD
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-[#0b3b2d] text-sm">Theo Dev</h5>
+                    <p className="text-xs text-gray-500">CEO &amp; Founder at NeoScratch</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Info Rating & Skills Boxes */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-gray-200">
+                
+                {/* Rating Card */}
+                <div className="p-4 rounded-2xl bg-[#f7f8f3] border border-gray-200/80 flex items-center gap-4">
+                  <div>
+                    <div className="flex text-amber-500 text-xs mb-1">
+                      ★★★★★
+                    </div>
+                    <span className="text-2xl font-extrabold text-[#0b3b2d]">4.9</span>
+                    <span className="text-xs text-gray-500 font-medium"> / 5.0</span>
+                    <p className="text-[11px] text-gray-500 font-bold uppercase tracking-wider mt-0.5">Avg. clients ratings</p>
+                  </div>
+                </div>
+
+                {/* Premium Skills Card */}
+                <div className="p-4 rounded-2xl bg-[#f7f8f3] border border-gray-200/80">
+                  <span className="text-[11px] font-extrabold text-[#0b3b2d] uppercase tracking-wider block mb-2">Premium Skills</span>
+                  <div className="flex flex-wrap gap-1.5">
+                    {['ADVISOR', 'CONSULTING', 'MARKETING', 'WEB DEV', 'SEO'].map(skill => (
+                      <span key={skill} className="px-2 py-0.5 rounded-md bg-white border border-gray-200 text-[10px] font-bold text-[#0b3b2d]">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* ── 4. Services Grid Section ("* Our Services") ── */}
+      <section className="py-24 bg-[#f7f8f3]" id="services">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#0b3b2d] text-xs font-extrabold uppercase tracking-wider mb-3">
+              <Star className="w-3.5 h-3.5 text-lime-600 fill-current" />
+              Our Services
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0b3b2d] mb-4">
+              Experienced best modern tech services
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Whether you need a powerful website, a custom software system, or to show up when customers search for you on Google — we handle it all, so you can focus on running your business.
+            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              Whether you need a high-converting website, custom mobile app, or dominance in Google search results — we deliver solutions crafted for growth.
             </p>
           </div>
 
@@ -214,57 +401,57 @@ export default function Index() {
               { 
                 icon: Monitor, 
                 title: 'Website Design & Development', 
-                desc: 'Your website is your most important salesperson — it works 24/7, never calls in sick, and is the first thing a potential customer judges you by.',
-                tags: ['Up to 15 pages', 'Mobile first', 'Admin panel', 'Fast delivery']
+                desc: 'Your website is your 24/7 digital salesperson. We build sleek, fast, high-converting websites tailored for your brand.',
+                tags: ['Responsive', 'Fast Speed', 'Admin Panel']
               },
               { 
                 icon: Globe, 
                 title: 'Google Business Profile Setup', 
-                desc: 'Before a customer visits your business or calls you, they search Google. We set up, verify, and fully optimise your Google Business Profile.',
-                tags: ['Google Maps', 'Verified listing', 'Reviews setup', 'Local SEO']
+                desc: 'Verify and rank your business locally on Google Maps so nearby customers find your service instantly.',
+                tags: ['Google Maps', 'SEO Boost', 'Review System']
               },
               { 
                 icon: BarChart3, 
                 title: 'Search Engine Optimisation (SEO)', 
-                desc: 'Being on page two of Google is the same as being invisible. We optimise your website with the right keywords to reach customers.',
-                tags: ['Keyword research', 'On-page SEO', 'Search Console', 'Monthly reports']
+                desc: 'Rank on page one of Google for your target business keywords and attract organic qualified leads daily.',
+                tags: ['Keywords', 'On-Page SEO', 'Monthly Audit']
               },
               { 
                 icon: Code, 
-                title: 'Custom Software Development', 
-                desc: 'No off-the-shelf tool fits every business perfectly. When your operations have outgrown spreadsheets, we build exactly what you need.',
-                tags: ['Web apps', 'Dashboards', 'Booking systems', 'Automations']
+                title: 'Custom Software Engineering', 
+                desc: 'Scalable web applications, management dashboards, automated workflows, and custom SaaS platforms.',
+                tags: ['Web Apps', 'Automation', 'Custom APIs']
               },
               { 
                 icon: Smartphone, 
                 title: 'Mobile App Development', 
-                desc: 'Your customers live on their phones — your business should too. We build polished iOS and Android apps with solid backend logic.',
-                tags: ['iOS & Android', 'React Native', 'MoMo / Airtel', 'Offline-first']
+                desc: 'High performance iOS & Android applications with seamless payment integration (MoMo & Card support).',
+                tags: ['iOS & Android', 'MoMo Pay', 'Cross Platform']
               },
               { 
                 icon: Settings, 
-                title: 'Website Maintenance & Management', 
-                desc: 'Launching your website is the beginning, not the end. We keep it fast, secure, and up to date with monthly retainers.',
-                tags: ['Monthly retainer', 'Content updates', 'SEO monitoring', 'Reports']
+                title: 'Website Maintenance Retainers', 
+                desc: 'Proactive server maintenance, performance optimizations, security updates, and monthly feature improvements.',
+                tags: ['Monthly Support', 'Security', 'Backups']
               },
-            ].map((service, index) => (
+            ].map((service) => (
               <div
                 key={service.title}
-                className="group relative flex flex-col p-8 rounded-[2rem] bg-card border border-border shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300"
+                className="group relative flex flex-col p-8 rounded-[2rem] bg-white border border-gray-200/80 shadow-sm hover:shadow-xl hover:border-lime-500 transition-all duration-300"
               >
-                <div className="flex justify-between items-start mb-8">
-                  <div className="p-3 rounded-xl bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-[#0b3b2d] text-lime-400 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-[#0b3b2d] transition-colors duration-300 shadow-sm">
                     <service.icon className="h-6 w-6" />
                   </div>
-                  <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <ArrowUpRight className="h-5 w-5 text-gray-400 group-hover:text-[#0b3b2d] transition-colors" />
                 </div>
                 
-                <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
-                <p className="text-muted-foreground mb-8 line-clamp-3 leading-relaxed">{service.desc}</p>
+                <h3 className="text-xl font-bold text-[#0b3b2d] mb-3 group-hover:text-emerald-800 transition-colors">{service.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{service.desc}</p>
                 
-                <div className="mt-auto flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
                   {service.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 rounded-full bg-secondary text-[11px] font-medium text-muted-foreground border border-border">
+                    <span key={tag} className="px-3 py-1 rounded-full bg-emerald-50 text-[11px] font-bold text-[#0b3b2d]">
                       {tag}
                     </span>
                   ))}
@@ -273,30 +460,29 @@ export default function Index() {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <Button variant="outline" className="rounded-full border-primary/20 hover:bg-primary/5 text-primary font-semibold group" asChild>
-              <Link href="/services">
-                View all services 
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* Horizontal Scroll Projects Section - High Contrast Hover Focus */}
-      <div ref={ghostRef} className="relative h-[400vh]">
-        <section className="sticky top-0 h-screen overflow-hidden bg-background py-8 flex flex-col justify-center">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8 flex justify-between items-end">
+
+      {/* ── 5. Horizontal Scroll Projects Section ── */}
+      <div ref={ghostRef} className="relative h-[300vh]">
+        <section className="sticky top-0 h-screen overflow-hidden bg-[#0b3b2d] py-12 flex flex-col justify-center text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8 flex justify-between items-end">
             <div>
-              <span className="text-primary font-bold tracking-[0.2em] text-[10px] uppercase mb-2 block">FEATURED WORK</span>
-              <h2 className="text-2xl lg:text-4xl font-bold text-foreground font-inter">
-                Platforms we've engineered.
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-lime-400 text-xs font-extrabold uppercase tracking-wider mb-2">
+                <Star className="w-3.5 h-3.5 fill-current" />
+                Featured Work
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+                Platforms &amp; Systems We&apos;ve Engineered
               </h2>
             </div>
-            <Button variant="outline" size="sm" className="rounded-xl border-primary/20 hover:bg-primary/5 text-primary font-bold text-xs" asChild>
-              <Link href="/projects">View all</Link>
-            </Button>
+            <Link 
+              href="/projects" 
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-lime-400 text-[#0b3b2d] font-bold text-xs hover:bg-lime-300 transition-colors"
+            >
+              View All Works
+            </Link>
           </div>
 
           <div 
@@ -309,41 +495,31 @@ export default function Index() {
               <Link 
                 key={p.id}
                 href={`/projects/${p.id}`}
-                className="w-[85vw] flex-shrink-0 h-[40vh] min-h-[320px] bg-white rounded-3xl border border-border shadow-2xl overflow-hidden flex flex-col lg:flex-row group transition-all duration-300 hover:ring-2 hover:ring-primary cursor-pointer"
+                className="w-[82vw] sm:w-[65vw] lg:w-[48vw] flex-shrink-0 h-[420px] bg-[#07261d] rounded-[2.5rem] border border-white/15 overflow-hidden flex flex-col group transition-all duration-300 hover:border-lime-400 cursor-pointer shadow-2xl"
               >
-                {/* Image Section - FULL FILL */}
-                <div className="lg:w-[65%] h-[50%] lg:h-full bg-secondary overflow-hidden relative">
+                <div className="h-[220px] bg-black/30 overflow-hidden relative">
                   <Image 
                     src={p.image} 
                     alt={p.title} 
                     fill
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
-                    sizes="(max-width: 768px) 85vw, 65vw"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
-                  <div className="absolute top-4 left-4 flex space-x-2">
-                    <span className="px-2 py-0.5 rounded-full bg-white/90 backdrop-blur-sm text-primary text-[9px] font-bold tracking-wider shadow-sm">{p.tag}</span>
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 rounded-full bg-lime-400 text-[#0b3b2d] text-[10px] font-extrabold uppercase tracking-wider shadow-md">
+                      {p.tag}
+                    </span>
                   </div>
                 </div>
                 
-                {/* Content Section */}
-                <div className="lg:w-[35%] h-[50%] lg:h-full p-6 lg:p-8 flex flex-col justify-center bg-white relative z-10 transition-colors duration-300 group-hover:bg-primary/[0.02]">
-                  <div className="flex items-center space-x-2 mb-4">
-                    <span className="text-[10px] font-bold text-muted-foreground/30">{p.year}</span>
-                    <span className="h-px w-4 bg-border"></span>
-                    <span className="text-primary text-[9px] font-extrabold tracking-widest uppercase">SYNERGY</span>
+                <div className="p-6 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-lime-400 transition-colors">{p.title}</h3>
+                    <p className="text-white/70 text-xs leading-relaxed line-clamp-2">{p.description}</p>
                   </div>
                   
-                  <h3 className="text-xl lg:text-2xl font-bold mb-2 leading-tight group-hover:text-primary transition-colors">{p.title}</h3>
-                  <p className="text-muted-foreground text-[11px] font-semibold mb-4 leading-none opacity-60 italic">for {p.subtitle.replace('for ', '')}</p>
-                  
-                  <p className="text-muted-foreground text-[13px] leading-relaxed mb-6 opacity-80 font-medium line-clamp-3">
-                    {p.description}
-                  </p>
-                  
-                  <div className="inline-flex items-center text-primary text-xs font-bold hover:gap-2 transition-all duration-300 group/link">
-                    Explore Case <ArrowRight className="ml-1.5 h-3.5 w-3.5 group-hover/link:translate-x-1" />
+                  <div className="inline-flex items-center gap-2 text-lime-400 text-xs font-bold pt-4 border-t border-white/10">
+                    <span>Explore Case Study</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </Link>
@@ -352,39 +528,49 @@ export default function Index() {
         </section>
       </div>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-background">
+
+      {/* ── 6. Testimonials Section ── */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <TestimonialSlider />
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-primary rounded-[3rem] p-12 lg:p-20 text-center text-primary-foreground shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-12 opacity-10">
-              <Code className="h-64 w-64" />
-            </div>
+
+      {/* ── 7. Call To Action Banner ── */}
+      <section className="py-20 bg-[#f7f8f3]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#0b3b2d] rounded-[3rem] p-10 sm:p-16 lg:p-20 text-center text-white shadow-2xl relative overflow-hidden">
+            <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-lime-400/10 blur-3xl pointer-events-none" />
             
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-8">
-              Ready to Start Your Project?
+            <span className="text-lime-400 font-extrabold tracking-widest text-xs uppercase mb-4 block">
+              GET IN TOUCH WITH NEOSCRATCH
+            </span>
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 text-white max-w-3xl mx-auto leading-tight">
+              Ready to elevate your business with modern tech?
             </h2>
-            <p className="text-xl opacity-90 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Contact us to bring your tech vision to life. Whether it's a website, an app, or digital marketing, we're here to help.
+            <p className="text-base sm:text-lg text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+              Book a call or send us a request today. We&apos;ll help you craft a high-performance website, custom software, and digital strategy.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="xl" className="bg-white text-primary hover:bg-white/90 rounded-2xl px-12 font-bold shadow-xl shadow-black/10" asChild>
-                <Link href="/request-website">Get Started</Link>
-              </Button>
-              <Button size="xl" variant="outline" className="border-white/20 hover:bg-white/10 text-white rounded-2xl px-12 font-bold" asChild>
-                <Link href="/contact">Contact Us</Link>
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/request-website"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-base font-bold bg-lime-400 text-[#0b3b2d] hover:bg-lime-300 transition-all shadow-lg hover:scale-105"
+              >
+                <span>Book Appointment</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link 
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-bold bg-white/10 border border-white/20 hover:bg-white/20 text-white transition-all"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 }

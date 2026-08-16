@@ -1,5 +1,5 @@
-/* Definition of the design system for NeoScratch - MDX Style Theme with Orange Gradients */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Definition of the design system for NeoScratch - Biztop Forest & Lime Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,29 +7,29 @@
 
 @layer base {
   :root {
-    /* Primary White/Orange Theme */
-    --background: 0 0% 100%;
-    --foreground: 220 10% 10%;
+    /* Biztop Theme: Forest Dark, Lime Bright, Warm Soft Cream Background */
+    --background: 75 20% 96%;
+    --foreground: 162 69% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 10% 10%;
+    --card-foreground: 162 69% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 10% 10%;
+    --popover-foreground: 162 69% 10%;
 
-    --primary: 221 83% 53%;
+    --primary: 162 69% 14%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 221 83% 85%;
-    --primary-dark: 221 83% 45%;
+    --primary-light: 163 62% 25%;
+    --primary-dark: 163 73% 9%;
 
-    --secondary: 0 0% 98%;
-    --secondary-foreground: 220 10% 10%;
+    --secondary: 84 81% 55%;
+    --secondary-foreground: 162 69% 14%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 220 10% 40%;
+    --muted: 75 15% 92%;
+    --muted-foreground: 162 30% 35%;
 
-    --accent: 221 83% 95%;
-    --accent-foreground: 221 83% 45%;
+    --accent: 84 81% 55%;
+    --accent-foreground: 162 69% 14%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -40,38 +40,31 @@
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 221 83% 53%;
+    --border: 162 20% 88%;
+    --input: 162 20% 88%;
+    --ring: 84 81% 55%;
 
-    --radius: 1rem;
+    --radius: 1.25rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 83% 45%));
-    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 98%), hsl(0 0% 96%));
-    
-    /* MDX style hero gradient - large minimal blue glow on white */
-    --gradient-hero: radial-gradient(circle at top left, hsl(221 83% 53% / 0.1) 0%, transparent 40%),
-                     radial-gradient(circle at bottom right, hsl(221 83% 45% / 0.05) 0%, transparent 40%);
-    
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(0 0% 99%));
+    --gradient-primary: linear-gradient(135deg, #0b3b2d, #06261d);
+    --gradient-secondary: linear-gradient(135deg, #a3e635, #b0f238);
+    --gradient-hero: linear-gradient(160deg, #072e23 0%, #0b3b2d 50%, #093327 100%);
+    --gradient-card: linear-gradient(145deg, #ffffff, #f7f8f3);
 
     /* Grid Pattern */
-    --grid-color: hsl(221 83% 53% / 0.15);
+    --grid-color: rgba(163, 230, 53, 0.15);
 
-    /* Apple-like Smooth Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-    --shadow-glow: 0 0 30px hsl(221 83% 53% / 0.15);
+    /* Shadows */
+    --shadow-sm: 0 2px 4px 0 rgba(11, 59, 45, 0.04);
+    --shadow-md: 0 6px 12px -2px rgba(11, 59, 45, 0.08), 0 3px 6px -2px rgba(11, 59, 45, 0.04);
+    --shadow-lg: 0 16px 24px -4px rgba(11, 59, 45, 0.12), 0 8px 12px -3px rgba(11, 59, 45, 0.06);
+    --shadow-xl: 0 24px 36px -6px rgba(11, 59, 45, 0.16), 0 12px 16px -6px rgba(11, 59, 45, 0.08);
+    --shadow-glow: 0 0 35px rgba(163, 230, 53, 0.3);
 
-    /* Apple smooth animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-
-
 }
 
 @layer base {

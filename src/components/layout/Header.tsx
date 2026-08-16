@@ -3,21 +3,19 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Code, MessageCircle } from 'lucide-react';
-
+import { Menu, X, ArrowRight, CheckCircle2, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 
 interface NavigationItem {
   name: string;
   href: string;
-  isMobileOnly?: boolean;
 }
 
 const navigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Projects', href: '/projects' },
+  { name: 'About Us', href: '/about' },
   { name: 'Services', href: '/services' },
+  { name: 'Projects', href: '/projects' },
   { name: 'Events', href: '/events' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -29,7 +27,7 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 30);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -40,67 +38,90 @@ export function Header() {
     setIsMenuOpen(false);
   }, [pathname]);
 
-  const isHomePage = pathname === '/';
-  const isHeaderThemed = true;
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled || pathname === '/about'
-          ? 'bg-primary/95 backdrop-blur-md shadow-lg border-b border-white/10 py-0'
-          : 'bg-transparent py-2'
-      } text-white`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-start items-center h-16 lg:h-20">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center space-x-2 hover:opacity-75 transition-opacity duration-300 mr-8 lg:mr-12"
-          >
-            <Image 
-              src="/logo.png" 
-              width={40}
-              height={40}
-              className="h-8 w-8 md:h-10 md:w-10 hover:opacity-90 transition-opacity" 
-              alt="NEOSCRATCH Logo" 
-              priority
-            />
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-jakarta">
+      {/* Top Bar */}
+      <div className="bg-[#052219] text-white/80 text-xs py-2 border-b border-white/10 hidden md:block">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          <div className="flex items-center space-x-6">
+            <span className="flex items-center gap-1.5 text-lime-400 font-medium">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              We&apos;re top software &amp; business consulting agency in Rwanda
+            </span>
+            <a href="mailto:info@neoscratch.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
+              <Mail className="w-3.5 h-3.5 text-lime-400" />
+              info@neoscratch.com
+            </a>
+          </div>
+          <div className="flex items-center space-x-4">
+            <span className="text-white/60">Follow Us —</span>
+            <a href="#" className="hover:text-lime-400 transition-colors"><Facebook className="w-3.5 h-3.5" /></a>
+            <a href="#" className="hover:text-lime-400 transition-colors"><Twitter className="w-3.5 h-3.5" /></a>
+            <a href="#" className="hover:text-lime-400 transition-colors"><Instagram className="w-3.5 h-3.5" /></a>
+            <a href="#" className="hover:text-lime-400 transition-colors"><Linkedin className="w-3.5 h-3.5" /></a>
+          </div>
+        </div>
+      </div>
 
+      {/* Main Navbar */}
+      <div className={`transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-[#0b3b2d]/95 backdrop-blur-md shadow-xl py-3 border-b border-white/10' 
+          : 'bg-[#0b3b2d] py-4'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          {/* Brand Logo */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 rounded-xl bg-lime-400 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+              <Image 
+                src="/logo.png" 
+                width={28}
+                height={28}
+                className="h-7 w-7 object-contain" 
+                alt="NEOSCRATCH Logo" 
+                priority
+              />
+            </div>
+            <span className="text-2xl font-extrabold tracking-tight text-white">
+              Neo<span className="text-lime-400">Scratch</span>
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
-            {navigation
-              .filter(item => !item.isMobileOnly)
-              .map((item) => (
+          {/* Navigation Links */}
+          <nav className="hidden lg:flex items-center space-x-1 bg-white/5 px-4 py-1.5 rounded-full border border-white/10">
+            {navigation.map((item) => {
+              const isActive = pathname === item.href;
+              return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 relative group ${isHeaderThemed 
-                    ? 'hover:bg-white/10' 
-                    : 'hover:bg-white/20'} ${pathname === item.href
-                      ? 'bg-white/20 text-white'
-                      : 'text-white'
-                    }`}
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                    isActive
+                      ? 'bg-lime-400 text-[#0b3b2d] shadow-sm'
+                      : 'text-white/90 hover:text-white hover:bg-white/10'
+                  }`}
                 >
                   {item.name}
                 </Link>
-              ))}
+              );
+            })}
           </nav>
 
-          {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center space-x-4 ml-auto">
-            <a
+          {/* CTA Pill Button */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link
               href="/request-website"
-              className="inline-flex items-center justify-center px-6 py-2 rounded-xl text-sm font-bold bg-white text-primary border border-white shadow-sm transition-all duration-200 hover:bg-white/10 hover:text-white hover:border-white hover:scale-[1.04]"
+              className="inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-sm font-bold bg-lime-400 text-[#0b3b2d] shadow-md hover:bg-lime-300 transition-all duration-300 hover:scale-[1.03] group"
             >
-              Get Your Website
-            </a>
+              <span>Get Your Website</span>
+              <span className="w-8 h-8 rounded-full bg-[#0b3b2d] text-lime-400 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-2 lg:hidden ml-auto">
+          {/* Mobile Toggle */}
+          <div className="flex items-center lg:hidden">
             <Button
               variant="ghost"
               size="icon"
@@ -112,26 +133,31 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Dropdown */}
         {isMenuOpen && (
-          <div className="lg:hidden animate-fade-in pb-4">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-primary border border-white/10 rounded-2xl shadow-xl">
+          <div className="lg:hidden animate-fade-in px-4 pt-3 pb-4">
+            <div className="p-4 space-y-2 bg-[#06261d] border border-white/10 rounded-2xl shadow-2xl">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`relative flex items-center w-fit px-3 py-2 rounded-md text-base font-medium transition-colors ${pathname === item.href
-                    ? 'bg-white/20 text-white'
-                    : 'text-white hover:bg-white/10'
-                    }`}
+                  className={`block px-4 py-2.5 rounded-xl text-base font-semibold transition-colors ${
+                    pathname === item.href
+                      ? 'bg-lime-400 text-[#0b3b2d]'
+                      : 'text-white hover:bg-white/10'
+                  }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="pt-4 space-y-2">
-                <Button variant="hero" className="w-full bg-white text-primary hover:bg-white/90" size="sm" asChild>
-                  <Link href="/request-website">Get Free Quote</Link>
-                </Button>
+              <div className="pt-3 border-t border-white/10">
+                <Link
+                  href="/request-website"
+                  className="flex items-center justify-between px-5 py-3 rounded-xl font-bold bg-lime-400 text-[#0b3b2d]"
+                >
+                  <span>Book Appointment</span>
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
               </div>
             </div>
           </div>

@@ -20,6 +20,8 @@ export default {
 		extend: {
 			fontFamily: {
 				inter: ['Inter', 'sans-serif'],
+				jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+				outfit: ['Outfit', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -27,15 +29,33 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				forest: {
+					DEFAULT: '#0b3b2d',
+					deep: '#06261d',
+					light: '#124d3c',
+					muted: '#1b5e4a',
+				},
+				lime: {
+					DEFAULT: '#a3e635',
+					bright: '#b0f238',
+					hover: '#8edf1d',
+					muted: '#d9f99d',
+					dark: '#4d7c0f',
+				},
+				cream: {
+					DEFAULT: '#f7f8f3',
+					soft: '#f1f3e8',
+					card: '#ffffff',
+				},
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))',
-					light: 'hsl(var(--primary-light))',
-					dark: 'hsl(var(--primary-dark))'
+					DEFAULT: '#0b3b2d',
+					foreground: '#ffffff',
+					light: '#124d3c',
+					dark: '#06261d'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#a3e635',
+					foreground: '#0b3b2d'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
