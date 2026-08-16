@@ -70,7 +70,7 @@ export function Footer() {
                   <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center text-lime-400">
                     <Phone className="h-4 w-4" />
                   </div>
-                  <span className="font-semibold text-xs">+250 788 000 000 / +250 792 734 752</span>
+                  <a href="tel:+250792734752" className="font-semibold text-xs hover:text-lime-400 transition-colors">+250 792 734 752</a>
                 </div>
                 <div className="flex items-center space-x-3 text-sm text-white/90">
                   <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center text-lime-400">

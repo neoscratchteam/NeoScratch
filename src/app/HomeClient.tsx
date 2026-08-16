@@ -112,7 +112,7 @@ export default function Index() {
 
                 {/* Call Us Callout */}
                 <a
-                  href="tel:+250788000000"
+                  href="tel:+250792734752"
                   className="inline-flex items-center gap-3 text-white transition-all font-semibold text-xs group"
                 >
                   <div className="w-10 h-10 rounded-full bg-[#a3e635] text-[#0b3b2d] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
@@ -120,7 +120,7 @@ export default function Index() {
                   </div>
                   <div>
                     <span className="block text-[9px] text-white/70 uppercase tracking-widest leading-none font-bold">CALL US</span>
-                    <span className="font-extrabold text-white text-sm tracking-wide">+880 (4590) 053</span>
+                    <span className="font-extrabold text-white text-sm tracking-wide">+250 792 734 752</span>
                   </div>
                 </a>
               </div>

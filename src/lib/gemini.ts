@@ -15,7 +15,7 @@ Company: ${websiteInfo?.companyName || 'NeoScratch'}
 Description: ${websiteInfo?.description || 'A tech company empowering African youth through technology and innovation'}
 Services: ${websiteInfo?.services?.join(', ') || 'Web Development, Mobile Apps, Training'}
 Contact Email: ${websiteInfo?.contact?.email || 'customerservice@neoscratch.com'}
-Phone: ${websiteInfo?.contact?.phone || '+250 788 123 456'}
+Phone: ${websiteInfo?.contact?.phone || '+250 792 734 752'}
 Address: ${websiteInfo?.contact?.address || 'Kigali, Rwanda'}
 
 Instructions:

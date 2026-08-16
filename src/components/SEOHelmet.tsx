@@ -68,7 +68,7 @@ export function SEOHelmet({
           },
           "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "+250-788-123-456",
+            "telephone": "+250792734752",
             "contactType": "customer service"
           },
           "sameAs": [
