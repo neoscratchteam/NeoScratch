@@ -351,12 +351,17 @@ export default function Index() {
                 </Link>
 
                 <div className="flex items-center gap-3 border-l border-gray-200 pl-6">
-                  <div className="w-11 h-11 rounded-full bg-emerald-800 text-white font-bold flex items-center justify-center text-sm shadow-sm">
-                    TD
+                  <div className="w-11 h-11 rounded-full bg-emerald-800 text-white font-bold flex items-center justify-center text-sm shadow-sm relative overflow-hidden shrink-0 border border-gray-200">
+                    <Image
+                      src="/theodev.png"
+                      alt="Theogene Iradukunda"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div>
-                    <h5 className="font-bold text-[#0b3b2d] text-sm">Theo Dev</h5>
-                    <p className="text-xs text-gray-500">CEO &amp; Founder at NeoScratch</p>
+                    <h5 className="font-bold text-[#0b3b2d] text-sm">Theogene Iradukunda</h5>
+                    <p className="text-xs text-gray-500">CEO &amp; Founder of NeoScratch</p>
                   </div>
                 </div>
               </div>
