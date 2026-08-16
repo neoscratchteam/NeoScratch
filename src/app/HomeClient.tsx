@@ -85,18 +85,6 @@ export default function Index() {
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
 
-              {/* Rating Pill Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-semibold backdrop-blur-md">
-                <span className="font-bold text-white text-xs">4.9</span>
-                <div className="flex items-center text-lime-400">
-                  <Star className="w-3 h-3 fill-current" />
-                  <Star className="w-3 h-3 fill-current" />
-                  <Star className="w-3 h-3 fill-current" />
-                  <Star className="w-3 h-3 fill-current" />
-                  <Star className="w-3 h-3 fill-current" />
-                </div>
-              </div>
-
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.04] text-white uppercase font-jakarta">
                 NEXT — GEN TOP <br />
