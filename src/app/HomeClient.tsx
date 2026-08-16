@@ -86,7 +86,7 @@ export default function Index() {
             <div className="lg:col-span-7 space-y-6">
 
               {/* Rating Pill Badge */}
-              <div className="inline-flex items-center gap-3 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-semibold backdrop-blur-md">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-semibold backdrop-blur-md">
                 <span className="font-bold text-white text-xs">4.9</span>
                 <div className="flex items-center text-lime-400">
                   <Star className="w-3 h-3 fill-current" />
@@ -95,7 +95,6 @@ export default function Index() {
                   <Star className="w-3 h-3 fill-current" />
                   <Star className="w-3 h-3 fill-current" />
                 </div>
-                <span className="text-white/80 border-l border-white/20 pl-2 text-[11px]">5K+ Reviews</span>
               </div>
 
               {/* Main Headline */}
