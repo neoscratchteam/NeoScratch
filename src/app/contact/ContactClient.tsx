@@ -94,7 +94,7 @@ ${formData.message}
               <div className="grid grid-cols-1 gap-4">
                  {[
                    { icon: Phone, label: 'Call / WhatsApp', val: '+250 792 734 752', color: 'bg-green-500/10 text-green-600' },
-                   { icon: Mail, label: 'Official Email', val: 'customerservice@neoscratch.com', color: 'bg-[#1a73e8]/10 text-[#1a73e8]' },
+                   { icon: Mail, label: 'Official Email', val: 'thisisneoscratch@gmail.com', color: 'bg-[#1a73e8]/10 text-[#1a73e8]' },
                    { icon: Globe, label: 'Location', val: 'Kigali, Rwanda (Remote Global)', color: 'bg-orange-500/10 text-orange-600' },
                    { icon: Clock, label: 'Working Hours', val: 'Mon-Sat: 8:00 AM - 6:00 PM', color: 'bg-purple-500/10 text-purple-600' }
                  ].map((item, i) => (

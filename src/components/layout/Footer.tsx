@@ -76,7 +76,7 @@ export function Footer() {
                   <div className="h-8 w-8 rounded-full bg-white/10 flex items-center justify-center text-lime-400">
                     <Mail className="h-4 w-4" />
                   </div>
-                  <span className="font-semibold text-xs">info@neoscratch.com</span>
+                  <a href="mailto:thisisneoscratch@gmail.com" className="font-semibold text-xs hover:text-lime-400 transition-colors">thisisneoscratch@gmail.com</a>
                 </div>
               </div>
             </div>

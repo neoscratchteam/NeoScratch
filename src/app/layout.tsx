@@ -110,7 +110,7 @@ export default function RootLayout({
       '@id': 'https://neoscratch.com/#organization',
       url: 'https://neoscratch.com',
       telephone: '+250792734752',
-      email: 'customerservice@neoscratch.com',
+      email: 'thisisneoscratch@gmail.com',
       priceRange: '$$',
       address: {
         '@type': 'PostalAddress',

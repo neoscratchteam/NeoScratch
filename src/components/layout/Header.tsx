@@ -41,16 +41,18 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-jakarta">
       {/* Top Bar (Bright Lime Green) */}
-      <div className="bg-[#a3e635] text-[#0b3b2d] text-xs py-2 font-semibold hidden md:block">
+      <div className={`bg-[#a3e635] text-[#0b3b2d] text-xs py-2 font-semibold transition-all duration-300 ${
+        isScrolled ? 'hidden' : 'hidden md:block'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center space-x-6">
             <span className="flex items-center gap-1.5 font-bold">
               <CheckCircle2 className="w-3.5 h-3.5 fill-[#0b3b2d] text-[#a3e635]" />
               We&apos;re top software &amp; web development agency
             </span>
-            <a href="mailto:example@biztop.com" className="flex items-center gap-1.5 hover:underline transition-all">
+            <a href="mailto:thisisneoscratch@gmail.com" className="flex items-center gap-1.5 hover:underline transition-all">
               <Mail className="w-3.5 h-3.5" />
-              example@biztop.com
+              thisisneoscratch@gmail.com
             </a>
           </div>
           <div className="flex items-center space-x-4">

@@ -125,7 +125,7 @@ You may request deletion of your data at any time (see "Your Rights" below). Upo
 • **Right to portability** — Receive your data in a structured, machine-readable format
 • **Right to object** — Object to processing based on legitimate interests
 
-To exercise any of these rights, email us at customerservice@neoscratch.com. We will respond within 30 days. You may also lodge a complaint with your local data protection authority.`,
+To exercise any of these rights, email us at thisisneoscratch@gmail.com. We will respond within 30 days. You may also lodge a complaint with your local data protection authority.`,
   },
   {
     id: 'contact',
@@ -135,7 +135,7 @@ To exercise any of these rights, email us at customerservice@neoscratch.com. We 
 
 **NeoScratch**
 Kigali, Rwanda
-📧 customerservice@neoscratch.com
+📧 thisisneoscratch@gmail.com
 📞 +250 792 734 752
 
 We are committed to resolving any privacy concerns promptly and transparently. Thank you for trusting NeoScratch with your information.`,
@@ -249,7 +249,7 @@ export default function PolicyClient() {
                 <p className="text-xs font-semibold text-foreground">Questions?</p>
                 <p className="text-xs text-muted-foreground leading-relaxed">Reach our team directly via email.</p>
                 <a
-                  href="mailto:customerservice@neoscratch.com"
+                  href="mailto:thisisneoscratch@gmail.com"
                   className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
                 >
                   <Mail className="w-3 h-3" />
