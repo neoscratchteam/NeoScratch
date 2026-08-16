@@ -168,16 +168,22 @@ export default function Index() {
             </p>
           </div>
 
-          {/* 3 Cards Matching Reference Image */}
+          {/* 3 Notched Cards Matching Reference Image */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             
             {/* Card 1: White Card */}
-            <div 
-              className="rounded-[2.2rem] p-8 pb-24 relative shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group min-h-[380px] overflow-hidden"
-              style={{ backgroundColor: '#ffffff', color: '#0b3b2d' }}
-            >
-              <div>
-                <div className="mb-10 text-[#0b3b2d] group-hover:scale-105 transition-transform origin-left">
+            <div className="relative min-h-[410px] p-8 pb-20 flex flex-col justify-between group transition-transform duration-300 hover:-translate-y-1">
+              {/* SVG Notched Card Background */}
+              <svg viewBox="0 0 360 410" className="w-full h-full absolute inset-0 text-white drop-shadow-sm" preserveAspectRatio="none">
+                <path 
+                  d="M 32 0 H 328 A 32 32 0 0 1 360 32 V 378 A 32 32 0 0 1 328 410 H 180 A 20 20 0 0 1 160 390 V 365 A 20 20 0 0 0 140 345 H 0 V 32 A 32 32 0 0 1 32 0 Z" 
+                  fill="currentColor" 
+                />
+              </svg>
+
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="mb-8 text-[#0b3b2d]">
                   <Briefcase className="w-12 h-12 stroke-[1.5]" />
                 </div>
                 <h3 className="text-xl font-extrabold text-[#0b3b2d] mb-4 leading-snug font-jakarta">
@@ -188,28 +194,34 @@ export default function Index() {
                 </p>
               </div>
 
-              {/* Bottom-left Notch Cutout & Pill Button */}
-              <div className="absolute bottom-0 left-0 bg-[#f6f7f2] pt-3 pr-4 rounded-tr-3xl z-10">
+              {/* Pill Button inside Notch Cutout */}
+              <div className="absolute bottom-2 left-2 z-20">
                 <Link 
                   href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-white border border-gray-200/80 shadow-sm hover:bg-[#0b3b2d] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-[#f4f5ee] hover:bg-[#0b3b2d] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm border border-gray-200/60"
                 >
                   <span>Explore More</span>
-                  <span className="font-extrabold text-sm">&gt;</span>
+                  <span className="font-extrabold text-xs">&gt;</span>
                 </Link>
               </div>
             </div>
 
             {/* Card 2: Bright Lime Card */}
-            <div 
-              className="rounded-[2.2rem] p-8 pb-24 relative shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group min-h-[380px] overflow-hidden"
-              style={{ backgroundColor: '#a4e634', color: '#0b3b2d' }}
-            >
-              {/* Decorative Concentric Arcs Graphic */}
-              <div className="w-48 h-48 rounded-full border-[18px] border-lime-600/15 absolute -bottom-10 -right-10 pointer-events-none" />
+            <div className="relative min-h-[410px] p-8 pb-20 flex flex-col justify-between group transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
+              {/* SVG Notched Card Background */}
+              <svg viewBox="0 0 360 410" className="w-full h-full absolute inset-0 text-[#a4e634] drop-shadow-md" preserveAspectRatio="none">
+                <path 
+                  d="M 32 0 H 328 A 32 32 0 0 1 360 32 V 378 A 32 32 0 0 1 328 410 H 180 A 20 20 0 0 1 160 390 V 365 A 20 20 0 0 0 140 345 H 0 V 32 A 32 32 0 0 1 32 0 Z" 
+                  fill="currentColor" 
+                />
+              </svg>
 
+              {/* Decorative Concentric Arcs */}
+              <div className="w-48 h-48 rounded-full border-[20px] border-lime-600/20 absolute -bottom-6 -right-6 pointer-events-none z-0" />
+
+              {/* Content */}
               <div className="relative z-10">
-                <div className="mb-10 text-[#0b3b2d] group-hover:scale-105 transition-transform origin-left">
+                <div className="mb-8 text-[#0b3b2d]">
                   <TrendingUp className="w-12 h-12 stroke-[1.5]" />
                 </div>
                 <h3 className="text-xl font-extrabold text-[#0b3b2d] mb-4 leading-snug font-jakarta">
@@ -220,43 +232,49 @@ export default function Index() {
                 </p>
               </div>
 
-              {/* Bottom-left Notch Cutout & Pill Button */}
-              <div className="absolute bottom-0 left-0 bg-[#f6f7f2] pt-3 pr-4 rounded-tr-3xl z-10">
+              {/* Pill Button inside Notch Cutout */}
+              <div className="absolute bottom-2 left-2 z-20">
                 <Link 
                   href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-[#8ce020] hover:bg-[#0b3b2d] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-[#8ce020] hover:bg-[#0b3b2d] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm border border-lime-500/40"
                 >
                   <span>Explore More</span>
-                  <span className="font-extrabold text-sm">&gt;</span>
+                  <span className="font-extrabold text-xs">&gt;</span>
                 </Link>
               </div>
             </div>
 
             {/* Card 3: Deep Forest Green Card */}
-            <div 
-              className="rounded-[2.2rem] p-8 pb-24 relative shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group min-h-[380px] overflow-hidden"
-              style={{ backgroundColor: '#062c22', color: '#ffffff' }}
-            >
-              <div>
-                <div className="mb-10 text-[#a4e634] group-hover:scale-105 transition-transform origin-left">
+            <div className="relative min-h-[410px] p-8 pb-20 flex flex-col justify-between group transition-transform duration-300 hover:-translate-y-1">
+              {/* SVG Notched Card Background */}
+              <svg viewBox="0 0 360 410" className="w-full h-full absolute inset-0 text-[#062c22] drop-shadow-md" preserveAspectRatio="none">
+                <path 
+                  d="M 32 0 H 328 A 32 32 0 0 1 360 32 V 378 A 32 32 0 0 1 328 410 H 180 A 20 20 0 0 1 160 390 V 365 A 20 20 0 0 0 140 345 H 0 V 32 A 32 32 0 0 1 32 0 Z" 
+                  fill="currentColor" 
+                />
+              </svg>
+
+              {/* Content */}
+              <div className="relative z-10">
+                <div className="mb-8 text-[#a4e634]">
                   <Handshake className="w-12 h-12 stroke-[1.5]" />
                 </div>
                 <h3 className="text-xl font-extrabold text-white mb-4 leading-snug font-jakarta">
                   Business process<br />Improvement
                 </h3>
-                <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-xs">
+                <p className="text-white/75 text-xs sm:text-sm leading-relaxed max-w-xs">
                   Optimize workflows to increase efficiency, productivity, and performance.
                 </p>
               </div>
 
-              {/* Bottom-left Notch Cutout & Pill Button */}
-              <div className="absolute bottom-0 left-0 bg-[#f6f7f2] pt-3 pr-4 rounded-tr-3xl z-10">
+              {/* Pill Button inside Notch Cutout */}
+              <div className="absolute bottom-2 left-2 z-20">
                 <Link 
                   href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#062c22] hover:bg-[#a4e634] hover:text-[#0b3b2d] px-5 py-2.5 rounded-full transition-all duration-300"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#0b3b2d] hover:bg-[#a4e634] hover:text-[#0b3b2d] px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm border border-white/20"
                 >
                   <span>Explore More</span>
-                  <span className="font-extrabold text-sm">&gt;</span>
+                  <span className="font-extrabold text-xs">&gt;</span>
                 </Link>
               </div>
             </div>
