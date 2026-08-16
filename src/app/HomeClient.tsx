@@ -94,17 +94,17 @@ export default function Index() {
 
               {/* Subtitle */}
               <p className="text-sm sm:text-base text-white/80 max-w-lg leading-relaxed">
-                We provide expert business consulting services to help companies grow, optimize operations, and achieve sustainable digital success.
+                We build high-performance software, custom websites, and digital solutions to help companies scale and achieve sustainable success.
               </p>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-5 pt-2">
-                {/* Book Appointment Pill Button */}
+                {/* Request Website Pill Button */}
                 <Link
                   href="/request-website"
                   className="inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs font-extrabold bg-[#0b3b2d] text-white border-2 border-[#a3e635] shadow-lg hover:bg-[#07261d] transition-all duration-300 hover:scale-[1.03] group"
                 >
-                  <span className="text-white font-bold">Book Appointment</span>
+                  <span className="text-white font-bold">Request Website</span>
                   <span className="w-8 h-8 rounded-full bg-[#a3e635] text-[#0b3b2d] flex items-center justify-center font-black text-sm group-hover:translate-x-0.5 transition-transform">
                     »
                   </span>
@@ -151,7 +151,7 @@ export default function Index() {
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-gray-500 max-w-md leading-relaxed lg:pt-8">
-              Explore integrated consulting approaches improve processes, increase productivity, and support long-term organizational data driven business development
+              Explore integrated software engineering and web solutions to automate operations, improve productivity, and support long-term digital growth
             </p>
           </div>
 
@@ -174,10 +174,10 @@ export default function Index() {
                   <Briefcase className="w-12 h-12 stroke-[1.5]" />
                 </div>
                 <h3 className="text-xl font-extrabold text-[#0b3b2d] mb-4 leading-snug font-jakarta">
-                  Next-gen human<br />Resources
+                  Custom Web &amp;<br />Software Build
                 </h3>
                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed max-w-xs">
-                  We provide expert business consulting services help companies grow
+                  We build modern software, websites, and web apps to help companies scale
                 </p>
               </div>
 
@@ -212,10 +212,10 @@ export default function Index() {
                   <TrendingUp className="w-12 h-12 stroke-[1.5]" />
                 </div>
                 <h3 className="text-xl font-extrabold text-[#0b3b2d] mb-4 leading-snug font-jakarta">
-                  Market growth<br />Consulting
+                  Digital Growth &amp;<br />Tech Solutions
                 </h3>
                 <p className="text-[#0b3b2d]/85 text-xs sm:text-sm leading-relaxed max-w-xs font-medium">
-                  Identify new opportunities and accelerate sustainable business growth
+                  Identify tech opportunities and accelerate sustainable digital growth
                 </p>
               </div>
 
@@ -331,11 +331,11 @@ export default function Index() {
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0b3b2d] leading-tight">
-                Comprehensive solution for business excellence
+                Comprehensive solutions for digital &amp; software excellence
               </h2>
 
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                Discover innovative consulting &amp; digital engineering strategies that help businesses improve operations, increase profitability, and achieve long-term growth across Kigali and digital markets around the world.
+                Discover innovative software development &amp; digital engineering strategies that help businesses improve operations, increase productivity, and achieve long-term growth across Kigali and global digital markets.
               </p>
 
               {/* Founder/CEO Row */}
@@ -378,9 +378,9 @@ export default function Index() {
 
                 {/* Premium Skills Card */}
                 <div className="p-4 rounded-2xl bg-[#f7f8f3] border border-gray-200/80">
-                  <span className="text-[11px] font-extrabold text-[#0b3b2d] uppercase tracking-wider block mb-2">Premium Skills</span>
+                  <span className="text-[11px] font-extrabold text-[#0b3b2d] uppercase tracking-wider block mb-2">Core Tech Stack</span>
                   <div className="flex flex-wrap gap-1.5">
-                    {['ADVISOR', 'CONSULTING', 'MARKETING', 'WEB DEV', 'SEO'].map(skill => (
+                    {['SOFTWARE', 'WEB DEV', 'MOBILE APPS', 'UI/UX', 'SEO'].map(skill => (
                       <span key={skill} className="px-2 py-0.5 rounded-md bg-white border border-gray-200 text-[10px] font-bold text-[#0b3b2d]">
                         {skill}
                       </span>
