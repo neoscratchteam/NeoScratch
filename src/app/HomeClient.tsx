@@ -149,92 +149,116 @@ export default function Index() {
 
 
       {/* ── 2. Essential Features Section ("* Our Approach") ── */}
-      <section className="py-24 bg-[#f7f8f3]">
+      <section className="py-20 lg:py-28 bg-[#f6f7f2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Section Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-16">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#0b3b2d] text-xs font-extrabold uppercase tracking-wider mb-3">
-                <Star className="w-3.5 h-3.5 text-lime-600 fill-current" />
-                Our Approach
+              <div className="flex items-center gap-2 text-[#0b3b2d] text-xs font-bold uppercase tracking-wider mb-4">
+                <span className="text-base font-extrabold">✱</span>
+                <span>Our Approach</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0b3b2d] max-w-xl leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0b3b2d] max-w-md leading-[1.15] font-jakarta">
                 Essential features for modern business success
               </h2>
             </div>
-            <p className="text-sm sm:text-base text-gray-600 max-w-md leading-relaxed">
-              Explore integrated consulting &amp; engineering approaches to improve processes, increase productivity, and support long-term organizational data-driven business development.
+            <p className="text-xs sm:text-sm text-gray-500 max-w-md leading-relaxed lg:pt-8">
+              Explore integrated consulting approaches improve processes, increase productivity, and support long-term organizational data driven business development
             </p>
           </div>
 
-          {/* 3 Interactive Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* 3 Cards Matching Reference Image */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             
             {/* Card 1: White Card */}
-            <div className="bg-white rounded-[2rem] p-8 border border-emerald-950/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div 
+              className="rounded-[2.2rem] p-8 pb-24 relative shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group min-h-[380px] overflow-hidden"
+              style={{ backgroundColor: '#ffffff', color: '#0b3b2d' }}
+            >
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-100 text-[#0b3b2d] flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                  <Briefcase className="w-7 h-7" />
+                <div className="mb-10 text-[#0b3b2d] group-hover:scale-105 transition-transform origin-left">
+                  <Briefcase className="w-12 h-12 stroke-[1.5]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#0b3b2d] mb-4">
-                  Next-gen Human &amp; Software Resources
+                <h3 className="text-xl font-extrabold text-[#0b3b2d] mb-4 leading-snug font-jakarta">
+                  Next-gen human<br />Resources
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-8">
-                  We provide expert business consulting &amp; tech talent solutions to help companies grow rapidly and sustain scale.
+                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed max-w-xs">
+                  We provide expert business consulting services help companies grow
                 </p>
               </div>
-              <Link 
-                href="/services" 
-                className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-gray-100 hover:bg-[#0b3b2d] hover:text-white px-5 py-2.5 rounded-full transition-colors w-fit"
-              >
-                <span>Explore More</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+
+              {/* Bottom-left Notch Cutout & Pill Button */}
+              <div className="absolute bottom-0 left-0 bg-[#f6f7f2] pt-3 pr-4 rounded-tr-3xl z-10">
+                <Link 
+                  href="/services" 
+                  className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-white border border-gray-200/80 shadow-sm hover:bg-[#0b3b2d] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300"
+                >
+                  <span>Explore More</span>
+                  <span className="font-extrabold text-sm">&gt;</span>
+                </Link>
+              </div>
             </div>
 
-            {/* Card 2: Bright Lime Highlight Card */}
-            <div className="bg-lime-400 rounded-[2rem] p-8 border border-lime-500/30 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group text-[#0b3b2d]">
-              <div>
-                <div className="w-14 h-14 rounded-2xl bg-[#0b3b2d] text-lime-400 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform shadow-md">
-                  <TrendingUp className="w-7 h-7" />
+            {/* Card 2: Bright Lime Card */}
+            <div 
+              className="rounded-[2.2rem] p-8 pb-24 relative shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group min-h-[380px] overflow-hidden"
+              style={{ backgroundColor: '#a4e634', color: '#0b3b2d' }}
+            >
+              {/* Decorative Concentric Arcs Graphic */}
+              <div className="w-48 h-48 rounded-full border-[18px] border-lime-600/15 absolute -bottom-10 -right-10 pointer-events-none" />
+
+              <div className="relative z-10">
+                <div className="mb-10 text-[#0b3b2d] group-hover:scale-105 transition-transform origin-left">
+                  <TrendingUp className="w-12 h-12 stroke-[1.5]" />
                 </div>
-                <h3 className="text-xl font-extrabold text-[#0b3b2d] mb-4">
-                  Market Growth &amp; Digital Strategy
+                <h3 className="text-xl font-extrabold text-[#0b3b2d] mb-4 leading-snug font-jakarta">
+                  Market growth<br />Consulting
                 </h3>
-                <p className="text-[#0b3b2d]/80 text-sm leading-relaxed mb-8 font-medium">
-                  Identify new market opportunities and accelerate sustainable business growth through data &amp; strategic SEO.
+                <p className="text-[#0b3b2d]/85 text-xs sm:text-sm leading-relaxed max-w-xs font-medium">
+                  Identify new opportunities and accelerate sustainable business growth
                 </p>
               </div>
-              <Link 
-                href="/services" 
-                className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#0b3b2d] hover:bg-[#06261d] px-5 py-2.5 rounded-full transition-colors w-fit shadow-sm"
-              >
-                <span>Explore More</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+
+              {/* Bottom-left Notch Cutout & Pill Button */}
+              <div className="absolute bottom-0 left-0 bg-[#f6f7f2] pt-3 pr-4 rounded-tr-3xl z-10">
+                <Link 
+                  href="/services" 
+                  className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-[#8ce020] hover:bg-[#0b3b2d] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300"
+                >
+                  <span>Explore More</span>
+                  <span className="font-extrabold text-sm">&gt;</span>
+                </Link>
+              </div>
             </div>
 
             {/* Card 3: Deep Forest Green Card */}
-            <div className="bg-[#0b3b2d] rounded-[2rem] p-8 border border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group text-white">
+            <div 
+              className="rounded-[2.2rem] p-8 pb-24 relative shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group min-h-[380px] overflow-hidden"
+              style={{ backgroundColor: '#062c22', color: '#ffffff' }}
+            >
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-white/10 text-lime-400 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                  <Handshake className="w-7 h-7" />
+                <div className="mb-10 text-[#a4e634] group-hover:scale-105 transition-transform origin-left">
+                  <Handshake className="w-12 h-12 stroke-[1.5]" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">
-                  Business Process Improvement
+                <h3 className="text-xl font-extrabold text-white mb-4 leading-snug font-jakarta">
+                  Business process<br />Improvement
                 </h3>
-                <p className="text-white/70 text-sm leading-relaxed mb-8">
-                  Optimize internal workflows to increase efficiency, team productivity, and high-performance automated software output.
+                <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-xs">
+                  Optimize workflows to increase efficiency, productivity, and performance.
                 </p>
               </div>
-              <Link 
-                href="/services" 
-                className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-lime-400 hover:bg-lime-300 px-5 py-2.5 rounded-full transition-colors w-fit"
-              >
-                <span>Explore More</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+
+              {/* Bottom-left Notch Cutout & Pill Button */}
+              <div className="absolute bottom-0 left-0 bg-[#f6f7f2] pt-3 pr-4 rounded-tr-3xl z-10">
+                <Link 
+                  href="/services" 
+                  className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#062c22] hover:bg-[#a4e634] hover:text-[#0b3b2d] px-5 py-2.5 rounded-full transition-all duration-300"
+                >
+                  <span>Explore More</span>
+                  <span className="font-extrabold text-sm">&gt;</span>
+                </Link>
+              </div>
             </div>
 
           </div>
