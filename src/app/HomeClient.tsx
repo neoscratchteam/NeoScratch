@@ -69,7 +69,7 @@ export default function Index() {
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
             src="/rwanda_hero_seamless.png"
-            alt="AI & Tech Solutions Robot"
+            alt="NeoScratch Digital Web Systems & Platforms Showcase"
             fill
             className="object-cover object-right lg:object-right-top opacity-95 lg:opacity-100"
             priority
