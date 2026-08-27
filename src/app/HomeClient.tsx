@@ -69,14 +69,14 @@ export default function Index() {
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
             src="/rwanda_hero_seamless.png"
-            alt="Rwandan Business Leaders"
+            alt="AI & Tech Solutions Robot"
             fill
-            className="object-cover object-right lg:object-right-top opacity-90 lg:opacity-100"
+            className="object-cover object-right lg:object-right-top opacity-95 lg:opacity-100"
             priority
           />
           {/* Gradient overlay to blend left side smoothly */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0b3b2d] via-[#0b3b2d]/95 lg:via-[#0b3b2d]/85 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0b3b2d] via-transparent to-transparent opacity-80 lg:opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b3b2d] via-[#0b3b2d]/90 md:via-[#0b3b2d]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b3b2d] via-transparent to-transparent opacity-60 lg:opacity-30" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
