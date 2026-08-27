@@ -139,6 +139,13 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Giant Brand Typography Banner */}
+        <div className="pt-10 pb-4 border-t border-white/10 text-center overflow-hidden select-none">
+          <span className="block text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[13rem] font-black uppercase tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-white/25 via-white/10 to-transparent font-jakarta">
+            NEOSCRATCH
+          </span>
+        </div>
+
         {/* Bottom Section */}
         <div className="py-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/70 font-medium">
           <div>
