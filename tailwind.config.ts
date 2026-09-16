@@ -26,39 +26,39 @@ export default {
 			colors: {
 				border: '#060606',
 				input: '#060606',
-				ring: '#7EDC14',
-				background: '#F9F9F9',
+				ring: '#175A26',
+				background: '#E5E5E5',
 				foreground: '#060606',
-				brandBg: '#F9F9F9',
-				brandGreen: '#7EDC14',
+				brandBg: '#E5E5E5',
+				brandGreen: '#175A26',
 				brandBlack: '#060606',
 				forest: {
-					DEFAULT: '#060606',
-					deep: '#060606',
-					light: '#060606',
-					muted: '#060606',
+					DEFAULT: '#175A26',
+					deep: '#175A26',
+					light: '#175A26',
+					muted: '#175A26',
 				},
 				lime: {
-					DEFAULT: '#7EDC14',
-					bright: '#7EDC14',
-					hover: '#7EDC14',
-					muted: '#7EDC14',
-					dark: '#7EDC14',
+					DEFAULT: '#175A26',
+					bright: '#175A26',
+					hover: '#175A26',
+					muted: '#175A26',
+					dark: '#175A26',
 				},
 				cream: {
-					DEFAULT: '#F9F9F9',
-					soft: '#F9F9F9',
-					card: '#F9F9F9',
+					DEFAULT: '#E5E5E5',
+					soft: '#E5E5E5',
+					card: '#E5E5E5',
 				},
 				primary: {
 					DEFAULT: '#060606',
-					foreground: '#F9F9F9',
+					foreground: '#E5E5E5',
 					light: '#060606',
 					dark: '#060606'
 				},
 				secondary: {
-					DEFAULT: '#7EDC14',
-					foreground: '#060606'
+					DEFAULT: '#175A26',
+					foreground: '#FFFFFF'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',

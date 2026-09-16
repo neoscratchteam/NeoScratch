@@ -40,13 +40,14 @@ export function Footer() {
             
             {/* Company Info */}
             <div className="lg:col-span-2 space-y-6">
-              <Link href="/" className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-full bg-[#7EDC14] text-[#060606] flex items-center justify-center shadow-lg font-black text-xl">
-                  ▶
-                </div>
-                <span className="text-2xl font-extrabold tracking-tight text-[#F9F9F9]">
-                  Neo<span className="text-[#7EDC14]">Scratch</span>
-                </span>
+              <Link href="/" className="flex items-center group">
+                <Image 
+                  src="/logo.png" 
+                  alt="Logo" 
+                  width={40} 
+                  height={40} 
+                  className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
+                />
               </Link>
               
               <p className="text-[#F9F9F9]/80 text-sm leading-relaxed max-w-sm font-medium">
@@ -55,29 +56,29 @@ export function Footer() {
               
               <div className="space-y-3 pt-4 border-t border-[#F9F9F9]/10">
                 <div className="flex items-center space-x-3 text-sm text-[#F9F9F9]">
-                  <div className="h-8 w-8 rounded-full bg-[#7EDC14] text-[#060606] flex items-center justify-center">
+                  <div className="h-8 w-8 rounded-full bg-[#175A26] text-white flex items-center justify-center">
                     <MapPin className="h-4 w-4" />
                   </div>
                   <span className="font-semibold text-xs">Kigali, Rwanda</span>
                 </div>
                 <div className="flex items-center space-x-3 text-sm text-[#F9F9F9]">
-                  <div className="h-8 w-8 rounded-full bg-[#7EDC14] text-[#060606] flex items-center justify-center">
+                  <div className="h-8 w-8 rounded-full bg-[#175A26] text-white flex items-center justify-center">
                     <Phone className="h-4 w-4" />
                   </div>
-                  <a href="tel:+250792734752" className="font-semibold text-xs hover:text-[#7EDC14] transition-colors">+250 792 734 752</a>
+                  <a href="tel:+250792734752" className="font-semibold text-xs hover:text-[#175A26] transition-colors">+250 792 734 752</a>
                 </div>
                 <div className="flex items-center space-x-3 text-sm text-[#F9F9F9]">
-                  <div className="h-8 w-8 rounded-full bg-[#7EDC14] text-[#060606] flex items-center justify-center">
+                  <div className="h-8 w-8 rounded-full bg-[#175A26] text-white flex items-center justify-center">
                     <Mail className="h-4 w-4" />
                   </div>
-                  <a href="mailto:thisisneoscratch@gmail.com" className="font-semibold text-xs hover:text-[#7EDC14] transition-colors">thisisneoscratch@gmail.com</a>
+                  <a href="mailto:thisisneoscratch@gmail.com" className="font-semibold text-xs hover:text-[#175A26] transition-colors">thisisneoscratch@gmail.com</a>
                 </div>
               </div>
             </div>
 
             {/* Footer Links */}
             <div>
-              <h3 className="text-xs font-extrabold text-[#7EDC14] uppercase tracking-widest mb-6">
+              <h3 className="text-xs font-extrabold text-[#175A26] uppercase tracking-widest mb-6">
                 Capabilities
               </h3>
               <ul className="space-y-3">
@@ -85,7 +86,7 @@ export function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-xs font-semibold text-[#F9F9F9]/80 hover:text-[#7EDC14] transition-colors inline-block"
+                      className="text-xs font-semibold text-[#F9F9F9]/80 hover:text-[#175A26] transition-colors inline-block"
                     >
                       {link.name}
                     </Link>
@@ -95,7 +96,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="text-xs font-extrabold text-[#7EDC14] uppercase tracking-widest mb-6">
+              <h3 className="text-xs font-extrabold text-[#175A26] uppercase tracking-widest mb-6">
                 Company
               </h3>
               <ul className="space-y-3">
@@ -103,7 +104,7 @@ export function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-xs font-semibold text-[#F9F9F9]/80 hover:text-[#7EDC14] transition-colors inline-block"
+                      className="text-xs font-semibold text-[#F9F9F9]/80 hover:text-[#175A26] transition-colors inline-block"
                     >
                       {link.name}
                     </Link>
@@ -113,7 +114,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="text-xs font-extrabold text-[#7EDC14] uppercase tracking-widest mb-6">
+              <h3 className="text-xs font-extrabold text-[#175A26] uppercase tracking-widest mb-6">
                 Resources
               </h3>
               <ul className="space-y-3">
@@ -121,7 +122,7 @@ export function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-xs font-semibold text-[#F9F9F9]/80 hover:text-[#7EDC14] transition-colors inline-block"
+                      className="text-xs font-semibold text-[#F9F9F9]/80 hover:text-[#175A26] transition-colors inline-block"
                     >
                       {link.name}
                     </Link>
@@ -135,7 +136,7 @@ export function Footer() {
 
         {/* Giant Brand Typography Banner */}
         <div className="pt-10 pb-4 border-t border-[#F9F9F9]/10 text-center overflow-hidden select-none">
-          <span className="block text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[13rem] font-black uppercase tracking-tighter leading-none text-[#7EDC14]/20 font-jakarta">
+          <span className="block text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[13rem] font-black uppercase tracking-tighter leading-none text-[#175A26]/30 font-jakarta">
             NEOSCRATCH
           </span>
         </div>
@@ -150,7 +151,7 @@ export function Footer() {
               <a
                 key={social.name}
                 href={social.href}
-                className="w-8 h-8 rounded-full bg-[#F9F9F9]/10 text-[#F9F9F9] hover:bg-[#7EDC14] hover:text-[#060606] flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-[#F9F9F9]/10 text-[#F9F9F9] hover:bg-[#175A26] hover:text-white flex items-center justify-center transition-colors"
                 aria-label={social.name}
                 target="_blank"
                 rel="noopener noreferrer"

@@ -75,7 +75,7 @@ export function TestimonialSlider() {
                 className={`relative rounded-full transition-all duration-700 ease-&lsqb;cubic-bezier(0.16,1,0.3,1)&rsqb; flex-shrink-0 cursor-pointer hover:opacity-100 ${sizeClass} ${opacityClass} ${yOffset} ${ringClass}`}
               >
                 {t.avatar === 'YOU' ? (
-                  <div className="w-full h-full rounded-full bg-[#060606] text-[#7EDC14] border border-[#7EDC14]/40 flex items-center justify-center font-black text-xs sm:text-lg tracking-tighter shadow-md">
+                  <div className="w-full h-full rounded-full bg-[#060606] text-[#175A26] border border-[#175A26]/40 flex items-center justify-center font-black text-xs sm:text-lg tracking-tighter shadow-md">
                     YOU
                   </div>
                 ) : (

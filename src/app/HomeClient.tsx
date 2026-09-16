@@ -53,10 +53,10 @@ export default function Index() {
   const translateX = -scrollProgress * (cardWidth + gapWidth) * (displayedProjects.length - 1);
 
   return (
-    <div className="min-h-screen font-jakarta bg-[#F9F9F9] text-[#060606]">
+    <div className="min-h-screen font-jakarta bg-[#E5E5E5] text-[#060606]">
       
-      {/* ── 1. Hero Section (Green Background #7EDC14 Matching Reference) ── */}
-      <section className="relative bg-[#7EDC14] text-[#060606] pt-36 sm:pt-44 pb-20 lg:pb-28 overflow-hidden">
+      {/* ── 1. Hero Section (Green Background #175A26 Matching Color Swatch) ── */}
+      <section className="relative bg-[#175A26] text-white pt-36 sm:pt-44 pb-20 lg:pb-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-12 gap-10 items-center min-h-[500px]">
 
@@ -64,16 +64,16 @@ export default function Index() {
             <div className="lg:col-span-6 space-y-8">
 
               {/* Main Headline */}
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.06] text-[#060606] font-jakarta">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.06] text-white font-jakarta">
                 Company That <br />
                 Builds Software.
               </h1>
 
-              {/* Call to Action Button (White button matching reference image) */}
+              {/* Call to Action Button */}
               <div className="pt-2">
                 <Link
                   href="/request-website"
-                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg text-sm font-extrabold bg-white text-[#060606] border border-[#060606]/20 shadow-lg hover:bg-[#060606] hover:text-[#F9F9F9] transition-all duration-300 hover:scale-[1.02]"
+                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg text-sm font-extrabold bg-white text-[#175A26] border border-white/20 shadow-lg hover:bg-[#060606] hover:text-white transition-all duration-300 hover:scale-[1.02]"
                 >
                   Get started for free
                 </Link>
@@ -99,9 +99,9 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── 2. Clientele Section (Light Gray/White Background #F9F9F9) ── */}
+      {/* ── 2. Clientele Section ── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 mb-24 relative z-20">
-        <div className="bg-[#F9F9F9] rounded-[10px] p-8 sm:p-14 shadow-xl">
+        <div className="bg-[#E5E5E5] rounded-[10px] p-8 sm:p-14 shadow-xl border border-[#060606]/10">
           
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#060606] text-center mb-10 tracking-tight font-jakarta">
             Businesses That Currently Trust Our Services
@@ -146,15 +146,15 @@ export default function Index() {
       </section>
 
 
-      {/* ── 3. Essential Features Section ("* Our Approach" - Next Section is White #F9F9F9) ── */}
-      <section className="py-20 lg:py-24 bg-[#F9F9F9]">
+      {/* ── 3. Essential Features Section ── */}
+      <section className="py-20 lg:py-24 bg-[#E5E5E5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-16">
             <div>
               <div className="flex items-center gap-2 text-[#060606] text-xs font-extrabold uppercase tracking-wider mb-4">
-                <span className="text-base font-black text-[#7EDC14]">✱</span>
+                <span className="text-base font-black text-[#175A26]">✱</span>
                 <span>Our Approach</span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#060606] max-w-md leading-[1.15] font-jakarta">
@@ -166,11 +166,11 @@ export default function Index() {
             </p>
           </div>
 
-          {/* 3 Cards Palette Mapped (#F9F9F9, #7EDC14, #060606) */}
+          {/* 3 Cards Palette Mapped (#E5E5E5, #175A26, #060606) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             
-            {/* Card 1: Light Card (#F9F9F9 / #060606 Border) */}
-            <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#F9F9F9] border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1">
+            {/* Card 1: Light Card (#E5E5E5 / #060606 Border) */}
+            <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#E5E5E5] border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1">
               <div>
                 <div className="mb-8 text-[#060606]">
                   <Briefcase className="w-12 h-12 stroke-[1.5]" />
@@ -186,7 +186,7 @@ export default function Index() {
               <div>
                 <Link 
                   href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-extrabold text-[#060606] bg-[#7EDC14] hover:bg-[#060606] hover:text-[#F9F9F9] px-5 py-2.5 rounded-full transition-all duration-300 border border-[#060606]"
+                  className="inline-flex items-center gap-2 text-xs font-extrabold text-white bg-[#175A26] hover:bg-[#060606] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300 border border-[#060606]"
                 >
                   <span>Explore More</span>
                   <span className="font-extrabold text-xs">&gt;</span>
@@ -194,16 +194,16 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Card 2: Vibrant Green Card (#7EDC14) */}
-            <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#7EDC14] border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
+            {/* Card 2: Deep Forest Green Card (#175A26) */}
+            <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#175A26] text-white border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
               <div className="relative z-10">
-                <div className="mb-8 text-[#060606]">
+                <div className="mb-8 text-white">
                   <TrendingUp className="w-12 h-12 stroke-[1.5]" />
                 </div>
-                <h3 className="text-xl font-extrabold text-[#060606] mb-4 leading-snug font-jakarta">
+                <h3 className="text-xl font-extrabold text-white mb-4 leading-snug font-jakarta">
                   Digital Growth &amp;<br />Tech Solutions
                 </h3>
-                <p className="text-[#060606]/85 text-xs sm:text-sm leading-relaxed max-w-xs font-bold">
+                <p className="text-white/90 text-xs sm:text-sm leading-relaxed max-w-xs font-bold">
                   Identify tech opportunities and accelerate sustainable digital growth
                 </p>
               </div>
@@ -211,7 +211,7 @@ export default function Index() {
               <div className="relative z-10">
                 <Link 
                   href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-extrabold text-[#F9F9F9] bg-[#060606] hover:bg-[#F9F9F9] hover:text-[#060606] px-5 py-2.5 rounded-full transition-all duration-300 border border-[#060606]"
+                  className="inline-flex items-center gap-2 text-xs font-extrabold text-[#175A26] bg-white hover:bg-[#060606] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300 border border-white"
                 >
                   <span>Explore More</span>
                   <span className="font-extrabold text-xs">&gt;</span>
@@ -219,10 +219,10 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Card 3: Black Card (#060606) */}
+            {/* Card 3: Dark Card (#060606) */}
             <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#060606] text-[#F9F9F9] border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1">
               <div>
-                <div className="mb-8 text-[#7EDC14]">
+                <div className="mb-8 text-[#175A26]">
                   <Handshake className="w-12 h-12 stroke-[1.5]" />
                 </div>
                 <h3 className="text-xl font-extrabold text-[#F9F9F9] mb-4 leading-snug font-jakarta">
@@ -236,7 +236,7 @@ export default function Index() {
               <div>
                 <Link 
                   href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-extrabold text-[#060606] bg-[#7EDC14] hover:bg-[#F9F9F9] px-5 py-2.5 rounded-full transition-all duration-300 border border-[#7EDC14]"
+                  className="inline-flex items-center gap-2 text-xs font-extrabold text-white bg-[#175A26] hover:bg-white hover:text-[#060606] px-5 py-2.5 rounded-full transition-all duration-300 border border-[#175A26]"
                 >
                   <span>Explore More</span>
                   <span className="font-extrabold text-xs">&gt;</span>
@@ -251,7 +251,7 @@ export default function Index() {
 
 
       {/* ── 4. Comprehensive Solution Section ("* Who We Are?") ── */}
-      <section className="py-24 bg-[#F9F9F9] border-t border-[#060606]/10">
+      <section className="py-24 bg-[#E5E5E5] border-t border-[#060606]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
 
@@ -272,14 +272,14 @@ export default function Index() {
               {/* Bottom 2 Items Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 
-                {/* Stat Box (#7EDC14) */}
-                <div className="bg-[#7EDC14] rounded-[2rem] p-6 text-[#060606] border-2 border-[#060606] shadow-md flex flex-col justify-between">
-                  <div className="w-10 h-10 rounded-full bg-[#060606] text-[#7EDC14] flex items-center justify-center mb-4 font-bold">
+                {/* Stat Box (#175A26) */}
+                <div className="bg-[#175A26] rounded-[2rem] p-6 text-white border-2 border-[#060606] shadow-md flex flex-col justify-between">
+                  <div className="w-10 h-10 rounded-full bg-white text-[#175A26] flex items-center justify-center mb-4 font-bold">
                     <Check className="w-5 h-5 stroke-[3]" />
                   </div>
                   <div>
-                    <h4 className="text-3xl font-extrabold tracking-tight mb-1 text-[#060606]">10K+</h4>
-                    <p className="text-xs font-bold uppercase tracking-wider text-[#060606]/80 leading-snug">
+                    <h4 className="text-3xl font-extrabold tracking-tight mb-1 text-white">10K+</h4>
+                    <p className="text-xs font-bold uppercase tracking-wider text-white/90 leading-snug">
                       Our Total Completed Works
                     </p>
                   </div>
@@ -303,8 +303,8 @@ export default function Index() {
             {/* Right Content */}
             <div className="lg:col-span-6 space-y-6">
 
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7EDC14] text-[#060606] text-xs font-extrabold uppercase tracking-wider border border-[#060606]">
-                <Star className="w-3.5 h-3.5 text-[#060606] fill-current" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#175A26] text-white text-xs font-extrabold uppercase tracking-wider border border-[#060606]">
+                <Star className="w-3.5 h-3.5 text-white fill-current" />
                 Who We Are?
               </div>
 
@@ -320,10 +320,10 @@ export default function Index() {
               <div className="flex flex-wrap items-center gap-6 pt-2">
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-3 pl-6 pr-2.5 py-3 rounded-full text-xs font-extrabold bg-[#060606] text-[#F9F9F9] hover:bg-[#7EDC14] hover:text-[#060606] transition-colors border border-[#060606]"
+                  className="inline-flex items-center gap-3 pl-6 pr-2.5 py-3 rounded-full text-xs font-extrabold bg-[#060606] text-[#F9F9F9] hover:bg-[#175A26] hover:text-white transition-colors border border-[#060606]"
                 >
                   <span>More About Us</span>
-                  <span className="w-7 h-7 rounded-full bg-[#7EDC14] text-[#060606] flex items-center justify-center font-bold">
+                  <span className="w-7 h-7 rounded-full bg-[#175A26] text-white flex items-center justify-center font-bold">
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </Link>
@@ -352,12 +352,12 @@ export default function Index() {
 
 
       {/* ── 5. Services Grid Section ("* Our Services") ── */}
-      <section className="py-24 bg-[#F9F9F9]" id="services">
+      <section className="py-24 bg-[#E5E5E5]" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7EDC14] text-[#060606] text-xs font-extrabold uppercase tracking-wider mb-3 border border-[#060606]">
-              <Star className="w-3.5 h-3.5 text-[#060606] fill-current" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#175A26] text-white text-xs font-extrabold uppercase tracking-wider mb-3 border border-[#060606]">
+              <Star className="w-3.5 h-3.5 text-white fill-current" />
               Our Services
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#060606] mb-4">
@@ -409,10 +409,10 @@ export default function Index() {
             ].map((service) => (
               <div
                 key={service.title}
-                className="group relative flex flex-col p-8 rounded-[2rem] bg-[#F9F9F9] border-2 border-[#060606] shadow-sm hover:shadow-xl hover:border-[#7EDC14] transition-all duration-300"
+                className="group relative flex flex-col p-8 rounded-[2rem] bg-[#E5E5E5] border-2 border-[#060606] shadow-sm hover:shadow-xl hover:border-[#175A26] transition-all duration-300"
               >
                 <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-[#060606] text-[#7EDC14] flex items-center justify-center group-hover:bg-[#7EDC14] group-hover:text-[#060606] transition-colors duration-300 shadow-sm font-bold">
+                  <div className="w-12 h-12 rounded-2xl bg-[#060606] text-[#175A26] flex items-center justify-center group-hover:bg-[#175A26] group-hover:text-white transition-colors duration-300 shadow-sm font-bold">
                     <service.icon className="h-6 w-6" />
                   </div>
                   <ArrowUpRight className="h-5 w-5 text-[#060606]/60 group-hover:text-[#060606] transition-colors" />
@@ -423,7 +423,7 @@ export default function Index() {
                 
                 <div className="flex flex-wrap gap-2 pt-4 border-t border-[#060606]/10">
                   {service.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 rounded-full bg-[#7EDC14]/30 text-[11px] font-extrabold text-[#060606] border border-[#060606]/20">
+                    <span key={tag} className="px-3 py-1 rounded-full bg-[#175A26]/20 text-[11px] font-extrabold text-[#175A26] border border-[#175A26]/30">
                       {tag}
                     </span>
                   ))}
@@ -441,7 +441,7 @@ export default function Index() {
         <section className="sticky top-0 h-screen overflow-hidden bg-[#060606] py-12 flex flex-col justify-center text-[#F9F9F9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8 flex justify-between items-end">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7EDC14] text-[#060606] text-xs font-extrabold uppercase tracking-wider mb-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#175A26] text-white text-xs font-extrabold uppercase tracking-wider mb-2">
                 <Star className="w-3.5 h-3.5 fill-current" />
                 Featured Work
               </div>
@@ -451,7 +451,7 @@ export default function Index() {
             </div>
             <Link 
               href="/projects" 
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#7EDC14] text-[#060606] font-extrabold text-xs hover:bg-[#F9F9F9] transition-colors border border-[#7EDC14]"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#175A26] text-white font-extrabold text-xs hover:bg-[#F9F9F9] hover:text-[#060606] transition-colors border border-[#175A26]"
             >
               View All Works
             </Link>
@@ -467,7 +467,7 @@ export default function Index() {
               <Link 
                 key={p.id}
                 href={`/projects/${p.id}`}
-                className="w-[82vw] sm:w-[65vw] lg:w-[48vw] flex-shrink-0 h-[420px] bg-[#060606] rounded-[2.5rem] border-2 border-[#F9F9F9]/20 overflow-hidden flex flex-col group transition-all duration-300 hover:border-[#7EDC14] cursor-pointer shadow-2xl"
+                className="w-[82vw] sm:w-[65vw] lg:w-[48vw] flex-shrink-0 h-[420px] bg-[#060606] rounded-[2.5rem] border-2 border-[#F9F9F9]/20 overflow-hidden flex flex-col group transition-all duration-300 hover:border-[#175A26] cursor-pointer shadow-2xl"
               >
                 <div className="h-[220px] bg-black/50 overflow-hidden relative">
                   <Image 
@@ -477,7 +477,7 @@ export default function Index() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-[#7EDC14] text-[#060606] text-[10px] font-extrabold uppercase tracking-wider shadow-md">
+                    <span className="px-3 py-1 rounded-full bg-[#175A26] text-white text-[10px] font-extrabold uppercase tracking-wider shadow-md">
                       {p.tag}
                     </span>
                   </div>
@@ -485,11 +485,11 @@ export default function Index() {
                 
                 <div className="p-6 flex flex-col justify-between flex-grow">
                   <div>
-                    <h3 className="text-xl font-bold text-[#F9F9F9] mb-2 group-hover:text-[#7EDC14] transition-colors">{p.title}</h3>
+                    <h3 className="text-xl font-bold text-[#F9F9F9] mb-2 group-hover:text-[#175A26] transition-colors">{p.title}</h3>
                     <p className="text-[#F9F9F9]/70 text-xs leading-relaxed line-clamp-2">{p.description}</p>
                   </div>
                   
-                  <div className="inline-flex items-center gap-2 text-[#7EDC14] text-xs font-bold pt-4 border-t border-[#F9F9F9]/10">
+                  <div className="inline-flex items-center gap-2 text-[#175A26] text-xs font-bold pt-4 border-t border-[#F9F9F9]/10">
                     <span>Explore Case Study</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -502,7 +502,7 @@ export default function Index() {
 
 
       {/* ── 7. Testimonials Section ── */}
-      <section className="py-24 bg-[#F9F9F9]">
+      <section className="py-24 bg-[#E5E5E5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <TestimonialSlider />
         </div>

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const solutionsDropdown = [
   { name: 'Finance', href: '/services' },
@@ -40,29 +41,31 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-jakarta">
       <div className={`transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#7EDC14]/95 backdrop-blur-md shadow-md py-4 border-b border-[#060606]/10'
-          : 'bg-[#7EDC14] py-5'
+          ? 'bg-[#175A26]/95 backdrop-blur-md shadow-md py-4 border-b border-white/10'
+          : 'bg-[#175A26] py-5'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center relative">
           
-          {/* Brand Logo (Matching reference circular icon style) */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-full bg-[#060606] text-[#7EDC14] flex items-center justify-center font-black text-sm shadow-sm group-hover:scale-105 transition-transform pl-0.5">
-              ▶
-            </div>
-            <span className="text-2xl font-extrabold tracking-tight text-[#060606]">
-              neoscratch
-            </span>
+          {/* Brand Logo (Only logo.png icon, no black background) */}
+          <Link href="/" className="flex items-center group">
+            <Image 
+              src="/logo.png" 
+              alt="Logo" 
+              width={40} 
+              height={40} 
+              className="h-10 w-auto object-contain group-hover:scale-105 transition-transform brightness-0 invert"
+              priority 
+            />
           </Link>
 
           {/* Navigation Links with Dropdowns */}
-          <nav className="hidden lg:flex items-center space-x-7 text-sm font-extrabold text-[#060606]">
+          <nav className="hidden lg:flex items-center space-x-7 text-sm font-extrabold text-white">
             
             {/* Products Dropdown */}
             <div className="relative group">
               <button 
                 onClick={() => setActiveDropdown(activeDropdown === 'products' ? null : 'products')}
-                className="flex items-center gap-1.5 hover:opacity-75 transition-opacity py-2"
+                className="flex items-center gap-1.5 hover:opacity-80 transition-opacity py-2"
               >
                 <span>Products</span>
                 <ChevronDown className="w-4 h-4 stroke-[2.5]" />
@@ -76,7 +79,7 @@ export function Header() {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button 
-                className="flex items-center gap-1.5 hover:opacity-75 transition-opacity py-2"
+                className="flex items-center gap-1.5 hover:opacity-80 transition-opacity py-2"
               >
                 <span>Solutions</span>
                 {activeDropdown === 'solutions' ? (
@@ -94,7 +97,7 @@ export function Header() {
                       <Link
                         key={item.name}
                         href={item.href}
-                        className="block py-1.5 text-xs font-bold text-[#060606] hover:text-[#7EDC14] hover:bg-[#060606] rounded-lg transition-colors"
+                        className="block py-1.5 text-xs font-bold text-[#060606] hover:text-white hover:bg-[#175A26] rounded-lg transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -104,17 +107,17 @@ export function Header() {
               )}
             </div>
 
-            <Link href="/services" className="hover:opacity-75 transition-opacity py-2">
+            <Link href="/services" className="hover:opacity-80 transition-opacity py-2">
               Docs
             </Link>
 
-            <Link href="/services" className="hover:opacity-75 transition-opacity py-2">
+            <Link href="/services" className="hover:opacity-80 transition-opacity py-2">
               Pricing
             </Link>
 
             {/* Company Dropdown */}
             <div className="relative group">
-              <button className="flex items-center gap-1.5 hover:opacity-75 transition-opacity py-2">
+              <button className="flex items-center gap-1.5 hover:opacity-80 transition-opacity py-2">
                 <span>Company</span>
                 <ChevronDown className="w-4 h-4 stroke-[2.5]" />
               </button>
@@ -122,11 +125,11 @@ export function Header() {
 
           </nav>
 
-          {/* CTA Pill Button (White button matching reference screenshot) */}
+          {/* CTA Pill Button */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/request-website"
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg text-xs font-extrabold bg-white text-[#060606] hover:bg-[#060606] hover:text-[#F9F9F9] transition-all duration-300 shadow-sm border border-[#060606]/20"
+              className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg text-xs font-extrabold bg-white text-[#175A26] hover:bg-[#060606] hover:text-white transition-all duration-300 shadow-sm"
             >
               Go to Dashboard
             </Link>
@@ -136,7 +139,7 @@ export function Header() {
           <div className="flex items-center lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-[#060606] p-2"
+              className="text-white p-2"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -146,15 +149,15 @@ export function Header() {
         {/* Mobile Navigation Dropdown */}
         {isMenuOpen && (
           <div className="lg:hidden animate-fade-in px-4 pt-3 pb-4">
-            <div className="p-4 space-y-2 bg-[#7EDC14] border border-[#060606]/10 rounded-2xl shadow-2xl text-[#060606]">
-              <Link href="/" className="block px-4 py-2 font-bold hover:bg-[#060606] hover:text-[#F9F9F9] rounded-lg">Home</Link>
-              <Link href="/about" className="block px-4 py-2 font-bold hover:bg-[#060606] hover:text-[#F9F9F9] rounded-lg">About Us</Link>
-              <Link href="/services" className="block px-4 py-2 font-bold hover:bg-[#060606] hover:text-[#F9F9F9] rounded-lg">Services</Link>
-              <Link href="/projects" className="block px-4 py-2 font-bold hover:bg-[#060606] hover:text-[#F9F9F9] rounded-lg">Projects</Link>
+            <div className="p-4 space-y-2 bg-[#175A26] border border-white/10 rounded-2xl shadow-2xl text-white">
+              <Link href="/" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Home</Link>
+              <Link href="/about" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">About Us</Link>
+              <Link href="/services" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Services</Link>
+              <Link href="/projects" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Projects</Link>
               <div className="pt-2">
                 <Link
                   href="/request-website"
-                  className="block text-center px-5 py-3 rounded-xl font-extrabold bg-[#060606] text-[#F9F9F9]"
+                  className="block text-center px-5 py-3 rounded-xl font-extrabold bg-white text-[#175A26]"
                 >
                   Go to Dashboard
                 </Link>
