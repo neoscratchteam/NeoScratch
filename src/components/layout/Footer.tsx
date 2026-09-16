@@ -31,7 +31,7 @@ const footerColumns = [
       { name: 'Our Story', href: '/about' },
       { name: 'Contact Us', href: '/contact' },
       { name: 'Careers', href: '/about' },
-      { name: 'Clientele', href: '/#clientele' },
+      { name: 'Clients', href: '/#Clients' },
     ],
   },
   {
@@ -47,12 +47,13 @@ const footerColumns = [
   {
     title: 'FIND US',
     links: [
-      { name: 'Twitter (X)', href: 'https://www.x.com/theo_dev_rw', external: true },
+      { name: 'Facebook', href: 'https://facebook.com', external: true },
+      { name: 'Twitter', href: 'https://www.x.com/theo_dev_rw', external: true },
       { name: 'Instagram', href: 'https://www.instagram.com/neoscratchltd/', external: true },
       { name: 'LinkedIn', href: 'https://www.linkedin.com/in/theogene-iradukunda-88b07a381/', external: true },
-      { name: 'GitHub', href: 'https://github.com/theodevrwanda', external: true },
-      { name: 'Facebook', href: 'https://facebook.com', external: true },
+      { name: 'YouTube', href: 'https://youtube.com', external: true },
       { name: 'TikTok', href: 'https://tiktok.com', external: true },
+      { name: 'Slack', href: 'https://slack.com', external: true },
     ],
   },
 ];
@@ -60,16 +61,16 @@ const footerColumns = [
 export function Footer() {
   return (
     <footer className="relative bg-[#0B293A] text-white font-jakarta border-t border-[#0B293A]">
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-12 sm:pt-20 sm:pb-16">
-        
-        {/* 5 Column Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
+      <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
+
+        {/* 5 Column Minimal Grid (Exact Layout of Reference Image) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-14">
           {footerColumns.map((col, idx) => (
             <div key={idx} className="space-y-4">
               <h4 className="text-[11px] font-extrabold tracking-widest text-white/90 uppercase font-jakarta">
                 {col.title}
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {col.links.map((link, lIdx) => (
                   <li key={lIdx}>
                     {link.external ? (
@@ -96,8 +97,8 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Divider & Copyright */}
-        <div className="mt-16 pt-8 border-t border-white/10 text-center">
+        {/* Divider & Centered Copyright (Exact Style of Reference Image) */}
+        <div className="mt-20 pt-8 border-t border-white/10 text-center">
           <p className="text-[12px] text-white/50 font-medium">
             NeoScratch. All rights reserved. &copy; 2026
           </p>
@@ -105,7 +106,7 @@ export function Footer() {
 
       </div>
 
-      {/* Floating Chat Widget Button (Bottom Right) */}
+      {/* Floating Green Action Button (Bottom Right) */}
       <div className="fixed bottom-6 right-6 z-50">
         <Link
           href="/contact"

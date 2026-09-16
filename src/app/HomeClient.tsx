@@ -2,8 +2,8 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { 
-  Code, Smartphone, Globe, 
+import {
+  Code, Smartphone, Globe,
   ArrowRight, ArrowUpRight,
   Settings, BarChart3,
   Monitor, Star, Briefcase, TrendingUp,
@@ -26,11 +26,11 @@ export default function Index() {
       if (!ghostRef.current) return;
       const rect = ghostRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
+
       const start = rect.top;
       const end = rect.bottom - windowHeight;
       const total = rect.height - windowHeight;
-      
+
       let nextProgress = 0;
       if (start <= 0 && end >= 0) {
         nextProgress = Math.abs(start) / total;
@@ -39,7 +39,7 @@ export default function Index() {
       } else if (end < 0) {
         nextProgress = 1;
       }
-      
+
       setScrollProgress(nextProgress);
     };
 
@@ -48,13 +48,13 @@ export default function Index() {
   }, []);
 
   const displayedProjects = projects.slice(0, 4);
-  const cardWidth = 85; 
-  const gapWidth = 5;  
+  const cardWidth = 85;
+  const gapWidth = 5;
   const translateX = -scrollProgress * (cardWidth + gapWidth) * (displayedProjects.length - 1);
 
   return (
     <div className="min-h-screen font-jakarta bg-[#E5E5E5] text-[#060606]">
-      
+
       {/* ── 1. Hero Section (Green Background #175A26 Matching Color Swatch) ── */}
       <section className="relative bg-[#175A26] text-white pt-36 sm:pt-44 pb-20 lg:pb-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -99,17 +99,17 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── 2. Clientele Section (Floating Card Overlapping Hero) ── */}
+      {/* ── 2. Clients Section (Floating Card Overlapping Hero) ── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-24 mb-24 relative z-20">
         <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-md border border-[#060606]/10 text-center">
-          
+
           <h2 className="text-lg sm:text-xl font-extrabold text-[#060606] mb-8 tracking-tight font-jakarta">
             Powering Digital Excellence for Industry Leaders
           </h2>
 
           {/* Client Logos Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-10 items-center justify-items-center font-jakarta">
-            
+
             {/* Logo 1: oluxywatches */}
             <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
               oluxywatches
@@ -165,7 +165,7 @@ export default function Index() {
 
             {/* Right Column: Clean Typography (Matching Reference Screenshot) */}
             <div className="lg:col-span-7 space-y-6 font-jakarta">
-              
+
               <div className="space-y-2">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#2B383F] tracking-tight leading-[1.1]">
                   About NeoScratch
@@ -238,31 +238,31 @@ export default function Index() {
                 Platforms &amp; Systems We&apos;ve Engineered
               </h2>
             </div>
-            <Link 
-              href="/projects" 
+            <Link
+              href="/projects"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#175A26] text-white font-extrabold text-xs hover:bg-[#060606] hover:text-white transition-colors border border-[#175A26]"
             >
               View All Works
             </Link>
           </div>
 
-          <div 
+          <div
             className="flex gap-[4vw] px-[7.5vw] transform-gpu will-change-transform"
-            style={{ 
+            style={{
               transform: `translate3d(${translateX.toFixed(2)}vw, 0px, 0px)`
             }}
           >
             {displayedProjects.map((p) => (
-              <Link 
+              <Link
                 key={p.id}
                 href={`/projects/${p.id}`}
                 className="w-[85vw] sm:w-[80vw] lg:w-[70vw] flex-shrink-0 h-[460px] sm:h-[400px] lg:h-[380px] bg-white rounded-3xl border border-[#060606]/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row group transition-all duration-300 hover:ring-2 hover:ring-[#175A26] cursor-pointer"
               >
                 {/* Image Section - FULL FILL */}
                 <div className="lg:w-[60%] h-[50%] lg:h-full bg-slate-900 overflow-hidden relative">
-                  <Image 
-                    src={p.image} 
-                    alt={p.title} 
+                  <Image
+                    src={p.image}
+                    alt={p.title}
                     fill
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
                     sizes="(max-width: 768px) 85vw, 60vw"
@@ -275,7 +275,7 @@ export default function Index() {
                     </span>
                   </div>
                 </div>
-                
+
                 {/* Content Section */}
                 <div className="lg:w-[40%] h-[50%] lg:h-full p-6 lg:p-8 flex flex-col justify-between bg-white text-[#060606] relative z-10 transition-colors duration-300 group-hover:bg-[#175A26]/[0.02]">
                   <div>
@@ -284,15 +284,15 @@ export default function Index() {
                       <span className="h-px w-4 bg-[#060606]/20"></span>
                       <span className="text-[#175A26] text-[9px] font-extrabold tracking-widest uppercase font-jakarta">SYNERGY</span>
                     </div>
-                    
+
                     <h3 className="text-xl lg:text-2xl font-extrabold text-[#060606] mb-2 leading-tight group-hover:text-[#175A26] transition-colors font-jakarta">{p.title}</h3>
                     <p className="text-[#060606]/60 text-[11px] font-semibold mb-3 leading-none italic">for {p.subtitle ? p.subtitle.replace('for ', '') : p.client}</p>
-                    
+
                     <p className="text-[#060606]/70 text-[13px] leading-relaxed mb-4 font-medium line-clamp-3">
                       {p.description}
                     </p>
                   </div>
-                  
+
                   <div className="inline-flex items-center text-[#175A26] text-xs font-bold hover:gap-2 transition-all duration-300 group/link pt-3 border-t border-[#060606]/10">
                     <span>Explore Case</span>
                     <ArrowRight className="ml-1.5 h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" />
