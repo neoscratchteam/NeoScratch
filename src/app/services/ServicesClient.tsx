@@ -123,7 +123,7 @@ export default function Services() {
 
           <div className="overflow-x-auto rounded-2xl border border-[#060606]/10 shadow-sm bg-white w-full">
             <table className="w-full text-left border-collapse min-w-[980px]">
-              <thead>
+              <thead id="pricing-table-header">
                 <tr className="border-b border-[#060606]/10 bg-gray-50/90">
                   <th className="py-6 px-6 text-[11px] font-black uppercase tracking-widest text-[#060606]/60 w-[22%]">
                     FEATURE / SERVICE
