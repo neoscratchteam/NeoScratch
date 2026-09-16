@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import RequestWebsite from "./RequestClient";
 
 export const metadata: Metadata = {
-  title: "Get a Free Quote | Web Design & Mobile App Development Rwanda",
-  description: "Start your digital transformation journey today. Request a free quote for custom web development, mobile apps, or SEO services in Rwanda.",
+  title: "Get a Project Quote | Web Design & Mobile App Development Rwanda",
+  description: "Start your digital transformation journey today. Request a project quote for custom web development, mobile apps, or SEO services in Rwanda.",
   keywords: [
     "request website quote Rwanda", "hire web developer Kigali", "website pricing Rwanda",
     "software development inquiry", "custom app development quote", "SEO strategy inquiry"

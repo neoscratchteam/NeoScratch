@@ -73,9 +73,9 @@ export default function Index() {
               <div className="pt-2">
                 <Link
                   href="/request-website"
-                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg text-sm font-extrabold bg-white text-[#175A26] border border-white/20 shadow-lg hover:bg-[#060606] hover:text-white transition-all duration-300 hover:scale-[1.02]"
+                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-xs font-black bg-white text-[#175A26] hover:bg-[#060606] hover:text-white transition-all duration-300 shadow-md"
                 >
-                  Get started for free
+                  Get Started Today
                 </Link>
               </div>
 

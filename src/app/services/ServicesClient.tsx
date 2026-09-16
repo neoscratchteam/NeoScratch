@@ -366,7 +366,7 @@ export default function Services() {
                     href="/request-website"
                     className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-black bg-white text-[#175A26] hover:bg-[#060606] hover:text-white transition-all shadow-lg"
                   >
-                    Get Free Proposal
+                    Get Proposal
                   </Link>
                 </div>
               </div>

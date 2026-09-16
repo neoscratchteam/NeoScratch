@@ -255,7 +255,7 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button size="xl" className="bg-white text-[#175A26] hover:bg-white/90 rounded-xl px-12 h-16 text-lg font-bold shadow-2xl" asChild>
-              <Link href="/request-website">Get Free Quote</Link>
+              <Link href="/request-website">Get Project Quote</Link>
             </Button>
             <Button size="xl" variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-xl px-12 h-16 text-lg font-bold backdrop-blur-sm" asChild>
               <Link href="/projects">View more projects</Link>
