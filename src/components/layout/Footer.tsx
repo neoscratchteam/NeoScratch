@@ -47,13 +47,10 @@ const footerColumns = [
   {
     title: 'FIND US',
     links: [
-      { name: 'Facebook', href: 'https://facebook.com', external: true },
-      { name: 'Twitter', href: 'https://www.x.com/theo_dev_rw', external: true },
-      { name: 'Instagram', href: 'https://www.instagram.com/neoscratchltd/', external: true },
-      { name: 'LinkedIn', href: 'https://www.linkedin.com/in/theogene-iradukunda-88b07a381/', external: true },
-      { name: 'YouTube', href: 'https://youtube.com', external: true },
-      { name: 'TikTok', href: 'https://tiktok.com', external: true },
-      { name: 'Slack', href: 'https://slack.com', external: true },
+      { name: 'GitHub', href: 'https://github.com/theodevrwanda', external: true },
+      { name: 'Instagram', href: 'https://www.instagram.com/thisisneoscratch/', external: true },
+      { name: 'thisisneoscratch@gmail.com', href: 'mailto:thisisneoscratch@gmail.com', external: true },
+      { name: 'Contact: 0792734752', href: 'tel:0792734752', external: true },
     ],
   },
 ];
