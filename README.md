@@ -7,7 +7,7 @@
 ## 🌐 Live Site
 [https://neoscratch.com](https://neoscratch.com)
 
-## 🚀 Tech Stack
+## 🚀 Tech Stack. 
 
 - **Framework**: [Next.js](https://nextjs.org/) (App Router)
 - **Styling**: [Vanilla CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) + [Tailwind CSS](https://tailwindcss.com/)
