@@ -21,7 +21,7 @@ export function FloatingChat() {
         setIsExpanded(true);
       }
 
-      // If at very top of page, keep expanded
+      // If near top of page (< 100px), keep expanded
       if (currentScrollY < 100) {
         setIsExpanded(true);
       }
@@ -67,17 +67,17 @@ export function FloatingChat() {
                 type="text"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Ask us anything, we reply on WhatsApp..."
+                placeholder="Ask about pricing, we reply on WhatsApp..."
                 className="w-full bg-transparent text-xs sm:text-sm font-medium text-[#060606] placeholder:text-gray-400 focus:outline-none"
               />
             </div>
 
-            {/* Orange Action Button */}
+            {/* Brand Green Action Button #175A26 */}
             <motion.button
               type="submit"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-1.5 bg-[#E05326] text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-extrabold text-xs sm:text-sm shrink-0 shadow-md hover:bg-[#c9451d] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-[#175A26] text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-extrabold text-xs sm:text-sm shrink-0 shadow-md hover:bg-[#060606] transition-colors cursor-pointer"
             >
               <span>Chat now</span>
               <Send className="w-3.5 h-3.5 stroke-[2.5]" />
@@ -97,7 +97,7 @@ export function FloatingChat() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleSend}
-              className="inline-flex items-center gap-2.5 bg-[#E05326] text-white px-5 py-3 rounded-full font-black text-xs sm:text-sm shadow-2xl hover:bg-[#c9451d] transition-all cursor-pointer border border-white/20"
+              className="inline-flex items-center gap-2.5 bg-[#175A26] text-white px-5 py-3 rounded-full font-black text-xs sm:text-sm shadow-2xl hover:bg-[#060606] transition-all cursor-pointer border border-white/20"
             >
               <div className="h-6 w-6 rounded-full bg-white/20 flex items-center justify-center">
                 <svg className="w-3.5 h-3.5 text-white fill-current" viewBox="0 0 24 24">
