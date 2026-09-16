@@ -289,11 +289,42 @@ export function Header() {
             </Link>
 
             {/* Company Dropdown */}
-            <div className="relative group">
-              <button className="flex items-center gap-1.5 hover:opacity-80 transition-opacity py-2">
+            <div 
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('company')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button 
+                onClick={() => setActiveDropdown(activeDropdown === 'company' ? null : 'company')}
+                className="flex items-center gap-1.5 hover:opacity-80 transition-opacity py-2"
+              >
                 <span>Company</span>
-                <ChevronDown className="w-4 h-4 stroke-[2.5]" />
+                {activeDropdown === 'company' ? (
+                  <ChevronUp className="w-4 h-4 stroke-[2.5]" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 stroke-[2.5]" />
+                )}
               </button>
+
+              {/* Dropdown Card */}
+              {activeDropdown === 'company' && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-48 animate-fade-in z-50">
+                  <div className="bg-white rounded-2xl p-2 shadow-2xl border border-[#060606]/10 space-y-1">
+                    <Link
+                      href="/about"
+                      className="block px-4 py-2.5 text-xs font-bold text-[#060606] hover:text-white hover:bg-[#175A26] rounded-xl transition-colors text-left"
+                    >
+                      About Us
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="block px-4 py-2.5 text-xs font-bold text-[#060606] hover:text-white hover:bg-[#175A26] rounded-xl transition-colors text-left"
+                    >
+                      Contact Us
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
 
           </nav>
@@ -327,6 +358,7 @@ export function Header() {
               <Link href="/about" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">About Us</Link>
               <Link href="/services" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Services</Link>
               <Link href="/projects" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Projects</Link>
+              <Link href="/contact" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Contact Us</Link>
               <div className="pt-2">
                 <Link
                   href="/request-website"
