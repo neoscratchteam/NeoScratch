@@ -9,19 +9,21 @@ import { FloatingChat } from "@/components/FloatingChat";
 
 export const metadata: Metadata = {
   title: {
-    default: "NeoScratch | Web Design, Apps & SEO Services in Rwanda",
+    default: "NeoScratch | Top Web Design, Mobile Apps & SEO Agency in Rwanda",
     template: "%s | NeoScratch"
   },
-  description: "NeoScratch is a premier digital engineering studio in Rwanda. We build professional websites, high-performance mobile apps, and provide strategic SEO & Google Business Profile services for global growth.",
+  description: "NeoScratch is Rwanda's leading digital engineering agency in Kigali. We specialize in high-converting web design, custom mobile app development (iOS/Android), strategic SEO, and Google Business Profile optimization.",
   keywords: [
     "web design Rwanda", "website design Kigali", "web development Rwanda",
-    "mobile app development Rwanda", "SEO services Rwanda", "Google Business Profile setup Rwanda",
-    "custom software development Kigali", "website developer Rwanda",
-    "affordable website Rwanda", "ecommerce website Rwanda",
-    "digital marketing Rwanda", "online presence Rwanda",
-    "website maintenance Rwanda", "NeoScratch",
-    "tech company Kigali", "software company Rwanda",
-    "software house Rwanda", "best web design Kigali"
+    "best web design company Kigali", "software company Kigali", "software development Rwanda",
+    "mobile app development Rwanda", "iOS Android app developer Kigali", "Flutter developer Rwanda",
+    "SEO services Rwanda", "SEO agency Kigali", "Google Business Profile setup Rwanda",
+    "Google Maps optimization Kigali", "custom software development Kigali", "website developer Rwanda",
+    "affordable website Rwanda", "ecommerce website developer Rwanda", "Next.js web agency Rwanda",
+    "digital marketing agency Kigali", "online presence Rwanda", "web development agency East Africa",
+    "website maintenance Rwanda", "NeoScratch Rwanda", "tech company Kigali",
+    "software house Rwanda", "best web designer Kigali", "hire developers Rwanda",
+    "digital engineering studio Kigali", "enterprise software Kigali"
   ],
   authors: [{ name: "NeoScratch", url: "https://neoscratch.com" }],
   creator: "NeoScratch",
@@ -40,8 +42,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "NeoScratch | Web Design, Apps & SEO Services in Rwanda",
-    description: "Professional website design, mobile apps, SEO, and Google Business Profile setup for businesses in Rwanda and beyond. We build digital products that scale.",
+    title: "NeoScratch | Top Web Design, Mobile Apps & SEO Agency in Rwanda",
+    description: "Leading digital engineering studio in Kigali. We build custom websites, mobile apps, and rank businesses #1 on Google with strategic SEO & Google Business Profile management.",
     url: 'https://neoscratch.com',
     siteName: 'NeoScratch',
     locale: 'en_US',
@@ -51,14 +53,14 @@ export const metadata: Metadata = {
         url: '/preview.png',
         width: 1200,
         height: 630,
-        alt: 'NeoScratch - Web Design, Apps & SEO Services Rwanda',
+        alt: 'NeoScratch - Premier Web Design, Mobile Apps & SEO Agency in Rwanda',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "NeoScratch | Web Design, Apps & SEO Services in Rwanda",
-    description: "Professional website design, mobile apps, SEO, and Google Business Profile setup for businesses in Rwanda and beyond.",
+    title: "NeoScratch | Top Web Design, Mobile Apps & SEO Agency in Rwanda",
+    description: "Leading digital engineering studio in Kigali. Custom web design, mobile app development, and strategic SEO for global growth.",
     creator: '@neoscratch',
     images: ['/preview.png'],
   },
@@ -149,6 +151,16 @@ export default function RootLayout({
         opens: '08:00',
         closes: '20:00'
       },
+      knowsAbout: [
+        "Web Design & Development",
+        "Mobile App Development (iOS & Android)",
+        "Search Engine Optimization (SEO)",
+        "Google Business Profile Optimization",
+        "Next.js & React Applications",
+        "E-commerce Platforms & MoMo Payment Gateways",
+        "Custom Enterprise Software Engineering"
+      ],
+      keywords: "web design Rwanda, website design Kigali, mobile app development Rwanda, SEO services Rwanda, Google Business Profile Kigali, software company Kigali",
       sameAs: [
         'https://www.x.com/theo_dev_rw',
         'https://www.instagram.com/neoscratchltd/',
