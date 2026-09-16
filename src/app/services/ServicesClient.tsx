@@ -110,7 +110,7 @@ export default function Services() {
       </section>
 
       {/* 📊 COMPREHENSIVE EVERYTHING SIDE BY SIDE COMPARISON MATRIX */}
-      <section className="py-20 lg:py-28 bg-white border-t border-b border-[#060606]/10 font-jakarta">
+      <section className="py-20 lg:py-28 bg-white border-t border-b border-[#060606]/10 font-jakarta overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-left">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#060606] tracking-tight font-jakarta">
@@ -123,32 +123,32 @@ export default function Services() {
 
           <div className="overflow-x-auto rounded-2xl border border-[#060606]/10 shadow-sm bg-white w-full">
             <table className="w-full text-left border-collapse min-w-[980px]">
-              <thead className="sticky top-[72px] z-30 bg-gray-50 border-b border-[#060606]/10 shadow-md">
-                <tr className="border-b border-[#060606]/10">
-                  <th className="sticky top-[72px] z-30 bg-gray-50 py-5 px-6 text-[11px] font-black uppercase tracking-widest text-[#060606]/60 w-[22%] shadow-xs">
+              <thead>
+                <tr className="border-b border-[#060606]/10 bg-gray-50/90">
+                  <th className="py-6 px-6 text-[11px] font-black uppercase tracking-widest text-[#060606]/60 w-[22%]">
                     FEATURE / SERVICE
                   </th>
-                  <th className="sticky top-[72px] z-30 bg-gray-50 py-5 px-6 w-[15.6%] shadow-xs">
+                  <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 01</span>
                     <span className="text-xs font-extrabold uppercase text-[#060606] block">SEO &amp; GOOGLE SETUP</span>
                     <span className="text-sm font-black text-[#175A26] block mt-1.5">from 50,000 RWF</span>
                   </th>
-                  <th className="sticky top-[72px] z-30 bg-gray-50 py-5 px-6 w-[15.6%] shadow-xs">
+                  <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 02</span>
                     <span className="text-xs font-extrabold uppercase text-[#060606] block">STARTER E-COMMERCE</span>
                     <span className="text-sm font-black text-[#175A26] block mt-1.5">from 200,000 RWF</span>
                   </th>
-                  <th className="sticky top-[72px] z-30 bg-gray-50 py-5 px-6 w-[15.6%] shadow-xs">
+                  <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 03</span>
                     <span className="text-xs font-extrabold uppercase text-[#060606] block">BUSINESS SYSTEM</span>
                     <span className="text-sm font-black text-[#175A26] block mt-1.5">from 350,000 RWF</span>
                   </th>
-                  <th className="sticky top-[72px] z-30 bg-gray-50 py-5 px-6 w-[15.6%] shadow-xs">
+                  <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 04</span>
                     <span className="text-xs font-extrabold uppercase text-[#060606] block">GROWTH SYSTEM</span>
                     <span className="text-sm font-black text-[#175A26] block mt-1.5">from 450,000 RWF</span>
                   </th>
-                  <th className="sticky top-[72px] z-30 bg-gray-50 py-5 px-6 w-[15.6%] shadow-xs">
+                  <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 05</span>
                     <span className="text-xs font-extrabold uppercase text-[#060606] block">ENTERPRISE BUILD</span>
                     <span className="text-sm font-black text-[#175A26] block mt-1.5">from 750,000 RWF</span>
