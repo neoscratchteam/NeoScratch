@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { testimonials } from '@/data/testimonials';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function TestimonialSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -16,25 +17,25 @@ export function TestimonialSlider() {
 
   return (
     <div className="w-full flex flex-col justify-center gap-12 lg:gap-20">
-      <div className="text-center animate-fade-in">
-        <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight mb-4">What Our Customers Say</h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+      <div className="text-center animate-fade-in font-jakarta">
+        <h2 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-[#060606] tracking-tight mb-4">What Our Customers Say</h2>
+        <p className="text-[#334155] max-w-2xl mx-auto text-lg font-medium">
           Real stories from real people! See how our services have transformed their experiences.
         </p>
       </div>
 
       <div className="relative h-64 sm:h-80 flex items-center justify-center w-full animate-slide-up" style={{ animationDelay: '0.1s' }}>
         {/* Base Wavy Path */}
-        <svg className="absolute w-full h-full opacity-10 pointer-events-none stroke-foreground" preserveAspectRatio="none" viewBox="0 0 1000 200">
+        <svg className="absolute w-full h-full opacity-10 pointer-events-none stroke-[#060606]" preserveAspectRatio="none" viewBox="0 0 1000 200">
           <path d="M-50,100 C150,200 250,0 500,100 C750,200 850,0 1050,100" fill="none" strokeWidth="2" strokeDasharray="6 6" />
         </svg>
 
         {/* Dots on wave for aesthetics */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[25%] left-[20%] w-2 h-2 rounded-full bg-foreground opacity-30"></div>
-          <div className="absolute top-[70%] left-[35%] w-1.5 h-1.5 rounded-full bg-foreground opacity-30"></div>
-          <div className="absolute top-[30%] left-[75%] w-2.5 h-2.5 rounded-full bg-foreground opacity-30"></div>
-          <div className="absolute top-[60%] right-[15%] w-2 h-2 rounded-full bg-foreground opacity-30"></div>
+          <div className="absolute top-[25%] left-[20%] w-2 h-2 rounded-full bg-[#060606] opacity-30"></div>
+          <div className="absolute top-[70%] left-[35%] w-1.5 h-1.5 rounded-full bg-[#060606] opacity-30"></div>
+          <div className="absolute top-[30%] left-[75%] w-2.5 h-2.5 rounded-full bg-[#060606] opacity-30"></div>
+          <div className="absolute top-[60%] right-[15%] w-2 h-2 rounded-full bg-[#060606] opacity-30"></div>
         </div>
 
         <div className="flex items-center justify-center gap-4 sm:gap-8 md:gap-16 relative z-10 w-full">
@@ -45,23 +46,23 @@ export function TestimonialSlider() {
             let sizeClass = 'w-12 h-12 sm:w-16 sm:h-16';
             let opacityClass = 'opacity-40 grayscale-[50%]';
             let yOffset = '';
-            let ringClass = 'ring-1 ring-border';
+            let ringClass = 'ring-1 ring-[#060606]/20';
 
             if (isActive) {
                sizeClass = 'w-24 h-24 sm:w-36 sm:h-36';
-               opacityClass = 'opacity-100 z-20 grayscale-0 shadow-xl shadow-primary/20';
-               ringClass = 'ring-2 sm:ring-4 ring-primary ring-offset-4 ring-offset-background p-1';
+               opacityClass = 'opacity-100 z-20 grayscale-0 shadow-xl shadow-[#175A26]/20';
+               ringClass = 'ring-2 sm:ring-4 ring-[#175A26] ring-offset-4 ring-offset-[#E5E5E5] p-1';
                yOffset = 'scale-110 translate-y-2';
             } else if (diff === 1) {
                sizeClass = 'w-16 h-16 sm:w-20 sm:h-20';
                opacityClass = 'opacity-80';
                yOffset = idx < activeIndex ? 'translate-y-8 sm:translate-y-12' : '-translate-y-8 sm:-translate-y-12';
-               ringClass = 'ring-2 ring-primary/40 p-0.5';
+               ringClass = 'ring-2 ring-[#175A26]/40 p-0.5';
             } else if (diff === 2) {
                sizeClass = 'w-12 h-12 sm:w-16 sm:h-16';
                opacityClass = 'opacity-60';
                yOffset = idx < activeIndex ? '-translate-y-10 sm:-translate-y-16' : 'translate-y-10 sm:translate-y-16';
-               ringClass = 'ring-1 ring-border';
+               ringClass = 'ring-1 ring-[#060606]/20';
             } else {
                sizeClass = 'w-10 h-10 sm:w-12 sm:h-12';
                opacityClass = 'opacity-30';
@@ -72,17 +73,22 @@ export function TestimonialSlider() {
               <button 
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
-                className={`relative rounded-full transition-all duration-700 ease-&lsqb;cubic-bezier(0.16,1,0.3,1)&rsqb; flex-shrink-0 cursor-pointer hover:opacity-100 ${sizeClass} ${opacityClass} ${yOffset} ${ringClass}`}
+                className={`relative rounded-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex-shrink-0 cursor-pointer hover:opacity-100 ${sizeClass} ${opacityClass} ${yOffset} ${ringClass}`}
               >
                 {t.avatar === 'YOU' ? (
                   <div className="w-full h-full rounded-full bg-[#060606] text-[#175A26] border border-[#175A26]/40 flex items-center justify-center font-black text-xs sm:text-lg tracking-tighter shadow-md">
                     YOU
                   </div>
                 ) : (
-                  <img src={t.avatar} alt={t.name} className="w-full h-full rounded-full object-cover shadow-inner" />
+                  <Image 
+                    src={t.avatar} 
+                    alt={t.name} 
+                    width={150} 
+                    height={150} 
+                    className="w-full h-full rounded-full object-cover shadow-inner" 
+                  />
                 )}
               </button>
-
             );
           })}
         </div>

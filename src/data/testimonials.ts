@@ -14,7 +14,7 @@ export const testimonials = [
     serviceType: 'Multi-Platform E-Commerce & ERP',
     link: 'https://oluxywear.com',
     content: 'NeoScratch redefined our digital presence across multiple ventures. From Oluxy Watches to Oluxy Wear and our internal management dashboard, they didn\'t just build platforms; they captured the essence of precision and quality. Our digital ecosystem is now as prestigious as our physical showrooms.',
-    avatar: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776629743/oluxywatchesmainlogo_tmsurb.png',
+    avatar: '/clients/oluxy.png',
   },
   {
     name: 'Mr. Faustin Hagenimana',
@@ -22,7 +22,7 @@ export const testimonials = [
     serviceType: 'Inventory & ERP System',
     link: 'https://pixelmartrw.vercel.app',
     content: 'NeoScratch developed a comprehensive management system for my business. Tracked products, multiple branches, and automated reporting has never been easier!',
-    avatar: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1775569550/faustin_gok4su.jpg',
+    avatar: '/clients/faustin.jpg',
   },
   {
     name: 'Juldas',
@@ -30,7 +30,7 @@ export const testimonials = [
     serviceType: 'System Architecture & Development',
     link: '#',
     content: 'The technical excellence and dedication shown by NeoScratch is unparalleled. They delivered a high-performance system that perfectly aligns with our growth strategy.',
-    avatar: '/juldas.png',
+    avatar: '/clients/juldas.png',
   },
   {
     name: 'Niyonsenga DieuMerci',
@@ -38,7 +38,7 @@ export const testimonials = [
     serviceType: 'Personal Portfolio Website',
     link: 'https://dieumerci.pages.dev',
     content: 'NeoScratch built a professional portfolio that perfectly showcases my skills and experience. The design is clean and fully functional.',
-    avatar: '/kate.jpeg',
+    avatar: '/clients/kate.jpeg',
   },
   {
     name: 'Open Future',
@@ -46,6 +46,6 @@ export const testimonials = [
     serviceType: 'Record Management System',
     link: 'https://openfuture.pages.dev',
     content: 'The digital savings management platform has transformed how we track monthly savings and manage our members. Simple and effective!',
-    avatar: '/openfuture.png',
+    avatar: '/clients/openfuture.png',
   }
 ];
