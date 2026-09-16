@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Globe, Code, Palette, Lightbulb, Check, X, ArrowRight, Star, Monitor, Smartphone, GraduationCap, Zap, ShoppingCart, Layout, Database, Settings, RefreshCw, Heart, Briefcase, Building2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Globe, Code, Palette, Lightbulb, Check, X, ArrowRight, Star, Monitor, Smartphone, GraduationCap, Zap, ShoppingCart, Layout, Database, Settings, RefreshCw, Heart, Briefcase, Building2, ChevronLeft, ChevronRight, Search, Minus, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
@@ -9,10 +9,11 @@ import { Badge } from '@/components/ui/badge';
 const categories = [
   'All', 
   'Development', 
-  'Education', 
-  'Design', 
+  'E-commerce',
+  'SEO',
   'Strategy', 
-  'E-commerce', 
+  'Design', 
+  'Education', 
   'Portfolio', 
   'Mobile App', 
   'Desktop App', 
@@ -25,33 +26,116 @@ const categories = [
 
 const servicesData = [
   {
+    id: 21,
+    category: 'SEO',
+    icon: Search,
+    title: 'Full SEO & Google Setup',
+    description: 'Complete search engine optimization, Google Maps & Business Profile setup, local keyword indexing, and metadata setup for maximum visibility.',
+    features: ['Google Business Profile Takeover', 'Full SEO Setup & Indexing', 'Local Keywords & Meta Tags', 'Fast Google Indexing'],
+    price: '50,000 RWF full',
+    popular: true,
+  },
+  {
     id: 1,
     category: 'Development',
     icon: Monitor,
-    title: 'Custom Web Applications',
-    description: 'High-performance, scalable web solutions built with React, Next.js, and modern cloud architecture for global businesses.',
-    features: ['Responsive Design', 'SaaS Architecture', 'E-commerce', 'API Integration'],
-    price: 'Starting from 500,000 RWF',
+    title: 'Custom Web Applications & Systems',
+    description: 'High-performance, scalable web systems built with React, Next.js, and modern cloud architecture for local and global businesses.',
+    features: ['Responsive Design', 'SaaS Architecture', 'System Dashboard', 'API Integration'],
+    price: 'Starting from 350,000 RWF',
     popular: true,
   },
   {
     id: 14,
     category: 'Development',
     icon: Briefcase,
-    title: 'Business Website',
-    description: 'Professional corporate websites designed to establish a powerful online presence and drive lead generation for SMEs.',
-    features: ['Service Pages', 'SEO Setup', 'Lead Forms', 'Analytics'],
-    price: 'Starting from 150,000 RWF',
+    title: 'Business System & Site',
+    description: 'Professional corporate business systems designed to establish a powerful online presence, manage operations, and drive growth.',
+    features: ['Custom Admin System', 'SEO Setup', 'Lead Automation', 'Analytics & Reports'],
+    price: 'Starting from 350,000 RWF',
     popular: false,
   },
   {
     id: 15,
     category: 'Development',
     icon: Building2,
-    title: 'Big Business Enterprise',
-    description: 'Large-scale enterprise websites with advanced multi-page architectures and custom integrations for high-volume traffic.',
-    features: ['Multi-page Structure', 'Speed Optimization', 'Secure CMS', '24/7 Monitoring'],
-    price: 'Starting from 350,000 RWF',
+    title: 'Big Business Enterprise System',
+    description: 'Large-scale enterprise websites & software with advanced multi-page architectures, custom APIs, and high-volume traffic handling.',
+    features: ['Multi-system Architecture', 'Speed Optimization', 'Secure Cloud Infrastructure', '24/7 Monitoring'],
+    price: 'Starting from 750,000 RWF',
+    popular: false,
+  },
+  {
+    id: 8,
+    category: 'E-commerce',
+    icon: ShoppingCart,
+    title: 'Starter E-commerce Website',
+    description: 'Affordable, full-featured online store with dashboard, product catalog, and order tools for small shops starting online.',
+    features: [
+      { text: 'Admin Panel / Dashboard', included: true },
+      { text: 'Free Domain Name (1 Year)', included: true },
+      { text: 'Standard SEO Setup', included: true },
+      { text: 'Order via WhatsApp & Email', included: true },
+      { text: 'Free Database & Uptime Monitoring', included: true },
+      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
+      { text: 'Up to 50 Products', included: true },
+      { text: '3 Months Maintenance', included: true }
+    ],
+    price: 'Starting from 200,000 RWF',
+    popular: false,
+  },
+  {
+    id: 17,
+    category: 'E-commerce',
+    icon: ShoppingCart,
+    title: 'Standard E-commerce Website',
+    description: 'Complete online store (8+ Pages, 4 Months Maintenance, Up to 200 Products) for growing businesses, including payment gateways.',
+    features: [
+      { text: 'Admin Panel / Dashboard', included: true },
+      { text: 'Free Domain Name (1 Year)', included: true },
+      { text: 'Standard SEO Setup', included: true },
+      { text: 'Order via WhatsApp & Email', included: true },
+      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
+      { text: 'Professional Business Emails', included: true },
+      { text: 'Up to 200 Products', included: true },
+      { text: '4 Months Maintenance', included: true }
+    ],
+    price: 'Starting from 200,000 RWF',
+    popular: true,
+  },
+  {
+    id: 18,
+    category: 'E-commerce',
+    icon: ShoppingCart,
+    title: 'Growth E-commerce System',
+    description: 'High-performance online store with local payment integrations, inventory tools, ad campaign setup, and extended support.',
+    features: [
+      { text: 'Admin Panel / Dashboard', included: true },
+      { text: 'Free Domain Name (1 Year)', included: true },
+      { text: 'Deep SEO Setup', included: true },
+      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
+      { text: 'Inventory Sync & API', included: true },
+      { text: 'Google Ads & Instagram Shopping', included: true },
+      { text: 'Unlimited Products', included: true },
+      { text: '6 Months Maintenance', included: true }
+    ],
+    price: 'Starting from 450,000 RWF',
+    popular: false,
+  },
+  {
+    id: 19,
+    category: 'E-commerce',
+    icon: ShoppingCart,
+    title: 'Enterprise E-commerce System',
+    description: 'Advanced digital commerce platform with multi-channel features, custom mobile & web apps, and dedicated support.',
+    features: [
+      { text: 'Custom Web & Mobile App', included: true },
+      { text: 'Unlimited Products & Pages', included: true },
+      { text: 'Full SEO & Google Ads Campaign', included: true },
+      { text: 'Local & Global Payment Integration', included: true },
+      { text: '12-Month Dedicated Retainer', included: true }
+    ],
+    price: 'Starting from 750,000 RWF',
     popular: false,
   },
   {
@@ -92,7 +176,7 @@ const servicesData = [
     description: 'High-end digital product design that combines aesthetic excellence with intuitive usability for maximum conversion.',
     features: ['Visual Identity', 'Prototyping', 'User Research', 'Design Systems'],
     price: 'Starting from 300,000 RWF',
-    popular: true,
+    popular: false,
   },
   {
     id: 5,
@@ -111,7 +195,7 @@ const servicesData = [
     title: 'MVP for Startups',
     description: 'Rapid development of Minimum Viable Products to help startups validate their ideas and attract international investors.',
     features: ['Fast-To-Market', 'Lean Development', 'Investor Pitch Deck', 'Iterative growth'],
-    price: 'Starting from 400,000 RWF',
+    price: 'Starting from 350,000 RWF',
     popular: false,
   },
   {
@@ -121,122 +205,7 @@ const servicesData = [
     title: 'Non-Profit / NGO Site',
     description: 'Impactful digital platforms for NGOs with secure online donation systems and community engagement tools.',
     features: ['Secure Donation', 'Event Management', 'Impact Reports', 'Volunteer signup'],
-    price: 'Starting from 400,000 RWF',
-    popular: false,
-  },
-  {
-    id: 8,
-    category: 'E-commerce',
-    icon: ShoppingCart,
-    title: 'Starter E-commerce',
-    description: 'Affordable, full-featured online store (5 Pages, 3 Months Free Maintenance, Up to 50 Products) with dashboard and basic tools for small shops starting online.',
-    features: [
-      { text: 'Admin Panel / Dashboard', included: true },
-      { text: 'Free Domain Name (1 Year)', included: true },
-      { text: 'Standard SEO Setup', included: true },
-      { text: 'Order via WhatsApp', included: true },
-      { text: 'Free Database & Uptime Monitoring', included: true },
-      { text: 'Order via Email', included: false },
-      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: false },
-      { text: 'Professional Business Emails', included: false },
-      { text: 'Inventory Sync & API', included: false },
-      { text: 'Ads Campaign Setup', included: false },
-      { text: '5 Pages', included: true },
-      { text: '3 Months Free Maintenance', included: true }
-    ],
-    price: 'Starting from 150,000 RWF',
-    popular: false,
-  },
-  {
-    id: 17,
-    category: 'E-commerce',
-    icon: ShoppingCart,
-    title: 'Standard E-commerce',
-    description: 'Complete online store (8 Pages, 4 Months Free Maintenance, Up to 200 Products) for growing businesses, including advanced catalog features and extended support.',
-    features: [
-      { text: 'Admin Panel / Dashboard', included: true },
-      { text: 'Free Domain Name (1 Year)', included: true },
-      { text: 'Standard SEO Setup', included: true },
-      { text: 'Order via WhatsApp', included: true },
-      { text: 'Free Database & Uptime Monitoring', included: true },
-      { text: 'Order via Email', included: true },
-      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: false },
-      { text: 'Professional Business Emails', included: false },
-      { text: 'Inventory Sync & API', included: false },
-      { text: 'Ads Campaign Setup', included: false },
-      { text: '8 Pages', included: true },
-      { text: '4 Months Free Maintenance', included: true }
-    ],
-    price: 'Starting from 200,000 RWF',
-    popular: false,
-  },
-  {
-    id: 18,
-    category: 'E-commerce',
-    icon: ShoppingCart,
-    title: 'Growth E-commerce',
-    description: 'High-performance online store (15 Pages, 6 Months Free Maintenance, Unlimited Products) with local payment integrations, inventory tools, and initial marketing push.',
-    features: [
-      { text: 'Admin Panel / Dashboard', included: true },
-      { text: 'Free Domain Name (1 Year)', included: true },
-      { text: 'Standard SEO Setup', included: true },
-      { text: 'Order via WhatsApp', included: true },
-      { text: 'Free Database & Uptime Monitoring', included: true },
-      { text: 'Order via Email', included: true },
-      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
-      { text: 'Professional Business Emails', included: false },
-      { text: 'Basic Inventory Sync & API', included: true },
-      { text: 'Ads Campaign Setup', included: false },
-      { text: '15 Pages', included: true },
-      { text: '6 Months Free Maintenance', included: true }
-    ],
-    price: 'Starting from 450,000 RWF',
-    popular: true,
-  },
-  {
-    id: 19,
-    category: 'E-commerce',
-    icon: ShoppingCart,
-    title: 'Pro E-commerce',
-    description: 'Advanced digital commerce platform (25 Pages, 12 Months Free Maintenance, Unlimited Products) with multi-channel features, extensive marketing, and dedicated support.',
-    features: [
-      { text: 'Admin Panel / Dashboard', included: true },
-      { text: 'Free Domain Name (1 Year)', included: true },
-      { text: 'Standard SEO Setup', included: true },
-      { text: 'Order via WhatsApp', included: true },
-      { text: 'Free Database & Uptime Monitoring', included: true },
-      { text: 'Order via Email', included: true },
-      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
-      { text: 'Professional Business Emails', included: true },
-      { text: 'Inventory Sync & API', included: true },
-      { text: 'Ads Campaign Setup', included: true },
-      { text: '25 Pages', included: true },
-      { text: '12 Months Free Maintenance', included: true }
-    ],
-    price: 'Starting from 800,000 RWF',
-    popular: false,
-  },
-  {
-    id: 20,
-    category: 'E-commerce',
-    icon: ShoppingCart,
-    title: 'Enterprise E-commerce',
-    description: 'The ultimate bespoke e-commerce solution (Unlimited Pages, 24 Months Free Maintenance, Unlimited Products) for market leaders, complete with comprehensive marketing and custom tools.',
-    features: [
-      { text: 'Admin Panel / Dashboard', included: true },
-      { text: 'Free Domain Name (1 Year)', included: true },
-      { text: 'Standard SEO Setup', included: true },
-      { text: 'Order via WhatsApp', included: true },
-      { text: 'Free Database & Uptime Monitoring', included: true },
-      { text: 'Order via Email', included: true },
-      { text: 'Local Payment Gateways (MTN MoMo, Airtel Money)', included: true },
-      { text: 'Professional Business Emails', included: true },
-      { text: 'Inventory Sync & API', included: true },
-      { text: 'Ads Campaign Setup', included: true },
-      { text: 'Unlimited Pages', included: true },
-      { text: '24 Months Free Maintenance', included: true }
-    ],
-    price: 'Starting from 1,340,000 RWF',
+    price: 'Starting from 350,000 RWF',
     popular: false,
   },
   {
@@ -512,6 +481,127 @@ export default function Services() {
                >
                  Back to Filters <ArrowRight className="ml-2 h-4 w-4 -rotate-90 group-hover:-translate-y-1 transition-transform" />
                </button>
+            </div>
+          </div>
+        </section>
+
+        {/* 📊 EVERYTHING, SIDE BY SIDE COMPARISON MATRIX */}
+        <section className="py-24 bg-white border-t border-b border-[#060606]/10 font-jakarta overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-12">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#060606] tracking-tight font-jakarta">
+                Everything, side by side.
+              </h2>
+              <p className="text-sm sm:text-base text-[#334155] font-medium mt-3">
+                Compare features, turnarounds, and exact pricing for every project level.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-[#060606]/10 shadow-sm bg-white">
+              <table className="w-full text-left border-collapse min-w-[850px]">
+                <thead>
+                  <tr className="border-b border-[#060606]/10 bg-gray-50/50">
+                    <th className="py-6 px-6 text-[11px] font-black uppercase tracking-widest text-[#060606]/50 w-1/5">
+                      FEATURE
+                    </th>
+                    <th className="py-6 px-6 w-1/5">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#E05326] block mb-1">TIER 01</span>
+                      <span className="text-xs font-extrabold uppercase text-[#060606] block">SEO &amp; STARTER SETUP</span>
+                    </th>
+                    <th className="py-6 px-6 w-1/5">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#E05326] block mb-1">TIER 02</span>
+                      <span className="text-xs font-extrabold uppercase text-[#060606] block">E-COMMERCE WEBSITE</span>
+                    </th>
+                    <th className="py-6 px-6 w-1/5">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#E05326] block mb-1">TIER 03</span>
+                      <span className="text-xs font-extrabold uppercase text-[#060606] block">BUSINESS SYSTEM</span>
+                    </th>
+                    <th className="py-6 px-6 w-1/5">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#E05326] block mb-1">TIER 04</span>
+                      <span className="text-xs font-extrabold uppercase text-[#060606] block">ENTERPRISE CUSTOM BUILD</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#060606]/10 text-xs sm:text-sm text-[#060606]">
+                  {/* Price row */}
+                  <tr className="bg-white font-black">
+                    <td className="py-4 px-6 font-bold text-[#060606]">Price</td>
+                    <td className="py-4 px-6 text-sm font-extrabold text-[#060606]">50,000 RWF</td>
+                    <td className="py-4 px-6 text-sm font-extrabold text-[#060606]">200,000 RWF</td>
+                    <td className="py-4 px-6 text-sm font-extrabold text-[#060606]">350,000 RWF</td>
+                    <td className="py-4 px-6 text-sm font-extrabold text-[#060606]">from 750,000 RWF</td>
+                  </tr>
+
+                  {/* Timeline row */}
+                  <tr className="bg-gray-50/30">
+                    <td className="py-4 px-6 font-bold text-[#060606]">Timeline</td>
+                    <td className="py-4 px-6 font-medium text-[#334155]">3 business days</td>
+                    <td className="py-4 px-6 font-medium text-[#334155]">7 business days</td>
+                    <td className="py-4 px-6 font-medium text-[#334155]">2 weeks</td>
+                    <td className="py-4 px-6 font-medium text-[#334155]">30–90 days</td>
+                  </tr>
+
+                  {/* Feature rows */}
+                  {[
+                    { name: "Custom website", values: [true, true, true, true] },
+                    { name: "Google Business Profile", values: [true, "full takeover", true, true] },
+                    { name: "MoMo and Airtel Money checkout", values: [false, true, true, true] },
+                    { name: "12 months of hosting", values: [true, true, true, true] },
+                    { name: "SEO foundations", values: ["full setup", "deep", "deep", "deep"] },
+                    { name: "Blog content pieces written", values: [false, "5", "5", "5"] },
+                    { name: "Google reviews campaign", values: [false, true, true, true] },
+                    { name: "Monthly performance reports", values: [false, "3 months", "3 months", "12 months"] },
+                    { name: "Online store", values: [false, true, true, true] },
+                    { name: "Products loaded and photographed", values: [false, "up to 20", "up to 50", "up to 50"] },
+                    { name: "Google Ads and Instagram Shopping", values: [false, false, true, true] },
+                    { name: "First 200,000 RWF of ad spend", values: [false, false, true, true] },
+                    { name: "Custom software, web and Android", values: [false, false, true, true] },
+                    { name: "12-month retainer included", values: [false, false, false, true] },
+                  ].map((row, idx) => (
+                    <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50/30"}>
+                      <td className="py-4 px-6 font-semibold text-[#060606]">{row.name}</td>
+                      {row.values.map((val, colIdx) => (
+                        <td key={colIdx} className="py-4 px-6 font-medium text-[#334155]">
+                          {typeof val === 'boolean' ? (
+                            val ? (
+                              <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-[#E05326] text-white">
+                                <Check className="h-3.5 w-3.5 stroke-[3]" />
+                              </span>
+                            ) : (
+                              <span className="text-gray-300 font-bold">—</span>
+                            )
+                          ) : (
+                            <span className="font-bold text-[#060606]">{val}</span>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Bottom floating action bar matching screenshot */}
+            <div className="mt-8 flex justify-center">
+              <div className="inline-flex items-center gap-3 bg-white border border-[#060606]/15 shadow-xl rounded-full px-5 py-2.5">
+                <a 
+                  href="https://wa.me/250792734752?text=Hello%20NeoScratch,%20I'm%20inquiring%20about%20your%20pricing%20tiers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-xs font-bold text-[#060606] hover:text-[#175A26] transition-colors"
+                >
+                  <MessageCircle className="h-4 w-4 text-[#25D366]" />
+                  <span>Ask about pricing</span>
+                </a>
+                <a 
+                  href="https://wa.me/250792734752?text=Hello%20NeoScratch,%20I'd%20like%20to%20chat%20now"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-1.5 rounded-full text-xs font-black bg-[#E05326] text-white hover:bg-[#c9451d] transition-all shadow-sm"
+                >
+                  Chat now <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                </a>
+              </div>
             </div>
           </div>
         </section>
