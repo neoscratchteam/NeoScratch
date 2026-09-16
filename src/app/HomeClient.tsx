@@ -108,50 +108,35 @@ export default function Index() {
           </h2>
 
           {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 sm:gap-8 items-center justify-items-center">
             
-            {/* Logo 1: irembo */}
-            <div className="flex items-center gap-2 font-extrabold text-2xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
-              <span>irembo</span>
-              <span className="w-2.5 h-2.5 rounded-full bg-[#060606]" />
+            {/* Logo 1: oluxywatches */}
+            <div className="flex items-center gap-2 font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              <span className="w-3 h-3 rounded-full border-2 border-[#060606]" />
+              <span>oluxywatches</span>
             </div>
 
-            {/* Logo 2: CANAL+ */}
-            <div className="flex items-center font-black text-2xl tracking-widest text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none border-b-2 border-[#060606] pb-0.5">
-              CANAL+
+            {/* Logo 2: oluxywear */}
+            <div className="flex items-center gap-2 font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              <span>oluxywear</span>
+              <span className="text-[#7EDC14] font-black text-sm">✦</span>
             </div>
 
-            {/* Logo 3: save. */}
-            <div className="flex items-center font-bold text-2xl tracking-tighter text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
-              save.
+            {/* Logo 3: pixelmart */}
+            <div className="flex items-center gap-1.5 font-black text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              <span className="w-3.5 h-3.5 bg-[#060606] rounded-xs inline-block" />
+              <span>pixelmart</span>
             </div>
 
-            {/* Logo 4: KAYKO */}
-            <div className="flex items-center gap-1.5 font-black text-2xl tracking-wider text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
-              <span className="w-4 h-4 rounded-full border-2 border-[#060606] inline-block" />
-              KAYKO
+            {/* Logo 4: bugajltd */}
+            <div className="flex items-center font-black text-xl tracking-widest text-[#060606] uppercase hover:scale-105 transition-transform cursor-pointer select-none border-b-2 border-[#060606] pb-0.5">
+              bugajltd
             </div>
 
-            {/* Logo 5: nokanda */}
-            <div className="flex items-center font-extrabold text-2xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
-              nokanda
-            </div>
-
-            {/* Logo 6: HURONE AI */}
-            <div className="flex items-center gap-1.5 font-bold text-base tracking-widest text-[#060606] uppercase hover:scale-105 transition-transform cursor-pointer select-none">
-              <span className="text-lg font-black">✱</span>
-              <span>HURONE AI</span>
-            </div>
-
-            {/* Logo 7: bento */}
-            <div className="flex items-center gap-2 font-black text-2xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
-              <span className="w-4 h-4 bg-[#060606] rounded-sm inline-block" />
-              bento
-            </div>
-
-            {/* Logo 8: WASOKO */}
-            <div className="flex items-center font-black text-xl tracking-widest text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none border-l-2 border-[#060606] pl-2">
-              WASOKO
+            {/* Logo 5: smartstock */}
+            <div className="flex items-center gap-1.5 font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              <span>smartstock</span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#7EDC14] border border-[#060606]" />
             </div>
 
           </div>
