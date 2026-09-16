@@ -6,20 +6,14 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/private/',
-          '/api/',
-          '/_next/',
-          '/static/',
-        ],
       },
       {
-        userAgent: 'GPTBot',
-        disallow: ['/'],
+        userAgent: 'Googlebot',
+        allow: '/',
       }
     ],
     sitemap: 'https://neoscratch.com/sitemap.xml',
     host: 'https://neoscratch.com',
   }
-
 }
+
