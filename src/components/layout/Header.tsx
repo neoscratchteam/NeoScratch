@@ -277,6 +277,12 @@ export function Header() {
                       About Us
                     </Link>
                     <Link
+                      href="/team"
+                      className="block px-4 py-2.5 text-xs font-bold text-[#060606] hover:text-white hover:bg-[#175A26] rounded-xl transition-colors text-left"
+                    >
+                      Our Team
+                    </Link>
+                    <Link
                       href="/contact"
                       className="block px-4 py-2.5 text-xs font-bold text-[#060606] hover:text-white hover:bg-[#175A26] rounded-xl transition-colors text-left"
                     >
@@ -316,6 +322,7 @@ export function Header() {
             <div className="p-4 space-y-2 bg-[#175A26] border border-white/10 rounded-2xl shadow-2xl text-white">
               <Link href="/" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Home</Link>
               <Link href="/about" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">About Us</Link>
+              <Link href="/team" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Our Team</Link>
               <Link href="/services" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Pricing</Link>
               <Link href="/projects" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Projects</Link>
               <Link href="/contact" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Contact Us</Link>
