@@ -172,33 +172,81 @@ export default function About() {
             <div className="lg:col-span-8 space-y-8">
               <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-md border border-[#060606]/10 space-y-6">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#175A26] text-white text-xs font-black uppercase tracking-wider">
-                  <span>THE STORY BEHIND NEOSCRATCH</span>
+                  <span>THE UNSTOPPABLE STORY OF NEOSCRATCH</span>
                 </div>
                 
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#060606] tracking-tight">
-                  From Student Innovation to RDB-Registered Enterprise
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#060606] tracking-tight">
+                  From a Classroom Vision in Tumba to an RDB Digital Engineering Leader
                 </h2>
 
-                <div className="space-y-5 text-[#334155] text-base sm:text-lg leading-relaxed font-medium">
-                  <p>
-                    Every great company starts with a vision to solve a real-world problem. NeoScratch began with a young innovator who noticed how traditional businesses struggled daily with operational risks—manual inventory tracking, unmonitored branch activities, untracked income and expenses, and a total lack of online visibility.
-                  </p>
+                <div className="space-y-8 text-[#334155] text-base sm:text-lg leading-relaxed font-medium pt-2">
+                  
+                  {/* Chapter 1 */}
+                  <div className="space-y-3">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#175A26] flex items-center gap-2">
+                      <span className="w-8 h-8 rounded-full bg-[#175A26] text-white text-sm font-extrabold flex items-center justify-center shrink-0">1</span>
+                      A Spark in Tumba: The Birth of GoDigital (2024)
+                    </h3>
+                    <p>
+                      Every revolutionary technology company begins with a relentless desire to solve a real-world pain point. In 2024, while studying software development at <strong>APEKI Tumba TSS</strong>, a young student named <strong>Theogene Iradukunda</strong> (known to the tech world as <strong>theodev</strong>) looked around the business landscape in Rwanda and noticed a silent crisis: traditional business owners were drowning in operational risk.
+                    </p>
+                    <p>
+                      Shopkeepers lost cash receipts; multi-branch managers stayed up late trying to reconcile daily incomes and expenses; inventory items disappeared without a trace; and local businesses had zero online visibility to reach new clients. Driven by an unshakable conviction that <em>clean software could eliminate business risk completely</em>, Theogene launched a movement called <strong>GoDigital</strong> and founded <strong>RwandaScratch</strong>.
+                    </p>
+                    <p className="bg-[#175A26]/5 p-5 rounded-2xl border-l-4 border-[#175A26] text-[#060606] italic font-semibold text-base sm:text-lg">
+                      &ldquo;When you are young and without paying clients, your only currency is relentless practice. I built software after software late into the night—not for money, but to ensure that when our first client arrived, our code would be unbreakable.&rdquo;
+                    </p>
+                  </div>
 
-                  <p>
-                    Firmly believing that modern software could eliminate business risks through automation, <strong>Theogene Iradukunda</strong> (known as <strong>theodev</strong>) launched a initiative called <strong>GoDigital</strong> and established <strong>RwandaScratch</strong> in <strong>2024</strong> while studying software development at <strong>APEKI Tumba TSS</strong>. As a young student, he engineered multiple software applications to sharpen his skills and gain real-world experience, preparing for the day he would serve paying clients.
-                  </p>
+                  {/* Chapter 2 */}
+                  <div className="space-y-3 pt-4 border-t border-[#060606]/10">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#175A26] flex items-center gap-2">
+                      <span className="w-8 h-8 rounded-full bg-[#175A26] text-white text-sm font-extrabold flex items-center justify-center shrink-0">2</span>
+                      The Crucible: PixelMart & The Full-Stack Evolution (2025)
+                    </h3>
+                    <p>
+                      After thousands of hours mastering database architecture, front-end design, and API security, 2025 brought the defining breakthrough. <strong>PixelMart</strong>, a fast-growing electronics retail enterprise, needed a complex multi-branch retail management system (ERP & BMS) to track sales, synchronize stock in real-time, and manage employee activity across branches.
+                    </p>
+                    <p>
+                      Theogene took on the challenge as a full-stack engineer and delivered a flawless system built from scratch. For PixelMart, it meant total clarity and zero financial leaks. For Theogene, it was the spark that transformed a student passion into a serious commercial career. He immediately decided to formalize the company with the <strong>Rwanda Development Board (RDB)</strong> to ensure full tax compliance and corporate reliability.
+                    </p>
+                  </div>
 
-                  <p>
-                    By <strong>2025</strong>, Theogene matured into a full-stack engineer and built his first paid commercial software system for <strong>PixelMart</strong>—a multi-branch retail management ERP. Taking his tech career seriously, he decided to formalize the business by registering it with the <strong>Rwanda Development Board (RDB)</strong> to ensure tax compliance and official corporate status in Rwanda.
-                  </p>
+                  {/* Chapter 3 */}
+                  <div className="space-y-3 pt-4 border-t border-[#060606]/10">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#175A26] flex items-center gap-2">
+                      <span className="w-8 h-8 rounded-full bg-[#175A26] text-white text-sm font-extrabold flex items-center justify-center shrink-0">3</span>
+                      The Name Evolution: Why &ldquo;NeoScratch&rdquo;?
+                    </h3>
+                    <p>
+                      During RDB registration, official guidelines stipulated that national terms like &ldquo;Rwanda&rdquo; could not be used in commercial company names. Theogene had to rename <em>RwandaScratch</em>. Rather than choosing a generic name, he meditated on two sacred principles that defined his engineering philosophy:
+                    </p>
+                    <ul className="space-y-3 list-none text-base sm:text-lg">
+                      <li className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <strong className="text-[#175A26] font-extrabold text-xl shrink-0">NEO:</strong>
+                        <span>Derived from the Greek word for <em>New, Modern & Next-Generation</em>—representing futuristic software engineering that propels businesses into the global digital age.</span>
+                      </li>
+                      <li className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <strong className="text-[#175A26] font-extrabold text-xl shrink-0">SCRATCH:</strong>
+                        <span>A sacred promise that <em>we build every application custom from scratch</em>. No copied templates, no bloatware—100% tailored to solve each client&apos;s unique operational needs.</span>
+                      </li>
+                    </ul>
+                  </div>
 
-                  <p>
-                    During RDB business registration, official guidelines required removing the national keyword &ldquo;Rwanda&rdquo; from the commercial name. Theogene carefully chose a new name by combining two core principles: <strong>NEO</strong> (representing modern, futuristic digital technology) and <strong>SCRATCH</strong> (representing building every software solution custom from scratch, tailored 100% to client specifications without copying generic templates). Thus, <strong>NeoScratch</strong> was born!
-                  </p>
+                  {/* Chapter 4 */}
+                  <div className="space-y-3 pt-4 border-t border-[#060606]/10">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#175A26] flex items-center gap-2">
+                      <span className="w-8 h-8 rounded-full bg-[#175A26] text-white text-sm font-extrabold flex items-center justify-center shrink-0">4</span>
+                      March 2026: An RDB Enterprise Leading Digital Transformation
+                    </h3>
+                    <p>
+                      In <strong>March 2026</strong>, NeoScratch was officially incorporated with the Rwanda Development Board as a registered digital engineering studio. What started as a young student&apos;s dream at APEKI Tumba TSS has grown into a powerful engine in Kigali, leading a team of engineers and designers.
+                    </p>
+                    <p>
+                      Today, NeoScratch crafts world-class web applications, native iOS & Android mobile apps, custom business ERPs, and drives strategic SEO campaigns that rank client websites #1 on Google. We remain obsessed with one mission: <strong>building digital engines that eliminate business risk and scale revenues globally.</strong>
+                    </p>
+                  </div>
 
-                  <p>
-                    In <strong>March 2026</strong>, NeoScratch officially became a fully registered enterprise with RDB. Today, Founder & CEO Theogene Iradukunda leads a growing team of engineers and designers in Kigali, delivering high-converting websites, native iOS & Android mobile apps, custom business ERPs, and strategic SEO campaigns that help businesses grow with confidence.
-                  </p>
                 </div>
               </div>
             </div>
