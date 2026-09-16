@@ -146,8 +146,26 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
-            {/* Sidebar Stats & Info Card */}
+            {/* Sidebar Stats, Info Card & Founder Photo */}
             <div className="lg:col-span-4 bg-white rounded-3xl p-8 sm:p-10 shadow-md border border-[#060606]/10 space-y-8 h-fit lg:sticky lg:top-32">
+              
+              {/* Founder Image Showcase */}
+              <div className="space-y-4 text-center">
+                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-[#175A26]/20 bg-slate-900 group">
+                  <Image 
+                    src="/theodev.png" 
+                    alt="Theogene Iradukunda (theodev) - Founder & CEO of NeoScratch Web Design & Software Studio in Rwanda" 
+                    fill 
+                    className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-left">
+                    <span className="text-white text-base font-extrabold tracking-tight">Theogene Iradukunda</span>
+                    <span className="text-white/80 text-xs font-semibold">Founder & CEO (&ldquo;theodev&rdquo;)</span>
+                  </div>
+                </div>
+              </div>
+
               <div>
                 <h3 className="text-xs font-black text-[#175A26] uppercase tracking-widest mb-2">OUR MISSION</h3>
                 <p className="text-base font-bold text-[#060606] leading-snug">
@@ -192,17 +210,17 @@ export default function About() {
                     <span>THE UNSTOPPABLE STORY OF NEOSCRATCH</span>
                   </div>
                   
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#060606] tracking-tight">
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight">
                     From a Classroom Vision in Tumba to an RDB Digital Engineering Leader
                   </h2>
                 </BlurReveal>
 
-                <div className="space-y-10 text-[#334155] text-base sm:text-lg leading-relaxed font-medium pt-4">
+                <div className="space-y-10 text-[#475569] text-base sm:text-lg leading-relaxed font-medium pt-4">
                   
                   {/* Chapter 1 */}
                   <div className="space-y-4">
                     <BlurReveal>
-                      <h3 className="text-xl sm:text-2xl font-bold text-[#175A26] flex items-center gap-2">
+                      <h3 className="text-xl sm:text-2xl font-bold text-[#0F172A] tracking-tight flex items-center gap-2">
                         <span className="w-8 h-8 rounded-full bg-[#175A26] text-white text-sm font-extrabold flex items-center justify-center shrink-0">1</span>
                         A Spark in Tumba: The Birth of GoDigital (2024)
                       </h3>
@@ -221,7 +239,7 @@ export default function About() {
                     </BlurReveal>
 
                     <BlurReveal delay={0.15}>
-                      <p className="bg-[#175A26]/5 p-5 sm:p-6 rounded-2xl border-l-4 border-[#175A26] text-[#060606] italic font-semibold text-base sm:text-lg my-4 shadow-sm">
+                      <p className="bg-[#175A26]/5 p-5 sm:p-6 rounded-2xl border-l-4 border-[#175A26] text-[#0F172A] italic font-semibold text-base sm:text-lg my-4 shadow-sm">
                         &ldquo;When you are young and without paying clients, your only currency is relentless practice. I built software after software late into the night—not for money, but to ensure that when our first client arrived, our code would be unbreakable.&rdquo;
                       </p>
                     </BlurReveal>
@@ -230,7 +248,7 @@ export default function About() {
                   {/* Chapter 2 */}
                   <div className="space-y-4 pt-6 border-t border-[#060606]/10">
                     <BlurReveal>
-                      <h3 className="text-xl sm:text-2xl font-bold text-[#175A26] flex items-center gap-2">
+                      <h3 className="text-xl sm:text-2xl font-bold text-[#0F172A] tracking-tight flex items-center gap-2">
                         <span className="w-8 h-8 rounded-full bg-[#175A26] text-white text-sm font-extrabold flex items-center justify-center shrink-0">2</span>
                         The Crucible: PixelMart & The Full-Stack Evolution (2025)
                       </h3>
