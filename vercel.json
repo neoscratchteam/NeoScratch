@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.neoscratch.com"
+        }
+      ],
+      "destination": "https://neoscratch.com/:path*",
+      "permanent": true
+    }
+  ]
+}
