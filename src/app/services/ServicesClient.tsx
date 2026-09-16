@@ -36,7 +36,7 @@ export default function Services() {
             <div className="lg:col-span-5 flex justify-center items-center">
               <img
                 src="/handshake.svg"
-                alt="NeoScratch Services & Partnerships"
+                alt="NeoScratch Services &amp; Partnerships"
                 className="w-full h-auto object-contain max-w-md drop-shadow-xl"
               />
             </div>
@@ -45,78 +45,82 @@ export default function Services() {
         </div>
       </section>
 
-      {/* 📊 EVERYTHING, SIDE BY SIDE COMPARISON MATRIX */}
+      {/* 📊 COMPREHENSIVE EVERYTHING SIDE BY SIDE COMPARISON MATRIX */}
       <section className="py-20 lg:py-28 bg-white border-t border-b border-[#060606]/10 font-jakarta overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
+          <div className="mb-12 text-left">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#060606] tracking-tight font-jakarta">
               Everything, side by side.
             </h2>
             <p className="text-sm sm:text-base text-[#334155] font-medium mt-3">
-              Compare features, timelines, and exact pricing for every project tier.
+              Compare all features, turnarounds, hosting, and exact pricing across our project tiers.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-[#060606]/10 shadow-sm bg-white">
-            <table className="w-full text-left border-collapse min-w-[850px]">
+          <div className="overflow-x-auto rounded-2xl border border-[#060606]/10 shadow-sm bg-white w-full">
+            <table className="w-full text-left border-collapse min-w-[950px]">
               <thead>
-                <tr className="border-b border-[#060606]/10 bg-gray-50/50">
-                  <th className="py-6 px-6 text-[11px] font-black uppercase tracking-widest text-[#060606]/50 w-1/5">
+                <tr className="border-b border-[#060606]/10 bg-gray-50/80">
+                  <th className="py-6 px-6 text-[11px] font-black uppercase tracking-widest text-[#060606]/60 w-[22%]">
                     FEATURE
                   </th>
-                  <th className="py-6 px-6 w-1/5">
+                  <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 01</span>
-                    <span className="text-xs font-extrabold uppercase text-[#060606] block">SEO &amp; STARTER SETUP</span>
+                    <span className="text-xs font-extrabold uppercase text-[#060606] block">SEO &amp; GOOGLE SETUP</span>
+                    <span className="text-sm font-black text-[#175A26] block mt-1.5">50,000 RWF</span>
                   </th>
-                  <th className="py-6 px-6 w-1/5">
+                  <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 02</span>
-                    <span className="text-xs font-extrabold uppercase text-[#060606] block">E-COMMERCE WEBSITE</span>
+                    <span className="text-xs font-extrabold uppercase text-[#060606] block">STARTER E-COMMERCE</span>
+                    <span className="text-sm font-black text-[#175A26] block mt-1.5">200,000 RWF</span>
                   </th>
-                  <th className="py-6 px-6 w-1/5">
+                  <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 03</span>
                     <span className="text-xs font-extrabold uppercase text-[#060606] block">BUSINESS SYSTEM</span>
+                    <span className="text-sm font-black text-[#175A26] block mt-1.5">350,000 RWF</span>
                   </th>
-                  <th className="py-6 px-6 w-1/5">
+                  <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 04</span>
-                    <span className="text-xs font-extrabold uppercase text-[#060606] block">ENTERPRISE CUSTOM BUILD</span>
+                    <span className="text-xs font-extrabold uppercase text-[#060606] block">GROWTH SYSTEM</span>
+                    <span className="text-sm font-black text-[#175A26] block mt-1.5">450,000 RWF</span>
+                  </th>
+                  <th className="py-6 px-6 w-[15.6%]">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 05</span>
+                    <span className="text-xs font-extrabold uppercase text-[#060606] block">ENTERPRISE BUILD</span>
+                    <span className="text-sm font-black text-[#175A26] block mt-1.5">from 750,000 RWF</span>
                   </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#060606]/10 text-xs sm:text-sm text-[#060606]">
-                {/* Price row */}
-                <tr className="bg-white font-black">
-                  <td className="py-4 px-6 font-bold text-[#060606]">Price</td>
-                  <td className="py-4 px-6 text-sm font-extrabold text-[#175A26]">50,000 RWF</td>
-                  <td className="py-4 px-6 text-sm font-extrabold text-[#175A26]">200,000 RWF</td>
-                  <td className="py-4 px-6 text-sm font-extrabold text-[#175A26]">350,000 RWF</td>
-                  <td className="py-4 px-6 text-sm font-extrabold text-[#175A26]">from 750,000 RWF</td>
-                </tr>
-
                 {/* Timeline row */}
-                <tr className="bg-gray-50/30">
+                <tr className="bg-gray-50/30 font-semibold">
                   <td className="py-4 px-6 font-bold text-[#060606]">Timeline</td>
                   <td className="py-4 px-6 font-medium text-[#334155]">3 business days</td>
                   <td className="py-4 px-6 font-medium text-[#334155]">7 business days</td>
                   <td className="py-4 px-6 font-medium text-[#334155]">2 weeks</td>
+                  <td className="py-4 px-6 font-medium text-[#334155]">3 weeks</td>
                   <td className="py-4 px-6 font-medium text-[#334155]">30–90 days</td>
                 </tr>
 
                 {/* Feature rows */}
                 {[
-                  { name: "Custom website", values: [true, true, true, true] },
-                  { name: "Google Business Profile", values: [true, "full takeover", true, true] },
-                  { name: "MoMo and Airtel Money checkout", values: [false, true, true, true] },
-                  { name: "12 months of hosting", values: [true, true, true, true] },
-                  { name: "SEO foundations", values: ["full setup", "deep", "deep", "deep"] },
-                  { name: "Blog content pieces written", values: [false, "5", "5", "5"] },
-                  { name: "Google reviews campaign", values: [false, true, true, true] },
-                  { name: "Monthly performance reports", values: [false, "3 months", "3 months", "12 months"] },
-                  { name: "Online store", values: [false, true, true, true] },
-                  { name: "Products loaded and photographed", values: [false, "up to 20", "up to 50", "up to 50"] },
-                  { name: "Google Ads and Instagram Shopping", values: [false, false, true, true] },
-                  { name: "First 200,000 RWF of ad spend", values: [false, false, true, true] },
-                  { name: "Custom software, web and Android", values: [false, false, true, true] },
-                  { name: "12-month retainer included", values: [false, false, false, true] },
+                  { name: "Custom Website", values: [true, true, true, true, true] },
+                  { name: "Free Domain Name (1 Year)", values: [false, true, true, true, true] },
+                  { name: "Admin Panel / Dashboard", values: [false, true, true, true, true] },
+                  { name: "Hosting & Free Maintenance", values: ["1 month", "3 months free", "4 months free", "12 months free", "12–24 months free"] },
+                  { name: "Google Business Profile", values: ["full takeover", true, true, true, true] },
+                  { name: "SEO Foundations & Indexing", values: ["full setup", "deep", "deep", "deep", "deep"] },
+                  { name: "Order via WhatsApp & Email", values: [false, true, true, true, true] },
+                  { name: "Online Payment (MoMo & Airtel Money)", values: [false, false, true, true, true] },
+                  { name: "SMS Notifications & Integration", values: [false, false, false, false, true] },
+                  { name: "Database & Uptime Monitoring", values: [false, true, true, true, true] },
+                  { name: "Professional Business Emails", values: [false, false, true, true, true] },
+                  { name: "Products Loaded & Photographed", values: [false, "up to 20", "up to 50", "unlimited", "unlimited"] },
+                  { name: "Inventory Sync & API", values: [false, false, true, true, true] },
+                  { name: "Google Ads & Instagram Shopping", values: [false, false, false, true, true] },
+                  { name: "First 200,000 RWF of Ad Spend", values: [false, false, false, true, true] },
+                  { name: "Custom Mobile App (iOS & Android)", values: [false, false, false, false, true] },
+                  { name: "Dedicated Retainer Included", values: [false, false, false, false, true] },
                 ].map((row, idx) => (
                   <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50/30"}>
                     <td className="py-4 px-6 font-semibold text-[#060606]">{row.name}</td>
@@ -124,7 +128,7 @@ export default function Services() {
                       <td key={colIdx} className="py-4 px-6 font-medium text-[#334155]">
                         {typeof val === 'boolean' ? (
                           val ? (
-                            <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-[#175A26] text-white">
+                            <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-[#175A26] text-white shadow-xs">
                               <Check className="h-3.5 w-3.5 stroke-[3]" />
                             </span>
                           ) : (
