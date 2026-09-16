@@ -153,7 +153,7 @@ export default function About() {
               <div className="space-y-4 text-center">
                 <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-[#175A26]/20 bg-slate-900 group">
                   <Image 
-                    src="/theodev.png" 
+                    src="/founder.png" 
                     alt="Theogene Iradukunda (theodev) - Founder & CEO of NeoScratch Web Design & Software Studio in Rwanda" 
                     fill 
                     className="object-cover group-hover:scale-105 transition-transform duration-500" 
