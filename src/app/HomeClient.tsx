@@ -110,12 +110,12 @@ export default function Index() {
           {/* Client Logos Grid: 3 per row matching Nokanda Logo Style */}
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8 sm:gap-12 items-center justify-items-center font-jakarta">
             {[
-              { name: 'oluxywatches', image: '/clients/oluxy.png' },
-              { name: 'oluxywear', image: '/clients/oluxy.png' },
-              { name: 'pixelmart', image: '/clients/faustin.jpg' },
-              { name: 'bugajltd', image: '/clients/juldas.png' },
-              { name: 'smartstock', image: '/clients/bigsam.webp' },
-              { name: 'eyevisioncenter', image: '/clients/solange.jpg' },
+              { name: 'pixelmart', image: '/clients/pixelmart.png' },
+              { name: 'oluxywear', image: '/clients/oluxywear.png' },
+              { name: 'smartstock', image: '/clients/smartstock.png' },
+              { name: 'oluxywatches', image: '/clients/oluxywatches.png' },
+              { name: 'bugajltd', image: '/clients/bugajltd.png' },
+              { name: 'eyevisioncenter', image: '/clients/eyevisioncenter.png' },
             ].map((client, idx) => (
               <div 
                 key={idx}
@@ -124,9 +124,9 @@ export default function Index() {
                 <Image
                   src={client.image}
                   alt={client.name}
-                  width={40}
-                  height={40}
-                  className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover shrink-0 border-2 border-[#175A26]/20 shadow-md group-hover:border-[#175A26] transition-colors"
+                  width={44}
+                  height={44}
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover shrink-0 border-2 border-[#175A26]/20 shadow-md group-hover:border-[#175A26] transition-colors"
                 />
                 <span className="font-jakarta text-[#64748B] group-hover:text-[#060606] font-extrabold tracking-tight text-lg sm:text-xl lg:text-2xl">
                   {client.name}
