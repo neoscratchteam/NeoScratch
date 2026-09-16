@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Check, ArrowRight, MessageCircle } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Services() {
@@ -139,29 +139,6 @@ export default function Services() {
                 ))}
               </tbody>
             </table>
-          </div>
-
-          {/* Bottom action bar */}
-          <div className="mt-10 flex justify-center">
-            <div className="inline-flex items-center gap-3 bg-white border border-[#060606]/15 shadow-xl rounded-full px-6 py-3">
-              <a 
-                href="https://wa.me/250792734752?text=Hello%20NeoScratch,%20I'm%20inquiring%20about%20your%20pricing%20tiers"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#060606] hover:text-[#175A26] transition-colors"
-              >
-                <MessageCircle className="h-4 w-4 text-[#25D366]" />
-                <span>Ask about pricing</span>
-              </a>
-              <a 
-                href="https://wa.me/250792734752?text=Hello%20NeoScratch,%20I'd%20like%20to%20chat%20now"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-5 py-2 rounded-full text-xs sm:text-sm font-black bg-[#175A26] text-white hover:bg-[#060606] transition-all shadow-sm"
-              >
-                Chat now <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-              </a>
-            </div>
           </div>
         </div>
       </section>
