@@ -241,7 +241,7 @@ export function Header() {
             </div>
 
             <Link href="/services" className="hover:opacity-80 transition-opacity py-2">
-              Services
+              Pricing
             </Link>
 
             <Link href="/projects" className="hover:opacity-80 transition-opacity py-2">
@@ -316,7 +316,7 @@ export function Header() {
             <div className="p-4 space-y-2 bg-[#175A26] border border-white/10 rounded-2xl shadow-2xl text-white">
               <Link href="/" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Home</Link>
               <Link href="/about" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">About Us</Link>
-              <Link href="/services" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Services</Link>
+              <Link href="/services" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Pricing</Link>
               <Link href="/projects" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Projects</Link>
               <Link href="/contact" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Contact Us</Link>
               <div className="pt-2">
