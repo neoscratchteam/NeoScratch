@@ -131,22 +131,22 @@ export default function Services() {
                   <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 01</span>
                     <span className="text-xs font-extrabold uppercase text-[#060606] block">SEO &amp; GOOGLE SETUP</span>
-                    <span className="text-sm font-black text-[#175A26] block mt-1.5">50,000 RWF</span>
+                    <span className="text-sm font-black text-[#175A26] block mt-1.5">from 50,000 RWF</span>
                   </th>
                   <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 02</span>
                     <span className="text-xs font-extrabold uppercase text-[#060606] block">STARTER E-COMMERCE</span>
-                    <span className="text-sm font-black text-[#175A26] block mt-1.5">200,000 RWF</span>
+                    <span className="text-sm font-black text-[#175A26] block mt-1.5">from 200,000 RWF</span>
                   </th>
                   <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 03</span>
                     <span className="text-xs font-extrabold uppercase text-[#060606] block">BUSINESS SYSTEM</span>
-                    <span className="text-sm font-black text-[#175A26] block mt-1.5">350,000 RWF</span>
+                    <span className="text-sm font-black text-[#175A26] block mt-1.5">from 350,000 RWF</span>
                   </th>
                   <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 04</span>
                     <span className="text-xs font-extrabold uppercase text-[#060606] block">GROWTH SYSTEM</span>
-                    <span className="text-sm font-black text-[#175A26] block mt-1.5">450,000 RWF</span>
+                    <span className="text-sm font-black text-[#175A26] block mt-1.5">from 450,000 RWF</span>
                   </th>
                   <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 05</span>
