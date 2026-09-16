@@ -49,7 +49,7 @@ export function TeamClient() {
               <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden shadow-sm bg-gray-100 group-hover:shadow-md transition-all duration-300">
                 <Image
                   src={member.image}
-                  alt={member.name}
+                  alt={`${member.name} - ${member.role} at NeoScratch Web Design & Software Studio in Rwanda`}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                   sizes="(max-width: 640px) 112px, 128px"

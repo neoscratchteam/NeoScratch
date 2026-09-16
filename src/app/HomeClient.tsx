@@ -126,7 +126,7 @@ export default function Index() {
               >
                 <Image
                   src={client.image}
-                  alt={client.name}
+                  alt={`${client.name} - Trusted Client of NeoScratch Web Design & Software Studio in Rwanda`}
                   width={44}
                   height={44}
                   className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover shrink-0 border-2 border-[#175A26]/20 shadow-md group-hover:border-[#175A26] transition-colors"
@@ -151,7 +151,7 @@ export default function Index() {
             <div className="lg:col-span-5 flex justify-center items-center">
               <Image
                 src="/africa.svg"
-                alt="NeoScratch Engineering Across Africa"
+                alt="NeoScratch Digital Engineering Studio - Empowering Businesses Across Rwanda and Africa"
                 width={520}
                 height={520}
                 className="w-full h-auto object-contain max-w-lg hover:scale-105 transition-transform duration-500 drop-shadow-sm"
@@ -159,7 +159,7 @@ export default function Index() {
               />
             </div>
 
-            {/* Right Column: Clean Typography (Matching Reference Screenshot) */}
+            {/* Right Column: Clean Typography */}
             <div className="lg:col-span-7 space-y-6 font-jakarta">
 
               <div className="space-y-2">
@@ -167,16 +167,16 @@ export default function Index() {
                   About NeoScratch
                 </h2>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#175A26] tracking-tight">
-                  Engineering World-Class Digital Solutions From Kigali Across Africa
+                  From Student Roots at APEKI Tumba TSS to an RDB-Registered Enterprise
                 </h3>
               </div>
 
               <div className="space-y-4 text-[#475569] text-base sm:text-lg leading-relaxed font-medium">
                 <p>
-                  NeoScratch is Rwanda&apos;s premier digital engineering studio. We build high-performance websites, custom web platforms, mobile apps, and enterprise business systems designed to power modern growth.
+                  Founded by <strong>Theogene Iradukunda (theodev)</strong> in 2024 as <em>RwandaScratch</em> during his software development studies at APEKI Tumba TSS, NeoScratch was born from a mission to eliminate business risks through automated custom software.
                 </p>
                 <p>
-                  Combining deep software engineering expertise with data-driven Search Engine Optimization (SEO) and Mobile Money payment systems, we empower businesses, startups, and institutions across East Africa and global digital markets to scale seamlessly.
+                  After engineering custom ERP systems for first paid clients like PixelMart in 2025, the business registered with the Rwanda Development Board (RDB) as <strong>NeoScratch</strong> (&ldquo;NEO&rdquo; for modern tech, &ldquo;SCRATCH&rdquo; for custom software built from scratch). Today, we build high-converting websites, native mobile apps, and rank businesses #1 on Google.
                 </p>
               </div>
 

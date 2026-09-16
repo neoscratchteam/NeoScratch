@@ -45,7 +45,7 @@ export function Header() {
           <Link href="/" className="flex items-center group">
             <Image 
               src="/logo.png" 
-              alt="Logo" 
+              alt="NeoScratch - Premier Web Design, Mobile Apps & SEO Agency in Rwanda" 
               width={40} 
               height={40} 
               className="h-10 w-auto object-contain group-hover:scale-105 transition-transform brightness-0 invert"
