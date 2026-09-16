@@ -99,44 +99,44 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── 2. Clientele Section ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 mb-24 relative z-20">
-        <div className="bg-[#E5E5E5] rounded-[10px] p-8 sm:p-14 shadow-xl border border-[#060606]/10">
+      {/* ── 2. Clientele Section (Floating Card Overlapping Hero) ── */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-24 mb-24 relative z-20">
+        <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-2xl border border-[#060606]/5 text-center">
           
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#060606] text-center mb-10 tracking-tight font-jakarta">
-            Businesses That Currently Trust Our Services
+          <h2 className="text-xl sm:text-2xl font-extrabold text-[#060606] mb-10 tracking-tight font-jakarta">
+            Join our prestigious clientele!
           </h2>
 
           {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 items-center justify-items-center font-jakarta">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-10 items-center justify-items-center font-jakarta">
             
             {/* Logo 1: oluxywatches */}
-            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
               oluxywatches
             </div>
 
             {/* Logo 2: oluxywear */}
-            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
               oluxywear
             </div>
 
             {/* Logo 3: pixelmart */}
-            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
               pixelmart
             </div>
 
             {/* Logo 4: bugajltd */}
-            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
               bugajltd
             </div>
 
             {/* Logo 5: smartstock */}
-            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
               smartstock
             </div>
 
             {/* Logo 6: eyevisioncenter */}
-            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
               eyevisioncenter
             </div>
 
