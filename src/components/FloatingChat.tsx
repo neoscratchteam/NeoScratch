@@ -71,54 +71,45 @@ export function FloatingChat() {
     }`}>
       <AnimatePresence mode="wait">
         {showStickyPricing ? (
-          /* 🏷️ FLOATING STICKY PRICING BAR MATCHING TABLE TIERS ON /SERVICES */
+          /* 🏷️ SMOOTH WHITE FLOATING STICKY PRICING BAR WITH COMPACT HEIGHT */
           <motion.div
             key="sticky-pricing"
-            initial={{ opacity: 0, y: 30, scale: 0.96 }}
+            initial={{ opacity: 0, y: 25, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 30, scale: 0.96 }}
+            exit={{ opacity: 0, y: 25, scale: 0.96 }}
             transition={{ type: 'spring', stiffness: 350, damping: 28 }}
-            className="w-full bg-[#060606]/95 backdrop-blur-xl border border-[#175A26]/40 text-white rounded-2xl p-3 sm:p-4 shadow-2xl font-jakarta"
+            className="w-full bg-white/95 backdrop-blur-md border border-[#060606]/15 text-[#060606] rounded-2xl sm:rounded-full p-2 sm:p-2.5 shadow-2xl font-jakarta transition-all"
           >
-            <div className="flex items-center justify-between mb-2 pb-2 border-b border-white/10 px-1">
-              <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-[#25D366] flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-[#25D366] animate-pulse" />
-                Live Pricing Matrix Quick Access
-              </span>
-              <span className="text-[10px] font-bold text-white/60">
-                Click any tier to chat on WhatsApp
-              </span>
-            </div>
+            <div className="flex items-center justify-between gap-2">
+              <div className="hidden xl:flex items-center gap-2 pl-3 pr-2 shrink-0">
+                <span className="h-2 w-2 rounded-full bg-[#175A26] animate-pulse" />
+                <span className="text-[10px] font-black uppercase tracking-wider text-[#175A26]">Pricing Access</span>
+              </div>
 
-            {/* 5 Column Grid Matching Table Header */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 overflow-x-auto hide-scrollbar">
-              {pricingTiers.map((t, i) => (
-                <motion.div
-                  key={i}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => handleSend(undefined, `Hello NeoScratch, I want to inquire about ${t.tier}: ${t.full} (${t.price})`)}
-                  className="bg-white/10 hover:bg-[#175A26] border border-white/10 hover:border-white/30 rounded-xl p-2.5 sm:p-3 flex flex-col justify-between cursor-pointer transition-all duration-300 group"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-[#25D366] group-hover:text-white transition-colors">
+              {/* 5 Compact Tier Pill Cards */}
+              <div className="flex-1 grid grid-cols-2 sm:grid-cols-5 gap-1.5 sm:gap-2">
+                {pricingTiers.map((t, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => handleSend(undefined, `Hello NeoScratch, I want to inquire about ${t.tier}: ${t.full} (${t.price})`)}
+                    className="bg-[#060606]/5 hover:bg-[#175A26] border border-[#060606]/10 hover:border-[#175A26] rounded-xl sm:rounded-full py-1.5 px-3 flex items-center justify-between cursor-pointer transition-all duration-300 group"
+                  >
+                    <div className="truncate pr-1">
+                      <span className="text-[9px] font-extrabold uppercase text-[#175A26] group-hover:text-white/90 block leading-none mb-0.5">
                         {t.tier}
                       </span>
+                      <span className="text-[11px] font-black text-[#060606] group-hover:text-white block truncate leading-none">
+                        {t.price}
+                      </span>
                     </div>
-                    <p className="text-xs font-extrabold text-white truncate leading-snug">
-                      {t.name}
-                    </p>
-                    <p className="text-xs font-black text-white/90 group-hover:text-white mt-1">
-                      {t.price}
-                    </p>
-                  </div>
-                  <div className="mt-2.5 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] font-bold text-[#25D366] group-hover:text-white">
-                    <span>Inquire</span>
-                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </motion.div>
-              ))}
+                    <div className="h-5 w-5 rounded-full bg-[#175A26]/10 group-hover:bg-white/20 flex items-center justify-center shrink-0">
+                      <ArrowRight className="w-3 h-3 text-[#175A26] group-hover:text-white transition-colors" />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         ) : isExpanded ? (
