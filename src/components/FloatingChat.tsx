@@ -71,41 +71,83 @@ export function FloatingChat() {
     }`}>
       <AnimatePresence mode="wait">
         {showStickyPricing ? (
-          /* 🏷️ SMOOTH WHITE FLOATING STICKY PRICING BAR WITH COMPACT HEIGHT */
+          /* 🏷️ SMOOTH WHITE FLOATING PRICING HEADER MATCHING 6 TABLE COLUMNS */
           <motion.div
             key="sticky-pricing"
             initial={{ opacity: 0, y: 25, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 25, scale: 0.96 }}
             transition={{ type: 'spring', stiffness: 350, damping: 28 }}
-            className="w-full bg-white/95 backdrop-blur-md border border-[#060606]/15 text-[#060606] rounded-2xl sm:rounded-full p-2 sm:p-2.5 shadow-2xl font-jakarta transition-all"
+            className="w-full bg-white/95 backdrop-blur-md border border-[#060606]/15 text-[#060606] rounded-2xl p-2.5 sm:p-3 shadow-2xl font-jakarta transition-all"
           >
-            <div className="flex items-center justify-between gap-2">
-              <div className="hidden xl:flex items-center gap-2 pl-3 pr-2 shrink-0">
-                <span className="h-2 w-2 rounded-full bg-[#175A26] animate-pulse" />
-                <span className="text-[10px] font-black uppercase tracking-wider text-[#175A26]">Pricing Access</span>
+            {/* Desktop 6-Column Layout Matching Table Grid */}
+            <div className="hidden lg:grid grid-cols-12 gap-3 items-center w-full">
+              {/* Column 0: Label cell matching Feature column (col-span-3 = ~25%) */}
+              <div className="col-span-3 flex items-center gap-2.5 pl-3 pr-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#175A26] animate-pulse shrink-0" />
+                <div>
+                  <span className="text-xs font-black uppercase tracking-wider text-[#175A26] block leading-none">PRICING MATRIX</span>
+                  <span className="text-[10px] font-bold text-gray-500 block mt-1">Click column to chat</span>
+                </div>
               </div>
 
-              {/* 5 Compact Tier Pill Cards */}
-              <div className="flex-1 grid grid-cols-2 sm:grid-cols-5 gap-1.5 sm:gap-2">
+              {/* Columns 1-5: The 5 Tier Columns */}
+              <div className="col-span-9 grid grid-cols-5 gap-2.5">
+                {pricingTiers.map((t, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    onClick={() => handleSend(undefined, `Hello NeoScratch, I want to inquire about ${t.tier}: ${t.full} (${t.price})`)}
+                    className="bg-[#060606]/5 hover:bg-[#175A26] border border-[#060606]/10 hover:border-[#175A26] rounded-xl py-2 px-2.5 flex flex-col justify-between cursor-pointer transition-all duration-300 group min-w-0"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-1 mb-0.5">
+                        <span className="text-[9px] font-black uppercase tracking-widest text-[#175A26] group-hover:text-white/90">
+                          {t.tier}
+                        </span>
+                        <ArrowRight className="w-3 h-3 text-[#175A26] group-hover:text-white transition-transform group-hover:translate-x-0.5" />
+                      </div>
+                      <p className="text-[10px] font-black text-[#060606] group-hover:text-white truncate uppercase leading-tight">
+                        {t.full}
+                      </p>
+                      <p className="text-[10px] font-extrabold text-[#175A26] group-hover:text-white mt-1">
+                        {t.price}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile / Tablet Responsive Layout */}
+            <div className="lg:hidden flex flex-col gap-2">
+              <div className="flex items-center justify-between px-2">
+                <span className="text-[10px] font-black uppercase tracking-wider text-[#175A26] flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-[#175A26] animate-pulse" />
+                  PRICING MATRIX QUICK ACCESS
+                </span>
+                <span className="text-[10px] font-bold text-gray-500">Tap tier to chat</span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {pricingTiers.map((t, i) => (
                   <motion.div
                     key={i}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleSend(undefined, `Hello NeoScratch, I want to inquire about ${t.tier}: ${t.full} (${t.price})`)}
-                    className="bg-[#060606]/5 hover:bg-[#175A26] border border-[#060606]/10 hover:border-[#175A26] rounded-xl sm:rounded-full py-1.5 px-3 flex items-center justify-between cursor-pointer transition-all duration-300 group"
+                    className="bg-[#060606]/5 hover:bg-[#175A26] border border-[#060606]/10 hover:border-[#175A26] rounded-xl p-2 flex flex-col justify-between cursor-pointer transition-all group"
                   >
-                    <div className="truncate pr-1">
-                      <span className="text-[9px] font-extrabold uppercase text-[#175A26] group-hover:text-white/90 block leading-none mb-0.5">
+                    <div>
+                      <span className="text-[9px] font-black uppercase text-[#175A26] group-hover:text-white/90 block mb-0.5">
                         {t.tier}
                       </span>
-                      <span className="text-[11px] font-black text-[#060606] group-hover:text-white block truncate leading-none">
+                      <p className="text-[10px] font-black text-[#060606] group-hover:text-white truncate uppercase">
+                        {t.full}
+                      </p>
+                      <p className="text-[10px] font-extrabold text-[#175A26] group-hover:text-white mt-0.5">
                         {t.price}
-                      </span>
-                    </div>
-                    <div className="h-5 w-5 rounded-full bg-[#175A26]/10 group-hover:bg-white/20 flex items-center justify-center shrink-0">
-                      <ArrowRight className="w-3 h-3 text-[#175A26] group-hover:text-white transition-colors" />
+                      </p>
                     </div>
                   </motion.div>
                 ))}
