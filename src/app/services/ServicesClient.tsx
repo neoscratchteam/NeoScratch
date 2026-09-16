@@ -32,11 +32,11 @@ export default function Services() {
               </div>
             </div>
 
-            {/* Right Column: unDraw Illustration */}
+            {/* Right Column: unDraw Handshake Illustration */}
             <div className="lg:col-span-5 flex justify-center items-center">
               <img
-                src="/relax.svg"
-                alt="Services Illustration"
+                src="/handshake.svg"
+                alt="NeoScratch Services & Partnerships"
                 className="w-full h-auto object-contain max-w-md drop-shadow-xl"
               />
             </div>
