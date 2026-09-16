@@ -103,43 +103,36 @@ export default function Index() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-24 mb-24 relative z-20">
         <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-md border border-[#060606]/10 text-center">
 
-          <h2 className="text-lg sm:text-xl font-extrabold text-[#060606] mb-8 tracking-tight font-jakarta">
+          <h2 className="text-lg sm:text-xl font-extrabold text-[#060606] mb-10 tracking-tight font-jakarta">
             Powering Digital Excellence for Industry Leaders
           </h2>
 
-          {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-10 items-center justify-items-center font-jakarta">
-
-            {/* Logo 1: oluxywatches */}
-            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
-              oluxywatches
-            </div>
-
-            {/* Logo 2: oluxywear */}
-            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
-              oluxywear
-            </div>
-
-            {/* Logo 3: pixelmart */}
-            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
-              pixelmart
-            </div>
-
-            {/* Logo 4: bugajltd */}
-            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
-              bugajltd
-            </div>
-
-            {/* Logo 5: smartstock */}
-            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
-              smartstock
-            </div>
-
-            {/* Logo 6: eyevisioncenter */}
-            <div className="font-extrabold text-lg sm:text-xl tracking-tight text-[#334155] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none">
-              eyevisioncenter
-            </div>
-
+          {/* Client Logos Grid: 3 per row matching Nokanda Logo Style */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8 sm:gap-12 items-center justify-items-center font-jakarta">
+            {[
+              { name: 'oluxywatches', image: '/clients/oluxy.png' },
+              { name: 'oluxywear', image: '/clients/oluxy.png' },
+              { name: 'pixelmart', image: '/clients/faustin.jpg' },
+              { name: 'bugajltd', image: '/clients/juldas.png' },
+              { name: 'smartstock', image: '/clients/bigsam.webp' },
+              { name: 'eyevisioncenter', image: '/clients/solange.jpg' },
+            ].map((client, idx) => (
+              <div 
+                key={idx}
+                className="flex items-center gap-3.5 font-black tracking-tight text-[#64748B] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none group"
+              >
+                <Image
+                  src={client.image}
+                  alt={client.name}
+                  width={40}
+                  height={40}
+                  className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover shrink-0 border-2 border-[#175A26]/20 shadow-md group-hover:border-[#175A26] transition-colors"
+                />
+                <span className="font-jakarta text-[#64748B] group-hover:text-[#060606] font-extrabold tracking-tight text-lg sm:text-xl lg:text-2xl">
+                  {client.name}
+                </span>
+              </div>
+            ))}
           </div>
 
         </div>

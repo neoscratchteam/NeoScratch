@@ -105,17 +105,6 @@ export function Footer() {
         </div>
 
       </div>
-
-      {/* Floating Green Action Button (Bottom Right) */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Link
-          href="/contact"
-          className="w-12 h-12 rounded-full bg-[#175A26] hover:bg-[#1f7532] text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300"
-          aria-label="Contact NeoScratch Support"
-        >
-          <MessageSquare className="w-5 h-5 fill-current" />
-        </Link>
-      </div>
     </footer>
   );
 }
