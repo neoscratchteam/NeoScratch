@@ -38,13 +38,14 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-jakarta">
-      <div className={`transition-all duration-300 ${isScrolled
-          ? 'bg-[#F9F9F9]/95 backdrop-blur-md shadow-md py-4 border-b border-[#060606]/10'
-          : 'bg-[#F9F9F9] py-5'
-        }`}>
+      <div className={`transition-all duration-300 ${
+        isScrolled
+          ? 'bg-[#7EDC14]/95 backdrop-blur-md shadow-md py-4 border-b border-[#060606]/10'
+          : 'bg-[#7EDC14] py-5'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center relative">
-
-          {/* Brand Logo (Matching neoscratch circular play icon style) */}
+          
+          {/* Brand Logo (Matching reference circular icon style) */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-9 h-9 rounded-full bg-[#060606] text-[#7EDC14] flex items-center justify-center font-black text-sm shadow-sm group-hover:scale-105 transition-transform pl-0.5">
               ▶
@@ -56,10 +57,10 @@ export function Header() {
 
           {/* Navigation Links with Dropdowns */}
           <nav className="hidden lg:flex items-center space-x-7 text-sm font-extrabold text-[#060606]">
-
+            
             {/* Products Dropdown */}
             <div className="relative group">
-              <button
+              <button 
                 onClick={() => setActiveDropdown(activeDropdown === 'products' ? null : 'products')}
                 className="flex items-center gap-1.5 hover:opacity-75 transition-opacity py-2"
               >
@@ -68,13 +69,13 @@ export function Header() {
               </button>
             </div>
 
-            {/* Solutions Dropdown (Openable with exact items from reference screenshot) */}
-            <div
+            {/* Solutions Dropdown */}
+            <div 
               className="relative"
               onMouseEnter={() => setActiveDropdown('solutions')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button
+              <button 
                 className="flex items-center gap-1.5 hover:opacity-75 transition-opacity py-2"
               >
                 <span>Solutions</span>
@@ -121,11 +122,11 @@ export function Header() {
 
           </nav>
 
-          {/* CTA Pill Button: "Go to Dashboard" / "Request Website" */}
+          {/* CTA Pill Button (White button matching reference screenshot) */}
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/request-website"
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg text-xs font-extrabold bg-[#060606] text-[#F9F9F9] hover:bg-[#7EDC14] hover:text-[#060606] transition-all duration-300 shadow-md border border-[#060606]"
+              className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg text-xs font-extrabold bg-white text-[#060606] hover:bg-[#060606] hover:text-[#F9F9F9] transition-all duration-300 shadow-sm border border-[#060606]/20"
             >
               Go to Dashboard
             </Link>
@@ -145,11 +146,11 @@ export function Header() {
         {/* Mobile Navigation Dropdown */}
         {isMenuOpen && (
           <div className="lg:hidden animate-fade-in px-4 pt-3 pb-4">
-            <div className="p-4 space-y-2 bg-[#F9F9F9] border border-[#060606]/10 rounded-2xl shadow-2xl text-[#060606]">
-              <Link href="/" className="block px-4 py-2 font-bold hover:bg-[#7EDC14]">Home</Link>
-              <Link href="/about" className="block px-4 py-2 font-bold hover:bg-[#7EDC14]">About Us</Link>
-              <Link href="/services" className="block px-4 py-2 font-bold hover:bg-[#7EDC14]">Services</Link>
-              <Link href="/projects" className="block px-4 py-2 font-bold hover:bg-[#7EDC14]">Projects</Link>
+            <div className="p-4 space-y-2 bg-[#7EDC14] border border-[#060606]/10 rounded-2xl shadow-2xl text-[#060606]">
+              <Link href="/" className="block px-4 py-2 font-bold hover:bg-[#060606] hover:text-[#F9F9F9] rounded-lg">Home</Link>
+              <Link href="/about" className="block px-4 py-2 font-bold hover:bg-[#060606] hover:text-[#F9F9F9] rounded-lg">About Us</Link>
+              <Link href="/services" className="block px-4 py-2 font-bold hover:bg-[#060606] hover:text-[#F9F9F9] rounded-lg">Services</Link>
+              <Link href="/projects" className="block px-4 py-2 font-bold hover:bg-[#060606] hover:text-[#F9F9F9] rounded-lg">Projects</Link>
               <div className="pt-2">
                 <Link
                   href="/request-website"

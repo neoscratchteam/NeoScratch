@@ -2,8 +2,8 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
-import {
-  Code, Smartphone, Globe,
+import { 
+  Code, Smartphone, Globe, 
   ArrowRight, ArrowUpRight,
   Settings, BarChart3,
   Monitor, Star, Briefcase, TrendingUp,
@@ -26,11 +26,11 @@ export default function Index() {
       if (!ghostRef.current) return;
       const rect = ghostRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-
+      
       const start = rect.top;
       const end = rect.bottom - windowHeight;
       const total = rect.height - windowHeight;
-
+      
       let nextProgress = 0;
       if (start <= 0 && end >= 0) {
         nextProgress = Math.abs(start) / total;
@@ -39,7 +39,7 @@ export default function Index() {
       } else if (end < 0) {
         nextProgress = 1;
       }
-
+      
       setScrollProgress(nextProgress);
     };
 
@@ -48,32 +48,32 @@ export default function Index() {
   }, []);
 
   const displayedProjects = projects.slice(0, 4);
-  const cardWidth = 85;
-  const gapWidth = 5;
+  const cardWidth = 85; 
+  const gapWidth = 5;  
   const translateX = -scrollProgress * (cardWidth + gapWidth) * (displayedProjects.length - 1);
 
   return (
     <div className="min-h-screen font-jakarta bg-[#F9F9F9] text-[#060606]">
-
-      {/* ── 1. Hero Section (100% Matching Reference Layout & Illustration) ── */}
-      <section className="relative bg-[#F9F9F9] text-[#060606] pt-36 sm:pt-44 pb-16 lg:pb-24 overflow-hidden">
+      
+      {/* ── 1. Hero Section (Green Background #7EDC14 Matching Reference) ── */}
+      <section className="relative bg-[#7EDC14] text-[#060606] pt-36 sm:pt-44 pb-20 lg:pb-28 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-12 gap-10 items-center min-h-[500px]">
 
             {/* Left Column Content */}
             <div className="lg:col-span-6 space-y-8">
 
-              {/* Main Headline (100% typography match) */}
+              {/* Main Headline */}
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.06] text-[#060606] font-jakarta">
                 Instant Communication <br />
                 for Businesses.
               </h1>
 
-              {/* Call to Action Button */}
+              {/* Call to Action Button (White button matching reference image) */}
               <div className="pt-2">
                 <Link
                   href="/request-website"
-                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-sm font-extrabold bg-[#060606] text-[#F9F9F9] border-2 border-[#060606] shadow-md hover:bg-[#7EDC14] hover:text-[#060606] transition-all duration-300 hover:scale-[1.02]"
+                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg text-sm font-extrabold bg-white text-[#060606] border border-[#060606]/20 shadow-lg hover:bg-[#060606] hover:text-[#F9F9F9] transition-all duration-300 hover:scale-[1.02]"
                 >
                   Get started for free
                 </Link>
@@ -81,7 +81,7 @@ export default function Index() {
 
             </div>
 
-            {/* Right Column Illustration (Using relax.svg from public) */}
+            {/* Right Column Illustration (Using relax.svg) */}
             <div className="lg:col-span-6 flex justify-center lg:justify-end">
               <div className="relative w-full max-w-xl aspect-[4/3] flex items-center justify-center p-2">
                 <Image
@@ -99,17 +99,17 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── 2. Clientele Section (Background #7EDC14, 100% Matching Reference Layout) ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-24 relative z-20">
-        <div className="bg-[#7EDC14] rounded-[2.5rem] p-8 sm:p-14 border-2 border-[#060606] shadow-2xl">
-
+      {/* ── 2. Clientele Section (Light Gray/White Background #F9F9F9) ── */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 mb-24 relative z-20">
+        <div className="bg-[#F9F9F9] rounded-[10px] p-8 sm:p-14 shadow-xl">
+          
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#060606] text-center mb-10 tracking-tight font-jakarta">
             Join our prestigious clientele!
           </h2>
 
           {/* Client Logos Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-items-center">
-
+            
             {/* Logo 1: irembo */}
             <div className="flex items-center gap-2 font-extrabold text-2xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
               <span>irembo</span>
@@ -160,10 +160,10 @@ export default function Index() {
       </section>
 
 
-      {/* ── 3. Essential Features Section ("* Our Approach") ── */}
+      {/* ── 3. Essential Features Section ("* Our Approach" - Next Section is White #F9F9F9) ── */}
       <section className="py-20 lg:py-24 bg-[#F9F9F9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
+          
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-16">
             <div>
@@ -182,7 +182,7 @@ export default function Index() {
 
           {/* 3 Cards Palette Mapped (#F9F9F9, #7EDC14, #060606) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-
+            
             {/* Card 1: Light Card (#F9F9F9 / #060606 Border) */}
             <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#F9F9F9] border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1">
               <div>
@@ -198,8 +198,8 @@ export default function Index() {
               </div>
 
               <div>
-                <Link
-                  href="/services"
+                <Link 
+                  href="/services" 
                   className="inline-flex items-center gap-2 text-xs font-extrabold text-[#060606] bg-[#7EDC14] hover:bg-[#060606] hover:text-[#F9F9F9] px-5 py-2.5 rounded-full transition-all duration-300 border border-[#060606]"
                 >
                   <span>Explore More</span>
@@ -223,8 +223,8 @@ export default function Index() {
               </div>
 
               <div className="relative z-10">
-                <Link
-                  href="/services"
+                <Link 
+                  href="/services" 
                   className="inline-flex items-center gap-2 text-xs font-extrabold text-[#F9F9F9] bg-[#060606] hover:bg-[#F9F9F9] hover:text-[#060606] px-5 py-2.5 rounded-full transition-all duration-300 border border-[#060606]"
                 >
                   <span>Explore More</span>
@@ -248,8 +248,8 @@ export default function Index() {
               </div>
 
               <div>
-                <Link
-                  href="/services"
+                <Link 
+                  href="/services" 
                   className="inline-flex items-center gap-2 text-xs font-extrabold text-[#060606] bg-[#7EDC14] hover:bg-[#F9F9F9] px-5 py-2.5 rounded-full transition-all duration-300 border border-[#7EDC14]"
                 >
                   <span>Explore More</span>
@@ -271,7 +271,7 @@ export default function Index() {
 
             {/* Left Grid: Images & Stat Box */}
             <div className="lg:col-span-6 space-y-6">
-
+              
               {/* Top Main Photo */}
               <div className="rounded-[2.5rem] overflow-hidden border-2 border-[#060606] shadow-md">
                 <Image
@@ -285,7 +285,7 @@ export default function Index() {
 
               {/* Bottom 2 Items Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-
+                
                 {/* Stat Box (#7EDC14) */}
                 <div className="bg-[#7EDC14] rounded-[2rem] p-6 text-[#060606] border-2 border-[#060606] shadow-md flex flex-col justify-between">
                   <div className="w-10 h-10 rounded-full bg-[#060606] text-[#7EDC14] flex items-center justify-center mb-4 font-bold">
@@ -368,7 +368,7 @@ export default function Index() {
       {/* ── 5. Services Grid Section ("* Our Services") ── */}
       <section className="py-24 bg-[#F9F9F9]" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
+          
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7EDC14] text-[#060606] text-xs font-extrabold uppercase tracking-wider mb-3 border border-[#060606]">
               <Star className="w-3.5 h-3.5 text-[#060606] fill-current" />
@@ -384,39 +384,39 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {
-                icon: Monitor,
-                title: 'Website Design & Development',
+              { 
+                icon: Monitor, 
+                title: 'Website Design & Development', 
                 desc: 'Your website is your 24/7 digital salesperson. We build sleek, fast, high-converting websites tailored for your brand.',
                 tags: ['Responsive', 'Fast Speed', 'Admin Panel']
               },
-              {
-                icon: Globe,
-                title: 'Google Business Profile Setup',
+              { 
+                icon: Globe, 
+                title: 'Google Business Profile Setup', 
                 desc: 'Verify and rank your business locally on Google Maps so nearby customers find your service instantly.',
                 tags: ['Google Maps', 'SEO Boost', 'Review System']
               },
-              {
-                icon: BarChart3,
-                title: 'Search Engine Optimisation (SEO)',
+              { 
+                icon: BarChart3, 
+                title: 'Search Engine Optimisation (SEO)', 
                 desc: 'Rank on page one of Google for your target business keywords and attract organic qualified leads daily.',
                 tags: ['Keywords', 'On-Page SEO', 'Monthly Audit']
               },
-              {
-                icon: Code,
-                title: 'Custom Software Engineering',
+              { 
+                icon: Code, 
+                title: 'Custom Software Engineering', 
                 desc: 'Scalable web applications, management dashboards, automated workflows, and custom SaaS platforms.',
                 tags: ['Web Apps', 'Automation', 'Custom APIs']
               },
-              {
-                icon: Smartphone,
-                title: 'Mobile App Development',
+              { 
+                icon: Smartphone, 
+                title: 'Mobile App Development', 
                 desc: 'High performance iOS & Android applications with seamless payment integration (MoMo & Card support).',
                 tags: ['iOS & Android', 'MoMo Pay', 'Cross Platform']
               },
-              {
-                icon: Settings,
-                title: 'Website Maintenance Retainers',
+              { 
+                icon: Settings, 
+                title: 'Website Maintenance Retainers', 
                 desc: 'Proactive server maintenance, performance optimizations, security updates, and monthly feature improvements.',
                 tags: ['Monthly Support', 'Security', 'Backups']
               },
@@ -431,10 +431,10 @@ export default function Index() {
                   </div>
                   <ArrowUpRight className="h-5 w-5 text-[#060606]/60 group-hover:text-[#060606] transition-colors" />
                 </div>
-
+                
                 <h3 className="text-xl font-extrabold text-[#060606] mb-3">{service.title}</h3>
                 <p className="text-[#060606]/75 text-sm leading-relaxed mb-6 flex-grow font-medium">{service.desc}</p>
-
+                
                 <div className="flex flex-wrap gap-2 pt-4 border-t border-[#060606]/10">
                   {service.tags.map(tag => (
                     <span key={tag} className="px-3 py-1 rounded-full bg-[#7EDC14]/30 text-[11px] font-extrabold text-[#060606] border border-[#060606]/20">
@@ -463,30 +463,30 @@ export default function Index() {
                 Platforms &amp; Systems We&apos;ve Engineered
               </h2>
             </div>
-            <Link
-              href="/projects"
+            <Link 
+              href="/projects" 
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#7EDC14] text-[#060606] font-extrabold text-xs hover:bg-[#F9F9F9] transition-colors border border-[#7EDC14]"
             >
               View All Works
             </Link>
           </div>
 
-          <div
+          <div 
             className="flex gap-[4vw] px-[7.5vw] transform-gpu will-change-transform"
-            style={{
+            style={{ 
               transform: `translate3d(${translateX.toFixed(2)}vw, 0px, 0px)`
             }}
           >
             {displayedProjects.map((p) => (
-              <Link
+              <Link 
                 key={p.id}
                 href={`/projects/${p.id}`}
                 className="w-[82vw] sm:w-[65vw] lg:w-[48vw] flex-shrink-0 h-[420px] bg-[#060606] rounded-[2.5rem] border-2 border-[#F9F9F9]/20 overflow-hidden flex flex-col group transition-all duration-300 hover:border-[#7EDC14] cursor-pointer shadow-2xl"
               >
                 <div className="h-[220px] bg-black/50 overflow-hidden relative">
-                  <Image
-                    src={p.image}
-                    alt={p.title}
+                  <Image 
+                    src={p.image} 
+                    alt={p.title} 
                     fill
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -496,13 +496,13 @@ export default function Index() {
                     </span>
                   </div>
                 </div>
-
+                
                 <div className="p-6 flex flex-col justify-between flex-grow">
                   <div>
                     <h3 className="text-xl font-bold text-[#F9F9F9] mb-2 group-hover:text-[#7EDC14] transition-colors">{p.title}</h3>
                     <p className="text-[#F9F9F9]/70 text-xs leading-relaxed line-clamp-2">{p.description}</p>
                   </div>
-
+                  
                   <div className="inline-flex items-center gap-2 text-[#7EDC14] text-xs font-bold pt-4 border-t border-[#F9F9F9]/10">
                     <span>Explore Case Study</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
