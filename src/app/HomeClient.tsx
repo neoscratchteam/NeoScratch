@@ -101,7 +101,7 @@ export default function Index() {
 
       {/* ── 2. Clientele Section (Floating Card Overlapping Hero) ── */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-24 mb-24 relative z-20">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-2xl border border-[#060606]/5 text-center">
+        <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-md border border-[#060606]/10 text-center">
           
           <h2 className="text-lg sm:text-xl font-extrabold text-[#060606] mb-8 tracking-tight font-jakarta">
             Powering Digital Excellence for Industry Leaders
@@ -147,7 +147,7 @@ export default function Index() {
 
 
       {/* ── 3. NeoScratch Across Africa Section (Using africa.svg) ── */}
-      <section className="py-20 lg:py-28 bg-[#E5E5E5] border-t border-[#060606]/10 overflow-hidden">
+      <section className="py-20 lg:py-28 bg-[#E5E5E5] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
@@ -240,7 +240,7 @@ export default function Index() {
 
 
       {/* ── 4. Comprehensive Solution Section ("* Who We Are?") ── */}
-      <section className="py-24 bg-[#E5E5E5] border-t border-[#060606]/10">
+      <section className="py-24 bg-[#E5E5E5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
 
@@ -340,89 +340,7 @@ export default function Index() {
       </section>
 
 
-      {/* ── 5. Services Grid Section ("* Our Services") ── */}
-      <section className="py-24 bg-[#E5E5E5]" id="services">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#175A26] text-white text-xs font-extrabold uppercase tracking-wider mb-3 border border-[#060606]">
-              <Star className="w-3.5 h-3.5 text-white fill-current" />
-              Our Services
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#060606] mb-4">
-              Experienced best modern tech services
-            </h2>
-            <p className="text-[#060606]/80 text-sm sm:text-base leading-relaxed font-medium">
-              Whether you need a high-converting website, custom mobile app, or dominance in Google search results — we deliver solutions crafted for growth.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: Monitor, 
-                title: 'Website Design & Development', 
-                desc: 'Your website is your 24/7 digital salesperson. We build sleek, fast, high-converting websites tailored for your brand.',
-                tags: ['Responsive', 'Fast Speed', 'Admin Panel']
-              },
-              { 
-                icon: Globe, 
-                title: 'Google Business Profile Setup', 
-                desc: 'Verify and rank your business locally on Google Maps so nearby customers find your service instantly.',
-                tags: ['Google Maps', 'SEO Boost', 'Review System']
-              },
-              { 
-                icon: BarChart3, 
-                title: 'Search Engine Optimisation (SEO)', 
-                desc: 'Rank on page one of Google for your target business keywords and attract organic qualified leads daily.',
-                tags: ['Keywords', 'On-Page SEO', 'Monthly Audit']
-              },
-              { 
-                icon: Code, 
-                title: 'Custom Software Engineering', 
-                desc: 'Scalable web applications, management dashboards, automated workflows, and custom SaaS platforms.',
-                tags: ['Web Apps', 'Automation', 'Custom APIs']
-              },
-              { 
-                icon: Smartphone, 
-                title: 'Mobile App Development', 
-                desc: 'High performance iOS & Android applications with seamless payment integration (MoMo & Card support).',
-                tags: ['iOS & Android', 'MoMo Pay', 'Cross Platform']
-              },
-              { 
-                icon: Settings, 
-                title: 'Website Maintenance Retainers', 
-                desc: 'Proactive server maintenance, performance optimizations, security updates, and monthly feature improvements.',
-                tags: ['Monthly Support', 'Security', 'Backups']
-              },
-            ].map((service) => (
-              <div
-                key={service.title}
-                className="group relative flex flex-col p-8 rounded-[2rem] bg-[#E5E5E5] border-2 border-[#060606] shadow-sm hover:shadow-xl hover:border-[#175A26] transition-all duration-300"
-              >
-                <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-[#060606] text-[#175A26] flex items-center justify-center group-hover:bg-[#175A26] group-hover:text-white transition-colors duration-300 shadow-sm font-bold">
-                    <service.icon className="h-6 w-6" />
-                  </div>
-                  <ArrowUpRight className="h-5 w-5 text-[#060606]/60 group-hover:text-[#060606] transition-colors" />
-                </div>
-                
-                <h3 className="text-xl font-extrabold text-[#060606] mb-3">{service.title}</h3>
-                <p className="text-[#060606]/75 text-sm leading-relaxed mb-6 flex-grow font-medium">{service.desc}</p>
-                
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-[#060606]/10">
-                  {service.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 rounded-full bg-[#175A26]/20 text-[11px] font-extrabold text-[#175A26] border border-[#175A26]/30">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
 
 
       {/* ── 6. Horizontal Scroll Projects Section ── */}
