@@ -280,11 +280,11 @@ export function Header() {
               )}
             </div>
 
-            <Link href="/services" className="hover:opacity-80 transition-opacity py-2">
-              Docs
+            <Link href="/projects" className="hover:opacity-80 transition-opacity py-2">
+              Projects
             </Link>
 
-            <Link href="/services" className="hover:opacity-80 transition-opacity py-2">
+            <Link href="/request-website" className="hover:opacity-80 transition-opacity py-2">
               Pricing
             </Link>
 
