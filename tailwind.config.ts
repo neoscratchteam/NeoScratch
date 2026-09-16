@@ -19,9 +19,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				inter: ['Inter', 'sans-serif'],
+				sans: ['Plus Jakarta Sans', 'sans-serif'],
+				inter: ['Plus Jakarta Sans', 'sans-serif'],
 				jakarta: ['Plus Jakarta Sans', 'sans-serif'],
-				outfit: ['Outfit', 'sans-serif'],
+				outfit: ['Plus Jakarta Sans', 'sans-serif'],
 			},
 			colors: {
 				border: '#060606',

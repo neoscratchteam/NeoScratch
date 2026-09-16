@@ -3,7 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
+import { 
+  ChevronDown, ChevronUp, Menu, X, 
+  ShoppingCart, Building2, BarChart3, 
+  Smartphone, Code, ShieldCheck, ArrowRight 
+} from 'lucide-react';
 import Image from 'next/image';
 
 const solutionsDropdown = [
@@ -61,15 +65,184 @@ export function Header() {
           {/* Navigation Links with Dropdowns */}
           <nav className="hidden lg:flex items-center space-x-7 text-sm font-extrabold text-white">
             
-            {/* Products Dropdown */}
-            <div className="relative group">
+            {/* Products Mega Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setActiveDropdown('products')}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
               <button 
                 onClick={() => setActiveDropdown(activeDropdown === 'products' ? null : 'products')}
                 className="flex items-center gap-1.5 hover:opacity-80 transition-opacity py-2"
               >
                 <span>Products</span>
-                <ChevronDown className="w-4 h-4 stroke-[2.5]" />
+                {activeDropdown === 'products' ? (
+                  <ChevronUp className="w-4 h-4 stroke-[2.5]" />
+                ) : (
+                  <ChevronDown className="w-4 h-4 stroke-[2.5]" />
+                )}
               </button>
+
+              {/* Mega Dropdown Panel */}
+              {activeDropdown === 'products' && (
+                <div className="absolute top-full -left-20 pt-3 w-[720px] animate-fade-in z-50">
+                  <div className="bg-white rounded-3xl shadow-2xl border border-[#060606]/10 text-left overflow-hidden">
+                    
+                    {/* Top Columns Content */}
+                    <div className="p-8 grid grid-cols-2 gap-8">
+                      
+                      {/* Left Column: Software & Platforms */}
+                      <div className="space-y-6">
+                        <h3 className="text-xs font-black uppercase tracking-wider text-[#175A26]">
+                          Software &amp; Digital Platforms
+                        </h3>
+
+                        <div className="space-y-4">
+                          
+                          {/* Item 1: E-Commerce */}
+                          <Link 
+                            href="/services" 
+                            className="flex items-start gap-4 group/item p-2 -mx-2 rounded-xl hover:bg-[#175A26]/5 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-xl bg-[#175A26]/10 text-[#175A26] flex items-center justify-center shrink-0 group-hover/item:bg-[#175A26] group-hover/item:text-white transition-colors">
+                              <ShoppingCart className="w-5 h-5" />
+                            </div>
+                            <div>
+                              <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
+                                E-Commerce Platforms
+                              </div>
+                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                                Online stores with MoMo &amp; card payment integration
+                              </p>
+                            </div>
+                          </Link>
+
+                          {/* Item 2: Business Systems */}
+                          <Link 
+                            href="/services" 
+                            className="flex items-start gap-4 group/item p-2 -mx-2 rounded-xl hover:bg-[#175A26]/5 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-xl bg-[#175A26]/10 text-[#175A26] flex items-center justify-center shrink-0 group-hover/item:bg-[#175A26] group-hover/item:text-white transition-colors">
+                              <Building2 className="w-5 h-5" />
+                            </div>
+                            <div>
+                              <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
+                                Business Systems &amp; ERP
+                              </div>
+                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                                Automated management, inventory &amp; company workflows
+                              </p>
+                            </div>
+                          </Link>
+
+                          {/* Item 3: Custom Software */}
+                          <Link 
+                            href="/services" 
+                            className="flex items-start gap-4 group/item p-2 -mx-2 rounded-xl hover:bg-[#175A26]/5 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-xl bg-[#175A26]/10 text-[#175A26] flex items-center justify-center shrink-0 group-hover/item:bg-[#175A26] group-hover/item:text-white transition-colors">
+                              <Code className="w-5 h-5" />
+                            </div>
+                            <div>
+                              <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
+                                Custom Web &amp; SaaS Build
+                              </div>
+                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                                Scalable web applications engineered for Rwandan businesses
+                              </p>
+                            </div>
+                          </Link>
+
+                        </div>
+                      </div>
+
+                      {/* Right Column: Growth & Engineering */}
+                      <div className="space-y-6">
+                        <h3 className="text-xs font-black uppercase tracking-wider text-[#175A26]">
+                          Digital Growth &amp; Support
+                        </h3>
+
+                        <div className="space-y-4">
+                          
+                          {/* Item 4: SEO */}
+                          <Link 
+                            href="/services" 
+                            className="flex items-start gap-4 group/item p-2 -mx-2 rounded-xl hover:bg-[#175A26]/5 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-xl bg-[#175A26]/10 text-[#175A26] flex items-center justify-center shrink-0 group-hover/item:bg-[#175A26] group-hover/item:text-white transition-colors">
+                              <BarChart3 className="w-5 h-5" />
+                            </div>
+                            <div>
+                              <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
+                                Search Engine Optimisation (SEO)
+                              </div>
+                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                                Rank #1 on Google &amp; Google Maps across Rwanda
+                              </p>
+                            </div>
+                          </Link>
+
+                          {/* Item 5: Mobile Apps */}
+                          <Link 
+                            href="/services" 
+                            className="flex items-start gap-4 group/item p-2 -mx-2 rounded-xl hover:bg-[#175A26]/5 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-xl bg-[#175A26]/10 text-[#175A26] flex items-center justify-center shrink-0 group-hover/item:bg-[#175A26] group-hover/item:text-white transition-colors">
+                              <Smartphone className="w-5 h-5" />
+                            </div>
+                            <div>
+                              <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
+                                Mobile App Engineering
+                              </div>
+                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                                Native &amp; cross-platform iOS &amp; Android apps
+                              </p>
+                            </div>
+                          </Link>
+
+                          {/* Item 6: IT Maintenance */}
+                          <Link 
+                            href="/services" 
+                            className="flex items-start gap-4 group/item p-2 -mx-2 rounded-xl hover:bg-[#175A26]/5 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-xl bg-[#175A26]/10 text-[#175A26] flex items-center justify-center shrink-0 group-hover/item:bg-[#175A26] group-hover/item:text-white transition-colors">
+                              <ShieldCheck className="w-5 h-5" />
+                            </div>
+                            <div>
+                              <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
+                                Maintenance &amp; Retainers
+                              </div>
+                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                                Proactive 24/7 security, updates &amp; server hosting
+                              </p>
+                            </div>
+                          </Link>
+
+                        </div>
+                      </div>
+
+                    </div>
+
+                    {/* Bottom Pricing Banner */}
+                    <div className="bg-[#F8FAFC] border-t border-[#060606]/5 px-8 py-5 flex items-center justify-between">
+                      <div>
+                        <h4 className="font-extrabold text-sm text-[#060606]">Pricing &amp; Packages</h4>
+                        <p className="text-xs text-[#060606]/60 font-medium">
+                          Flexible pricing models tailored for companies &amp; startups in Rwanda
+                        </p>
+                      </div>
+                      <Link 
+                        href="/request-website"
+                        className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-[#175A26] text-white font-extrabold text-xs hover:bg-[#060606] transition-colors shadow-sm"
+                      >
+                        <span>See Pricing</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Solutions Dropdown */}
