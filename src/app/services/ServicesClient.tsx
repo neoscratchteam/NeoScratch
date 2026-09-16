@@ -342,37 +342,57 @@ export default function Services() {
     : servicesData.filter(s => s.category === filter);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#E5E5E5] text-[#060606] font-jakarta">
       
       {/* 🟢 NAVIGATION WRAPPER - Confines the Sticky Filter to the Results Section */}
       <div className="relative">
-        {/* 🚀 MODERN HERO SECTION - Matches Project Page */}
-        <section className="pt-24 lg:pt-36 pb-24 lg:pb-32 bg-[#1a73e8] relative overflow-hidden">
-          {/* Large Grid Overlay */}
-          <div className="absolute inset-0 z-0 bg-grid opacity-[0.05] pointer-events-none" style={{ backgroundSize: '60px 60px' }} />
-          
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white/90 text-[10px] font-bold uppercase tracking-widest mb-6 animate-slide-up">
-              <span>Global Engineering Solutions</span>
+        {/* 🚀 MODERN HERO SECTION (Brand Green #175A26) */}
+        <section className="pt-36 sm:pt-44 pb-24 lg:pb-32 bg-[#175A26] text-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid lg:grid-cols-12 gap-12 items-center">
+              
+              <div className="lg:col-span-7 space-y-6 text-left">
+                <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-black uppercase tracking-widest">
+                  <span>Digital Engineering &amp; Services</span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.08]">
+                  Innovate with Precision. <br /> Scale with NeoScratch.
+                </h1>
+                <p className="text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed font-medium">
+                  We provide world-class software engineering, mobile app development, SEO, and digital growth services tailored for businesses across Rwanda &amp; global markets.
+                </p>
+                <div className="pt-4 flex flex-wrap gap-4">
+                  <Link
+                    href="/request-website"
+                    className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-black bg-white text-[#175A26] hover:bg-[#060606] hover:text-white transition-all shadow-lg"
+                  >
+                    Get Free Proposal
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right Column: unDraw Illustration */}
+              <div className="lg:col-span-5 flex justify-center items-center">
+                <img
+                  src="/relax.svg"
+                  alt="Services Illustration"
+                  className="w-full h-auto object-contain max-w-md drop-shadow-xl"
+                />
+              </div>
+
             </div>
-            <h1 className="text-4xl lg:text-7xl font-bold tracking-tight text-white mb-8 animate-fade-in max-w-4xl mx-auto">
-              Innovate with Precision. <br /> Scale with <span className="opacity-70 text-transparent bg-clip-text bg-gradient-to-b from-white to-white/20">NeoScratch.</span>
-            </h1>
-            <p className="text-sm lg:text-[15px] text-white/80 max-w-2xl mx-auto leading-relaxed font-medium animate-slide-up">
-              We provide world-class software engineering, strategic tech coaching, and digital design services tailored for businesses aiming for global impact.
-            </p>
           </div>
         </section>
 
-        {/* 🔍 FILTER BAR - Single Line Horizontal Scroll with Navigation Arrows */}
-        <section className="py-8 border-b border-border/40 sticky top-16 lg:top-20 bg-white z-40">
+        {/* 🔍 FILTER BAR - Single Line Horizontal Scroll */}
+        <section className="py-6 border-b border-[#060606]/10 sticky top-16 lg:top-20 bg-[#E5E5E5] z-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative group">
             
             {/* Left Arrow */}
             {showLeftArrow && (
               <button 
                 onClick={() => scroll('left')}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-1.5 rounded-full bg-white border border-border shadow-md text-foreground hover:text-primary transition-all duration-200"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-2 rounded-full bg-white border border-[#060606]/10 shadow-md text-[#060606] hover:text-[#175A26] transition-all"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
@@ -382,7 +402,7 @@ export default function Services() {
             <div 
               ref={scrollContainerRef}
               onScroll={checkScroll}
-              className="flex flex-nowrap items-center gap-2 justify-start overflow-x-auto pb-2 hide-scrollbar scroll-smooth"
+              className="flex flex-nowrap items-center gap-2.5 justify-start overflow-x-auto pb-2 hide-scrollbar scroll-smooth"
             >
               {categories.map((cat) => (
                 <button
@@ -393,10 +413,10 @@ export default function Services() {
                     e.stopPropagation();
                     handleFilterChange(cat);
                   }}
-                  className={`px-4 py-2 rounded-full text-[11px] whitespace-nowrap font-bold transition-all duration-300 ${
+                  className={`px-5 py-2.5 rounded-full text-xs whitespace-nowrap font-extrabold transition-all duration-300 ${
                     filter === cat 
-                      ? 'bg-[#1a73e8] text-white shadow-lg shadow-blue-500/10' 
-                      : 'bg-[#f4f7fa] text-[#555] hover:bg-[#e8ebf0]'
+                      ? 'bg-[#175A26] text-white shadow-md' 
+                      : 'bg-white text-[#060606] hover:bg-[#175A26] hover:text-white border border-[#060606]/10'
                   }`}
                 >
                   {cat}
@@ -408,7 +428,7 @@ export default function Services() {
             {showRightArrow && (
               <button 
                 onClick={() => scroll('right')}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-1.5 rounded-full bg-white border border-border shadow-md text-foreground hover:text-primary transition-all duration-200"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-2 rounded-full bg-white border border-[#060606]/10 shadow-md text-[#060606] hover:text-[#175A26] transition-all"
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
@@ -417,62 +437,62 @@ export default function Services() {
           </div>
         </section>
 
-        {/* 📦 SERVICES GRID - Small Modern Cards */}
-        <section id="services-grid" className="py-24">
+        {/* 📦 SERVICES GRID - Clean Modern Cards */}
+        <section id="services-grid" className="py-24 bg-[#E5E5E5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredServices.map((s) => (
                 <div 
                   key={s.id} 
-                  className="group relative flex flex-col bg-white border border-[#1a73e8]/10 rounded-2xl p-8 hover:border-[#1a73e8]/40 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-500"
+                  className="group relative flex flex-col bg-white border border-[#060606]/10 rounded-3xl p-8 hover:border-[#175A26]/40 hover:shadow-2xl transition-all duration-300"
                 >
                   {s.popular && (
-                    <Badge className="absolute top-4 right-4 bg-[#1a73e8] text-white hover:bg-[#1a73e8]/90 font-bold text-[9px] uppercase tracking-wider px-3 py-1 rounded-full border-none">
+                    <Badge className="absolute top-4 right-4 bg-[#175A26] text-white font-extrabold text-[9px] uppercase tracking-wider px-3 py-1 rounded-full border-none">
                       Most Popular
                     </Badge>
                   )}
-                  <div className="h-14 w-14 rounded-xl bg-[#1a73e8]/10 flex items-center justify-center mb-8 group-hover:bg-[#1a73e8] transition-colors duration-500">
-                    <s.icon className="h-6 w-6 text-[#1a73e8] group-hover:text-white transition-colors duration-500" />
+                  <div className="h-14 w-14 rounded-2xl bg-[#175A26]/10 flex items-center justify-center mb-8 group-hover:bg-[#175A26] transition-colors duration-300">
+                    <s.icon className="h-6 w-6 text-[#175A26] group-hover:text-white transition-colors duration-300" />
                   </div>
                   
-                  <h3 className="text-xl font-bold mb-4 text-foreground group-hover:text-[#1a73e8] transition-colors text-[16px]">
+                  <h3 className="text-xl font-extrabold mb-3 text-[#060606] group-hover:text-[#175A26] transition-colors font-jakarta">
                     {s.title}
                   </h3>
                   
-                  <p className="text-muted-foreground text-[13px] leading-relaxed font-semibold mb-8 flex-1">
+                  <p className="text-[#334155] text-sm leading-relaxed font-medium mb-8 flex-1">
                     {s.description}
                   </p>
 
-                  <div className="space-y-4 mb-8">
+                  <div className="space-y-3.5 mb-8">
                     {(s.features as (string | { text: string; included: boolean })[]).map((f, i) => {
                       if (typeof f === 'string') {
                         return (
-                          <div key={i} className="flex items-center text-[10px] font-bold text-foreground/70 uppercase tracking-widest leading-none">
-                            <Check className="h-3.5 w-3.5 mr-3 text-[#1a73e8] shrink-0" />
+                          <div key={i} className="flex items-center text-xs font-bold text-[#060606] font-jakarta">
+                            <Check className="h-4 w-4 mr-2.5 text-[#175A26] shrink-0 stroke-[3]" />
                             <span>{f}</span>
                           </div>
                         );
                       } else {
                         return (
-                          <div key={i} className="flex items-center text-[10px] font-bold text-foreground/70 uppercase tracking-widest leading-none">
+                          <div key={i} className="flex items-center text-xs font-bold text-[#060606] font-jakarta">
                             {f.included ? (
-                              <Check className="h-3.5 w-3.5 mr-3 text-[#1a73e8] shrink-0" />
+                              <Check className="h-4 w-4 mr-2.5 text-[#175A26] shrink-0 stroke-[3]" />
                             ) : (
-                              <X className="h-3.5 w-3.5 mr-3 text-red-500 shrink-0" />
+                              <X className="h-4 w-4 mr-2.5 text-red-500 shrink-0 stroke-[2.5]" />
                             )}
-                            <span>{f.text}</span>
+                            <span className={f.included ? '' : 'line-through text-[#060606]/40'}>{f.text}</span>
                           </div>
                         );
                       }
                     })}
                   </div>
 
-                  <div className="pt-8 border-t border-border/40 flex items-center justify-between">
+                  <div className="pt-6 border-t border-[#060606]/10 flex items-center justify-between">
                     <div>
-                        <p className="text-sm font-black text-foreground">{s.price}</p>
+                      <p className="text-sm font-black text-[#060606] font-jakarta">{s.price}</p>
                     </div>
-                    <Link href="/contact" className="text-[10px] font-bold text-[#1a73e8] uppercase tracking-[0.2em] flex items-center group-hover:translate-x-1 transition-transform">
-                        Inquire <ArrowRight className="ml-2 h-3.5 w-3.5" />
+                    <Link href="/contact" className="text-xs font-extrabold text-[#175A26] uppercase tracking-wider flex items-center group-hover:translate-x-1 transition-transform">
+                      Inquire <ArrowRight className="ml-1.5 h-4 w-4" />
                     </Link>
                   </div>
                 </div>
@@ -480,7 +500,7 @@ export default function Services() {
             </div>
 
             {/* ⬆️ BACK TO TOP OF SECTION */}
-            <div className="mt-16 flex justify-center border-t border-border/40 pt-12">
+            <div className="mt-16 flex justify-center border-t border-[#060606]/10 pt-12">
                <button 
                  type="button"
                  onClick={(e) => {
@@ -488,9 +508,9 @@ export default function Services() {
                    e.stopPropagation();
                    handleFilterChange(filter);
                  }}
-                 className="inline-flex items-center text-[10px] font-bold text-muted-foreground hover:text-[#1a73e8] uppercase tracking-[0.3em] transition-all group"
+                 className="inline-flex items-center text-xs font-black text-[#060606] hover:text-[#175A26] uppercase tracking-widest transition-all group"
                >
-                 Back to Filters <ArrowRight className="ml-2 h-3.5 w-3.5 -rotate-90 group-hover:-translate-y-1 transition-transform" />
+                 Back to Filters <ArrowRight className="ml-2 h-4 w-4 -rotate-90 group-hover:-translate-y-1 transition-transform" />
                </button>
             </div>
           </div>
@@ -498,22 +518,22 @@ export default function Services() {
       </div>
 
       {/* 🚀 FINAL CTA SECTION */}
-      <section className="py-24 bg-[#f8fafc] border-t border-border/40">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-           <div className="inline-block p-1.5 rounded-full bg-[#1a73e8]/10 mb-8">
-              <div className="bg-[#1a73e8] p-3 rounded-full">
-                 <Zap className="h-6 w-6 text-white" />
-              </div>
-           </div>
-           <h2 className="text-3xl lg:text-5xl font-bold mb-8 tracking-tight text-foreground">
+      <section className="py-24 bg-[#175A26] text-white border-t border-[#060606]/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+           <h2 className="text-3xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-jakarta">
              Scale Your Innovation Globally
            </h2>
-           <p className="text-sm lg:text-base text-muted-foreground font-semibold mb-12 max-w-2xl mx-auto">
-             Whether you're a startup or an enterprise, we have the engineering expertise to help you build the future. Reach out for a custom consultation.
+           <p className="text-base lg:text-lg text-white/80 font-medium max-w-2xl mx-auto">
+             Whether you&apos;re a startup or an enterprise, we have the software engineering expertise to help you build the future.
            </p>
-           <Button size="xl" className="rounded-full bg-[#1a73e8] text-white hover:bg-[#1a73e8]/90 px-12 h-16 font-bold shadow-2xl shadow-blue-500/20" asChild>
-             <Link href="/contact">Get a Custom Proposal</Link>
-           </Button>
+           <div className="flex flex-wrap gap-4 justify-center pt-2">
+             <Link
+               href="/contact"
+               className="px-8 py-3.5 rounded-full text-sm font-black bg-white text-[#175A26] hover:bg-[#060606] hover:text-white transition-all shadow-lg"
+             >
+               Get a Custom Proposal
+             </Link>
+           </div>
         </div>
       </section>
 

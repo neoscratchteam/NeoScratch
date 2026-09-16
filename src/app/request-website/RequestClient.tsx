@@ -94,72 +94,77 @@ _Request sent from neoscratch.rw inquiry portal_
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#E5E5E5] font-jakarta">
       {/* 🚀 COMPACT HERO SECTION */}
-      <section className="pb-16 lg:pb-20 bg-[#1a73e8] relative overflow-hidden">
+      <section className="pt-24 lg:pt-32 pb-16 lg:pb-20 bg-[#175A26] relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-grid opacity-[0.05] pointer-events-none" style={{ backgroundSize: '40px 40px' }} />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
-          <Badge className="bg-white/10 text-white border-white/20 text-[9px] uppercase tracking-[0.2em] mb-4">Architecture Brief</Badge>
-          <h1 className="text-3xl lg:text-5xl font-bold tracking-tight text-white mb-4 animate-fade-in uppercase">
-            Architect Your <br /> Digital <span className="opacity-70">Presence.</span>
-          </h1>
-          <p className="text-[13px] text-white/70 max-w-xl mx-auto leading-relaxed font-semibold animate-slide-up">
-            Fast, high-performance inquiries for global scaling.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+          <div className="text-center md:text-left max-w-xl">
+            <Badge className="bg-white/10 text-white border-white/20 text-[9px] uppercase tracking-[0.2em] mb-4">Architecture Brief</Badge>
+            <h1 className="text-3xl lg:text-5xl font-bold tracking-tight text-white mb-4 animate-fade-in uppercase leading-tight">
+              Architect Your <br /> <span className="opacity-80 text-emerald-200">Digital Presence.</span>
+            </h1>
+            <p className="text-[13px] text-white/80 leading-relaxed font-semibold animate-slide-up">
+              Fast, high-performance web solutions built to scale your business.
+            </p>
+          </div>
+          <div className="w-full md:w-1/3 flex justify-center">
+            <img src="/relax.svg" alt="Request Website Illustration" className="w-56 lg:w-72 h-auto opacity-95 hover:scale-105 transition-transform duration-500" />
+          </div>
         </div>
       </section>
 
-      {/* 📝 PROJECT INQUIRY FORM - CONFINED EXPERIENCE */}
-      <section className="py-20 bg-[#f8fafc]">
+      {/* 📝 PROJECT INQUIRY FORM */}
+      <section className="py-16 bg-[#E5E5E5]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white border border-border/40 rounded-[2.5rem] p-8 lg:p-12 shadow-2xl shadow-blue-500/5">
-            <form onSubmit={handleSubmit} className="space-y-12">
+          <div className="bg-white border border-slate-200 rounded-[2rem] p-8 lg:p-12 shadow-xl">
+            <form onSubmit={handleSubmit} className="space-y-10">
               
               {/* Section 1: Your Details */}
-              <div className="space-y-8">
-                <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4">Your details</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+              <div className="space-y-6">
+                <h2 className="text-[17px] font-black tracking-tight text-slate-900 border-l-4 border-[#175A26] pl-4">Your details</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                   <div>
-                    <label className="block text-[11px] font-black text-muted-foreground/80 uppercase tracking-widest mb-3">Your name *</label>
+                    <label className="block text-[11px] font-black text-slate-500 uppercase tracking-widest mb-2">Your name *</label>
                     <input
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-5 py-3.5 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      className="w-full px-5 py-3.5 border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:border-[#175A26] focus:ring-2 focus:ring-[#175A26]/20 transition-all text-[13px] font-semibold"
                       placeholder="Your full name"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] font-black text-muted-foreground/80 uppercase tracking-widest mb-3">Phone / WhatsApp *</label>
+                    <label className="block text-[11px] font-black text-slate-500 uppercase tracking-widest mb-2">Phone / WhatsApp *</label>
                     <input
                       name="whatsapp"
                       value={formData.whatsapp}
                       onChange={handleInputChange}
-                      className="w-full px-5 py-3.5 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      className="w-full px-5 py-3.5 border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:border-[#175A26] focus:ring-2 focus:ring-[#175A26]/20 transition-all text-[13px] font-semibold"
                       placeholder="Your phone number"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] font-black text-muted-foreground/80 uppercase tracking-widest mb-3">Business Email</label>
+                    <label className="block text-[11px] font-black text-slate-500 uppercase tracking-widest mb-2">Business Email</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-5 py-3.5 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      className="w-full px-5 py-3.5 border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:border-[#175A26] focus:ring-2 focus:ring-[#175A26]/20 transition-all text-[13px] font-semibold"
                       placeholder="Your email address"
                     />
                   </div>
                   <div>
-                    <label className="block text-[11px] font-black text-muted-foreground/80 uppercase tracking-widest mb-3">Business name</label>
+                    <label className="block text-[11px] font-black text-slate-500 uppercase tracking-widest mb-2">Business name</label>
                     <input
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-5 py-3.5 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold placeholder:text-muted-foreground/30"
+                      className="w-full px-5 py-3.5 border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:border-[#175A26] focus:ring-2 focus:ring-[#175A26]/20 transition-all text-[13px] font-semibold"
                       placeholder="Your business name"
                     />
                   </div>
@@ -167,8 +172,8 @@ _Request sent from neoscratch.rw inquiry portal_
               </div>
 
               {/* Section 2: What do you need? */}
-              <div className="space-y-8">
-                <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4">What do you need? *</h2>
+              <div className="space-y-6">
+                <h2 className="text-[17px] font-black tracking-tight text-slate-900 border-l-4 border-[#175A26] pl-4">What do you need? *</h2>
                 <div className="flex flex-wrap gap-2.5">
                   {services.map((s) => (
                     <button
@@ -177,8 +182,8 @@ _Request sent from neoscratch.rw inquiry portal_
                       onClick={() => toggleSelection('serviceType', s)}
                       className={`px-4 py-2.5 rounded-xl border text-[12px] font-black transition-all duration-300 ${
                         formData.serviceType === s 
-                          ? 'bg-[#1a73e8] text-white border-[#1a73e8] shadow-lg shadow-blue-500/10' 
-                          : 'bg-white text-muted-foreground/80 border-border hover:border-[#1a73e8]/30 hover:text-[#1a73e8]'
+                          ? 'bg-[#175A26] text-white border-[#175A26] shadow-md' 
+                          : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-[#175A26] hover:text-[#175A26]'
                       }`}
                     >
                       {s}
@@ -188,8 +193,8 @@ _Request sent from neoscratch.rw inquiry portal_
               </div>
 
               {/* Section 3: Budget range */}
-              <div className="space-y-8">
-                <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4">Budget range</h2>
+              <div className="space-y-6">
+                <h2 className="text-[17px] font-black tracking-tight text-slate-900 border-l-4 border-[#175A26] pl-4">Budget range</h2>
                 <div className="flex flex-wrap gap-2.5">
                   {budgetRanges.map((r) => (
                     <button
@@ -198,8 +203,8 @@ _Request sent from neoscratch.rw inquiry portal_
                       onClick={() => toggleSelection('budget', r)}
                       className={`px-4 py-2.5 rounded-xl border text-[12px] font-black transition-all duration-300 ${
                         formData.budget === r 
-                          ? 'border-[#1a73e8] text-[#1a73e8] border-2 bg-white' 
-                          : 'bg-white text-muted-foreground/80 border-border hover:border-[#1a73e8]/30 hover:text-[#1a73e8]'
+                          ? 'border-[#175A26] text-[#175A26] border-2 bg-emerald-50' 
+                          : 'bg-slate-50 text-slate-700 border-slate-200 hover:border-[#175A26] hover:text-[#175A26]'
                       }`}
                     >
                       {r}
@@ -209,33 +214,33 @@ _Request sent from neoscratch.rw inquiry portal_
               </div>
 
               {/* Section 4: Tell us briefly */}
-              <div className="space-y-8">
-                <h2 className="text-[17px] font-black tracking-tight text-foreground border-l-4 border-[#1a73e8] pl-4">Tell us briefly</h2>
+              <div className="space-y-6">
+                <h2 className="text-[17px] font-black tracking-tight text-slate-900 border-l-4 border-[#175A26] pl-4">Tell us briefly</h2>
                 <textarea
                   name="description"
                   value={formData.description}
                   onChange={handleInputChange}
-                  rows={6}
-                  className="w-full px-6 py-6 border border-border/60 rounded-xl bg-white focus:border-[#1a73e8] focus:ring-0 transition-all text-[13px] font-semibold resize-none placeholder:text-muted-foreground/30"
+                  rows={5}
+                  className="w-full px-5 py-4 border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:border-[#175A26] focus:ring-2 focus:ring-[#175A26]/20 transition-all text-[13px] font-semibold resize-none"
                   placeholder="What does your business do? What do you need help with? Any specific features or deadlines?"
                   required
                 />
               </div>
 
               {/* Final Submit Action */}
-              <div className="pt-6">
+              <div className="pt-4">
                 <Button
                   type="submit"
                   size="xl"
-                  className="w-full rounded-xl bg-[#1a73e8] text-white hover:bg-black hover:scale-[1.02] transition-all duration-300 h-14 text-[11px] font-black uppercase tracking-widest shadow-2xl shadow-blue-500/10"
+                  className="w-full rounded-xl bg-[#175A26] text-white hover:bg-[#12481e] transition-all duration-300 h-14 text-[12px] font-black uppercase tracking-widest shadow-lg"
                   disabled={submitting}
                 >
                   {submitting ? 'Preparing Brief...' : 'Send Request via WhatsApp'}
                   {!submitting && <ArrowRight className="ml-2.5 h-4 w-4" />}
                 </Button>
-                <div className="mt-6 flex items-center justify-center gap-6 text-[9px] font-black text-muted-foreground/30 uppercase tracking-[0.2em]">
-                   <div className="flex items-center"><Shield className="h-3 w-3 mr-2" /> Global Standard</div>
-                   <div className="flex items-center"><Globe className="h-3 w-3 mr-2" /> Fast Inquiry</div>
+                <div className="mt-6 flex items-center justify-center gap-6 text-[9px] font-black text-slate-400 uppercase tracking-[0.2em]">
+                   <div className="flex items-center"><Shield className="h-3 w-3 mr-2 text-[#175A26]" /> Global Standard</div>
+                   <div className="flex items-center"><Globe className="h-3 w-3 mr-2 text-[#175A26]" /> Fast Inquiry</div>
                 </div>
               </div>
             </form>
@@ -243,35 +248,30 @@ _Request sent from neoscratch.rw inquiry portal_
         </div>
       </section>
 
-      {/* 🏗️ ARCHITECTURAL WORKFLOW - HIGH IMPACT STEPS */}
-      <section className="py-24 bg-white border-t border-border/10 overflow-hidden">
+      {/* 🏗️ ARCHITECTURAL WORKFLOW */}
+      <section className="py-20 bg-white border-t border-slate-200 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="text-center mb-16">
-              <span className="text-[10px] font-black tracking-[0.3em] text-[#1a73e8] uppercase">Our Process</span>
-              <h2 className="text-3xl font-bold text-foreground mt-4 uppercase">From Scratch to <span className="opacity-40">Engineering</span></h2>
+           <div className="text-center mb-14">
+              <span className="text-[10px] font-black tracking-[0.3em] text-[#175A26] uppercase">Our Process</span>
+              <h2 className="text-3xl font-bold text-slate-900 mt-3 uppercase">From Concept to <span className="text-[#175A26]">Deployment</span></h2>
            </div>
            
-           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-8">
+           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
              {[
-               { id: '01', icon: <PenTool className="h-5 w-5" />, title: 'TECHNICAL BRIEF', desc: 'Secure project parameters submission through our portal.' },
-               { id: '02', icon: <Search className="h-5 w-5" />, title: 'EXECUTIVE REVIEW', desc: 'Our lead engineers analyze requirements for global scalability.' },
-               { id: '03', icon: <FileText className="h-5 w-5" />, title: 'PROPOSAL PHASE', desc: 'Detailed architecture map, timeline, and optimized quote.' },
-               { id: '04', icon: <Code className="h-5 w-5" />, title: 'ENGINEERING', desc: 'Building your vision using high-end industry standards.' }
+               { id: '01', icon: <PenTool className="h-5 w-5" />, title: 'TECHNICAL BRIEF', desc: 'Submit your project parameters through our streamlined request portal.' },
+               { id: '02', icon: <Search className="h-5 w-5" />, title: 'EXECUTIVE REVIEW', desc: 'Our lead engineers analyze requirements for performance & scalability.' },
+               { id: '03', icon: <FileText className="h-5 w-5" />, title: 'PROPOSAL PHASE', desc: 'Detailed architecture map, timeline, and custom quote for your project.' },
+               { id: '04', icon: <Code className="h-5 w-5" />, title: 'ENGINEERING', desc: 'Building your high-impact digital platform using modern web standards.' }
              ].map((step, i) => (
-               <div key={step.id} className="relative group p-8 rounded-[2rem] border border-border/40 hover:border-[#1a73e8]/30 transition-all duration-500 bg-white hover:shadow-2xl hover:shadow-blue-500/5">
-                  <div className="flex items-center justify-between mb-8">
-                     <div className="h-12 w-12 rounded-2xl bg-[#f4f7fa] flex items-center justify-center text-[#1a73e8] group-hover:bg-[#1a73e8] group-hover:text-white transition-all duration-500">
+               <div key={step.id} className="relative group p-8 rounded-2xl border border-slate-200 hover:border-[#175A26] transition-all duration-300 bg-white hover:shadow-lg">
+                  <div className="flex items-center justify-between mb-6">
+                     <div className="h-12 w-12 rounded-xl bg-slate-100 flex items-center justify-center text-[#175A26] group-hover:bg-[#175A26] group-hover:text-white transition-all duration-300">
                         {step.icon}
                      </div>
-                     <span className="text-[13px] font-black text-[#1a73e8]/20 group-hover:text-[#1a73e8]/40 transition-colors uppercase tracking-widest">{step.id}</span>
+                     <span className="text-[13px] font-black text-slate-300 group-hover:text-[#175A26] transition-colors uppercase tracking-widest">{step.id}</span>
                   </div>
-                  <h3 className="text-[14px] font-black tracking-widest text-foreground mb-4 uppercase group-hover:text-[#1a73e8] transition-colors">{step.title}</h3>
-                  <p className="text-[13px] font-semibold text-muted-foreground/80 leading-relaxed">{step.desc}</p>
-                  
-                  {/* Visual Connection (Desktop Only) */}
-                  {i < 3 && (
-                    <div className="hidden md:block absolute top-[60px] -right-[15%] w-1/4 h-[1px] bg-gradient-to-r from-[#1a73e8]/20 to-transparent z-0" />
-                  )}
+                  <h3 className="text-[14px] font-black tracking-widest text-slate-900 mb-3 uppercase group-hover:text-[#175A26] transition-colors">{step.title}</h3>
+                  <p className="text-[13px] font-medium text-slate-600 leading-relaxed">{step.desc}</p>
                </div>
              ))}
            </div>

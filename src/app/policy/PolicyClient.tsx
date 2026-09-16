@@ -190,25 +190,25 @@ export default function PolicyClient() {
   const [activeSection, setActiveSection] = useState('overview');
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#E5E5E5] font-jakarta">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-primary py-20 md:py-28">
+      <section className="relative overflow-hidden bg-[#175A26] py-20 md:py-28">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-white blur-3xl" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-white blur-3xl" />
         </div>
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm text-white/80 font-medium mb-6 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm text-white/90 font-medium mb-6 backdrop-blur-sm">
             <Shield className="w-4 h-4" />
             Legal &amp; Privacy
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6">
             Privacy Policy
           </h1>
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium">
             We believe in radical transparency. Here is exactly how we handle your data — and what rights you have.
           </p>
-          <p className="mt-6 text-white/40 text-sm">Last updated: April 8, 2026</p>
+          <p className="mt-6 text-white/50 text-sm font-semibold">Last updated: April 8, 2026</p>
         </div>
       </section>
 
@@ -219,7 +219,7 @@ export default function PolicyClient() {
           {/* Sidebar Nav */}
           <aside className="hidden lg:block">
             <div className="sticky top-28 space-y-1">
-              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground mb-4">
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-4">
                 Sections
               </p>
               {sections.map((s) => {
@@ -234,23 +234,23 @@ export default function PolicyClient() {
                     }}
                     className={`w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 group ${
                       isActive
-                        ? 'bg-primary text-white shadow-md shadow-primary/20'
-                        : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
+                        ? 'bg-[#175A26] text-white shadow-md'
+                        : 'text-slate-600 hover:bg-white hover:text-slate-900'
                     }`}
                   >
-                    <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-primary group-hover:scale-110 transition-transform'}`} />
+                    <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-[#175A26] group-hover:scale-110 transition-transform'}`} />
                     {s.title}
                     {isActive && <ChevronRight className="w-3 h-3 ml-auto" />}
                   </button>
                 );
               })}
 
-              <div className="mt-8 p-4 rounded-xl border border-border bg-secondary/40 space-y-2">
-                <p className="text-xs font-semibold text-foreground">Questions?</p>
-                <p className="text-xs text-muted-foreground leading-relaxed">Reach our team directly via email.</p>
+              <div className="mt-8 p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+                <p className="text-xs font-semibold text-slate-900">Questions?</p>
+                <p className="text-xs text-slate-600 leading-relaxed">Reach our team directly via email.</p>
                 <a
                   href="mailto:thisisneoscratch@gmail.com"
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-[#175A26] hover:underline"
                 >
                   <Mail className="w-3 h-3" />
                   Email Us
@@ -267,42 +267,38 @@ export default function PolicyClient() {
                 <div
                   id={s.id}
                   key={s.id}
-                  className="scroll-mt-28 group"
+                  className="scroll-mt-28 group bg-white p-8 rounded-2xl border border-slate-200 shadow-sm"
                   onMouseEnter={() => setActiveSection(s.id)}
                 >
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                      <Icon className="w-5 h-5 text-primary group-hover:text-white transition-colors" />
+                    <div className="h-10 w-10 rounded-xl bg-[#175A26]/10 flex items-center justify-center shrink-0 group-hover:bg-[#175A26] group-hover:text-white transition-all duration-300">
+                      <Icon className="w-5 h-5 text-[#175A26] group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-black uppercase tracking-[0.25em] text-muted-foreground">
+                      <p className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-400">
                         Section {String(idx + 1).padStart(2, '0')}
                       </p>
-                      <h2 className="text-xl md:text-2xl font-bold text-foreground">{s.title}</h2>
+                      <h2 className="text-xl md:text-2xl font-bold text-slate-900">{s.title}</h2>
                     </div>
                   </div>
 
-                  <div className="pl-14 space-y-1 border-l-2 border-border group-hover:border-primary/40 transition-colors duration-300">
+                  <div className="pl-6 space-y-2 border-l-2 border-slate-200 group-hover:border-[#175A26] transition-colors duration-300">
                     {formatContent(s.content)}
                   </div>
-
-                  {idx < sections.length - 1 && (
-                    <div className="mt-12 h-px bg-border" />
-                  )}
                 </div>
               );
             })}
 
             {/* CTA */}
-            <div className="mt-16 rounded-2xl border border-border bg-secondary/40 p-8 text-center">
-              <Shield className="w-8 h-8 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-foreground mb-2">Your Data, Your Control</h3>
-              <p className="text-muted-foreground text-sm max-w-md mx-auto mb-6">
+            <div className="mt-16 rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
+              <Shield className="w-8 h-8 text-[#175A26] mx-auto mb-4" />
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Your Data, Your Control</h3>
+              <p className="text-slate-600 text-sm max-w-md mx-auto mb-6">
                 You can request access to, correction of, or deletion of your personal data at any time.
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full font-semibold text-sm hover:scale-105 transition-transform duration-200 shadow-md shadow-primary/20"
+                className="inline-flex items-center gap-2 bg-[#175A26] text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-[#12481e] transition-all shadow-md"
               >
                 <Mail className="w-4 h-4" />
                 Contact Us
