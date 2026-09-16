@@ -2,16 +2,14 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { 
-  Code, Smartphone, Globe, Palette, 
-  ArrowRight, ArrowUpRight, CheckCircle2,
-  Search, ShieldCheck, Settings, BarChart3,
-  Monitor, Star, Phone, Briefcase, TrendingUp,
-  Handshake, Users, Award, Check
+import {
+  Code, Smartphone, Globe,
+  ArrowRight, ArrowUpRight,
+  Settings, BarChart3,
+  Monitor, Star, Briefcase, TrendingUp,
+  Handshake, Check
 } from 'lucide-react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { useCountUpAnimation } from '@/hooks/useCountUpAnimation';
 import { TestimonialSlider } from '@/components/ui/TestimonialSlider';
 import { projects } from '@/data/projects';
@@ -19,11 +17,6 @@ import { projects } from '@/data/projects';
 export default function Index() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
-
-  const projectsCount = useCountUpAnimation({ end: 10, suffix: 'K+' });
-  const experienceCount = useCountUpAnimation({ end: 5, suffix: '+' });
-  const clientsCount = useCountUpAnimation({ end: 500, suffix: '+' });
-  const retentionCount = useCountUpAnimation({ end: 99, suffix: '%' });
 
   const ghostRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -33,11 +26,11 @@ export default function Index() {
       if (!ghostRef.current) return;
       const rect = ghostRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
+
       const start = rect.top;
       const end = rect.bottom - windowHeight;
       const total = rect.height - windowHeight;
-      
+
       let nextProgress = 0;
       if (start <= 0 && end >= 0) {
         nextProgress = Math.abs(start) / total;
@@ -46,7 +39,7 @@ export default function Index() {
       } else if (end < 0) {
         nextProgress = 1;
       }
-      
+
       setScrollProgress(nextProgress);
     };
 
@@ -55,137 +48,159 @@ export default function Index() {
   }, []);
 
   const displayedProjects = projects.slice(0, 4);
-  const cardWidth = 85; 
-  const gapWidth = 5;  
+  const cardWidth = 85;
+  const gapWidth = 5;
   const translateX = -scrollProgress * (cardWidth + gapWidth) * (displayedProjects.length - 1);
 
   return (
-    <div className="min-h-screen font-jakarta bg-[#f7f8f3] text-[#0b3b2d]">
-      
-      {/* ── 1. Biztop Forest Green Hero Section ── */}
-      <section className="relative bg-[#0b3b2d] text-white pt-28 lg:pt-36 pb-16 lg:pb-24 overflow-hidden">
-        
-        {/* Full-bleed background image with left gradient blend */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Image
-            src="/rwanda_hero_seamless.png"
-            alt="NeoScratch Digital Web Systems & Platforms Showcase"
-            fill
-            className="object-cover object-right lg:object-right-top opacity-95 lg:opacity-100"
-            priority
-          />
-          {/* Gradient overlay to blend left side smoothly */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0b3b2d] via-[#0b3b2d]/90 md:via-[#0b3b2d]/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0b3b2d] via-transparent to-transparent opacity-60 lg:opacity-30" />
-        </div>
+    <div className="min-h-screen font-jakarta bg-[#F9F9F9] text-[#060606]">
 
+      {/* ── 1. Hero Section (100% Matching Reference Layout & Illustration) ── */}
+      <section className="relative bg-[#F9F9F9] text-[#060606] pt-36 sm:pt-44 pb-16 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[520px]">
+          <div className="grid lg:grid-cols-12 gap-10 items-center min-h-[500px]">
 
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6">
+            {/* Left Column Content */}
+            <div className="lg:col-span-6 space-y-8">
 
-              {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.04] text-white uppercase font-jakarta">
-                NEXT — GEN TOP <br />
-                NOTCH <span className="text-[#a3e635]">BUSINESS</span> <br />
-                SOLUTION
+              {/* Main Headline (100% typography match) */}
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.06] text-[#060606] font-jakarta">
+                Instant Communication <br />
+                for Businesses.
               </h1>
 
-              {/* Subtitle */}
-              <p className="text-sm sm:text-base text-white/80 max-w-lg leading-relaxed">
-                We build high-performance software, custom websites, and digital solutions to help companies scale and achieve sustainable success.
-              </p>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-5 pt-2">
-                {/* Request Website Pill Button */}
+              {/* Call to Action Button */}
+              <div className="pt-2">
                 <Link
                   href="/request-website"
-                  className="inline-flex items-center gap-3 pl-6 pr-2 py-2 rounded-full text-xs font-extrabold bg-[#0b3b2d] text-white border-2 border-[#a3e635] shadow-lg hover:bg-[#07261d] transition-all duration-300 hover:scale-[1.03] group"
+                  className="inline-flex items-center justify-center px-7 py-3.5 rounded-lg text-sm font-extrabold bg-[#060606] text-[#F9F9F9] border-2 border-[#060606] shadow-md hover:bg-[#7EDC14] hover:text-[#060606] transition-all duration-300 hover:scale-[1.02]"
                 >
-                  <span className="text-white font-bold">Request Website</span>
-                  <span className="w-8 h-8 rounded-full bg-[#a3e635] text-[#0b3b2d] flex items-center justify-center font-black text-sm group-hover:translate-x-0.5 transition-transform">
-                    »
-                  </span>
+                  Get started for free
                 </Link>
-
-                {/* Call Us Callout */}
-                <a
-                  href="tel:+250792734752"
-                  className="inline-flex items-center gap-3 text-white transition-all font-semibold text-xs group"
-                >
-                  <div className="w-10 h-10 rounded-full bg-[#a3e635] text-[#0b3b2d] flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-                    <Phone className="w-5 h-5 fill-current" />
-                  </div>
-                  <div>
-                    <span className="block text-[9px] text-white/70 uppercase tracking-widest leading-none font-bold">CALL US</span>
-                    <span className="font-extrabold text-white text-sm tracking-wide">+250 792 734 752</span>
-                  </div>
-                </a>
               </div>
 
             </div>
 
-            {/* Spacer for Right Side Seamless Portrait */}
-            <div className="hidden lg:block lg:col-span-5 h-full min-h-[500px]" />
+            {/* Right Column Illustration (100% Match of Reference Artwork) */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-lg aspect-square flex items-center justify-center">
+                <Image
+                  src="/neoscratch_hero_illustration.png"
+                  alt="Instant Communication Illustration"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto object-contain drop-shadow-lg"
+                  priority
+                />
+              </div>
+            </div>
 
           </div>
         </div>
       </section>
 
+      {/* ── 2. Clientele Section (Background #7EDC14, 100% Matching Reference Layout) ── */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 mb-24 relative z-20">
+        <div className="bg-[#7EDC14] rounded-[2.5rem] p-8 sm:p-14 border-2 border-[#060606] shadow-2xl">
 
-      {/* ── 2. Essential Features Section ("* Our Approach") ── */}
-      <section className="py-20 lg:py-28 bg-[#f6f7f2]">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#060606] text-center mb-10 tracking-tight font-jakarta">
+            Join our prestigious clientele!
+          </h2>
+
+          {/* Client Logos Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-items-center">
+
+            {/* Logo 1: irembo */}
+            <div className="flex items-center gap-2 font-extrabold text-2xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              <span>irembo</span>
+              <span className="w-2.5 h-2.5 rounded-full bg-[#060606]" />
+            </div>
+
+            {/* Logo 2: CANAL+ */}
+            <div className="flex items-center font-black text-2xl tracking-widest text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none border-b-2 border-[#060606] pb-0.5">
+              CANAL+
+            </div>
+
+            {/* Logo 3: save. */}
+            <div className="flex items-center font-bold text-2xl tracking-tighter text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              save.
+            </div>
+
+            {/* Logo 4: KAYKO */}
+            <div className="flex items-center gap-1.5 font-black text-2xl tracking-wider text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              <span className="w-4 h-4 rounded-full border-2 border-[#060606] inline-block" />
+              KAYKO
+            </div>
+
+            {/* Logo 5: nokanda */}
+            <div className="flex items-center font-extrabold text-2xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              nokanda
+            </div>
+
+            {/* Logo 6: HURONE AI */}
+            <div className="flex items-center gap-1.5 font-bold text-base tracking-widest text-[#060606] uppercase hover:scale-105 transition-transform cursor-pointer select-none">
+              <span className="text-lg font-black">✱</span>
+              <span>HURONE AI</span>
+            </div>
+
+            {/* Logo 7: bento */}
+            <div className="flex items-center gap-2 font-black text-2xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              <span className="w-4 h-4 bg-[#060606] rounded-sm inline-block" />
+              bento
+            </div>
+
+            {/* Logo 8: WASOKO */}
+            <div className="flex items-center font-black text-xl tracking-widest text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none border-l-2 border-[#060606] pl-2">
+              WASOKO
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* ── 3. Essential Features Section ("* Our Approach") ── */}
+      <section className="py-20 lg:py-24 bg-[#F9F9F9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-16">
             <div>
-              <div className="flex items-center gap-2 text-[#0b3b2d] text-xs font-bold uppercase tracking-wider mb-4">
-                <span className="text-base font-extrabold">✱</span>
+              <div className="flex items-center gap-2 text-[#060606] text-xs font-extrabold uppercase tracking-wider mb-4">
+                <span className="text-base font-black text-[#7EDC14]">✱</span>
                 <span>Our Approach</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0b3b2d] max-w-md leading-[1.15] font-jakarta">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#060606] max-w-md leading-[1.15] font-jakarta">
                 Essential features for modern business success
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-gray-500 max-w-md leading-relaxed lg:pt-8">
+            <p className="text-xs sm:text-sm text-[#060606]/75 max-w-md leading-relaxed lg:pt-8 font-medium">
               Explore integrated software engineering and web solutions to automate operations, improve productivity, and support long-term digital growth
             </p>
           </div>
 
-          {/* 3 Notched Cards Matching Reference Image */}
+          {/* 3 Cards Palette Mapped (#F9F9F9, #7EDC14, #060606) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            
-            {/* Card 1: White Card */}
-            <div className="relative min-h-[410px] p-8 pb-20 flex flex-col justify-between group transition-transform duration-300 hover:-translate-y-1">
-              {/* SVG Notched Card Background */}
-              <svg viewBox="0 0 360 410" className="w-full h-full absolute inset-0 text-white drop-shadow-sm" preserveAspectRatio="none">
-                <path 
-                  d="M 32 0 H 328 A 32 32 0 0 1 360 32 V 378 A 32 32 0 0 1 328 410 H 180 A 20 20 0 0 1 160 390 V 365 A 20 20 0 0 0 140 345 H 0 V 32 A 32 32 0 0 1 32 0 Z" 
-                  fill="currentColor" 
-                />
-              </svg>
 
-              {/* Content */}
-              <div className="relative z-10">
-                <div className="mb-8 text-[#0b3b2d]">
+            {/* Card 1: Light Card (#F9F9F9 / #060606 Border) */}
+            <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#F9F9F9] border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1">
+              <div>
+                <div className="mb-8 text-[#060606]">
                   <Briefcase className="w-12 h-12 stroke-[1.5]" />
                 </div>
-                <h3 className="text-xl font-extrabold text-[#0b3b2d] mb-4 leading-snug font-jakarta">
+                <h3 className="text-xl font-extrabold text-[#060606] mb-4 leading-snug font-jakarta">
                   Custom Web &amp;<br />Software Build
                 </h3>
-                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed max-w-xs">
+                <p className="text-[#060606]/80 text-xs sm:text-sm leading-relaxed max-w-xs font-medium">
                   We build modern software, websites, and web apps to help companies scale
                 </p>
               </div>
 
-              {/* Pill Button inside Notch Cutout */}
-              <div className="absolute bottom-2 left-2 z-20">
-                <Link 
-                  href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-[#f4f5ee] hover:bg-[#0b3b2d] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm border border-gray-200/60"
+              <div>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 text-xs font-extrabold text-[#060606] bg-[#7EDC14] hover:bg-[#060606] hover:text-[#F9F9F9] px-5 py-2.5 rounded-full transition-all duration-300 border border-[#060606]"
                 >
                   <span>Explore More</span>
                   <span className="font-extrabold text-xs">&gt;</span>
@@ -193,37 +208,24 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Card 2: Bright Lime Card */}
-            <div className="relative min-h-[410px] p-8 pb-20 flex flex-col justify-between group transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
-              {/* SVG Notched Card Background */}
-              <svg viewBox="0 0 360 410" className="w-full h-full absolute inset-0 text-[#a4e634] drop-shadow-md" preserveAspectRatio="none">
-                <path 
-                  d="M 32 0 H 328 A 32 32 0 0 1 360 32 V 378 A 32 32 0 0 1 328 410 H 180 A 20 20 0 0 1 160 390 V 365 A 20 20 0 0 0 140 345 H 0 V 32 A 32 32 0 0 1 32 0 Z" 
-                  fill="currentColor" 
-                />
-              </svg>
-
-              {/* Decorative Concentric Arcs */}
-              <div className="w-48 h-48 rounded-full border-[20px] border-lime-600/20 absolute -bottom-6 -right-6 pointer-events-none z-0" />
-
-              {/* Content */}
+            {/* Card 2: Vibrant Green Card (#7EDC14) */}
+            <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#7EDC14] border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
               <div className="relative z-10">
-                <div className="mb-8 text-[#0b3b2d]">
+                <div className="mb-8 text-[#060606]">
                   <TrendingUp className="w-12 h-12 stroke-[1.5]" />
                 </div>
-                <h3 className="text-xl font-extrabold text-[#0b3b2d] mb-4 leading-snug font-jakarta">
+                <h3 className="text-xl font-extrabold text-[#060606] mb-4 leading-snug font-jakarta">
                   Digital Growth &amp;<br />Tech Solutions
                 </h3>
-                <p className="text-[#0b3b2d]/85 text-xs sm:text-sm leading-relaxed max-w-xs font-medium">
+                <p className="text-[#060606]/85 text-xs sm:text-sm leading-relaxed max-w-xs font-bold">
                   Identify tech opportunities and accelerate sustainable digital growth
                 </p>
               </div>
 
-              {/* Pill Button inside Notch Cutout */}
-              <div className="absolute bottom-2 left-2 z-20">
-                <Link 
-                  href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-bold text-[#0b3b2d] bg-[#8ce020] hover:bg-[#0b3b2d] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm border border-lime-500/40"
+              <div className="relative z-10">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 text-xs font-extrabold text-[#F9F9F9] bg-[#060606] hover:bg-[#F9F9F9] hover:text-[#060606] px-5 py-2.5 rounded-full transition-all duration-300 border border-[#060606]"
                 >
                   <span>Explore More</span>
                   <span className="font-extrabold text-xs">&gt;</span>
@@ -231,34 +233,24 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Card 3: Deep Forest Green Card */}
-            <div className="relative min-h-[410px] p-8 pb-20 flex flex-col justify-between group transition-transform duration-300 hover:-translate-y-1">
-              {/* SVG Notched Card Background */}
-              <svg viewBox="0 0 360 410" className="w-full h-full absolute inset-0 text-[#062c22] drop-shadow-md" preserveAspectRatio="none">
-                <path 
-                  d="M 32 0 H 328 A 32 32 0 0 1 360 32 V 378 A 32 32 0 0 1 328 410 H 180 A 20 20 0 0 1 160 390 V 365 A 20 20 0 0 0 140 345 H 0 V 32 A 32 32 0 0 1 32 0 Z" 
-                  fill="currentColor" 
-                />
-              </svg>
-
-              {/* Content */}
-              <div className="relative z-10">
-                <div className="mb-8 text-[#a4e634]">
+            {/* Card 3: Black Card (#060606) */}
+            <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#060606] text-[#F9F9F9] border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1">
+              <div>
+                <div className="mb-8 text-[#7EDC14]">
                   <Handshake className="w-12 h-12 stroke-[1.5]" />
                 </div>
-                <h3 className="text-xl font-extrabold text-white mb-4 leading-snug font-jakarta">
-                  Business process<br />Improvement
+                <h3 className="text-xl font-extrabold text-[#F9F9F9] mb-4 leading-snug font-jakarta">
+                  Business Process<br />Improvement
                 </h3>
-                <p className="text-white/75 text-xs sm:text-sm leading-relaxed max-w-xs">
+                <p className="text-[#F9F9F9]/80 text-xs sm:text-sm leading-relaxed max-w-xs font-medium">
                   Optimize workflows to increase efficiency, productivity, and performance.
                 </p>
               </div>
 
-              {/* Pill Button inside Notch Cutout */}
-              <div className="absolute bottom-2 left-2 z-20">
-                <Link 
-                  href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#0b3b2d] hover:bg-[#a4e634] hover:text-[#0b3b2d] px-5 py-2.5 rounded-full transition-all duration-300 shadow-sm border border-white/20"
+              <div>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 text-xs font-extrabold text-[#060606] bg-[#7EDC14] hover:bg-[#F9F9F9] px-5 py-2.5 rounded-full transition-all duration-300 border border-[#7EDC14]"
                 >
                   <span>Explore More</span>
                   <span className="font-extrabold text-xs">&gt;</span>
@@ -272,16 +264,16 @@ export default function Index() {
       </section>
 
 
-      {/* ── 3. Comprehensive Solution Section ("* Who We Are?") ── */}
-      <section className="py-24 bg-white border-t border-b border-gray-200/60">
+      {/* ── 4. Comprehensive Solution Section ("* Who We Are?") ── */}
+      <section className="py-24 bg-[#F9F9F9] border-t border-[#060606]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
 
             {/* Left Grid: Images & Stat Box */}
             <div className="lg:col-span-6 space-y-6">
-              
+
               {/* Top Main Photo */}
-              <div className="rounded-[2.5rem] overflow-hidden border border-gray-200 shadow-md">
+              <div className="rounded-[2.5rem] overflow-hidden border-2 border-[#060606] shadow-md">
                 <Image
                   src="/rwanda_team_tablet.png"
                   alt="Rwandan Tech Consultants"
@@ -293,22 +285,22 @@ export default function Index() {
 
               {/* Bottom 2 Items Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                
-                {/* Stat Box (Bright Lime) */}
-                <div className="bg-lime-400 rounded-[2rem] p-6 text-[#0b3b2d] shadow-md flex flex-col justify-between">
-                  <div className="w-10 h-10 rounded-full bg-[#0b3b2d] text-lime-400 flex items-center justify-center mb-4">
+
+                {/* Stat Box (#7EDC14) */}
+                <div className="bg-[#7EDC14] rounded-[2rem] p-6 text-[#060606] border-2 border-[#060606] shadow-md flex flex-col justify-between">
+                  <div className="w-10 h-10 rounded-full bg-[#060606] text-[#7EDC14] flex items-center justify-center mb-4 font-bold">
                     <Check className="w-5 h-5 stroke-[3]" />
                   </div>
                   <div>
-                    <h4 className="text-3xl font-extrabold tracking-tight mb-1">10K+</h4>
-                    <p className="text-xs font-bold uppercase tracking-wider text-[#0b3b2d]/80 leading-snug">
+                    <h4 className="text-3xl font-extrabold tracking-tight mb-1 text-[#060606]">10K+</h4>
+                    <p className="text-xs font-bold uppercase tracking-wider text-[#060606]/80 leading-snug">
                       Our Total Completed Works
                     </p>
                   </div>
                 </div>
 
                 {/* Secondary Image */}
-                <div className="rounded-[2rem] overflow-hidden border border-gray-200 shadow-sm">
+                <div className="rounded-[2rem] overflow-hidden border-2 border-[#060606] shadow-sm">
                   <Image
                     src="/rwanda_women_meeting.png"
                     alt="Rwandan Business Women Collaborating"
@@ -325,16 +317,16 @@ export default function Index() {
             {/* Right Content */}
             <div className="lg:col-span-6 space-y-6">
 
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#0b3b2d] text-xs font-extrabold uppercase tracking-wider">
-                <Star className="w-3.5 h-3.5 text-lime-600 fill-current" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7EDC14] text-[#060606] text-xs font-extrabold uppercase tracking-wider border border-[#060606]">
+                <Star className="w-3.5 h-3.5 text-[#060606] fill-current" />
                 Who We Are?
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0b3b2d] leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#060606] leading-tight">
                 Comprehensive solutions for digital &amp; software excellence
               </h2>
 
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-[#060606]/80 text-sm sm:text-base leading-relaxed font-medium">
                 Discover innovative software development &amp; digital engineering strategies that help businesses improve operations, increase productivity, and achieve long-term growth across Kigali and global digital markets.
               </p>
 
@@ -342,16 +334,16 @@ export default function Index() {
               <div className="flex flex-wrap items-center gap-6 pt-2">
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-3 pl-6 pr-2.5 py-3 rounded-full text-xs font-bold bg-[#0b3b2d] text-white hover:bg-[#07261d] transition-colors"
+                  className="inline-flex items-center gap-3 pl-6 pr-2.5 py-3 rounded-full text-xs font-extrabold bg-[#060606] text-[#F9F9F9] hover:bg-[#7EDC14] hover:text-[#060606] transition-colors border border-[#060606]"
                 >
                   <span>More About Us</span>
-                  <span className="w-7 h-7 rounded-full bg-lime-400 text-[#0b3b2d] flex items-center justify-center">
+                  <span className="w-7 h-7 rounded-full bg-[#7EDC14] text-[#060606] flex items-center justify-center font-bold">
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </Link>
 
-                <div className="flex items-center gap-3 border-l border-gray-200 pl-6">
-                  <div className="w-11 h-11 rounded-full bg-emerald-800 text-white font-bold flex items-center justify-center text-sm shadow-sm relative overflow-hidden shrink-0 border border-gray-200">
+                <div className="flex items-center gap-3 border-l-2 border-[#060606]/20 pl-6">
+                  <div className="w-11 h-11 rounded-full bg-[#060606] text-[#F9F9F9] font-bold flex items-center justify-center text-sm shadow-sm relative overflow-hidden shrink-0 border border-[#060606]">
                     <Image
                       src="/theodev.png"
                       alt="Theogene Iradukunda"
@@ -360,39 +352,10 @@ export default function Index() {
                     />
                   </div>
                   <div>
-                    <h5 className="font-bold text-[#0b3b2d] text-sm">Theogene Iradukunda</h5>
-                    <p className="text-xs text-gray-500">CEO &amp; Founder of NeoScratch</p>
+                    <h5 className="font-extrabold text-[#060606] text-sm">Theogene Iradukunda</h5>
+                    <p className="text-xs text-[#060606]/70 font-semibold">CEO &amp; Founder of NeoScratch</p>
                   </div>
                 </div>
-              </div>
-
-              {/* Info Rating & Skills Boxes */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-gray-200">
-                
-                {/* Rating Card */}
-                <div className="p-4 rounded-2xl bg-[#f7f8f3] border border-gray-200/80 flex items-center gap-4">
-                  <div>
-                    <div className="flex text-amber-500 text-xs mb-1">
-                      ★★★★★
-                    </div>
-                    <span className="text-2xl font-extrabold text-[#0b3b2d]">4.9</span>
-                    <span className="text-xs text-gray-500 font-medium"> / 5.0</span>
-                    <p className="text-[11px] text-gray-500 font-bold uppercase tracking-wider mt-0.5">Avg. clients ratings</p>
-                  </div>
-                </div>
-
-                {/* Premium Skills Card */}
-                <div className="p-4 rounded-2xl bg-[#f7f8f3] border border-gray-200/80">
-                  <span className="text-[11px] font-extrabold text-[#0b3b2d] uppercase tracking-wider block mb-2">Core Tech Stack</span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {['SOFTWARE', 'WEB DEV', 'MOBILE APPS', 'UI/UX', 'SEO'].map(skill => (
-                      <span key={skill} className="px-2 py-0.5 rounded-md bg-white border border-gray-200 text-[10px] font-bold text-[#0b3b2d]">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
               </div>
 
             </div>
@@ -402,79 +365,79 @@ export default function Index() {
       </section>
 
 
-      {/* ── 4. Services Grid Section ("* Our Services") ── */}
-      <section className="py-24 bg-[#f7f8f3]" id="services">
+      {/* ── 5. Services Grid Section ("* Our Services") ── */}
+      <section className="py-24 bg-[#F9F9F9]" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#0b3b2d] text-xs font-extrabold uppercase tracking-wider mb-3">
-              <Star className="w-3.5 h-3.5 text-lime-600 fill-current" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7EDC14] text-[#060606] text-xs font-extrabold uppercase tracking-wider mb-3 border border-[#060606]">
+              <Star className="w-3.5 h-3.5 text-[#060606] fill-current" />
               Our Services
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0b3b2d] mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#060606] mb-4">
               Experienced best modern tech services
             </h2>
-            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#060606]/80 text-sm sm:text-base leading-relaxed font-medium">
               Whether you need a high-converting website, custom mobile app, or dominance in Google search results — we deliver solutions crafted for growth.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { 
-                icon: Monitor, 
-                title: 'Website Design & Development', 
+              {
+                icon: Monitor,
+                title: 'Website Design & Development',
                 desc: 'Your website is your 24/7 digital salesperson. We build sleek, fast, high-converting websites tailored for your brand.',
                 tags: ['Responsive', 'Fast Speed', 'Admin Panel']
               },
-              { 
-                icon: Globe, 
-                title: 'Google Business Profile Setup', 
+              {
+                icon: Globe,
+                title: 'Google Business Profile Setup',
                 desc: 'Verify and rank your business locally on Google Maps so nearby customers find your service instantly.',
                 tags: ['Google Maps', 'SEO Boost', 'Review System']
               },
-              { 
-                icon: BarChart3, 
-                title: 'Search Engine Optimisation (SEO)', 
+              {
+                icon: BarChart3,
+                title: 'Search Engine Optimisation (SEO)',
                 desc: 'Rank on page one of Google for your target business keywords and attract organic qualified leads daily.',
                 tags: ['Keywords', 'On-Page SEO', 'Monthly Audit']
               },
-              { 
-                icon: Code, 
-                title: 'Custom Software Engineering', 
+              {
+                icon: Code,
+                title: 'Custom Software Engineering',
                 desc: 'Scalable web applications, management dashboards, automated workflows, and custom SaaS platforms.',
                 tags: ['Web Apps', 'Automation', 'Custom APIs']
               },
-              { 
-                icon: Smartphone, 
-                title: 'Mobile App Development', 
+              {
+                icon: Smartphone,
+                title: 'Mobile App Development',
                 desc: 'High performance iOS & Android applications with seamless payment integration (MoMo & Card support).',
                 tags: ['iOS & Android', 'MoMo Pay', 'Cross Platform']
               },
-              { 
-                icon: Settings, 
-                title: 'Website Maintenance Retainers', 
+              {
+                icon: Settings,
+                title: 'Website Maintenance Retainers',
                 desc: 'Proactive server maintenance, performance optimizations, security updates, and monthly feature improvements.',
                 tags: ['Monthly Support', 'Security', 'Backups']
               },
             ].map((service) => (
               <div
                 key={service.title}
-                className="group relative flex flex-col p-8 rounded-[2rem] bg-white border border-gray-200/80 shadow-sm hover:shadow-xl hover:border-lime-500 transition-all duration-300"
+                className="group relative flex flex-col p-8 rounded-[2rem] bg-[#F9F9F9] border-2 border-[#060606] shadow-sm hover:shadow-xl hover:border-[#7EDC14] transition-all duration-300"
               >
                 <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-[#0b3b2d] text-lime-400 flex items-center justify-center group-hover:bg-lime-400 group-hover:text-[#0b3b2d] transition-colors duration-300 shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-[#060606] text-[#7EDC14] flex items-center justify-center group-hover:bg-[#7EDC14] group-hover:text-[#060606] transition-colors duration-300 shadow-sm font-bold">
                     <service.icon className="h-6 w-6" />
                   </div>
-                  <ArrowUpRight className="h-5 w-5 text-gray-400 group-hover:text-[#0b3b2d] transition-colors" />
+                  <ArrowUpRight className="h-5 w-5 text-[#060606]/60 group-hover:text-[#060606] transition-colors" />
                 </div>
-                
-                <h3 className="text-xl font-bold text-[#0b3b2d] mb-3 group-hover:text-emerald-800 transition-colors">{service.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{service.desc}</p>
-                
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+
+                <h3 className="text-xl font-extrabold text-[#060606] mb-3">{service.title}</h3>
+                <p className="text-[#060606]/75 text-sm leading-relaxed mb-6 flex-grow font-medium">{service.desc}</p>
+
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-[#060606]/10">
                   {service.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 rounded-full bg-emerald-50 text-[11px] font-bold text-[#0b3b2d]">
+                    <span key={tag} className="px-3 py-1 rounded-full bg-[#7EDC14]/30 text-[11px] font-extrabold text-[#060606] border border-[#060606]/20">
                       {tag}
                     </span>
                   ))}
@@ -487,60 +450,60 @@ export default function Index() {
       </section>
 
 
-      {/* ── 5. Horizontal Scroll Projects Section ── */}
+      {/* ── 6. Horizontal Scroll Projects Section ── */}
       <div ref={ghostRef} className="relative h-[300vh]">
-        <section className="sticky top-0 h-screen overflow-hidden bg-[#0b3b2d] py-12 flex flex-col justify-center text-white">
+        <section className="sticky top-0 h-screen overflow-hidden bg-[#060606] py-12 flex flex-col justify-center text-[#F9F9F9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8 flex justify-between items-end">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-lime-400 text-xs font-extrabold uppercase tracking-wider mb-2">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7EDC14] text-[#060606] text-xs font-extrabold uppercase tracking-wider mb-2">
                 <Star className="w-3.5 h-3.5 fill-current" />
                 Featured Work
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F9F9F9]">
                 Platforms &amp; Systems We&apos;ve Engineered
               </h2>
             </div>
-            <Link 
-              href="/projects" 
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-lime-400 text-[#0b3b2d] font-bold text-xs hover:bg-lime-300 transition-colors"
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#7EDC14] text-[#060606] font-extrabold text-xs hover:bg-[#F9F9F9] transition-colors border border-[#7EDC14]"
             >
               View All Works
             </Link>
           </div>
 
-          <div 
+          <div
             className="flex gap-[4vw] px-[7.5vw] transform-gpu will-change-transform"
-            style={{ 
+            style={{
               transform: `translate3d(${translateX.toFixed(2)}vw, 0px, 0px)`
             }}
           >
             {displayedProjects.map((p) => (
-              <Link 
+              <Link
                 key={p.id}
                 href={`/projects/${p.id}`}
-                className="w-[82vw] sm:w-[65vw] lg:w-[48vw] flex-shrink-0 h-[420px] bg-[#07261d] rounded-[2.5rem] border border-white/15 overflow-hidden flex flex-col group transition-all duration-300 hover:border-lime-400 cursor-pointer shadow-2xl"
+                className="w-[82vw] sm:w-[65vw] lg:w-[48vw] flex-shrink-0 h-[420px] bg-[#060606] rounded-[2.5rem] border-2 border-[#F9F9F9]/20 overflow-hidden flex flex-col group transition-all duration-300 hover:border-[#7EDC14] cursor-pointer shadow-2xl"
               >
-                <div className="h-[220px] bg-black/30 overflow-hidden relative">
-                  <Image 
-                    src={p.image} 
-                    alt={p.title} 
+                <div className="h-[220px] bg-black/50 overflow-hidden relative">
+                  <Image
+                    src={p.image}
+                    alt={p.title}
                     fill
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-lime-400 text-[#0b3b2d] text-[10px] font-extrabold uppercase tracking-wider shadow-md">
+                    <span className="px-3 py-1 rounded-full bg-[#7EDC14] text-[#060606] text-[10px] font-extrabold uppercase tracking-wider shadow-md">
                       {p.tag}
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="p-6 flex flex-col justify-between flex-grow">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-lime-400 transition-colors">{p.title}</h3>
-                    <p className="text-white/70 text-xs leading-relaxed line-clamp-2">{p.description}</p>
+                    <h3 className="text-xl font-bold text-[#F9F9F9] mb-2 group-hover:text-[#7EDC14] transition-colors">{p.title}</h3>
+                    <p className="text-[#F9F9F9]/70 text-xs leading-relaxed line-clamp-2">{p.description}</p>
                   </div>
-                  
-                  <div className="inline-flex items-center gap-2 text-lime-400 text-xs font-bold pt-4 border-t border-white/10">
+
+                  <div className="inline-flex items-center gap-2 text-[#7EDC14] text-xs font-bold pt-4 border-t border-[#F9F9F9]/10">
                     <span>Explore Case Study</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -552,8 +515,8 @@ export default function Index() {
       </div>
 
 
-      {/* ── 6. Testimonials Section ── */}
-      <section className="py-24 bg-white">
+      {/* ── 7. Testimonials Section ── */}
+      <section className="py-24 bg-[#F9F9F9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <TestimonialSlider />
         </div>
