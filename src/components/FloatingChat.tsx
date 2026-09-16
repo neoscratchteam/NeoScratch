@@ -24,12 +24,12 @@ export function FloatingChat() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Check if on /services page and pricing table header is scrolled past
-      if (pathname === '/services') {
+      // Check if on /services page and on desktop screens (width >= 1024px)
+      if (pathname === '/services' && window.innerWidth >= 1024) {
         const tableHeader = document.getElementById('pricing-table-header');
         if (tableHeader) {
           const rect = tableHeader.getBoundingClientRect();
-          // Show floating pricing bar when top table header has scrolled out of view (< 80px)
+          // Show floating pricing bar on desktop when top table header has scrolled out of view (< 80px)
           const isHeaderScrolledPast = rect.bottom < 80;
           setShowStickyPricing(isHeaderScrolledPast);
         }
@@ -52,8 +52,12 @@ export function FloatingChat() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
     handleScroll(); // Initial check
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, [lastScrollY, pathname]);
 
   const handleSend = (e?: React.FormEvent, customMsg?: string) => {
@@ -71,17 +75,17 @@ export function FloatingChat() {
     }`}>
       <AnimatePresence mode="wait">
         {showStickyPricing ? (
-          /* 🏷️ SMOOTH WHITE FLOATING PRICING HEADER MATCHING 6 TABLE COLUMNS */
+          /* 🏷️ SMOOTH WHITE FLOATING PRICING HEADER MATCHING 6 TABLE COLUMNS (DESKTOP ONLY) */
           <motion.div
             key="sticky-pricing"
             initial={{ opacity: 0, y: 25, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 25, scale: 0.96 }}
             transition={{ type: 'spring', stiffness: 350, damping: 28 }}
-            className="w-full bg-white/95 backdrop-blur-md border border-[#060606]/15 text-[#060606] rounded-2xl p-2.5 sm:p-3 shadow-2xl font-jakarta transition-all"
+            className="hidden lg:block w-full bg-white/95 backdrop-blur-md border border-[#060606]/15 text-[#060606] rounded-2xl p-2.5 sm:p-3 shadow-2xl font-jakarta transition-all"
           >
             {/* Desktop 6-Column Layout Matching Table Grid */}
-            <div className="hidden lg:grid grid-cols-12 gap-3 items-center w-full">
+            <div className="grid grid-cols-12 gap-3 items-center w-full">
               {/* Column 0: Label cell matching Feature column (col-span-3 = ~25%) */}
               <div className="col-span-3 flex items-center gap-2.5 pl-3 pr-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#175A26] animate-pulse shrink-0" />
@@ -112,40 +116,6 @@ export function FloatingChat() {
                         {t.full}
                       </p>
                       <p className="text-[10px] font-extrabold text-[#175A26] group-hover:text-white mt-1">
-                        {t.price}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-
-            {/* Mobile / Tablet Responsive Layout */}
-            <div className="lg:hidden flex flex-col gap-2">
-              <div className="flex items-center justify-between px-2">
-                <span className="text-[10px] font-black uppercase tracking-wider text-[#175A26] flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-[#175A26] animate-pulse" />
-                  PRICING MATRIX QUICK ACCESS
-                </span>
-                <span className="text-[10px] font-bold text-gray-500">Tap tier to chat</span>
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                {pricingTiers.map((t, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={() => handleSend(undefined, `Hello NeoScratch, I want to inquire about ${t.tier}: ${t.full} (${t.price})`)}
-                    className="bg-[#060606]/5 hover:bg-[#175A26] border border-[#060606]/10 hover:border-[#175A26] rounded-xl p-2 flex flex-col justify-between cursor-pointer transition-all group"
-                  >
-                    <div>
-                      <span className="text-[9px] font-black uppercase text-[#175A26] group-hover:text-white/90 block mb-0.5">
-                        {t.tier}
-                      </span>
-                      <p className="text-[10px] font-black text-[#060606] group-hover:text-white truncate uppercase">
-                        {t.full}
-                      </p>
-                      <p className="text-[10px] font-extrabold text-[#175A26] group-hover:text-white mt-0.5">
                         {t.price}
                       </p>
                     </div>
