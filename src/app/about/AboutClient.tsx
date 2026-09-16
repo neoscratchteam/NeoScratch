@@ -39,19 +39,19 @@ export default function About() {
           </div>
         </BlurReveal>
 
-        {/* Founder Photo Section (Cleanly Embedded) */}
+        {/* Founder Photo Section (Dark Cinematic Vibe) */}
         <BlurReveal>
           <div className="my-10">
-            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-slate-900">
+            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-black/30 bg-black group">
               <Image 
                 src="/founder.png" 
                 alt="Theogene Iradukunda (theodev) - Founder & CEO of NeoScratch Web Design & Software Studio in Rwanda" 
                 fill 
-                className="object-cover" 
+                className="object-cover brightness-[0.82] contrast-[1.1] saturate-[0.95] group-hover:brightness-100 group-hover:scale-105 transition-all duration-700" 
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-left">
-                <span className="text-white text-lg font-bold tracking-tight">Theogene Iradukunda (&ldquo;theodev&rdquo;)</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 group-hover:from-black/80 transition-colors duration-500 flex flex-col justify-end p-6 text-left">
+                <span className="text-white text-lg sm:text-xl font-bold tracking-tight">Theogene Iradukunda (&ldquo;theodev&rdquo;)</span>
                 <span className="text-white/80 text-xs sm:text-sm font-medium">Founder & CEO, NeoScratch Ltd</span>
               </div>
             </div>
