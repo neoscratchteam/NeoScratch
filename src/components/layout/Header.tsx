@@ -11,13 +11,13 @@ const companyLinks = [
   { name: 'Contact Us', href: '/contact', desc: 'Get in touch & support' },
 ];
 
-const productLinks = [
-  { name: 'Pixelmart', href: '/projects/pixelmart', desc: 'E-commerce platform' },
-  { name: 'Oluxywear', href: '/projects/oluxywear', desc: 'Fashion store' },
-  { name: 'Smartstock', href: '/projects/smartstock', desc: 'Inventory management' },
-  { name: 'Oluxywatches', href: '/projects/oluxywatches', desc: 'Luxury timepiece store' },
-  { name: 'Bugaj Ltd', href: '/projects/bugajltd', desc: 'Corporate web system' },
-  { name: 'Eye Vision Center', href: '/projects/eyevisioncenter', desc: 'Medical healthcare site' },
+const serviceProvidedLinks = [
+  { name: 'Custom Web Applications', href: '/services', desc: 'Scalable Next.js & React web apps' },
+  { name: 'Mobile App Engineering', href: '/services', desc: 'iOS & Android mobile development' },
+  { name: 'Enterprise Desktop Apps', href: '/services', desc: 'Windows & macOS native desktop software' },
+  { name: 'Premium UI/UX Design', href: '/services', desc: 'Modern user interfaces & design systems' },
+  { name: 'E-commerce Solutions', href: '/services', desc: 'Online stores with payment gateway' },
+  { name: 'Digital Transformation', href: '/services', desc: 'Cloud migration & tech consulting' },
 ];
 
 export function Header() {
@@ -70,7 +70,7 @@ export function Header() {
               Home
             </Link>
 
-            {/* Products Dropdown */}
+            {/* Products / Services Dropdown */}
             <div className="relative group py-2">
               <button 
                 type="button"
@@ -80,25 +80,25 @@ export function Header() {
                 <ChevronDown className="h-4 w-4 group-hover:rotate-180 transition-transform duration-300" />
               </button>
               
-              <div className="absolute left-0 top-full pt-2 w-72 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50">
+              <div className="absolute left-0 top-full pt-2 w-80 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 z-50">
                 <div className="bg-white text-slate-900 rounded-2xl shadow-2xl border border-slate-200 p-3 space-y-1">
-                  <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 px-3 py-1">Featured Products</div>
-                  {productLinks.map((item) => (
+                  <div className="text-[10px] font-black uppercase tracking-widest text-slate-400 px-3 py-1">Services We Provide</div>
+                  {serviceProvidedLinks.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
                       className="block px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors"
                     >
-                      <div className="text-xs font-bold text-[#175A26] lowercase">{item.name}</div>
+                      <div className="text-xs font-bold text-[#175A26]">{item.name}</div>
                       <div className="text-[11px] font-medium text-slate-500">{item.desc}</div>
                     </Link>
                   ))}
                   <div className="pt-2 border-t border-slate-100">
                     <Link
-                      href="/projects"
+                      href="/services"
                       className="block text-center text-xs font-black text-white bg-[#175A26] hover:bg-[#12481e] py-2 rounded-xl transition-colors"
                     >
-                      View All Projects →
+                      Explore All Services →
                     </Link>
                   </div>
                 </div>
@@ -131,14 +131,14 @@ export function Header() {
               </div>
             </div>
 
-            {/* Services Link */}
+            {/* Projects Link */}
             <Link
-              href="/services"
+              href="/projects"
               className={`py-2 transition-all duration-200 relative ${
-                pathname === '/services' ? 'text-white font-black' : 'text-white/90 hover:text-white'
+                pathname === '/projects' ? 'text-white font-black' : 'text-white/90 hover:text-white'
               }`}
             >
-              Services
+              Projects
             </Link>
           </nav>
 
@@ -178,15 +178,15 @@ export function Header() {
               </div>
 
               <div className="px-4 pt-2">
-                <p className="text-[10px] font-black uppercase text-emerald-200 tracking-widest mb-1">Products</p>
-                {productLinks.map((item) => (
-                  <Link key={item.name} href={item.href} className="block py-1 text-sm font-medium hover:text-emerald-200 lowercase">
+                <p className="text-[10px] font-black uppercase text-emerald-200 tracking-widest mb-1">Services We Provide</p>
+                {serviceProvidedLinks.map((item) => (
+                  <Link key={item.name} href={item.href} className="block py-1 text-sm font-medium hover:text-emerald-200">
                     {item.name}
                   </Link>
                 ))}
               </div>
 
-              <Link href="/services" className="block px-4 py-2 rounded-xl font-bold hover:bg-white/10">Services</Link>
+              <Link href="/projects" className="block px-4 py-2 rounded-xl font-bold hover:bg-white/10">Projects</Link>
 
               <div className="pt-2">
                 <Link
