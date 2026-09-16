@@ -10,16 +10,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 
-const solutionsDropdown = [
-  { name: 'Finance', href: '/services' },
-  { name: 'Healthcare', href: '/services' },
-  { name: 'Government tech', href: '/services' },
-  { name: 'Non-profit', href: '/services' },
-  { name: 'Software', href: '/services' },
-  { name: 'Logistics', href: '/services' },
-  { name: 'Gaming', href: '/services' },
-  { name: 'Retail', href: '/services' },
-];
+
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,6 +56,10 @@ export function Header() {
           {/* Navigation Links with Dropdowns */}
           <nav className="hidden lg:flex items-center space-x-7 text-sm font-extrabold text-white">
             
+            <Link href="/" className="hover:opacity-80 transition-opacity py-2">
+              Home
+            </Link>
+
             {/* Products Mega Dropdown */}
             <div 
               className="relative"
@@ -245,47 +240,12 @@ export function Header() {
               )}
             </div>
 
-            {/* Solutions Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setActiveDropdown('solutions')}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button 
-                className="flex items-center gap-1.5 hover:opacity-80 transition-opacity py-2"
-              >
-                <span>Solutions</span>
-                {activeDropdown === 'solutions' ? (
-                  <ChevronUp className="w-4 h-4 stroke-[2.5]" />
-                ) : (
-                  <ChevronDown className="w-4 h-4 stroke-[2.5]" />
-                )}
-              </button>
-
-              {/* Dropdown Card */}
-              {activeDropdown === 'solutions' && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-56 animate-fade-in z-50">
-                  <div className="bg-white rounded-2xl p-4 shadow-2xl border border-[#060606]/10 text-center space-y-2">
-                    {solutionsDropdown.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="block py-1.5 text-xs font-bold text-[#060606] hover:text-white hover:bg-[#175A26] rounded-lg transition-colors"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
             <Link href="/services" className="hover:opacity-80 transition-opacity py-2">
-              Docs
+              Services
             </Link>
 
-            <Link href="/services" className="hover:opacity-80 transition-opacity py-2">
-              Pricing
+            <Link href="/projects" className="hover:opacity-80 transition-opacity py-2">
+              Projects
             </Link>
 
             {/* Company Dropdown */}
