@@ -1,166 +1,119 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Twitter, Instagram, Linkedin, Github, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
+import { MessageSquare } from 'lucide-react';
 
-const footerLinks = {
-  company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Our Team', href: '/about' },
-    { name: 'Careers', href: '/about' },
-  ],
-  services: [
-    { name: 'Web Development', href: '/services' },
-    { name: 'Mobile Apps', href: '/services' },
-    { name: 'SEO & Google Maps', href: '/services' },
-    { name: 'Custom Software', href: '/services' },
-  ],
-  resources: [
-    { name: 'Projects', href: '/projects' },
-    { name: 'Events', href: '/events' },
-    { name: 'Privacy Policy', href: '/policy' },
-  ],
-};
-
-const socialLinks = [
-  { name: 'Twitter', href: 'https://www.x.com/theo_dev_rw', icon: Twitter },
-  { name: 'Instagram', href: 'https://www.instagram.com/neoscratchltd/', icon: Instagram },
-  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/theogene-iradukunda-88b07a381/', icon: Linkedin },
-  { name: 'GitHub', href: 'https://github.com/theodevrwanda', icon: Github },
+const footerColumns = [
+  {
+    title: 'PRODUCTS',
+    links: [
+      { name: 'Web & Mobile Apps', href: '/services' },
+      { name: 'MoMo & Card Payments', href: '/services' },
+      { name: 'Business Systems (ERP)', href: '/services' },
+      { name: 'Google SEO & Maps', href: '/services' },
+      { name: 'Server Maintenance', href: '/services' },
+      { name: 'Custom APIs & Cloud', href: '/services' },
+    ],
+  },
+  {
+    title: 'RESOURCES',
+    links: [
+      { name: 'Support', href: '/contact' },
+      { name: 'Developers', href: '/projects' },
+      { name: 'GitHub', href: 'https://github.com/theodevrwanda', external: true },
+      { name: 'Status', href: '/services' },
+      { name: 'Case Studies', href: '/projects' },
+    ],
+  },
+  {
+    title: 'COMPANY',
+    links: [
+      { name: 'Our Story', href: '/about' },
+      { name: 'Contact Us', href: '/contact' },
+      { name: 'Careers', href: '/about' },
+      { name: 'Clientele', href: '/#clientele' },
+    ],
+  },
+  {
+    title: 'LEGAL',
+    links: [
+      { name: 'Terms of Service', href: '/policy' },
+      { name: 'Privacy Policy', href: '/policy' },
+      { name: 'Service Level Agreement', href: '/policy' },
+      { name: 'Acceptable Use Policy', href: '/policy' },
+      { name: 'Marketplace Terms', href: '/policy' },
+    ],
+  },
+  {
+    title: 'FIND US',
+    links: [
+      { name: 'Twitter (X)', href: 'https://www.x.com/theo_dev_rw', external: true },
+      { name: 'Instagram', href: 'https://www.instagram.com/neoscratchltd/', external: true },
+      { name: 'LinkedIn', href: 'https://www.linkedin.com/in/theogene-iradukunda-88b07a381/', external: true },
+      { name: 'GitHub', href: 'https://github.com/theodevrwanda', external: true },
+      { name: 'Facebook', href: 'https://facebook.com', external: true },
+      { name: 'TikTok', href: 'https://tiktok.com', external: true },
+    ],
+  },
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-[#060606] text-[#F9F9F9] border-t border-[#060606] font-jakarta">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="py-16 lg:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
-            
-            {/* Company Info */}
-            <div className="lg:col-span-2 space-y-6">
-              <Link href="/" className="flex items-center group">
-                <Image 
-                  src="/logo.png" 
-                  alt="Logo" 
-                  width={40} 
-                  height={40} 
-                  className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
-                />
-              </Link>
-              
-              <p className="text-[#F9F9F9]/80 text-sm leading-relaxed max-w-sm font-medium">
-                Empowering businesses through high-performance software engineering, web design, and digital growth strategies in Kigali, Rwanda and worldwide.
-              </p>
-              
-              <div className="space-y-3 pt-4 border-t border-[#F9F9F9]/10">
-                <div className="flex items-center space-x-3 text-sm text-[#F9F9F9]">
-                  <div className="h-8 w-8 rounded-full bg-[#175A26] text-white flex items-center justify-center">
-                    <MapPin className="h-4 w-4" />
-                  </div>
-                  <span className="font-semibold text-xs">Kigali, Rwanda</span>
-                </div>
-                <div className="flex items-center space-x-3 text-sm text-[#F9F9F9]">
-                  <div className="h-8 w-8 rounded-full bg-[#175A26] text-white flex items-center justify-center">
-                    <Phone className="h-4 w-4" />
-                  </div>
-                  <a href="tel:+250792734752" className="font-semibold text-xs hover:text-[#175A26] transition-colors">+250 792 734 752</a>
-                </div>
-                <div className="flex items-center space-x-3 text-sm text-[#F9F9F9]">
-                  <div className="h-8 w-8 rounded-full bg-[#175A26] text-white flex items-center justify-center">
-                    <Mail className="h-4 w-4" />
-                  </div>
-                  <a href="mailto:thisisneoscratch@gmail.com" className="font-semibold text-xs hover:text-[#175A26] transition-colors">thisisneoscratch@gmail.com</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Footer Links */}
-            <div>
-              <h3 className="text-xs font-extrabold text-[#175A26] uppercase tracking-widest mb-6">
-                Capabilities
-              </h3>
-              <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-xs font-semibold text-[#F9F9F9]/80 hover:text-[#175A26] transition-colors inline-block"
-                    >
-                      {link.name}
-                    </Link>
+    <footer className="relative bg-[#0B293A] text-white font-jakarta border-t border-[#0B293A]">
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-12 sm:pt-20 sm:pb-16">
+        
+        {/* 5 Column Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
+          {footerColumns.map((col, idx) => (
+            <div key={idx} className="space-y-4">
+              <h4 className="text-[11px] font-extrabold tracking-widest text-white/90 uppercase font-jakarta">
+                {col.title}
+              </h4>
+              <ul className="space-y-2">
+                {col.links.map((link, lIdx) => (
+                  <li key={lIdx}>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[13px] text-white/60 hover:text-white transition-colors block py-0.5 font-medium"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-[13px] text-white/60 hover:text-white transition-colors block py-0.5 font-medium"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
             </div>
-
-            <div>
-              <h3 className="text-xs font-extrabold text-[#175A26] uppercase tracking-widest mb-6">
-                Company
-              </h3>
-              <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-xs font-semibold text-[#F9F9F9]/80 hover:text-[#175A26] transition-colors inline-block"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xs font-extrabold text-[#175A26] uppercase tracking-widest mb-6">
-                Resources
-              </h3>
-              <ul className="space-y-3">
-                {footerLinks.resources.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-xs font-semibold text-[#F9F9F9]/80 hover:text-[#175A26] transition-colors inline-block"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-          </div>
+          ))}
         </div>
 
-        {/* Giant Brand Typography Banner */}
-        <div className="pt-10 pb-4 border-t border-[#F9F9F9]/10 text-center overflow-hidden select-none">
-          <span className="block text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] xl:text-[13rem] font-black uppercase tracking-tighter leading-none text-[#175A26]/30 font-jakarta">
-            NEOSCRATCH
-          </span>
+        {/* Divider & Copyright */}
+        <div className="mt-16 pt-8 border-t border-white/10 text-center">
+          <p className="text-[12px] text-white/50 font-medium">
+            NeoScratch. All rights reserved. &copy; 2026
+          </p>
         </div>
 
-        {/* Bottom Section */}
-        <div className="py-6 border-t border-[#F9F9F9]/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-[#F9F9F9]/70 font-medium">
-          <div>
-            &copy; 2026 NEOSCRATCH INC. ALL RIGHTS RESERVED.
-          </div>
-          <div className="flex items-center space-x-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                className="w-8 h-8 rounded-full bg-[#F9F9F9]/10 text-[#F9F9F9] hover:bg-[#175A26] hover:text-white flex items-center justify-center transition-colors"
-                aria-label={social.name}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <social.icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
-        </div>
+      </div>
+
+      {/* Floating Chat Widget Button (Bottom Right) */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <Link
+          href="/contact"
+          className="w-12 h-12 rounded-full bg-[#175A26] hover:bg-[#1f7532] text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300"
+          aria-label="Contact NeoScratch Support"
+        >
+          <MessageSquare className="w-5 h-5 fill-current" />
+        </Link>
       </div>
     </footer>
   );
