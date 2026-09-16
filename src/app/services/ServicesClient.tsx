@@ -121,7 +121,147 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-[#060606]/10 shadow-sm bg-white w-full">
+          {/* 📱 MOBILE VIEW: RESPONSIVE SERVICE CARDS (md:hidden) */}
+          <div className="md:hidden space-y-6">
+            {[
+              {
+                tier: "TIER 01",
+                name: "SEO & GOOGLE SETUP",
+                price: "from 50,000 RWF",
+                turnaround: "3 business days",
+                hosting: "1 month free",
+                popular: false,
+                features: [
+                  "Full SEO setup & Meta keyword indexing",
+                  "Google Business Profile full takeover",
+                  "Custom responsive web application",
+                  "SSL Certificate & Global CDN support",
+                  "Security updates & technical maintenance",
+                ]
+              },
+              {
+                tier: "TIER 02",
+                name: "STARTER E-COMMERCE",
+                price: "from 200,000 RWF",
+                turnaround: "7 business days",
+                hosting: "3 months free",
+                popular: false,
+                features: [
+                  "Free domain name (.RW / .COM / .NET - 1 yr)",
+                  "Custom Admin Panel / Dashboard",
+                  "Modern E-Commerce Store & inventory tools",
+                  "Order via WhatsApp & email forms",
+                  "Products loaded & photographed (up to 20)",
+                  "Speed optimization & secure CMS",
+                ]
+              },
+              {
+                tier: "TIER 03",
+                name: "BUSINESS SYSTEM",
+                price: "from 350,000 RWF",
+                turnaround: "2 weeks",
+                hosting: "4 months free",
+                popular: true,
+                features: [
+                  "Free domain name (1 year)",
+                  "Online Payment (MTN MoMo & Airtel Money)",
+                  "SaaS Architecture & multi-page structure",
+                  "24/7 Database & uptime monitoring",
+                  "Products loaded & photographed (up to 50)",
+                  "API & lead automation integration",
+                  "Cloud database migration (Zero downtime)",
+                ]
+              },
+              {
+                tier: "TIER 04",
+                name: "GROWTH SYSTEM",
+                price: "from 450,000 RWF",
+                turnaround: "3 weeks",
+                hosting: "12 months free",
+                popular: false,
+                features: [
+                  "12 months free hosting & maintenance",
+                  "Free domain name (1 year)",
+                  "Online Payment (MoMo & Airtel Money)",
+                  "Products loaded (Unlimited)",
+                  "Google Ads & Instagram Shopping setup",
+                  "Startup MVP Development & pitch decks",
+                  "Tech Coaching & Fullstack mentorship",
+                ]
+              },
+              {
+                tier: "TIER 05",
+                name: "ENTERPRISE BUILD",
+                price: "from 750,000 RWF",
+                turnaround: "30–90 days",
+                hosting: "12–24 months free",
+                popular: false,
+                features: [
+                  "SMS Notifications & Gateway integration",
+                  "Custom Mobile App (iOS & Android / React Native)",
+                  "Enterprise Desktop Apps (Windows & macOS)",
+                  "Offline functionality & native system APIs",
+                  "Dedicated Retainer / Tech Lead included",
+                  "Full multi-system enterprise architecture",
+                ]
+              }
+            ].map((card, idx) => (
+              <div
+                key={idx}
+                className={`bg-white border rounded-3xl p-6 shadow-md relative transition-all ${
+                  card.popular ? 'border-[#175A26] ring-2 ring-[#175A26]/20' : 'border-[#060606]/10'
+                }`}
+              >
+                {card.popular && (
+                  <span className="absolute top-4 right-4 bg-[#175A26] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-xs">
+                    Most Popular
+                  </span>
+                )}
+                <div className="space-y-2 mb-6">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block">
+                    {card.tier}
+                  </span>
+                  <h3 className="text-xl font-extrabold text-[#060606]">
+                    {card.name}
+                  </h3>
+                  <p className="text-2xl font-black text-[#175A26] pt-1">
+                    {card.price}
+                  </p>
+                  <div className="text-xs font-semibold text-[#334155] bg-gray-50 rounded-xl p-2.5 mt-2 flex flex-wrap gap-2">
+                    <span>⚡ Turnaround: <strong className="text-[#060606]">{card.turnaround}</strong></span>
+                    <span>•</span>
+                    <span>🎁 Hosting: <strong className="text-[#175A26]">{card.hosting}</strong></span>
+                  </div>
+                </div>
+
+                <div className="space-y-3 mb-8 border-t border-[#060606]/10 pt-6">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-2">
+                    Included Highlights
+                  </span>
+                  {card.features.map((f, i) => (
+                    <div key={i} className="flex items-start text-xs font-semibold text-[#060606]">
+                      <span className="inline-flex items-center justify-center h-4 w-4 rounded-full bg-[#175A26] text-white shrink-0 mr-2.5 mt-0.5">
+                        <Check className="h-2.5 w-2.5 stroke-[3]" />
+                      </span>
+                      <span>{f}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <a
+                  href={`https://wa.me/250792734752?text=${encodeURIComponent(`Hello NeoScratch, I am interested in ${card.tier}: ${card.name} (${card.price})`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-full text-xs font-black bg-[#175A26] text-white hover:bg-[#060606] transition-all shadow-md"
+                >
+                  Inquire on WhatsApp
+                </a>
+              </div>
+            ))}
+          </div>
+
+          {/* 💻 DESKTOP / TABLET VIEW: SIDE-BY-SIDE MATRIX TABLE (hidden md:block) */}
+          <div className="hidden md:block overflow-x-auto rounded-2xl border border-[#060606]/10 shadow-sm bg-white w-full">
             <table className="w-full text-left border-collapse min-w-[980px]">
               <thead id="pricing-table-header">
                 <tr className="border-b border-[#060606]/10 bg-gray-50/90">
