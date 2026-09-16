@@ -108,7 +108,7 @@ export default function Index() {
           </h2>
 
           {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 sm:gap-8 items-center justify-items-center font-jakarta">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 items-center justify-items-center font-jakarta">
             
             {/* Logo 1: oluxywatches */}
             <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
@@ -133,6 +133,11 @@ export default function Index() {
             {/* Logo 5: smartstock */}
             <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
               smartstock
+            </div>
+
+            {/* Logo 6: eyevisioncenter */}
+            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              eyevisioncenter
             </div>
 
           </div>
