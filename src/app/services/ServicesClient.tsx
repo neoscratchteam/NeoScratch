@@ -1,10 +1,74 @@
 'use client';
 
 import React from 'react';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Services() {
+  const tableData = [
+    {
+      category: "Timeline & Essentials",
+      items: [
+        { name: "Timeline / Turnaround", values: ["3 business days", "7 business days", "2 weeks", "3 weeks", "30–90 days"] },
+        { name: "Free Hosting & Maintenance", values: ["1 month free", "3 months free", "4 months free", "12 months free", "12–24 months free"] },
+        { name: "Free Domain (.RW / .COM / .NET)", values: [false, true, true, true, true] },
+        { name: "SSL Certificate & Global CDN Support", values: [true, true, true, true, true] },
+      ]
+    },
+    {
+      category: "Web & System Engineering",
+      items: [
+        { name: "Custom Responsive Web Application", values: [true, true, true, true, true] },
+        { name: "Corporate Business Website & Service Pages", values: [false, true, true, true, true] },
+        { name: "SaaS Architecture & Multi-Page Structure", values: [false, false, true, true, true] },
+        { name: "Custom Admin Panel / Dashboard", values: [false, true, true, true, true] },
+        { name: "Speed Optimization & Secure CMS", values: [false, true, true, true, true] },
+        { name: "24/7 Database & Uptime Monitoring", values: [false, true, true, true, true] },
+        { name: "Personal High-End Portfolio & Motion", values: [true, true, true, true, true] },
+      ]
+    },
+    {
+      category: "E-Commerce & Digital Payments",
+      items: [
+        { name: "Modern E-Commerce Store & Inventory Tools", values: [false, true, true, true, true] },
+        { name: "Order via WhatsApp & Email Forms", values: [false, true, true, true, true] },
+        { name: "Online Payment (MTN MoMo & Airtel Money)", values: [false, false, true, true, true] },
+        { name: "Products Loaded & Photographed", values: [false, "up to 20", "up to 50", "unlimited", "unlimited"] },
+        { name: "SMS Notifications & SMS Gateway", values: [false, false, false, false, true] },
+      ]
+    },
+    {
+      category: "SEO & Digital Strategy",
+      items: [
+        { name: "Full SEO Setup & Meta Keyword Indexing", values: ["full setup", "deep", "deep", "deep", "deep"] },
+        { name: "Google Business Profile Setup & Takeover", values: ["full takeover", true, true, true, true] },
+        { name: "Google Ads & Instagram Shopping Setup", values: [false, false, false, true, true] },
+        { name: "Digital Transformation & Tech Audits", values: [false, false, true, true, true] },
+      ]
+    },
+    {
+      category: "Advanced Native Apps & Systems",
+      items: [
+        { name: "Mobile App Engineering (iOS & Android)", values: [false, false, false, false, true] },
+        { name: "Enterprise Desktop Apps (Windows & macOS)", values: [false, false, false, false, true] },
+        { name: "Offline Functionality & Native System APIs", values: [false, false, false, false, true] },
+        { name: "API & Lead Automation Integration", values: [false, false, true, true, true] },
+      ]
+    },
+    {
+      category: "Special Solutions, Maintenance & Coaching",
+      items: [
+        { name: "Cloud Database Migration (Zero Downtime)", values: [false, false, true, true, true] },
+        { name: "NGO Platforms & Secure Online Donations", values: [false, false, true, true, true] },
+        { name: "Startup MVP Development & Pitch Decks", values: [false, false, false, true, true] },
+        { name: "Premium UI/UX Design Systems & Prototypes", values: [false, true, true, true, true] },
+        { name: "Tech Coaching & Fullstack Mentorship", values: [false, false, false, true, true] },
+        { name: "Security Updates, Bug Fixes & Technical Maintenance", values: [true, true, true, true, true] },
+        { name: "Dedicated Retainer / Tech Lead Included", values: [false, false, false, false, true] },
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-[#E5E5E5] text-[#060606] font-jakarta">
       {/* 🚀 HERO SECTION (Brand Green #175A26) */}
@@ -58,11 +122,11 @@ export default function Services() {
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-[#060606]/10 shadow-sm bg-white w-full">
-            <table className="w-full text-left border-collapse min-w-[950px]">
+            <table className="w-full text-left border-collapse min-w-[980px]">
               <thead>
-                <tr className="border-b border-[#060606]/10 bg-gray-50/80">
+                <tr className="border-b border-[#060606]/10 bg-gray-50/90">
                   <th className="py-6 px-6 text-[11px] font-black uppercase tracking-widest text-[#060606]/60 w-[22%]">
-                    FEATURE
+                    FEATURE / SERVICE
                   </th>
                   <th className="py-6 px-6 w-[15.6%]">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#175A26] block mb-1">TIER 01</span>
@@ -92,54 +156,34 @@ export default function Services() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#060606]/10 text-xs sm:text-sm text-[#060606]">
-                {/* Timeline row */}
-                <tr className="bg-gray-50/30 font-semibold">
-                  <td className="py-4 px-6 font-bold text-[#060606]">Timeline</td>
-                  <td className="py-4 px-6 font-medium text-[#334155]">3 business days</td>
-                  <td className="py-4 px-6 font-medium text-[#334155]">7 business days</td>
-                  <td className="py-4 px-6 font-medium text-[#334155]">2 weeks</td>
-                  <td className="py-4 px-6 font-medium text-[#334155]">3 weeks</td>
-                  <td className="py-4 px-6 font-medium text-[#334155]">30–90 days</td>
-                </tr>
-
-                {/* Feature rows */}
-                {[
-                  { name: "Custom Website", values: [true, true, true, true, true] },
-                  { name: "Free Domain Name (1 Year)", values: [false, true, true, true, true] },
-                  { name: "Admin Panel / Dashboard", values: [false, true, true, true, true] },
-                  { name: "Hosting & Free Maintenance", values: ["1 month", "3 months free", "4 months free", "12 months free", "12–24 months free"] },
-                  { name: "Google Business Profile", values: ["full takeover", true, true, true, true] },
-                  { name: "SEO Foundations & Indexing", values: ["full setup", "deep", "deep", "deep", "deep"] },
-                  { name: "Order via WhatsApp & Email", values: [false, true, true, true, true] },
-                  { name: "Online Payment (MoMo & Airtel Money)", values: [false, false, true, true, true] },
-                  { name: "SMS Notifications & Integration", values: [false, false, false, false, true] },
-                  { name: "Database & Uptime Monitoring", values: [false, true, true, true, true] },
-                  { name: "Professional Business Emails", values: [false, false, true, true, true] },
-                  { name: "Products Loaded & Photographed", values: [false, "up to 20", "up to 50", "unlimited", "unlimited"] },
-                  { name: "Inventory Sync & API", values: [false, false, true, true, true] },
-                  { name: "Google Ads & Instagram Shopping", values: [false, false, false, true, true] },
-                  { name: "First 200,000 RWF of Ad Spend", values: [false, false, false, true, true] },
-                  { name: "Custom Mobile App (iOS & Android)", values: [false, false, false, false, true] },
-                  { name: "Dedicated Retainer Included", values: [false, false, false, false, true] },
-                ].map((row, idx) => (
-                  <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50/30"}>
-                    <td className="py-4 px-6 font-semibold text-[#060606]">{row.name}</td>
-                    {row.values.map((val, colIdx) => (
-                      <td key={colIdx} className="py-4 px-6 font-medium text-[#334155]">
-                        {typeof val === 'boolean' ? (
-                          val ? (
-                            <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-[#175A26] text-white shadow-xs">
-                              <Check className="h-3.5 w-3.5 stroke-[3]" />
-                            </span>
-                          ) : (
-                            <span className="text-gray-300 font-bold">—</span>
-                          )
-                        ) : (
-                          <span className="font-bold text-[#060606]">{val}</span>
-                        )}
+                {tableData.map((section, secIdx) => (
+                  <React.Fragment key={secIdx}>
+                    <tr className="bg-[#175A26]/5 border-t border-b border-[#175A26]/20">
+                      <td colSpan={6} className="py-3 px-6 font-black text-[#175A26] text-xs uppercase tracking-wider">
+                        {section.category}
                       </td>
+                    </tr>
+                    {section.items.map((row, rowIdx) => (
+                      <tr key={rowIdx} className={rowIdx % 2 === 0 ? "bg-white" : "bg-gray-50/30"}>
+                        <td className="py-4 px-6 font-semibold text-[#060606]">{row.name}</td>
+                        {row.values.map((val, colIdx) => (
+                          <td key={colIdx} className="py-4 px-6 font-medium text-[#334155]">
+                            {typeof val === 'boolean' ? (
+                              val ? (
+                                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-[#175A26] text-white shadow-xs">
+                                  <Check className="h-3.5 w-3.5 stroke-[3]" />
+                                </span>
+                              ) : (
+                                <span className="text-gray-300 font-bold">—</span>
+                              )
+                            ) : (
+                              <span className="font-bold text-[#060606]">{val}</span>
+                            )}
+                          </td>
+                        ))}
+                      </tr>
                     ))}
-                  </tr>
+                  </React.Fragment>
                 ))}
               </tbody>
             </table>
@@ -169,3 +213,4 @@ export default function Services() {
     </div>
   );
 }
+
