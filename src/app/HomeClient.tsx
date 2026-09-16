@@ -81,15 +81,15 @@ export default function Index() {
 
             </div>
 
-            {/* Right Column Illustration (100% Match of Reference Artwork) */}
+            {/* Right Column Illustration (Using relax.svg from public) */}
             <div className="lg:col-span-6 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg aspect-square flex items-center justify-center">
+              <div className="relative w-full max-w-xl aspect-[4/3] flex items-center justify-center p-2">
                 <Image
-                  src="/neoscratch_hero_illustration.png"
-                  alt="Instant Communication Illustration"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto object-contain drop-shadow-lg"
+                  src="/relax.svg"
+                  alt="Instant Communication & Work Solutions"
+                  width={583}
+                  height={383}
+                  className="w-full h-auto object-contain drop-shadow-xl"
                   priority
                 />
               </div>
