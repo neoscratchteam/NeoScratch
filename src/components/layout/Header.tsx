@@ -304,7 +304,7 @@ export function Header() {
               href="/request-website"
               className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg text-xs font-extrabold bg-white text-[#175A26] hover:bg-[#060606] hover:text-white transition-all duration-300 shadow-sm"
             >
-              Go to Dashboard
+              Get your website
             </Link>
           </div>
 
@@ -332,7 +332,7 @@ export function Header() {
                   href="/request-website"
                   className="block text-center px-5 py-3 rounded-xl font-extrabold bg-white text-[#175A26]"
                 >
-                  Go to Dashboard
+                  Get your website
                 </Link>
               </div>
             </div>

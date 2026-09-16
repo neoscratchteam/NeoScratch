@@ -103,8 +103,8 @@ export default function Index() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-24 mb-24 relative z-20">
         <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-2xl border border-[#060606]/5 text-center">
           
-          <h2 className="text-xl sm:text-2xl font-extrabold text-[#060606] mb-10 tracking-tight font-jakarta">
-            Join our prestigious clientele!
+          <h2 className="text-lg sm:text-xl font-extrabold text-[#060606] mb-8 tracking-tight font-jakarta">
+            Powering Digital Excellence for Industry Leaders
           </h2>
 
           {/* Client Logos Grid */}
@@ -146,106 +146,95 @@ export default function Index() {
       </section>
 
 
-      {/* ── 3. Essential Features Section ── */}
-      <section className="py-20 lg:py-24 bg-[#E5E5E5]">
+      {/* ── 3. NeoScratch Across Africa Section (Using africa.svg) ── */}
+      <section className="py-20 lg:py-28 bg-[#E5E5E5] border-t border-[#060606]/10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          {/* Section Header */}
-          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-16">
-            <div>
-              <div className="flex items-center gap-2 text-[#060606] text-xs font-extrabold uppercase tracking-wider mb-4">
-                <span className="text-base font-black text-[#175A26]">✱</span>
-                <span>Our Approach</span>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+            {/* Left Column: africa.svg directly on page without card */}
+            <div className="lg:col-span-6 flex justify-center items-center">
+              <Image
+                src="/africa.svg"
+                alt="NeoScratch Engineering Across Africa"
+                width={520}
+                height={520}
+                className="w-full h-auto object-contain max-w-lg hover:scale-105 transition-transform duration-500 drop-shadow-md"
+                priority
+              />
+            </div>
+
+            {/* Right Column: Smooth Black Text About NeoScratch */}
+            <div className="lg:col-span-6 space-y-6">
+              
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#175A26] text-white text-xs font-extrabold uppercase tracking-wider">
+                <Star className="w-3.5 h-3.5 text-white fill-current" />
+                About NeoScratch
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#060606] max-w-md leading-[1.15] font-jakarta">
-                Essential features for modern business success
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#060606] leading-[1.12] font-jakarta">
+                Engineering World-Class Digital Solutions From Kigali Across Africa
               </h2>
-            </div>
-            <p className="text-xs sm:text-sm text-[#060606]/75 max-w-md leading-relaxed lg:pt-8 font-medium">
-              Explore integrated software engineering and web solutions to automate operations, improve productivity, and support long-term digital growth
-            </p>
-          </div>
 
-          {/* 3 Cards Palette Mapped (#E5E5E5, #175A26, #060606) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            
-            {/* Card 1: Light Card (#E5E5E5 / #060606 Border) */}
-            <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#E5E5E5] border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1">
-              <div>
-                <div className="mb-8 text-[#060606]">
-                  <Briefcase className="w-12 h-12 stroke-[1.5]" />
+              <p className="text-[#060606] text-base sm:text-lg leading-relaxed font-semibold">
+                NeoScratch is Rwanda&apos;s premier digital engineering studio. We build high-performance websites, custom web platforms, mobile apps, and enterprise business systems designed to power modern growth.
+              </p>
+
+              <p className="text-[#060606]/85 text-sm sm:text-base leading-relaxed font-medium">
+                Combining deep software engineering expertise with data-driven Search Engine Optimization (SEO) and Mobile Money payment systems, we empower businesses, startups, and institutions across East Africa and global digital markets to scale seamlessly.
+              </p>
+
+              {/* Feature Highlights (Clean Black Text, No Cards) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#175A26] text-white flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4 stroke-[3]" />
+                  </div>
+                  <span className="font-extrabold text-sm text-[#060606]">Custom Web &amp; Mobile Apps</span>
                 </div>
-                <h3 className="text-xl font-extrabold text-[#060606] mb-4 leading-snug font-jakarta">
-                  Custom Web &amp;<br />Software Build
-                </h3>
-                <p className="text-[#060606]/80 text-xs sm:text-sm leading-relaxed max-w-xs font-medium">
-                  We build modern software, websites, and web apps to help companies scale
-                </p>
+
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#175A26] text-white flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4 stroke-[3]" />
+                  </div>
+                  <span className="font-extrabold text-sm text-[#060606]">MoMo &amp; Card Payments</span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#175A26] text-white flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4 stroke-[3]" />
+                  </div>
+                  <span className="font-extrabold text-sm text-[#060606]">Rank #1 on Google SEO</span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#175A26] text-white flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4 stroke-[3]" />
+                  </div>
+                  <span className="font-extrabold text-sm text-[#060606]">24/7 Server Maintenance</span>
+                </div>
               </div>
 
-              <div>
-                <Link 
-                  href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-extrabold text-white bg-[#175A26] hover:bg-[#060606] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300 border border-[#060606]"
+              {/* Action Buttons */}
+              <div className="pt-4 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/request-website"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-xs font-extrabold bg-[#175A26] text-white hover:bg-[#060606] transition-all shadow-md"
                 >
-                  <span>Explore More</span>
-                  <span className="font-extrabold text-xs">&gt;</span>
+                  <span>Get Started Today</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-extrabold bg-white text-[#060606] border border-[#060606]/20 hover:bg-[#060606] hover:text-white transition-all shadow-sm"
+                >
+                  <span>Learn Our Story</span>
                 </Link>
               </div>
-            </div>
 
-            {/* Card 2: Deep Forest Green Card (#175A26) */}
-            <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#175A26] text-white border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1 overflow-hidden">
-              <div className="relative z-10">
-                <div className="mb-8 text-white">
-                  <TrendingUp className="w-12 h-12 stroke-[1.5]" />
-                </div>
-                <h3 className="text-xl font-extrabold text-white mb-4 leading-snug font-jakarta">
-                  Digital Growth &amp;<br />Tech Solutions
-                </h3>
-                <p className="text-white/90 text-xs sm:text-sm leading-relaxed max-w-xs font-bold">
-                  Identify tech opportunities and accelerate sustainable digital growth
-                </p>
-              </div>
-
-              <div className="relative z-10">
-                <Link 
-                  href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-extrabold text-[#175A26] bg-white hover:bg-[#060606] hover:text-white px-5 py-2.5 rounded-full transition-all duration-300 border border-white"
-                >
-                  <span>Explore More</span>
-                  <span className="font-extrabold text-xs">&gt;</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Card 3: Dark Card (#060606) */}
-            <div className="relative min-h-[380px] p-8 pb-20 flex flex-col justify-between group rounded-[2rem] bg-[#060606] text-[#F9F9F9] border-2 border-[#060606] shadow-md transition-transform duration-300 hover:-translate-y-1">
-              <div>
-                <div className="mb-8 text-[#175A26]">
-                  <Handshake className="w-12 h-12 stroke-[1.5]" />
-                </div>
-                <h3 className="text-xl font-extrabold text-[#F9F9F9] mb-4 leading-snug font-jakarta">
-                  Business Process<br />Improvement
-                </h3>
-                <p className="text-[#F9F9F9]/80 text-xs sm:text-sm leading-relaxed max-w-xs font-medium">
-                  Optimize workflows to increase efficiency, productivity, and performance.
-                </p>
-              </div>
-
-              <div>
-                <Link 
-                  href="/services" 
-                  className="inline-flex items-center gap-2 text-xs font-extrabold text-white bg-[#175A26] hover:bg-white hover:text-[#060606] px-5 py-2.5 rounded-full transition-all duration-300 border border-[#175A26]"
-                >
-                  <span>Explore More</span>
-                  <span className="font-extrabold text-xs">&gt;</span>
-                </Link>
-              </div>
             </div>
 
           </div>
-
         </div>
       </section>
 
