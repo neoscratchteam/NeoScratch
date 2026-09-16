@@ -104,39 +104,35 @@ export default function Index() {
         <div className="bg-[#F9F9F9] rounded-[10px] p-8 sm:p-14 shadow-xl">
           
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#060606] text-center mb-10 tracking-tight font-jakarta">
-            Join our prestigious clientele!
+            Businesses That Currently Trust Our Services
           </h2>
 
           {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 sm:gap-8 items-center justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 sm:gap-8 items-center justify-items-center font-jakarta">
             
             {/* Logo 1: oluxywatches */}
-            <div className="flex items-center gap-2 font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
-              <span className="w-3 h-3 rounded-full border-2 border-[#060606]" />
-              <span>oluxywatches</span>
+            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              oluxywatches
             </div>
 
             {/* Logo 2: oluxywear */}
-            <div className="flex items-center gap-2 font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
-              <span>oluxywear</span>
-              <span className="text-[#7EDC14] font-black text-sm">✦</span>
+            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              oluxywear
             </div>
 
             {/* Logo 3: pixelmart */}
-            <div className="flex items-center gap-1.5 font-black text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
-              <span className="w-3.5 h-3.5 bg-[#060606] rounded-xs inline-block" />
-              <span>pixelmart</span>
+            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              pixelmart
             </div>
 
             {/* Logo 4: bugajltd */}
-            <div className="flex items-center font-black text-xl tracking-widest text-[#060606] uppercase hover:scale-105 transition-transform cursor-pointer select-none border-b-2 border-[#060606] pb-0.5">
+            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
               bugajltd
             </div>
 
             {/* Logo 5: smartstock */}
-            <div className="flex items-center gap-1.5 font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
-              <span>smartstock</span>
-              <span className="w-2.5 h-2.5 rounded-full bg-[#7EDC14] border border-[#060606]" />
+            <div className="font-extrabold text-xl tracking-tight text-[#060606] hover:scale-105 transition-transform cursor-pointer select-none">
+              smartstock
             </div>
 
           </div>
