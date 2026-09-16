@@ -64,10 +64,13 @@ export default function Index() {
             <div className="lg:col-span-6 space-y-8">
 
               {/* Main Headline */}
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.06] text-white font-jakarta">
-                Company That <br />
-                Builds Software.
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-white font-jakarta">
+                Web Design, Mobile Apps <br />
+                & SEO Agency in Rwanda.
               </h1>
+              <p className="text-sm sm:text-base font-medium text-white/90 leading-relaxed max-w-lg">
+                Premier software engineering studio in Kigali. We build high-converting websites, native iOS & Android mobile apps, and rank your business #1 on Google.
+              </p>
 
               {/* Call to Action Button */}
               <div className="pt-2">
