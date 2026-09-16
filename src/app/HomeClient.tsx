@@ -65,8 +65,8 @@ export default function Index() {
 
               {/* Main Headline */}
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.06] text-[#060606] font-jakarta">
-                Instant Communication <br />
-                for Businesses.
+                Company That <br />
+                Builds Software.
               </h1>
 
               {/* Call to Action Button (White button matching reference image) */}
