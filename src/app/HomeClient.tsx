@@ -146,12 +146,12 @@ export default function Index() {
       </section>
 
 
-      {/* ── 3. NeoScratch Across Africa Section (Using africa.svg) ── */}
+      {/* ── 3. NeoScratch Across Africa Section (Matching Minimal Reference Screenshot) ── */}
       <section className="py-20 lg:py-28 bg-[#E5E5E5] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-            {/* Left Column: africa.svg directly on page without card */}
+            {/* Left Column: africa.svg map */}
             <div className="lg:col-span-6 flex justify-center items-center">
               <Image
                 src="/africa.svg"
@@ -163,74 +163,16 @@ export default function Index() {
               />
             </div>
 
-            {/* Right Column: Smooth Black Text About NeoScratch */}
+            {/* Right Column: Ultra-Clean Bold Title & Smooth Text (Matching Reference Screenshot) */}
             <div className="lg:col-span-6 space-y-6">
               
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#175A26] text-white text-xs font-extrabold uppercase tracking-wider">
-                <Star className="w-3.5 h-3.5 text-white fill-current" />
-                About NeoScratch
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#060606] leading-[1.12] font-jakarta">
-                Engineering World-Class Digital Solutions From Kigali Across Africa
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#060606] tracking-tight leading-[1.08] font-jakarta">
+                Engineering Digital Solutions Across Africa
               </h2>
 
-              <p className="text-[#060606] text-base sm:text-lg leading-relaxed font-semibold">
-                NeoScratch is Rwanda&apos;s premier digital engineering studio. We build high-performance websites, custom web platforms, mobile apps, and enterprise business systems designed to power modern growth.
+              <p className="text-[#334155] text-lg sm:text-xl leading-relaxed font-medium font-jakarta max-w-xl">
+                NeoScratch is Rwanda&apos;s premier digital engineering studio. We build high-performance websites, custom web applications, mobile platforms, and enterprise business systems designed to empower businesses to scale seamlessly across Africa and global markets.
               </p>
-
-              <p className="text-[#060606]/85 text-sm sm:text-base leading-relaxed font-medium">
-                Combining deep software engineering expertise with data-driven Search Engine Optimization (SEO) and Mobile Money payment systems, we empower businesses, startups, and institutions across East Africa and global digital markets to scale seamlessly.
-              </p>
-
-              {/* Feature Highlights (Clean Black Text, No Cards) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#175A26] text-white flex items-center justify-center shrink-0">
-                    <Check className="w-4 h-4 stroke-[3]" />
-                  </div>
-                  <span className="font-extrabold text-sm text-[#060606]">Custom Web &amp; Mobile Apps</span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#175A26] text-white flex items-center justify-center shrink-0">
-                    <Check className="w-4 h-4 stroke-[3]" />
-                  </div>
-                  <span className="font-extrabold text-sm text-[#060606]">MoMo &amp; Card Payments</span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#175A26] text-white flex items-center justify-center shrink-0">
-                    <Check className="w-4 h-4 stroke-[3]" />
-                  </div>
-                  <span className="font-extrabold text-sm text-[#060606]">Rank #1 on Google SEO</span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#175A26] text-white flex items-center justify-center shrink-0">
-                    <Check className="w-4 h-4 stroke-[3]" />
-                  </div>
-                  <span className="font-extrabold text-sm text-[#060606]">24/7 Server Maintenance</span>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="pt-4 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/request-website"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-xs font-extrabold bg-[#175A26] text-white hover:bg-[#060606] transition-all shadow-md"
-                >
-                  <span>Get Started Today</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-extrabold bg-white text-[#060606] border border-[#060606]/20 hover:bg-[#060606] hover:text-white transition-all shadow-sm"
-                >
-                  <span>Learn Our Story</span>
-                </Link>
-              </div>
 
             </div>
 
