@@ -47,6 +47,23 @@ export default function Index() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const heroSlides = [
+    "Custom Software",
+    "High-Converting Websites",
+    "Native Mobile Apps",
+    "Your Business Better",
+    "SEO & Digital Systems",
+  ];
+
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 2600);
+    return () => clearInterval(timer);
+  }, []);
+
   const displayedProjects = projects.slice(0, 4);
   const cardWidth = 85;
   const gapWidth = 5;
@@ -63,13 +80,29 @@ export default function Index() {
             {/* Left Column Content */}
             <div className="lg:col-span-6 space-y-8">
 
-              {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-white font-jakarta">
-                Web Design, Mobile Apps <br />
-                & SEO Agency in Rwanda.
-              </h1>
+              {/* Main Headline with Auto-Sliding Text */}
+              <div className="space-y-4">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white/10 text-white/90 border border-white/20 backdrop-blur-md">
+                  <span className="w-2 h-2 rounded-full bg-[#7FFFD4] animate-pulse"></span>
+                  Premier Digital Engineering Studio
+                </div>
+
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12] text-white font-jakarta">
+                  The company that builds <br />
+                  <span className="relative inline-block h-[1.25em] overflow-hidden align-bottom text-[#7FFFD4]">
+                    <span
+                      key={slideIndex}
+                      className="inline-block animate-slide-up transition-all duration-500 ease-out"
+                    >
+                      {heroSlides[slideIndex]}
+                    </span>
+                  </span> <br />
+                  in Rwanda & globally.
+                </h1>
+              </div>
+
               <p className="text-sm sm:text-base font-medium text-white/90 leading-relaxed max-w-lg">
-                Premier software engineering studio in Kigali. We build high-converting websites, native iOS & Android mobile apps, and rank your business #1 on Google.
+                Premier software engineering studio in Kigali. We build high-converting websites, native iOS & Android mobile apps, custom software platforms, and rank your business #1 on Google.
               </p>
 
               {/* Call to Action Button */}
