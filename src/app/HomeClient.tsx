@@ -81,13 +81,7 @@ export default function Index() {
             <div className="lg:col-span-6 space-y-8">
 
               {/* Main Headline with Auto-Sliding Text */}
-              <div className="space-y-4">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white/10 text-white/90 border border-white/20 backdrop-blur-md">
-                  <span className="w-2 h-2 rounded-full bg-[#7FFFD4] animate-pulse"></span>
-                  Premier Digital Engineering Studio
-                </div>
-
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12] text-white font-jakarta">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12] text-white font-jakarta">
                   The company that builds <br />
                   <span className="relative inline-block h-[1.25em] overflow-hidden align-bottom text-[#7FFFD4]">
                     <span
@@ -99,7 +93,6 @@ export default function Index() {
                   </span> <br />
                   in Rwanda & globally.
                 </h1>
-              </div>
 
               <p className="text-sm sm:text-base font-medium text-white/90 leading-relaxed max-w-lg">
                 Premier software engineering studio in Kigali. We build high-converting websites, native iOS & Android mobile apps, custom software platforms, and rank your business #1 on Google.
