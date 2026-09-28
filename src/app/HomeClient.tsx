@@ -48,11 +48,11 @@ export default function Index() {
   }, []);
 
   const heroSlides = [
+    "Websites",
+    "Mobile Apps",
     "Custom Software",
-    "High-Converting Websites",
-    "Native Mobile Apps",
-    "Your Business Better",
-    "SEO & Digital Systems",
+    "Google #1 SEO",
+    "Digital Ads & Marketing",
   ];
 
   const [slideIndex, setSlideIndex] = useState(0);
@@ -60,7 +60,7 @@ export default function Index() {
   useEffect(() => {
     const timer = setInterval(() => {
       setSlideIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 2600);
+    }, 2200);
     return () => clearInterval(timer);
   }, []);
 
@@ -85,47 +85,46 @@ export default function Index() {
             quality={95}
           />
           {/* Subtle Dark Gradient Overlay for Text Readability without altering image colors */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30" />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/40" />
+          <div className="absolute inset-0 bg-black/25" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl space-y-8">
+          <div className="max-w-4xl space-y-8">
             {/* Location Badge */}
             <div className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
               <span className="w-2.5 h-2.5 rounded-full bg-[#7FFFD4] animate-pulse" />
               <span className="text-xs font-black tracking-widest uppercase text-white font-jakarta">KIGALI, RWANDA • DIGITAL ENGINEERING STUDIO</span>
             </div>
 
-            {/* Main Headline with Auto-Sliding Text */}
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-white font-jakarta drop-shadow-md">
+            {/* Main Headline with Pop-Up Rotating Text (Websites, Mobile Apps, Custom Software, SEO, Digital Ads) */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] text-white font-jakarta drop-shadow-md">
               The company that builds <br />
               <span className="relative inline-block h-[1.25em] overflow-hidden align-bottom text-[#7FFFD4]">
                 <span
                   key={slideIndex}
-                  className="inline-block animate-slide-up transition-all duration-500 ease-out"
+                  className="inline-block animate-slide-up transition-all duration-500 ease-out font-black"
                 >
-                  {heroSlides[slideIndex]}
+                  {heroSlides[slideIndex]}.
                 </span>
-              </span> <br />
-              in Rwanda & globally.
+              </span>
             </h1>
 
-            <p className="text-base sm:text-lg font-medium text-white/95 leading-relaxed max-w-2xl drop-shadow">
-              Premier software engineering studio in Kigali. We build high-converting websites, native iOS & Android mobile apps, custom software platforms, and rank your business #1 on Google.
+            <p className="text-base sm:text-xl font-medium text-white/90 leading-relaxed max-w-2xl drop-shadow">
+              We empower Rwandan and global businesses with high-converting websites, native iOS &amp; Android mobile apps, custom software automation, Google #1 SEO, and targeted digital ads.
             </p>
 
-            {/* Call to Action Buttons */}
+            {/* Call to Action Buttons matching reference image style */}
             <div className="pt-4 flex flex-wrap gap-4 items-center">
               <Link
                 href="/request-website"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-xs font-black bg-[#7FFFD4] text-[#060606] hover:bg-white transition-all duration-300 shadow-xl hover:scale-105 uppercase tracking-wider"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-sm font-extrabold bg-white text-[#060606] hover:bg-[#7FFFD4] transition-all duration-300 shadow-xl hover:scale-105"
               >
-                Get Started Today
+                Get started today
               </Link>
               <Link
                 href="/projects"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-xs font-black bg-white/10 backdrop-blur-md text-white border border-white/30 hover:bg-white hover:text-[#175A26] transition-all duration-300 shadow-md uppercase tracking-wider"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-sm font-extrabold bg-white/10 backdrop-blur-md text-white border border-white/30 hover:bg-white hover:text-[#175A26] transition-all duration-300 shadow-md"
               >
                 Explore Projects
               </Link>
