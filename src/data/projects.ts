@@ -30,6 +30,59 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'bugajltd-management-system',
+    title: 'Bugajltd — Business Activity & Record Management Platform',
+    subtitle: 'for John (Founder & CEO, Bugajltd)',
+    description: 'A comprehensive, enterprise-grade business management platform built for Bugajltd to streamline daily operations, track business activities across branches, and allow staff to record every single transaction seamlessly.',
+    techStack: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Firebase'],
+    image: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/v1790626709/Screenshot_2026-08-31_at_12.35.43_AM_isvtlp.png',
+    liveDemo: '#',
+    category: 'Business Management & ERP',
+    tag: 'BUSINESS & ERP',
+    client: 'John (Bugajltd)',
+    year: 'Aug 31, 2026',
+    price: 'Enterprise System',
+    gallery: [
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/v1790626720/Screenshot_2026-08-31_at_12.44.53_AM_kv79xt.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/v1790626719/Screenshot_2026-08-31_at_12.43.56_AM_r18vca.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/v1790626709/Screenshot_2026-08-31_at_12.35.43_AM_isvtlp.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/v1790626707/Screenshot_2026-08-31_at_12.33.59_AM_zsyxep.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/v1790626710/Screenshot_2026-08-31_at_12.34.38_AM_wetlm9.png',
+      'https://res.cloudinary.com/dhjdtt7rj/image/upload/v1790626719/Screenshot_2026-08-31_at_12.44.15_AM_nyqkk3.png'
+    ],
+    details: {
+      overview: "Bugajltd required a modern, centralized business management system to digitize daily operations, manage operational records, and monitor business activities across branches with real-time accuracy.",
+      objective: "To eliminate manual record-keeping by engineering a real-time record management platform that enables employees to log every single transaction, monitor operational metrics, and audit business activities effortlessly.",
+      delivered: [
+        "Centralized Business Activity Dashboard",
+        "Real-Time Transaction & Record Logging Engine",
+        "Operational Branch & Resource Management System",
+        "Role-Based Employee Access Control & Audit Trails",
+        "Comprehensive Sales & Activity Analytics",
+        "Automated Financial Auditing & Daily Reports"
+      ],
+      process: [
+        {
+          title: "Discovery & Workflow Mapping",
+          description: "Worked closely with John, Founder & CEO of Bugajltd, to analyze core business operations and record-keeping requirements."
+        },
+        {
+          title: "Cloud Infrastructure Engineering",
+          description: "Built a secure, high-availability architecture designed for instant record retrieval and real-time synchronization across teams."
+        },
+        {
+          title: "User Experience Execution",
+          description: "Delivered an intuitive, responsive web interface allowing staff to log operational records and transactions with zero friction."
+        }
+      ],
+      results: "The Bugajltd management system revolutionized daily operations, providing leadership with 100% visibility over all records and business activities in real time.",
+      conclusion: "Bugajltd now operates on a state-of-the-art digital foundation engineered for maximum efficiency, transparency, and rapid scaling.",
+      services: ["Business Automation", "ERP Systems", "Database Architecture", "UI/UX Design"]
+    },
+    seoDescription: "Discover Bugajltd's Business Activity & Record Management Platform engineered by NeoScratch. Centralized real-time tracking for business operations and sales.",
+    seoKeywords: ["Bugajltd", "Business Management System", "Record Management System", "NeoScratch Platform", "ERP Rwanda"]
+  },
+  {
     id: 'oluxy-wear-platform',
     title: 'Oluxy Wear — Elite Eyewear & Fashion Statement',
     subtitle: 'for Mr. Jean Baptiste (Oluxy Wear)',

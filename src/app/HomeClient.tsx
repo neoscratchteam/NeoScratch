@@ -64,7 +64,7 @@ export default function Index() {
     return () => clearInterval(timer);
   }, []);
 
-  const displayedProjects = projects.slice(0, 4);
+  const displayedProjects = projects.slice(0, 5);
   const cardWidth = 85;
   const gapWidth = 5;
   const translateX = -scrollProgress * (cardWidth + gapWidth) * (displayedProjects.length - 1);
