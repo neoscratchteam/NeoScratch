@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Info } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { projects } from '@/data/projects';
 
 export function ProjectCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const next = () => setActiveIndex((prev) => (prev + 1) % projects.length);
   const prev = () => setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
@@ -54,7 +54,7 @@ export function ProjectCarousel() {
                 <div 
                   key={p.title}
                   onClick={() => { if (offset > 0) setActiveIndex(idx); }}
-                  className={`absolute left-0 lg:left-8 w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-3xl transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${positionClasses}`}
+                  className={`absolute left-0 lg:left-8 w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-3xl transition-all duration-700 ease-smooth ${positionClasses}`}
                 >
                   {/* Image Fill Window */}
                   <div className="w-full aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl relative bg-black/80 border border-white/10 group">
@@ -68,7 +68,7 @@ export function ProjectCarousel() {
                     {/* Active Hover Overlay -> Read More */}
                     {isActive && (
                       <div 
-                        onClick={() => navigate(`/projects/${p.id}`)}
+                        onClick={() => router.push(`/projects/${p.id}`)}
                         className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm flex flex-col items-center justify-center cursor-pointer"
                       >
                         <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex flex-col items-center">
