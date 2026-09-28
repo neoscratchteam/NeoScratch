@@ -88,9 +88,9 @@ export function Header() {
                       
                       {/* Left Column: Software & Platforms */}
                       <div className="space-y-6">
-                        <h3 className="text-xs font-black uppercase tracking-wider text-[#175A26]">
+                        <p className="text-xs font-black uppercase tracking-wider text-[#175A26]">
                           Software &amp; Digital Platforms
-                        </h3>
+                        </p>
 
                         <div className="space-y-4">
                           
@@ -106,7 +106,7 @@ export function Header() {
                               <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
                                 E-Commerce Platforms
                               </div>
-                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                              <p className="text-xs text-[#060606]/80 mt-0.5 leading-snug font-medium">
                                 Online stores with MoMo &amp; card payment integration
                               </p>
                             </div>
@@ -124,7 +124,7 @@ export function Header() {
                               <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
                                 Business Systems &amp; ERP
                               </div>
-                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                              <p className="text-xs text-[#060606]/80 mt-0.5 leading-snug font-medium">
                                 Automated management, inventory &amp; company workflows
                               </p>
                             </div>
@@ -142,7 +142,7 @@ export function Header() {
                               <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
                                 Custom Web &amp; SaaS Build
                               </div>
-                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                              <p className="text-xs text-[#060606]/80 mt-0.5 leading-snug font-medium">
                                 Scalable web applications engineered for Rwandan businesses
                               </p>
                             </div>
@@ -153,9 +153,9 @@ export function Header() {
 
                       {/* Right Column: Growth & Engineering */}
                       <div className="space-y-6">
-                        <h3 className="text-xs font-black uppercase tracking-wider text-[#175A26]">
+                        <p className="text-xs font-black uppercase tracking-wider text-[#175A26]">
                           Digital Growth &amp; Support
-                        </h3>
+                        </p>
 
                         <div className="space-y-4">
                           
@@ -171,7 +171,7 @@ export function Header() {
                               <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
                                 Search Engine Optimisation (SEO)
                               </div>
-                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                              <p className="text-xs text-[#060606]/80 mt-0.5 leading-snug font-medium">
                                 Rank #1 on Google &amp; Google Maps across Rwanda
                               </p>
                             </div>
@@ -189,7 +189,7 @@ export function Header() {
                               <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
                                 Mobile App Engineering
                               </div>
-                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                              <p className="text-xs text-[#060606]/80 mt-0.5 leading-snug font-medium">
                                 Native &amp; cross-platform iOS &amp; Android apps
                               </p>
                             </div>
@@ -207,7 +207,7 @@ export function Header() {
                               <div className="font-extrabold text-sm text-[#060606] group-hover/item:text-[#175A26]">
                                 Maintenance &amp; Retainers
                               </div>
-                              <p className="text-xs text-[#060606]/65 mt-0.5 leading-snug font-medium">
+                              <p className="text-xs text-[#060606]/80 mt-0.5 leading-snug font-medium">
                                 Proactive 24/7 security, updates &amp; server hosting
                               </p>
                             </div>
@@ -221,8 +221,8 @@ export function Header() {
                     {/* Bottom Pricing Banner */}
                     <div className="bg-[#F8FAFC] border-t border-[#060606]/5 px-8 py-5 flex items-center justify-between">
                       <div>
-                        <h4 className="font-extrabold text-sm text-[#060606]">Pricing &amp; Packages</h4>
-                        <p className="text-xs text-[#060606]/60 font-medium">
+                        <p className="font-extrabold text-sm text-[#060606]">Pricing &amp; Packages</p>
+                        <p className="text-xs text-[#060606]/80 font-medium">
                           Flexible pricing models tailored for companies &amp; startups in Rwanda
                         </p>
                       </div>

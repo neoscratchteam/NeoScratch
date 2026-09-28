@@ -65,9 +65,9 @@ export function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 lg:gap-14">
           {footerColumns.map((col, idx) => (
             <div key={idx} className="space-y-4">
-              <h4 className="text-[11px] font-extrabold tracking-widest text-white/90 uppercase font-jakarta">
+              <p className="text-[11px] font-extrabold tracking-widest text-white uppercase font-jakarta">
                 {col.title}
-              </h4>
+              </p>
               <ul className="space-y-2.5">
                 {col.links.map((link, lIdx) => (
                   <li key={lIdx}>
@@ -76,14 +76,14 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[13px] text-white/80 hover:text-white transition-colors block py-0.5 font-medium"
+                        className="text-[13px] text-white/95 hover:text-white transition-colors block py-0.5 font-semibold"
                       >
                         {link.name}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-[13px] text-white/80 hover:text-white transition-colors block py-0.5 font-medium"
+                        className="text-[13px] text-white/95 hover:text-white transition-colors block py-0.5 font-semibold"
                       >
                         {link.name}
                       </Link>
@@ -97,7 +97,7 @@ export function Footer() {
 
         {/* Divider & Centered Copyright (Exact Style of Reference Image) */}
         <div className="mt-20 pt-8 border-t border-white/10 text-center">
-          <p className="text-[12px] text-white/70 font-medium">
+          <p className="text-[12px] text-white/90 font-medium">
             NeoScratch. All rights reserved. &copy; 2026
           </p>
         </div>

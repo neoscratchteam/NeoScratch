@@ -352,15 +352,15 @@ export default function Index() {
                 <div className="lg:w-[40%] h-[50%] lg:h-full p-6 lg:p-8 flex flex-col justify-between bg-white text-[#060606] relative z-10 transition-colors duration-300 group-hover:bg-[#175A26]/[0.02]">
                   <div>
                     <div className="flex items-center space-x-2 mb-3">
-                      <span className="text-[10px] font-bold text-[#060606]/70">{p.year}</span>
-                      <span className="h-px w-4 bg-[#060606]/20"></span>
+                      <span className="text-[10px] font-bold text-[#060606]/90">{p.year}</span>
+                      <span className="h-px w-4 bg-[#060606]/30"></span>
                       <span className="text-[#175A26] text-[9px] font-extrabold tracking-widest uppercase font-jakarta">SYNERGY</span>
                     </div>
 
                     <h3 className="text-xl lg:text-2xl font-extrabold text-[#060606] mb-2 leading-tight group-hover:text-[#175A26] transition-colors font-jakarta">{p.title}</h3>
-                    <p className="text-[#060606]/60 text-[11px] font-semibold mb-3 leading-none italic">for {p.subtitle ? p.subtitle.replace('for ', '') : p.client}</p>
+                    <p className="text-[#060606]/85 text-[11px] font-semibold mb-3 leading-none italic">for {p.subtitle ? p.subtitle.replace('for ', '') : p.client}</p>
 
-                    <p className="text-[#060606]/70 text-[13px] leading-relaxed mb-4 font-medium line-clamp-3">
+                    <p className="text-[#060606]/85 text-[13px] leading-relaxed mb-4 font-medium line-clamp-3">
                       {p.description}
                     </p>
                   </div>
