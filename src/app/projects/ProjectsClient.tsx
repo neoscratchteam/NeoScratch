@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { projects } from '@/data/projects';
 import Link from 'next/link';
@@ -8,42 +8,10 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
 
 export default function Projects() {
-  const [filter, setFilter] = useState('All Projects');
-  
-  const handleFilterChange = (cat: string) => {
-    setFilter(cat);
-    // Smooth scroll to the top of the projects section
-    const element = document.getElementById('projects-grid');
-    if (element) {
-      const offset = 140; // Accounting for sticky header + filter bar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  // 🚀 DYNAMIC CATEGORY EXTRACTION
-  const dynamicCategories = ['All Projects', ...Array.from(new Set(projects.map(p => p.category)))];
-
-  const filteredProjects = filter === 'All Projects' 
-    ? projects 
-    : projects.filter(p => {
-        const catSearch = p.category.toLowerCase();
-        const tagSearch = p.tag.toLowerCase();
-        const filterLower = filter.toLowerCase();
-        return catSearch.includes(filterLower) || tagSearch.includes(filterLower);
-      });
-
   return (
     <div className="min-h-screen bg-[#E5E5E5] font-jakarta">
       
-      {/* 🟢 NAVIGATION WRAPPER - Confines the Sticky Filter to the Results Section */}
+      {/* 🟢 NAVIGATION WRAPPER */}
       <div className="relative">
         {/* 🚀 MODERN HERO SECTION - Green Brand Theme */}
         <section className="pt-24 lg:pt-36 pb-20 lg:pb-28 bg-[#175A26] relative overflow-hidden">
@@ -69,37 +37,11 @@ export default function Projects() {
           </div>
         </section>
 
-        {/* 🔍 FILTER BAR - Pill Buttons */}
-        <section className="py-8 border-b border-black/10 sticky top-16 lg:top-20 bg-[#E5E5E5]/95 backdrop-blur-md z-40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap items-center gap-3 justify-start md:justify-center">
-              {dynamicCategories.map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    handleFilterChange(cat);
-                  }}
-                  className={`px-5 py-2 rounded-full text-[12px] font-bold transition-all duration-300 ${
-                    filter === cat 
-                      ? 'bg-[#175A26] text-white shadow-md' 
-                      : 'bg-white text-slate-700 hover:bg-white/80 border border-slate-200'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Project List - One by One Big Cards */}
         <section id="projects-grid" className="py-20 bg-[#E5E5E5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col gap-10 lg:gap-14">
-              {filteredProjects.map((p, idx) => (
+              {projects.map((p, idx) => (
                 <Link 
                   key={p.id} 
                   href={`/projects/${p.id}`}
@@ -158,21 +100,6 @@ export default function Projects() {
                   </div>
                 </Link>
               ))}
-            </div>
-
-            {/* ⬆️ BACK TO TOP OF SECTION */}
-            <div className="mt-16 flex justify-center border-t border-slate-300 pt-12">
-               <button 
-                 type="button"
-                 onClick={(e) => {
-                   e.preventDefault();
-                   e.stopPropagation();
-                   handleFilterChange(filter);
-                 }}
-                 className="inline-flex items-center text-[10px] font-bold text-slate-600 hover:text-[#175A26] uppercase tracking-[0.3em] transition-all group"
-               >
-                 Back to Filters <ArrowRight className="ml-2 h-3.5 w-3.5 -rotate-90 group-hover:-translate-y-1 transition-transform" />
-               </button>
             </div>
           </div>
         </section>
