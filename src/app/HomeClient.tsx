@@ -235,16 +235,16 @@ export default function Index() {
                   About NeoScratch
                 </h2>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#175A26] tracking-tight">
-                  From Student Roots at APEKI Tumba TSS to an RDB-Registered Enterprise
+                  Premier Digital Engineering &amp; Software Studio in Rwanda
                 </h3>
               </div>
 
               <div className="space-y-4 text-[#475569] text-base sm:text-lg leading-relaxed font-medium">
                 <p>
-                  Founded by <strong>Theogene Iradukunda (theodev)</strong> in 2024 as <em>RwandaScratch</em> during his software development studies at APEKI Tumba TSS, NeoScratch was born from a mission to eliminate business risks through automated custom software.
+                  At <strong>NeoScratch</strong>, we empower modern businesses with powerful software solutions built to drive real growth. Our main mission is to digitalize Rwandan enterprises—making businesses easier to run, eliminating costly operational errors, and automating daily management.
                 </p>
                 <p>
-                  After engineering custom ERP systems for first paid clients like PixelMart in 2025, the business registered with the Rwanda Development Board (RDB) as <strong>NeoScratch</strong> (&ldquo;NEO&rdquo; for modern tech, &ldquo;SCRATCH&rdquo; for custom software built from scratch). Today, we build high-converting websites, native mobile apps, and rank businesses #1 on Google.
+                  Whether you need custom software, high-converting websites, native mobile applications, or seamless Mobile Money (MoMo) payment systems, we engineer tailormade digital products that solve complex business challenges and keep you ahead of the competition.
                 </p>
               </div>
 
@@ -252,9 +252,9 @@ export default function Index() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {[
                   'Custom Web & Mobile Apps',
-                  'MoMo & Card Payments',
-                  'Rank #1 on Google SEO',
-                  '24/7 Server Maintenance'
+                  'Automated Business ERPs',
+                  'MoMo & Card Payment Systems',
+                  'Rank #1 on Google SEO & 24/7 Support'
                 ].map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-2.5 text-[#2B383F] font-bold text-sm sm:text-base">
                     <div className="w-5 h-5 rounded-full bg-[#175A26] text-white flex items-center justify-center shrink-0">
@@ -275,10 +275,10 @@ export default function Index() {
                 </Link>
 
                 <Link
-                  href="/about"
+                  href="/services"
                   className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-extrabold bg-transparent text-[#2B383F] border-2 border-[#2B383F] hover:bg-[#175A26] hover:text-white hover:border-[#175A26] transition-all"
                 >
-                  Learn Our Story
+                  Explore Our Services
                 </Link>
               </div>
 
