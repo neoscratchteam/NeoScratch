@@ -59,7 +59,7 @@ const aboutJsonLd = {
       description: 'NeoScratch is an RDB-registered digital engineering studio in Rwanda building custom software systems, mobile apps, and high-ranking SEO platforms from scratch.',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'GF Plaza, Kigali City Tower Area',
+        streetAddress: 'Kigali (100% Online & Remote Service)',
         addressLocality: 'Kigali',
         addressCountry: 'RW'
       }

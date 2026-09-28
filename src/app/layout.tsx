@@ -170,7 +170,7 @@ export default function RootLayout({
       priceRange: '$$',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'GF Plaza, Kigali City Tower Area',
+        streetAddress: 'Kigali (100% Online & Remote Service)',
         addressLocality: 'Kigali',
         addressRegion: 'Kigali Province',
         postalCode: '0000',
@@ -321,6 +321,44 @@ export default function RootLayout({
             'name': 'Open Future - Savings Fintech',
             'image': 'https://res.cloudinary.com/dhjdtt7rj/image/upload/q_auto/f_auto/v1776366290/Screenshot_2026-04-16_at_21.01.15_v3rolu.png',
             'description': 'Community-driven student financial literacy and micro-savings platform.'
+          }
+        }
+      ]
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      'mainEntity': [
+        {
+          '@type': 'Question',
+          'name': 'Which is the top software development company in Kigali, Rwanda?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'NeoScratch is Rwanda\'s premier software development and web design agency located in Kigali. We build custom web applications, native mobile apps (iOS/Android), enterprise ERP systems, and provide Google SEO ranking services.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'How much does custom software or mobile app development cost in Rwanda?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Software development costs in Kigali vary based on features and scope. NeoScratch provides transparent, affordable quotations for custom websites, mobile apps, e-commerce platforms, and MoMo API integrations.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'Can NeoScratch integrate Mobile Money (MTN MoMo API) in web and mobile apps?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'Yes! NeoScratch specializes in seamless MTN MoMo API, Airtel Money, and card payment gateway integrations for businesses across Rwanda and East Africa.'
+          }
+        },
+        {
+          '@type': 'Question',
+          'name': 'How does NeoScratch rank Rwandan businesses #1 on Google Search?',
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': 'We perform technical SEO audits, Google Business Profile optimization, schema markup, and geo-targeted keyword strategies so your company appears at the top of Google Search and Google Maps.'
           }
         }
       ]
