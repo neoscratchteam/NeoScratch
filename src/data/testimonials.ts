@@ -9,6 +9,14 @@ export const testimonials = [
     isSpecial: true,
   },
   {
+    name: 'John',
+    role: 'Founder & CEO, Bugajltd',
+    serviceType: 'Business Management & Record System',
+    link: '#',
+    content: 'NeoScratch built an exceptional management system for Bugajltd. It effectively manages all our business activities and allows us to record every transaction seamlessly and accurately.',
+    avatar: 'https://res.cloudinary.com/dhjdtt7rj/image/upload/v1790626799/logo_ijgp1f.png',
+  },
+  {
     name: 'Mr. Jean Baptiste',
     role: 'Business Owner, Oluxy',
     serviceType: 'Multi-Platform E-Commerce & ERP',
