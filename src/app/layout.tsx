@@ -29,16 +29,55 @@ export const metadata: Metadata = {
   },
   description: "NeoScratch is Rwanda's leading digital engineering agency in Kigali. We specialize in high-converting web design, custom mobile app development (iOS/Android), strategic SEO, and Google Business Profile optimization.",
   keywords: [
-    "web design Rwanda", "website design Kigali", "web development Rwanda",
-    "best web design company Kigali", "software company Kigali", "software development Rwanda",
-    "mobile app development Rwanda", "iOS Android app developer Kigali", "Flutter developer Rwanda",
-    "SEO services Rwanda", "SEO agency Kigali", "Google Business Profile setup Rwanda",
-    "Google Maps optimization Kigali", "custom software development Kigali", "website developer Rwanda",
-    "affordable website Rwanda", "ecommerce website developer Rwanda", "Next.js web agency Rwanda",
-    "digital marketing agency Kigali", "online presence Rwanda", "web development agency East Africa",
-    "website maintenance Rwanda", "NeoScratch Rwanda", "tech company Kigali",
-    "software house Rwanda", "best web designer Kigali", "hire developers Rwanda",
-    "digital engineering studio Kigali", "enterprise software Kigali"
+    // 1. High-Intent Core Software Keywords
+    "software company in Kigali", "software development company in Rwanda", "custom software development Kigali",
+    "best software companies in Rwanda", "software development services Kigali", "IT consulting firm Rwanda",
+    "custom software developers Kigali", "Enterprise software solutions Rwanda", "top software development firm Rwanda",
+    "bespoke software development Kigali", "outsourced software development Rwanda", "offshore software development Kigali",
+    "software engineering company Rwanda", "software agency Kigali", "IT solutions provider Rwanda",
+
+    // 2. Web Development & Design Keywords
+    "web application development Kigali", "website development company in Rwanda", "custom web portal development Kigali",
+    "e-commerce developer Rwanda", "full-stack web development Kigali", "React developers Kigali",
+    "Node.js development company Rwanda", "PHP web development Kigali", "Python web development Rwanda",
+    "Laravel developers Kigali", "front-end web development Rwanda", "back-end software architecture Kigali",
+    "Progressive Web App (PWA) developers Kigali", "UI/UX design agency Rwanda", "responsive web application design Kigali",
+
+    // 3. Mobile App Development Keywords
+    "mobile app development company Kigali", "iOS app developers Rwanda", "Android app development Kigali",
+    "Flutter app developer Kigali", "React Native development Rwanda", "mobile app development cost Kigali",
+    "cross-platform app developers Rwanda", "custom mobile app builder Kigali", "fintech mobile app developers Rwanda",
+    "native app development Kigali", "mobile UX design Rwanda", "enterprise mobile apps Kigali",
+    "app development agency Rwanda", "Mobile solution company Kigali", "top app developers in Rwanda",
+
+    // 4. Enterprise, Cloud & API Integration
+    "ERP software developers Rwanda", "CRM custom development Kigali", "Cloud software integration Rwanda",
+    "SaaS development company Kigali", "API integration services Rwanda", "microservices development Kigali",
+    "cloud migration services Rwanda", "database design and management Kigali", "AWS cloud developers Rwanda",
+    "Azure software developers Kigali", "DevOps services company Rwanda", "IT system architecture Kigali",
+    "software maintenance and support Rwanda", "legacy software migration Kigali", "enterprise systems engineering Rwanda",
+
+    // 5. Industry-Specific Software Keywords
+    "fintech software developers Rwanda", "mobile money integration Kigali", "MoMo API software integration Rwanda",
+    "e-learning software developers Kigali", "healthcare software development Rwanda", "hospital management system Kigali",
+    "school management system software Rwanda", "hotel management software Kigali", "logistics software development Rwanda",
+    "agri-tech software developers Kigali", "point of sale (POS) software developer Rwanda", "inventory management software Kigali",
+    "real estate portal software Rwanda", "government digital services Kigali", "NGO software solutions Rwanda",
+
+    // 6. Specialized & Emerging Tech Keywords
+    "AI software development company Kigali", "artificial intelligence solutions Rwanda", "machine learning engineers Kigali",
+    "data analytics software Rwanda", "business intelligence software Kigali", "cybersecurity software services Rwanda",
+    "blockchain developers Kigali", "IoT software solutions Rwanda", "automation software company Kigali", "chat bot developers Rwanda",
+
+    // 7. Hiring, Outsourcing & Dedicated Developers
+    "hire software developers in Kigali", "dedicated software development team Rwanda", "hire Flutter developers Kigali",
+    "software development talent Rwanda", "hire Python developers Kigali", "software development outsourcing Kigali",
+    "hire full-stack developers Rwanda", "IT staffing agency Kigali",
+
+    // 8. Cost & Commercial Intent Keywords
+    "software development cost in Rwanda", "website development price Kigali", "mobile app development quote Rwanda",
+    "affordable software development Kigali", "software developer rates in Rwanda", "cost to build software application Kigali",
+    "custom software development quotation Rwanda"
   ],
   authors: [{ name: "NeoScratch", url: "https://neoscratch.com" }],
   creator: "NeoScratch",
