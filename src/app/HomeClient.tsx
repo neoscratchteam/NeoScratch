@@ -139,7 +139,7 @@ export default function Index() {
         <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-xl border border-[#060606]/10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            {/* Left Title Column (1/3 width approx matching reference image) */}
+            {/* Left Title Column */}
             <div className="lg:col-span-4 lg:pr-4 text-left">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#060606] tracking-tight leading-snug">
                 Trusted by our <br className="hidden sm:inline" />
@@ -150,55 +150,64 @@ export default function Index() {
               </p>
             </div>
 
-            {/* Right Logos Column with Vertical Border & Horizontal Row Dividers */}
+            {/* Right Logos Column with 5px Border Radius & Clickable/Private Hover State */}
             <div className="lg:col-span-8 lg:border-l lg:border-[#060606]/10 lg:pl-10 space-y-6">
               
               {/* Row 1 */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 items-center justify-items-start sm:justify-items-center pb-6 border-b border-[#060606]/10">
                 {[
-                  { name: 'pixelmart', image: '/clients/pixelmart.png' },
-                  { name: 'oluxywear', image: '/clients/oluxywear.png' },
-                  { name: 'smartstock', image: '/clients/smartstock.png' },
+                  { name: 'oluxywatches', image: '/clients/oluxywatches.png', url: 'https://www.oluxywatches.com/', isPrivate: false },
+                  { name: 'oluxywear', image: '/clients/oluxywear.png', url: 'https://oluxywear.com/', isPrivate: false },
+                  { name: 'smartstock', image: '/clients/smartstock.png', url: 'https://smartstock.rw/', isPrivate: false },
                 ].map((client, idx) => (
-                  <div 
+                  <a 
                     key={idx}
-                    className="flex items-center gap-3 font-extrabold tracking-tight text-[#475569] hover:text-[#175A26] hover:scale-105 transition-all cursor-pointer select-none group"
+                    href={client.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 font-extrabold tracking-tight text-[#475569] hover:text-[#175A26] hover:scale-105 transition-all cursor-pointer select-none group/client"
                   >
                     <Image
                       src={client.image}
                       alt={`${client.name} - Trusted Client of NeoScratch`}
-                      width={40}
-                      height={40}
-                      className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover shrink-0 border border-[#175A26]/20 shadow-sm group-hover:border-[#175A26] transition-colors"
+                      width={48}
+                      height={48}
+                      className="w-11 h-11 sm:w-12 sm:h-12 rounded-[5px] object-cover shrink-0 border border-[#175A26]/20 shadow-sm group-hover/client:border-[#175A26] transition-colors"
                     />
-                    <span className="text-base sm:text-lg lg:text-xl font-extrabold text-[#060606] group-hover:text-[#175A26] transition-colors">
+                    <span className="text-base sm:text-lg lg:text-xl font-extrabold text-[#060606] group-hover/client:text-[#175A26] transition-colors">
                       {client.name}
                     </span>
-                  </div>
+                  </a>
                 ))}
               </div>
 
-              {/* Row 2 */}
+              {/* Row 2 (Private Systems) */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 items-center justify-items-start sm:justify-items-center pt-2">
                 {[
-                  { name: 'oluxywatches', image: '/clients/oluxywatches.png' },
+                  { name: 'pixelmart', image: '/clients/pixelmart.png' },
                   { name: 'bugajltd', image: '/clients/bugajltd.png' },
                   { name: 'eyevisioncenter', image: '/clients/eyevisioncenter.png' },
                 ].map((client, idx) => (
                   <div 
                     key={idx}
-                    className="flex items-center gap-3 font-extrabold tracking-tight text-[#475569] hover:text-[#175A26] hover:scale-105 transition-all cursor-pointer select-none group"
+                    className="flex items-center gap-3 font-extrabold tracking-tight text-[#475569] hover:scale-105 transition-all cursor-pointer select-none group/client relative"
+                    title={`${client.name} - Private Enterprise System`}
                   >
                     <Image
                       src={client.image}
-                      alt={`${client.name} - Trusted Client of NeoScratch`}
-                      width={40}
-                      height={40}
-                      className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover shrink-0 border border-[#175A26]/20 shadow-sm group-hover:border-[#175A26] transition-colors"
+                      alt={`${client.name} - Private Client System`}
+                      width={48}
+                      height={48}
+                      className="w-11 h-11 sm:w-12 sm:h-12 rounded-[5px] object-cover shrink-0 border border-[#175A26]/20 shadow-sm group-hover/client:border-[#175A26] transition-colors"
                     />
-                    <span className="text-base sm:text-lg lg:text-xl font-extrabold text-[#060606] group-hover:text-[#175A26] transition-colors">
-                      {client.name}
-                    </span>
+                    <div className="flex flex-col">
+                      <span className="text-base sm:text-lg lg:text-xl font-extrabold text-[#060606] group-hover/client:text-[#175A26] transition-colors">
+                        {client.name}
+                      </span>
+                      <span className="text-[10px] font-black uppercase tracking-wider text-[#175A26] opacity-0 group-hover/client:opacity-100 transition-opacity">
+                        Private System
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
