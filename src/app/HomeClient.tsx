@@ -302,7 +302,7 @@ export default function Index() {
                 <div className="lg:w-[40%] h-[50%] lg:h-full p-6 lg:p-8 flex flex-col justify-between bg-white text-[#060606] relative z-10 transition-colors duration-300 group-hover:bg-[#175A26]/[0.02]">
                   <div>
                     <div className="flex items-center space-x-2 mb-3">
-                      <span className="text-[10px] font-bold text-[#060606]/40">{p.year}</span>
+                      <span className="text-[10px] font-bold text-[#060606]/70">{p.year}</span>
                       <span className="h-px w-4 bg-[#060606]/20"></span>
                       <span className="text-[#175A26] text-[9px] font-extrabold tracking-widest uppercase font-jakarta">SYNERGY</span>
                     </div>

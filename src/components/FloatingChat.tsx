@@ -172,6 +172,7 @@ export function FloatingChat() {
           >
             <motion.button
               type="button"
+              aria-label="Chat with us on WhatsApp"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={(e) => handleSend(e)}

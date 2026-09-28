@@ -73,6 +73,7 @@ export function TestimonialSlider() {
               <button 
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
+                aria-label={`View testimonial from ${t.name}`}
                 className={`relative rounded-full transition-all duration-700 ease-smooth flex-shrink-0 cursor-pointer hover:opacity-100 ${sizeClass} ${opacityClass} ${yOffset} ${ringClass}`}
               >
                 {t.avatar === 'YOU' ? (
@@ -95,7 +96,7 @@ export function TestimonialSlider() {
       </div>
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 max-w-4xl mx-auto w-full animate-fade-in" style={{ animationDelay: '0.2s' }}>
-        <button onClick={prev} className="hidden md:flex p-4 rounded-full border border-border bg-background hover:bg-secondary transition-colors text-foreground shadow-sm">
+        <button onClick={prev} aria-label="Previous testimonial" className="hidden md:flex p-4 rounded-full border border-border bg-background hover:bg-secondary transition-colors text-foreground shadow-sm">
           <ChevronLeft className="w-6 h-6" />
         </button>
         
@@ -115,15 +116,15 @@ export function TestimonialSlider() {
           </div>
         </div>
 
-        <button onClick={next} className="hidden md:flex p-4 rounded-full border border-border bg-background hover:bg-secondary transition-colors text-foreground shadow-sm">
+        <button onClick={next} aria-label="Next testimonial" className="hidden md:flex p-4 rounded-full border border-border bg-background hover:bg-secondary transition-colors text-foreground shadow-sm">
           <ChevronRight className="w-6 h-6" />
         </button>
 
         <div className="flex md:hidden items-center justify-center gap-8 mt-4">
-          <button onClick={prev} className="p-3 rounded-full border border-border bg-background hover:bg-secondary shadow-sm">
+          <button onClick={prev} aria-label="Previous testimonial" className="p-3 rounded-full border border-border bg-background hover:bg-secondary shadow-sm">
             <ChevronLeft className="w-5 h-5" />
           </button>
-          <button onClick={next} className="p-3 rounded-full border border-border bg-background hover:bg-secondary shadow-sm">
+          <button onClick={next} aria-label="Next testimonial" className="p-3 rounded-full border border-border bg-background hover:bg-secondary shadow-sm">
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>

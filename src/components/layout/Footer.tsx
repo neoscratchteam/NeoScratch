@@ -76,14 +76,14 @@ export function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[13px] text-white/60 hover:text-white transition-colors block py-0.5 font-medium"
+                        className="text-[13px] text-white/80 hover:text-white transition-colors block py-0.5 font-medium"
                       >
                         {link.name}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-[13px] text-white/60 hover:text-white transition-colors block py-0.5 font-medium"
+                        className="text-[13px] text-white/80 hover:text-white transition-colors block py-0.5 font-medium"
                       >
                         {link.name}
                       </Link>
@@ -97,7 +97,7 @@ export function Footer() {
 
         {/* Divider & Centered Copyright (Exact Style of Reference Image) */}
         <div className="mt-20 pt-8 border-t border-white/10 text-center">
-          <p className="text-[12px] text-white/50 font-medium">
+          <p className="text-[12px] text-white/70 font-medium">
             NeoScratch. All rights reserved. &copy; 2026
           </p>
         </div>
