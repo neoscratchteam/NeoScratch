@@ -73,7 +73,7 @@ export default function Index() {
     <div className="min-h-screen font-jakarta bg-[#E5E5E5] text-[#060606]">
 
       {/* ── 1. Hero Section with Kigali Background Image ── */}
-      <section className="relative text-white pt-36 sm:pt-44 pb-24 lg:pb-32 overflow-hidden bg-[#175A26]">
+      <section className="relative text-white pt-36 sm:pt-44 pb-24 lg:pb-32 overflow-hidden bg-[#060606]">
         {/* Full Cover Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -82,11 +82,11 @@ export default function Index() {
             fill
             className="object-cover w-full h-full object-center pointer-events-none"
             priority
-            quality={90}
+            quality={95}
           />
-          {/* Dark Gradient Overlay for Maximum Text Contrast & Brand Green Accent */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#175A26]/95 via-[#175A26]/85 to-[#060606]/80 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-black/40" />
+          {/* Subtle Dark Gradient Overlay for Text Readability without altering image colors */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30" />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
