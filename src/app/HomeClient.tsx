@@ -134,42 +134,78 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── 2. Clients Section (Floating Card Overlapping Hero) ── */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-24 mb-24 relative z-20">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-md border border-[#060606]/10 text-center">
+      {/* ── 2. Clients Section (Matching Reference Layout with Left Title & Horizontal Border Rows) ── */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-24 mb-24 relative z-20 font-jakarta">
+        <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-14 shadow-xl border border-[#060606]/10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Title Column (1/3 width approx matching reference image) */}
+            <div className="lg:col-span-4 lg:pr-4 text-left">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#060606] tracking-tight leading-snug">
+                Trusted by our <br className="hidden sm:inline" />
+                customers &amp; partners
+              </h2>
+              <p className="text-xs sm:text-sm font-bold text-[#175A26] uppercase tracking-wider mt-3">
+                Powering Digital Excellence for Industry Leaders
+              </p>
+            </div>
 
-          <h2 className="text-lg sm:text-xl font-extrabold text-[#060606] mb-10 tracking-tight font-jakarta">
-            Powering Digital Excellence for Industry Leaders
-          </h2>
-
-          {/* Client Logos Grid: 3 per row matching Nokanda Logo Style */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8 sm:gap-12 items-center justify-items-center font-jakarta">
-            {[
-              { name: 'pixelmart', image: '/clients/pixelmart.png' },
-              { name: 'oluxywear', image: '/clients/oluxywear.png' },
-              { name: 'smartstock', image: '/clients/smartstock.png' },
-              { name: 'oluxywatches', image: '/clients/oluxywatches.png' },
-              { name: 'bugajltd', image: '/clients/bugajltd.png' },
-              { name: 'eyevisioncenter', image: '/clients/eyevisioncenter.png' },
-            ].map((client, idx) => (
-              <div 
-                key={idx}
-                className="flex items-center gap-3.5 font-black tracking-tight text-[#64748B] hover:text-[#060606] hover:scale-105 transition-all cursor-pointer select-none group"
-              >
-                <Image
-                  src={client.image}
-                  alt={`${client.name} - Trusted Client of NeoScratch Web Design & Software Studio in Rwanda`}
-                  width={44}
-                  height={44}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover shrink-0 border-2 border-[#175A26]/20 shadow-md group-hover:border-[#175A26] transition-colors"
-                />
-                <span className="font-jakarta text-[#64748B] group-hover:text-[#060606] font-extrabold tracking-tight text-lg sm:text-xl lg:text-2xl">
-                  {client.name}
-                </span>
+            {/* Right Logos Column with Vertical Border & Horizontal Row Dividers */}
+            <div className="lg:col-span-8 lg:border-l lg:border-[#060606]/10 lg:pl-10 space-y-6">
+              
+              {/* Row 1 */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 items-center justify-items-start sm:justify-items-center pb-6 border-b border-[#060606]/10">
+                {[
+                  { name: 'pixelmart', image: '/clients/pixelmart.png' },
+                  { name: 'oluxywear', image: '/clients/oluxywear.png' },
+                  { name: 'smartstock', image: '/clients/smartstock.png' },
+                ].map((client, idx) => (
+                  <div 
+                    key={idx}
+                    className="flex items-center gap-3 font-extrabold tracking-tight text-[#475569] hover:text-[#175A26] hover:scale-105 transition-all cursor-pointer select-none group"
+                  >
+                    <Image
+                      src={client.image}
+                      alt={`${client.name} - Trusted Client of NeoScratch`}
+                      width={40}
+                      height={40}
+                      className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover shrink-0 border border-[#175A26]/20 shadow-sm group-hover:border-[#175A26] transition-colors"
+                    />
+                    <span className="text-base sm:text-lg lg:text-xl font-extrabold text-[#060606] group-hover:text-[#175A26] transition-colors">
+                      {client.name}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
+              {/* Row 2 */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 items-center justify-items-start sm:justify-items-center pt-2">
+                {[
+                  { name: 'oluxywatches', image: '/clients/oluxywatches.png' },
+                  { name: 'bugajltd', image: '/clients/bugajltd.png' },
+                  { name: 'eyevisioncenter', image: '/clients/eyevisioncenter.png' },
+                ].map((client, idx) => (
+                  <div 
+                    key={idx}
+                    className="flex items-center gap-3 font-extrabold tracking-tight text-[#475569] hover:text-[#175A26] hover:scale-105 transition-all cursor-pointer select-none group"
+                  >
+                    <Image
+                      src={client.image}
+                      alt={`${client.name} - Trusted Client of NeoScratch`}
+                      width={40}
+                      height={40}
+                      className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover shrink-0 border border-[#175A26]/20 shadow-sm group-hover:border-[#175A26] transition-colors"
+                    />
+                    <span className="text-base sm:text-lg lg:text-xl font-extrabold text-[#060606] group-hover:text-[#175A26] transition-colors">
+                      {client.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
+          </div>
         </div>
       </section>
 
