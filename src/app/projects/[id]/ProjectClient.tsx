@@ -54,6 +54,11 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
             <Badge variant="secondary" className="bg-[#175A26] text-white px-2.5 py-0.5 text-[10px] font-bold tracking-wider uppercase rounded-full">
               {project.tag || project.category}
             </Badge>
+            {project.isPrivate && (
+              <Badge className="bg-[#060606] text-[#7FFFD4] border border-[#7FFFD4]/30 px-3 py-0.5 text-[10px] font-black tracking-widest uppercase rounded-full">
+                🔒 Private Enterprise System
+              </Badge>
+            )}
             <span className="text-slate-400 hidden sm:block">•</span>
             <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none">{project.client}</span>
             <span className="text-slate-400 hidden sm:block">•</span>
@@ -69,11 +74,17 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="rounded-xl px-8 h-12 font-bold bg-[#175A26] text-white hover:bg-[#12481e] shadow-lg shadow-[#175A26]/20" asChild>
-              <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                Visit website <ExternalLink className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
+            {project.isPrivate || project.liveDemo === '#' ? (
+              <div className="inline-flex items-center justify-center px-6 h-12 rounded-xl text-sm font-extrabold bg-[#175A26]/10 text-[#175A26] border border-[#175A26]/30">
+                🔒 Private Enterprise System
+              </div>
+            ) : (
+              <Button size="lg" className="rounded-xl px-8 h-12 font-bold bg-[#175A26] text-white hover:bg-[#12481e] shadow-lg shadow-[#175A26]/20" asChild>
+                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                  Visit website <ExternalLink className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            )}
             <Button size="lg" variant="outline" className="rounded-xl px-8 h-12 font-bold border-[#175A26] text-[#175A26] hover:bg-[#175A26] hover:text-white transition-all duration-300" asChild>
               <Link href="/request-website">Start a similar project</Link>
             </Button>

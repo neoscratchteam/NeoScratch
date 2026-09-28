@@ -21,6 +21,7 @@ export interface Project {
   client: string;
   year: string;
   price?: string;
+  isPrivate?: boolean;
   gallery?: string[];
   details?: ProjectDetails;
   seoDescription: string;
@@ -42,6 +43,7 @@ export const projects: Project[] = [
     client: 'John (Bugajltd)',
     year: 'Aug 31, 2026',
     price: 'Enterprise System',
+    isPrivate: true,
     gallery: [
       'https://res.cloudinary.com/dhjdtt7rj/image/upload/v1790626720/Screenshot_2026-08-31_at_12.44.53_AM_kv79xt.png',
       'https://res.cloudinary.com/dhjdtt7rj/image/upload/v1790626719/Screenshot_2026-08-31_at_12.43.56_AM_r18vca.png',
