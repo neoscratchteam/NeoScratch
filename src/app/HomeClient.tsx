@@ -72,58 +72,64 @@ export default function Index() {
   return (
     <div className="min-h-screen font-jakarta bg-[#E5E5E5] text-[#060606]">
 
-      {/* ── 1. Hero Section (Green Background #175A26 Matching Color Swatch) ── */}
-      <section className="relative bg-[#175A26] text-white pt-36 sm:pt-44 pb-20 lg:pb-28 overflow-hidden">
+      {/* ── 1. Hero Section with Kigali Background Image ── */}
+      <section className="relative text-white pt-36 sm:pt-44 pb-24 lg:pb-32 overflow-hidden bg-[#175A26]">
+        {/* Full Cover Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/kigali2.jpg"
+            alt="Kigali City Rwanda - NeoScratch Digital Engineering Studio"
+            fill
+            className="object-cover w-full h-full object-center pointer-events-none"
+            priority
+            quality={90}
+          />
+          {/* Dark Gradient Overlay for Maximum Text Contrast & Brand Green Accent */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#175A26]/95 via-[#175A26]/85 to-[#060606]/80 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-10 items-center min-h-[500px]">
+          <div className="max-w-3xl space-y-8">
+            {/* Location Badge */}
+            <div className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#7FFFD4] animate-pulse" />
+              <span className="text-xs font-black tracking-widest uppercase text-white font-jakarta">KIGALI, RWANDA • DIGITAL ENGINEERING STUDIO</span>
+            </div>
 
-            {/* Left Column Content */}
-            <div className="lg:col-span-6 space-y-8">
-
-              {/* Main Headline with Auto-Sliding Text */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12] text-white font-jakarta">
-                  The company that builds <br />
-                  <span className="relative inline-block h-[1.25em] overflow-hidden align-bottom text-[#7FFFD4]">
-                    <span
-                      key={slideIndex}
-                      className="inline-block animate-slide-up transition-all duration-500 ease-out"
-                    >
-                      {heroSlides[slideIndex]}
-                    </span>
-                  </span> <br />
-                  in Rwanda & globally.
-                </h1>
-
-              <p className="text-sm sm:text-base font-medium text-white/90 leading-relaxed max-w-lg">
-                Premier software engineering studio in Kigali. We build high-converting websites, native iOS & Android mobile apps, custom software platforms, and rank your business #1 on Google.
-              </p>
-
-              {/* Call to Action Button */}
-              <div className="pt-2">
-                <Link
-                  href="/request-website"
-                  className="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-xs font-black bg-white text-[#175A26] hover:bg-[#060606] hover:text-white transition-all duration-300 shadow-md"
+            {/* Main Headline with Auto-Sliding Text */}
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-white font-jakarta drop-shadow-md">
+              The company that builds <br />
+              <span className="relative inline-block h-[1.25em] overflow-hidden align-bottom text-[#7FFFD4]">
+                <span
+                  key={slideIndex}
+                  className="inline-block animate-slide-up transition-all duration-500 ease-out"
                 >
-                  Get Started Today
-                </Link>
-              </div>
+                  {heroSlides[slideIndex]}
+                </span>
+              </span> <br />
+              in Rwanda & globally.
+            </h1>
 
+            <p className="text-base sm:text-lg font-medium text-white/95 leading-relaxed max-w-2xl drop-shadow">
+              Premier software engineering studio in Kigali. We build high-converting websites, native iOS & Android mobile apps, custom software platforms, and rank your business #1 on Google.
+            </p>
+
+            {/* Call to Action Buttons */}
+            <div className="pt-4 flex flex-wrap gap-4 items-center">
+              <Link
+                href="/request-website"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-xs font-black bg-[#7FFFD4] text-[#060606] hover:bg-white transition-all duration-300 shadow-xl hover:scale-105 uppercase tracking-wider"
+              >
+                Get Started Today
+              </Link>
+              <Link
+                href="/projects"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full text-xs font-black bg-white/10 backdrop-blur-md text-white border border-white/30 hover:bg-white hover:text-[#175A26] transition-all duration-300 shadow-md uppercase tracking-wider"
+              >
+                Explore Projects
+              </Link>
             </div>
-
-            {/* Right Column Illustration (Using relax.svg) */}
-            <div className="lg:col-span-6 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-xl aspect-[4/3] flex items-center justify-center p-2">
-                <Image
-                  src="/relax.svg"
-                  alt="Instant Communication & Work Solutions"
-                  width={583}
-                  height={383}
-                  className="w-full h-auto object-contain drop-shadow-xl"
-                  priority
-                />
-              </div>
-            </div>
-
           </div>
         </div>
       </section>

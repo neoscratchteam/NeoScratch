@@ -32,7 +32,9 @@ export default function Projects() {
             </div>
             
             <div className="w-full md:w-1/3 flex justify-center">
-              <img src="/relax.svg" alt="Projects Illustration" className="w-64 lg:w-80 h-auto opacity-95 hover:scale-105 transition-transform duration-500" />
+              <div className="relative w-64 lg:w-80 aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-white/20 group">
+                <img src="/kigali2.jpg" alt="Kigali City Rwanda" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
             </div>
           </div>
         </section>

@@ -37,7 +37,7 @@ export function Header() {
       <div className={`transition-all duration-300 ${
         isScrolled
           ? 'bg-[#175A26]/95 backdrop-blur-md shadow-md py-4 border-b border-white/10'
-          : 'bg-[#175A26] py-5'
+          : 'bg-transparent py-5'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center relative">
           
