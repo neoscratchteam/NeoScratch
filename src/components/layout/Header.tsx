@@ -33,13 +33,13 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-jakarta w-full max-w-full overflow-x-hidden">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-jakarta">
       <div className={`transition-all duration-300 ${
         isScrolled
           ? 'bg-[#175A26]/95 backdrop-blur-md shadow-md py-4 border-b border-white/10'
           : 'bg-transparent py-5'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center relative w-full max-w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center relative">
           
           {/* Brand Logo (Only logo.png icon, no black background) */}
           <Link href="/" className="flex items-center group">
@@ -319,8 +319,8 @@ export function Header() {
 
         {/* Mobile Navigation Dropdown */}
         {isMenuOpen && (
-          <div className="lg:hidden animate-fade-in px-4 pt-3 pb-4 w-full max-w-full overflow-x-hidden">
-            <div className="p-4 space-y-2 bg-[#175A26] border border-white/10 rounded-2xl shadow-2xl text-white max-w-full">
+          <div className="lg:hidden animate-fade-in px-4 pt-3 pb-4">
+            <div className="p-4 space-y-2 bg-[#175A26] border border-white/10 rounded-2xl shadow-2xl text-white">
               <Link href="/" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Home</Link>
               <Link href="/about" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">About Us</Link>
               <Link href="/team" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Our Team</Link>

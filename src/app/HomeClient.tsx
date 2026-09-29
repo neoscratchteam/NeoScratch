@@ -19,44 +19,32 @@ export default function Index() {
   useEffect(() => { setMounted(true); }, []);
 
   const ghostRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [maxTranslatePx, setMaxTranslatePx] = useState(0);
-  const [ghostHeight, setGhostHeight] = useState<number | null>(null);
-  const [cardStep, setCardStep] = useState(84);
 
   useEffect(() => {
-    let animationFrameId: number;
-
     const handleScroll = () => {
       if (!ghostRef.current) return;
       const rect = ghostRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
+      const start = rect.top;
+      const end = rect.bottom - windowHeight;
       const total = rect.height - windowHeight;
-      if (total <= 0) return;
 
       let nextProgress = 0;
-      if (rect.top <= 0 && rect.bottom >= windowHeight) {
-        nextProgress = Math.abs(rect.top) / total;
-      } else if (rect.top > 0) {
+      if (start <= 0 && end >= 0) {
+        nextProgress = Math.abs(start) / total;
+      } else if (start > 0) {
         nextProgress = 0;
-      } else if (rect.bottom < windowHeight) {
+      } else if (end < 0) {
         nextProgress = 1;
       }
 
-      animationFrameId = requestAnimationFrame(() => {
-        setScrollProgress(Math.min(Math.max(nextProgress, 0), 1));
-      });
+      setScrollProgress(nextProgress);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (animationFrameId) cancelAnimationFrame(animationFrameId);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const heroSlides = [
@@ -76,44 +64,10 @@ export default function Index() {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    const updateCardStep = () => {
-      const w = window.innerWidth;
-      if (w >= 1024) {
-        setCardStep(74); // 70vw + 4vw gap
-      } else if (w >= 640) {
-        setCardStep(84); // 80vw + 4vw gap
-      } else {
-        setCardStep(89); // 85vw + 4vw gap
-      }
-    };
-
-    const updateTrackDimensions = () => {
-      updateCardStep();
-      if (trackRef.current) {
-        const scrollW = trackRef.current.scrollWidth;
-        const windowW = window.innerWidth;
-        const windowH = window.innerHeight;
-        const maxScroll = Math.max(scrollW - windowW, 0);
-        setMaxTranslatePx(maxScroll);
-        setGhostHeight(maxScroll + windowH);
-      }
-    };
-
-    updateTrackDimensions();
-    window.addEventListener('resize', updateTrackDimensions);
-    const timer = setTimeout(updateTrackDimensions, 400);
-
-    return () => {
-      window.removeEventListener('resize', updateTrackDimensions);
-      clearTimeout(timer);
-    };
-  }, []);
-
   const displayedProjects = projects.slice(0, 5);
-  const translateX = maxTranslatePx > 0
-    ? -scrollProgress * maxTranslatePx
-    : -scrollProgress * cardStep * (displayedProjects.length - 1);
+  const cardWidth = 85;
+  const gapWidth = 5;
+  const translateX = -scrollProgress * (cardWidth + gapWidth) * (displayedProjects.length - 1);
 
   return (
     <div className="min-h-screen font-jakarta bg-[#E5E5E5] text-[#060606]">
@@ -137,18 +91,16 @@ export default function Index() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl space-y-8">
-            {/* Location Badge (Mobile Responsive) */}
-            <div className="inline-flex max-w-full items-center gap-2 bg-white/10 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/20">
-              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#7FFFD4] animate-pulse shrink-0" />
-              <span className="text-[9px] sm:text-xs font-black tracking-wider sm:tracking-widest uppercase text-white font-jakarta truncate">
-                KIGALI, RWANDA • DIGITAL STUDIO
-              </span>
+            {/* Location Badge */}
+            <div className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#7FFFD4] animate-pulse" />
+              <span className="text-xs font-black tracking-widest uppercase text-white font-jakarta">KIGALI, RWANDA • DIGITAL ENGINEERING STUDIO</span>
             </div>
 
-            {/* Main Headline with Pop-Up Rotating Text */}
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-[1.15] text-white font-jakarta drop-shadow-md max-w-full break-words">
-              The company that builds <br className="hidden sm:inline" />
-              <span className="relative inline-block h-[1.3em] max-w-full overflow-hidden align-bottom text-[#7FFFD4]">
+            {/* Main Headline with Pop-Up Rotating Text (Websites, Mobile Apps, Custom Software, SEO, Digital Ads) */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] text-white font-jakarta drop-shadow-md">
+              The company that builds <br />
+              <span className="relative inline-block h-[1.25em] overflow-hidden align-bottom text-[#7FFFD4]">
                 <span
                   key={slideIndex}
                   className="inline-block animate-slide-up transition-all duration-500 ease-out font-black"
@@ -348,45 +300,38 @@ export default function Index() {
 
 
 
-      {/* ── 6. Horizontal Scroll Projects Section (Sticky Horizontal Scroll) ── */}
-      <div
-        ref={ghostRef}
-        className="relative"
-        style={{ height: ghostHeight ? `${ghostHeight}px` : '280vh' }}
-      >
-        <section className="sticky top-0 h-screen overflow-hidden bg-[#E5E5E5] pt-[72px] sm:pt-[80px] pb-6 flex flex-col justify-center text-[#060606]">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-4 sm:mb-6 flex justify-between items-end shrink-0">
+      {/* ── 6. Horizontal Scroll Projects Section (Commit 99548c05fb76f482e4280bb8ee7e6410c9ba8072 Style) ── */}
+      <div ref={ghostRef} className="relative h-[350vh]">
+        <section className="sticky top-0 h-screen overflow-hidden bg-[#E5E5E5] py-8 flex flex-col justify-center text-[#060606]">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8 flex justify-between items-end">
             <div>
-              <span className="text-[#175A26] font-bold tracking-[0.2em] text-[10px] uppercase mb-1 block font-jakarta">FEATURED WORK</span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#060606] font-jakarta">
+              <span className="text-[#175A26] font-bold tracking-[0.2em] text-[10px] uppercase mb-2 block font-jakarta">FEATURED WORK</span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#060606] font-jakarta">
                 Platforms &amp; Systems We&apos;ve Engineered
               </h2>
             </div>
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#175A26] text-white font-extrabold text-xs hover:bg-[#060606] hover:text-white transition-colors border border-[#175A26] shrink-0"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#175A26] text-white font-extrabold text-xs hover:bg-[#060606] hover:text-white transition-colors border border-[#175A26]"
             >
               View All Works
             </Link>
           </div>
 
           <div
-            ref={trackRef}
             className="flex gap-[4vw] px-[7.5vw] transform-gpu will-change-transform"
             style={{
-              transform: maxTranslatePx > 0
-                ? `translate3d(${translateX.toFixed(2)}px, 0px, 0px)`
-                : `translate3d(${translateX.toFixed(2)}vw, 0px, 0px)`
+              transform: `translate3d(${translateX.toFixed(2)}vw, 0px, 0px)`
             }}
           >
             {displayedProjects.map((p) => (
               <Link
                 key={p.id}
                 href={`/projects/${p.id}`}
-                className="w-[85vw] sm:w-[80vw] lg:w-[70vw] flex-shrink-0 h-[420px] sm:h-[400px] lg:h-[400px] bg-white rounded-3xl border border-[#060606]/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row group transition-all duration-300 hover:ring-2 hover:ring-[#175A26] cursor-pointer"
+                className="w-[85vw] sm:w-[80vw] lg:w-[70vw] flex-shrink-0 h-[460px] sm:h-[400px] lg:h-[380px] bg-white rounded-3xl border border-[#060606]/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row group transition-all duration-300 hover:ring-2 hover:ring-[#175A26] cursor-pointer"
               >
                 {/* Image Section - FULL FILL */}
-                <div className="lg:w-[58%] h-[48%] lg:h-full bg-slate-900 overflow-hidden relative">
+                <div className="lg:w-[60%] h-[50%] lg:h-full bg-slate-900 overflow-hidden relative">
                   <Image
                     src={p.image}
                     alt={p.title}
@@ -404,23 +349,23 @@ export default function Index() {
                 </div>
 
                 {/* Content Section */}
-                <div className="lg:w-[42%] h-[52%] lg:h-full p-5 sm:p-6 lg:p-8 flex flex-col justify-between bg-white text-[#060606] relative z-10 transition-colors duration-300 group-hover:bg-[#175A26]/[0.02]">
+                <div className="lg:w-[40%] h-[50%] lg:h-full p-6 lg:p-8 flex flex-col justify-between bg-white text-[#060606] relative z-10 transition-colors duration-300 group-hover:bg-[#175A26]/[0.02]">
                   <div>
-                    <div className="flex items-center space-x-2 mb-2 sm:mb-3">
+                    <div className="flex items-center space-x-2 mb-3">
                       <span className="text-[10px] font-bold text-[#060606]/90">{p.year}</span>
                       <span className="h-px w-4 bg-[#060606]/30"></span>
                       <span className="text-[#175A26] text-[9px] font-extrabold tracking-widest uppercase font-jakarta">SYNERGY</span>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[#060606] mb-1.5 leading-tight group-hover:text-[#175A26] transition-colors font-jakarta">{p.title}</h3>
-                    <p className="text-[#060606]/85 text-[10px] sm:text-[11px] font-semibold mb-2 leading-none italic">for {p.subtitle ? p.subtitle.replace('for ', '') : p.client}</p>
+                    <h3 className="text-xl lg:text-2xl font-extrabold text-[#060606] mb-2 leading-tight group-hover:text-[#175A26] transition-colors font-jakarta">{p.title}</h3>
+                    <p className="text-[#060606]/85 text-[11px] font-semibold mb-3 leading-none italic">for {p.subtitle ? p.subtitle.replace('for ', '') : p.client}</p>
 
-                    <p className="text-[#060606]/85 text-xs sm:text-[13px] leading-relaxed mb-3 font-medium line-clamp-3">
+                    <p className="text-[#060606]/85 text-[13px] leading-relaxed mb-4 font-medium line-clamp-3">
                       {p.description}
                     </p>
                   </div>
 
-                  <div className="inline-flex items-center text-[#175A26] text-xs font-bold hover:gap-2 transition-all duration-300 group/link pt-2.5 border-t border-[#060606]/10">
+                  <div className="inline-flex items-center text-[#175A26] text-xs font-bold hover:gap-2 transition-all duration-300 group/link pt-3 border-t border-[#060606]/10">
                     <span>Explore Case</span>
                     <ArrowRight className="ml-1.5 h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" />
                   </div>
