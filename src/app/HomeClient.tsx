@@ -354,10 +354,10 @@ export default function Index() {
         className="relative"
         style={{ height: ghostHeight ? `${ghostHeight}px` : '280vh' }}
       >
-        <section className="sticky top-0 h-screen overflow-hidden bg-[#E5E5E5] pt-24 sm:pt-28 pb-6 flex flex-col justify-start text-[#060606]">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-6 sm:mb-8 flex justify-between items-end shrink-0">
+        <section className="sticky top-0 h-screen overflow-hidden bg-[#E5E5E5] pt-[72px] sm:pt-[80px] pb-6 flex flex-col justify-center text-[#060606]">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-4 sm:mb-6 flex justify-between items-end shrink-0">
             <div>
-              <span className="text-[#175A26] font-bold tracking-[0.2em] text-[10px] uppercase mb-1.5 block font-jakarta">FEATURED WORK</span>
+              <span className="text-[#175A26] font-bold tracking-[0.2em] text-[10px] uppercase mb-1 block font-jakarta">FEATURED WORK</span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#060606] font-jakarta">
                 Platforms &amp; Systems We&apos;ve Engineered
               </h2>
@@ -383,10 +383,10 @@ export default function Index() {
               <Link
                 key={p.id}
                 href={`/projects/${p.id}`}
-                className="w-[85vw] sm:w-[80vw] lg:w-[70vw] flex-shrink-0 h-[420px] sm:h-[400px] lg:h-[380px] bg-white rounded-3xl border border-[#060606]/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row group transition-all duration-300 hover:ring-2 hover:ring-[#175A26] cursor-pointer"
+                className="w-[85vw] sm:w-[80vw] lg:w-[70vw] flex-shrink-0 h-[420px] sm:h-[400px] lg:h-[400px] bg-white rounded-3xl border border-[#060606]/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row group transition-all duration-300 hover:ring-2 hover:ring-[#175A26] cursor-pointer"
               >
                 {/* Image Section - FULL FILL */}
-                <div className="lg:w-[60%] h-[48%] lg:h-full bg-slate-900 overflow-hidden relative">
+                <div className="lg:w-[58%] h-[48%] lg:h-full bg-slate-900 overflow-hidden relative">
                   <Image
                     src={p.image}
                     alt={p.title}
@@ -404,7 +404,7 @@ export default function Index() {
                 </div>
 
                 {/* Content Section */}
-                <div className="lg:w-[40%] h-[52%] lg:h-full p-5 sm:p-6 lg:p-8 flex flex-col justify-between bg-white text-[#060606] relative z-10 transition-colors duration-300 group-hover:bg-[#175A26]/[0.02]">
+                <div className="lg:w-[42%] h-[52%] lg:h-full p-5 sm:p-6 lg:p-8 flex flex-col justify-between bg-white text-[#060606] relative z-10 transition-colors duration-300 group-hover:bg-[#175A26]/[0.02]">
                   <div>
                     <div className="flex items-center space-x-2 mb-2 sm:mb-3">
                       <span className="text-[10px] font-bold text-[#060606]/90">{p.year}</span>
