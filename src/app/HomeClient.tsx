@@ -22,29 +22,37 @@ export default function Index() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    let animationFrameId: number;
+
     const handleScroll = () => {
       if (!ghostRef.current) return;
       const rect = ghostRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
       const start = rect.top;
-      const end = rect.bottom - windowHeight;
       const total = rect.height - windowHeight;
 
       let nextProgress = 0;
-      if (start <= 0 && end >= 0) {
+      if (start <= 0 && rect.bottom >= windowHeight) {
         nextProgress = Math.abs(start) / total;
       } else if (start > 0) {
         nextProgress = 0;
-      } else if (end < 0) {
+      } else if (rect.bottom < windowHeight) {
         nextProgress = 1;
       }
 
-      setScrollProgress(nextProgress);
+      animationFrameId = requestAnimationFrame(() => {
+        setScrollProgress(Math.min(Math.max(nextProgress, 0), 1));
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    };
   }, []);
 
   const heroSlides = [
@@ -318,8 +326,8 @@ export default function Index() {
 
 
 
-      {/* ── 6. Horizontal Scroll Projects Section (Commit 99548c05fb76f482e4280bb8ee7e6410c9ba8072 Style) ── */}
-      <div ref={ghostRef} className="relative h-[350vh]">
+      {/* ── 6. Horizontal Scroll Projects Section (Sticky Horizontal Scroll) ── */}
+      <div ref={ghostRef} className="relative h-[300vh]">
         <section className="sticky top-0 h-screen overflow-hidden bg-[#E5E5E5] py-8 flex flex-col justify-center text-[#060606]">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8 flex justify-between items-end">
             <div>
