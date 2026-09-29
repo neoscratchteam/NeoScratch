@@ -91,16 +91,18 @@ export default function Index() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl space-y-8">
-            {/* Location Badge */}
-            <div className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#7FFFD4] animate-pulse" />
-              <span className="text-xs font-black tracking-widest uppercase text-white font-jakarta">KIGALI, RWANDA • DIGITAL ENGINEERING STUDIO</span>
+            {/* Location Badge (Mobile Responsive) */}
+            <div className="inline-flex max-w-full items-center gap-2 bg-white/10 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/20">
+              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#7FFFD4] animate-pulse shrink-0" />
+              <span className="text-[9px] sm:text-xs font-black tracking-wider sm:tracking-widest uppercase text-white font-jakarta truncate">
+                KIGALI, RWANDA • DIGITAL STUDIO
+              </span>
             </div>
 
-            {/* Main Headline with Pop-Up Rotating Text (Websites, Mobile Apps, Custom Software, SEO, Digital Ads) */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] text-white font-jakarta drop-shadow-md">
-              The company that builds <br />
-              <span className="relative inline-block h-[1.25em] overflow-hidden align-bottom text-[#7FFFD4]">
+            {/* Main Headline with Pop-Up Rotating Text */}
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tight leading-[1.15] text-white font-jakarta drop-shadow-md max-w-full break-words">
+              The company that builds <br className="hidden sm:inline" />
+              <span className="relative inline-block h-[1.3em] max-w-full overflow-hidden align-bottom text-[#7FFFD4]">
                 <span
                   key={slideIndex}
                   className="inline-block animate-slide-up transition-all duration-500 ease-out font-black"

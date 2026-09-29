@@ -33,13 +33,13 @@ export function Header() {
   }, [pathname]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-jakarta">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-jakarta w-full max-w-full overflow-x-hidden">
       <div className={`transition-all duration-300 ${
         isScrolled
           ? 'bg-[#175A26]/95 backdrop-blur-md shadow-md py-4 border-b border-white/10'
           : 'bg-transparent py-5'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center relative w-full max-w-full">
           
           {/* Brand Logo (Only logo.png icon, no black background) */}
           <Link href="/" className="flex items-center group">
