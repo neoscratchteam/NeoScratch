@@ -64,10 +64,26 @@ export default function Index() {
     return () => clearInterval(timer);
   }, []);
 
+  const [cardStep, setCardStep] = useState(89);
+
+  useEffect(() => {
+    const updateCardStep = () => {
+      const w = window.innerWidth;
+      if (w >= 1024) {
+        setCardStep(74); // 70vw + 4vw gap
+      } else if (w >= 640) {
+        setCardStep(84); // 80vw + 4vw gap
+      } else {
+        setCardStep(89); // 85vw + 4vw gap
+      }
+    };
+    updateCardStep();
+    window.addEventListener('resize', updateCardStep);
+    return () => window.removeEventListener('resize', updateCardStep);
+  }, []);
+
   const displayedProjects = projects.slice(0, 5);
-  const cardWidth = 85;
-  const gapWidth = 5;
-  const translateX = -scrollProgress * (cardWidth + gapWidth) * (displayedProjects.length - 1);
+  const translateX = -scrollProgress * cardStep * (displayedProjects.length - 1);
 
   return (
     <div className="min-h-screen font-jakarta bg-[#E5E5E5] text-[#060606]">
