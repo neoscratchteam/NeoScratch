@@ -102,21 +102,32 @@ export function TestimonialSlider() {
           <ChevronLeft className="w-6 h-6" />
         </button>
         
-        <div className="flex-1 text-center px-4" key={activeIndex}>
-          <p className="text-sm sm:text-lg md:text-xl font-medium text-muted-foreground leading-relaxed animate-fade-in">
-            "{testimonials[activeIndex].content}"
-          </p>
-          {testimonials[activeIndex].link && testimonials[activeIndex].link !== '#' ? (
-             <a href={testimonials[activeIndex].link} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-primary hover:underline font-semibold text-xs sm:text-sm">
-               View Live Build →
-             </a>
-          ) : null}
-          <div className="mt-4 sm:mt-6 flex flex-col items-center justify-center animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <span className="font-bold text-foreground text-base sm:text-lg">{testimonials[activeIndex].name}</span>
-            <span className="text-xs sm:text-sm text-primary mb-1 mt-0.5">{testimonials[activeIndex].serviceType}</span>
-            <span className="text-[11px] sm:text-xs text-muted-foreground">{testimonials[activeIndex].role}</span>
-          </div>
-        </div>
+        {(() => {
+          const currentTestimonial = testimonials[activeIndex] || testimonials[0] || {
+            name: '',
+            role: '',
+            serviceType: '',
+            content: '',
+            link: ''
+          };
+          return (
+            <div className="flex-1 text-center px-4" key={activeIndex}>
+              <p className="text-sm sm:text-lg md:text-xl font-medium text-muted-foreground leading-relaxed animate-fade-in">
+                "{currentTestimonial.content}"
+              </p>
+              {currentTestimonial.link && currentTestimonial.link !== '#' ? (
+                 <a href={currentTestimonial.link} target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-primary hover:underline font-semibold text-xs sm:text-sm">
+                   View Live Build →
+                 </a>
+              ) : null}
+              <div className="mt-4 sm:mt-6 flex flex-col items-center justify-center animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                <span className="font-bold text-foreground text-base sm:text-lg">{currentTestimonial.name}</span>
+                <span className="text-xs sm:text-sm text-primary mb-1 mt-0.5">{currentTestimonial.serviceType}</span>
+                <span className="text-[11px] sm:text-xs text-muted-foreground">{currentTestimonial.role}</span>
+              </div>
+            </div>
+          );
+        })()}
 
         <button onClick={next} aria-label="Next testimonial" className="hidden md:flex p-4 rounded-full border border-border bg-background hover:bg-secondary transition-colors text-foreground shadow-sm">
           <ChevronRight className="w-6 h-6" />
