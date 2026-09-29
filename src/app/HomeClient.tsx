@@ -319,7 +319,7 @@ export default function Index() {
           </div>
 
           <div
-            className="flex gap-[4vw] px-[7.5vw] transform-gpu will-change-transform"
+            className="flex gap-[4vw] px-[7.5vw] transform-gpu will-change-transform max-w-full overflow-hidden"
             style={{
               transform: `translate3d(${translateX.toFixed(2)}vw, 0px, 0px)`
             }}

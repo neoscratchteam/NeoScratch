@@ -71,16 +71,21 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-background text-foreground font-jakarta;
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.01em;
-  }
-
-  html {
-    scroll-behavior: smooth;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
   }
   
   h1, h2, h3, h4, h5, h6 {

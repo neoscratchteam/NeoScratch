@@ -319,8 +319,8 @@ export function Header() {
 
         {/* Mobile Navigation Dropdown */}
         {isMenuOpen && (
-          <div className="lg:hidden animate-fade-in px-4 pt-3 pb-4">
-            <div className="p-4 space-y-2 bg-[#175A26] border border-white/10 rounded-2xl shadow-2xl text-white">
+          <div className="lg:hidden animate-fade-in px-4 pt-3 pb-4 w-full max-w-full overflow-x-hidden">
+            <div className="p-4 space-y-2 bg-[#175A26] border border-white/10 rounded-2xl shadow-2xl text-white max-w-full">
               <Link href="/" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Home</Link>
               <Link href="/about" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">About Us</Link>
               <Link href="/team" className="block px-4 py-2 font-bold hover:bg-white hover:text-[#175A26] rounded-lg">Our Team</Link>
