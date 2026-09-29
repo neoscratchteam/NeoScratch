@@ -19,7 +19,10 @@ export default function Index() {
   useEffect(() => { setMounted(true); }, []);
 
   const ghostRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [maxTranslatePx, setMaxTranslatePx] = useState(0);
+  const [ghostHeight, setGhostHeight] = useState<number | null>(null);
 
   useEffect(() => {
     let animationFrameId: number;
@@ -29,13 +32,13 @@ export default function Index() {
       const rect = ghostRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      const start = rect.top;
       const total = rect.height - windowHeight;
+      if (total <= 0) return;
 
       let nextProgress = 0;
-      if (start <= 0 && rect.bottom >= windowHeight) {
-        nextProgress = Math.abs(start) / total;
-      } else if (start > 0) {
+      if (rect.top <= 0 && rect.bottom >= windowHeight) {
+        nextProgress = Math.abs(rect.top) / total;
+      } else if (rect.top > 0) {
         nextProgress = 0;
       } else if (rect.bottom < windowHeight) {
         nextProgress = 1;
@@ -72,8 +75,6 @@ export default function Index() {
     return () => clearInterval(timer);
   }, []);
 
-  const [cardStep, setCardStep] = useState(89);
-
   useEffect(() => {
     const updateCardStep = () => {
       const w = window.innerWidth;
@@ -85,13 +86,33 @@ export default function Index() {
         setCardStep(89); // 85vw + 4vw gap
       }
     };
-    updateCardStep();
-    window.addEventListener('resize', updateCardStep);
-    return () => window.removeEventListener('resize', updateCardStep);
+
+    const updateTrackDimensions = () => {
+      updateCardStep();
+      if (trackRef.current) {
+        const scrollW = trackRef.current.scrollWidth;
+        const windowW = window.innerWidth;
+        const windowH = window.innerHeight;
+        const maxScroll = Math.max(scrollW - windowW, 0);
+        setMaxTranslatePx(maxScroll);
+        setGhostHeight(maxScroll + windowH);
+      }
+    };
+
+    updateTrackDimensions();
+    window.addEventListener('resize', updateTrackDimensions);
+    const timer = setTimeout(updateTrackDimensions, 400);
+
+    return () => {
+      window.removeEventListener('resize', updateTrackDimensions);
+      clearTimeout(timer);
+    };
   }, []);
 
   const displayedProjects = projects.slice(0, 5);
-  const translateX = -scrollProgress * cardStep * (displayedProjects.length - 1);
+  const translateX = maxTranslatePx > 0
+    ? -scrollProgress * maxTranslatePx
+    : -scrollProgress * cardStep * (displayedProjects.length - 1);
 
   return (
     <div className="min-h-screen font-jakarta bg-[#E5E5E5] text-[#060606]">
@@ -327,37 +348,44 @@ export default function Index() {
 
 
       {/* ── 6. Horizontal Scroll Projects Section (Sticky Horizontal Scroll) ── */}
-      <div ref={ghostRef} className="relative h-[300vh]">
-        <section className="sticky top-0 h-screen overflow-hidden bg-[#E5E5E5] py-8 flex flex-col justify-center text-[#060606]">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-8 flex justify-between items-end">
+      <div
+        ref={ghostRef}
+        className="relative"
+        style={{ height: ghostHeight ? `${ghostHeight}px` : '280vh' }}
+      >
+        <section className="sticky top-0 h-screen overflow-hidden bg-[#E5E5E5] pt-24 sm:pt-28 pb-6 flex flex-col justify-start text-[#060606]">
+          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full mb-6 sm:mb-8 flex justify-between items-end shrink-0">
             <div>
-              <span className="text-[#175A26] font-bold tracking-[0.2em] text-[10px] uppercase mb-2 block font-jakarta">FEATURED WORK</span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#060606] font-jakarta">
+              <span className="text-[#175A26] font-bold tracking-[0.2em] text-[10px] uppercase mb-1.5 block font-jakarta">FEATURED WORK</span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#060606] font-jakarta">
                 Platforms &amp; Systems We&apos;ve Engineered
               </h2>
             </div>
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#175A26] text-white font-extrabold text-xs hover:bg-[#060606] hover:text-white transition-colors border border-[#175A26]"
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-[#175A26] text-white font-extrabold text-xs hover:bg-[#060606] hover:text-white transition-colors border border-[#175A26] shrink-0"
             >
               View All Works
             </Link>
           </div>
 
           <div
+            ref={trackRef}
             className="flex gap-[4vw] px-[7.5vw] transform-gpu will-change-transform"
             style={{
-              transform: `translate3d(${translateX.toFixed(2)}vw, 0px, 0px)`
+              transform: maxTranslatePx > 0
+                ? `translate3d(${translateX.toFixed(2)}px, 0px, 0px)`
+                : `translate3d(${translateX.toFixed(2)}vw, 0px, 0px)`
             }}
           >
             {displayedProjects.map((p) => (
               <Link
                 key={p.id}
                 href={`/projects/${p.id}`}
-                className="w-[85vw] sm:w-[80vw] lg:w-[70vw] flex-shrink-0 h-[460px] sm:h-[400px] lg:h-[380px] bg-white rounded-3xl border border-[#060606]/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row group transition-all duration-300 hover:ring-2 hover:ring-[#175A26] cursor-pointer"
+                className="w-[85vw] sm:w-[80vw] lg:w-[70vw] flex-shrink-0 h-[420px] sm:h-[400px] lg:h-[380px] bg-white rounded-3xl border border-[#060606]/10 shadow-2xl overflow-hidden flex flex-col lg:flex-row group transition-all duration-300 hover:ring-2 hover:ring-[#175A26] cursor-pointer"
               >
                 {/* Image Section - FULL FILL */}
-                <div className="lg:w-[60%] h-[50%] lg:h-full bg-slate-900 overflow-hidden relative">
+                <div className="lg:w-[60%] h-[48%] lg:h-full bg-slate-900 overflow-hidden relative">
                   <Image
                     src={p.image}
                     alt={p.title}
@@ -375,23 +403,23 @@ export default function Index() {
                 </div>
 
                 {/* Content Section */}
-                <div className="lg:w-[40%] h-[50%] lg:h-full p-6 lg:p-8 flex flex-col justify-between bg-white text-[#060606] relative z-10 transition-colors duration-300 group-hover:bg-[#175A26]/[0.02]">
+                <div className="lg:w-[40%] h-[52%] lg:h-full p-5 sm:p-6 lg:p-8 flex flex-col justify-between bg-white text-[#060606] relative z-10 transition-colors duration-300 group-hover:bg-[#175A26]/[0.02]">
                   <div>
-                    <div className="flex items-center space-x-2 mb-3">
+                    <div className="flex items-center space-x-2 mb-2 sm:mb-3">
                       <span className="text-[10px] font-bold text-[#060606]/90">{p.year}</span>
                       <span className="h-px w-4 bg-[#060606]/30"></span>
                       <span className="text-[#175A26] text-[9px] font-extrabold tracking-widest uppercase font-jakarta">SYNERGY</span>
                     </div>
 
-                    <h3 className="text-xl lg:text-2xl font-extrabold text-[#060606] mb-2 leading-tight group-hover:text-[#175A26] transition-colors font-jakarta">{p.title}</h3>
-                    <p className="text-[#060606]/85 text-[11px] font-semibold mb-3 leading-none italic">for {p.subtitle ? p.subtitle.replace('for ', '') : p.client}</p>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[#060606] mb-1.5 leading-tight group-hover:text-[#175A26] transition-colors font-jakarta">{p.title}</h3>
+                    <p className="text-[#060606]/85 text-[10px] sm:text-[11px] font-semibold mb-2 leading-none italic">for {p.subtitle ? p.subtitle.replace('for ', '') : p.client}</p>
 
-                    <p className="text-[#060606]/85 text-[13px] leading-relaxed mb-4 font-medium line-clamp-3">
+                    <p className="text-[#060606]/85 text-xs sm:text-[13px] leading-relaxed mb-3 font-medium line-clamp-3">
                       {p.description}
                     </p>
                   </div>
 
-                  <div className="inline-flex items-center text-[#175A26] text-xs font-bold hover:gap-2 transition-all duration-300 group/link pt-3 border-t border-[#060606]/10">
+                  <div className="inline-flex items-center text-[#175A26] text-xs font-bold hover:gap-2 transition-all duration-300 group/link pt-2.5 border-t border-[#060606]/10">
                     <span>Explore Case</span>
                     <ArrowRight className="ml-1.5 h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" />
                   </div>
