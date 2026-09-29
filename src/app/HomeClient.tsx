@@ -23,6 +23,7 @@ export default function Index() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [maxTranslatePx, setMaxTranslatePx] = useState(0);
   const [ghostHeight, setGhostHeight] = useState<number | null>(null);
+  const [cardStep, setCardStep] = useState(84);
 
   useEffect(() => {
     let animationFrameId: number;
